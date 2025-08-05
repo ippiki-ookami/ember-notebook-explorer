@@ -1,0 +1,68 @@
+[
+  {
+    "id": "1",
+    "name": "Import Libraries",
+    "description": "This block imports necessary libraries for data manipulation and machine learning. It includes pandas for data handling, langchain for working with language models, and numpy for numerical operations. These libraries provide essential functionalities that will be used throughout the code.",
+    "dependencies": [],
+    "dependents": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "code_length": 97,
+    "code_lines": 5
+  },
+  {
+    "id": "2",
+    "name": "Text Cleaning and Tokenization Functions",
+    "description": "This block contains helper functions for processing text. The 'clean_text' function removes extra whitespace and normalizes the text, while the 'tokenize' function converts the text to lowercase and splits it into tokens. These functions are essential for preparing the documents before they are stored in the vector store.",
+    "dependencies": [
+      "1"
+    ],
+    "dependents": [
+      "3",
+      "4",
+      "5"
+    ],
+    "code_length": 243,
+    "code_lines": 10
+  },
+  {
+    "id": "3",
+    "name": "VectorStore Class Definition",
+    "description": "This block defines the 'VectorStore' class, which is responsible for storing and managing vectors (tokenized documents). It includes methods to add vectors and perform a simplified search. This class encapsulates the functionality needed to handle the embeddings of the processed documents.",
+    "dependencies": [
+      "2"
+    ],
+    "dependents": [
+      "4",
+      "5"
+    ],
+    "code_length": 291,
+    "code_lines": 12
+  },
+  {
+    "id": "4",
+    "name": "Build RAG Graph Function",
+    "description": "This block contains the 'build_rag_graph' function, which is the main function for building the RAG (Retrieval-Augmented Generation) pipeline. It initializes a VectorStore instance, processes each document by cleaning and tokenizing it, and adds the resulting tokens to the vector store. This function orchestrates the flow of data from raw documents to a structured vector representation.",
+    "dependencies": [
+      "2",
+      "3"
+    ],
+    "dependents": [],
+    "code_length": 289,
+    "code_lines": 12
+  },
+  {
+    "id": "5",
+    "name": "Configuration Variables",
+    "description": "This block defines configuration variables that can be used throughout the code. 'MAX_TOKENS' and 'TEMPERATURE' are set to control aspects of the text processing or model behavior, although they are not directly used in the provided code. These variables can be useful for future enhancements or integrations.",
+    "dependencies": [
+      "1"
+    ],
+    "dependents": [],
+    "code_length": 51,
+    "code_lines": 4
+  }
+]

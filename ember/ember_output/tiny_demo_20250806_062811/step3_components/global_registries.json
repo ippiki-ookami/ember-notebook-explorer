@@ -1,0 +1,28 @@
+{
+  "function_registry": {
+    "clean_text_function": "2:1",
+    "tokenize_function": "2:4",
+    "build_rag_graph_function": "4:1",
+    "clean_text_function_call": "4:9",
+    "tokenize_function_call": "4:10"
+  },
+  "class_registry": {
+    "VectorStore_class": "3:1"
+  },
+  "import_registry": {
+    "pandas": [
+      "1:1"
+    ],
+    "langchain": [
+      "1:2"
+    ],
+    "numpy": [
+      "1:3"
+    ]
+  },
+  "summary": {
+    "functions": 5,
+    "classes": 1,
+    "imports": 3
+  }
+}

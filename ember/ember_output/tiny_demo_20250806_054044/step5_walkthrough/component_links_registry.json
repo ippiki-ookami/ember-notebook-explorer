@@ -1,0 +1,402 @@
+[
+  {
+    "display_text": "pandas_import",
+    "component_name": "pandas_import",
+    "block_id": "1",
+    "component_number": 1,
+    "section_number": 1,
+    "link_format": "[[component:1:1:pandas_import|pandas_import]]"
+  },
+  {
+    "display_text": "pandas_import",
+    "component_name": "pandas_import",
+    "block_id": "1",
+    "component_number": 1,
+    "section_number": 1,
+    "link_format": "[[component:1:1:pandas_import|pandas_import]]"
+  },
+  {
+    "display_text": "langchain_import",
+    "component_name": "langchain_import",
+    "block_id": "1",
+    "component_number": 2,
+    "section_number": 1,
+    "link_format": "[[component:1:2:langchain_import|langchain_import]]"
+  },
+  {
+    "display_text": "langchain_import",
+    "component_name": "langchain_import",
+    "block_id": "1",
+    "component_number": 2,
+    "section_number": 1,
+    "link_format": "[[component:1:2:langchain_import|langchain_import]]"
+  },
+  {
+    "display_text": "numpy_import",
+    "component_name": "numpy_import",
+    "block_id": "1",
+    "component_number": 3,
+    "section_number": 1,
+    "link_format": "[[component:1:3:numpy_import|numpy_import]]"
+  },
+  {
+    "display_text": "numpy_import",
+    "component_name": "numpy_import",
+    "block_id": "1",
+    "component_number": 3,
+    "section_number": 1,
+    "link_format": "[[component:1:3:numpy_import|numpy_import]]"
+  },
+  {
+    "display_text": "pandas_import",
+    "component_name": "pandas_import",
+    "block_id": "1",
+    "component_number": 1,
+    "section_number": 1,
+    "link_format": "[[component:1:1:pandas_import|pandas_import]]"
+  },
+  {
+    "display_text": "langchain_import",
+    "component_name": "langchain_import",
+    "block_id": "1",
+    "component_number": 2,
+    "section_number": 1,
+    "link_format": "[[component:1:2:langchain_import|langchain_import]]"
+  },
+  {
+    "display_text": "numpy_import",
+    "component_name": "numpy_import",
+    "block_id": "1",
+    "component_number": 3,
+    "section_number": 1,
+    "link_format": "[[component:1:3:numpy_import|numpy_import]]"
+  },
+  {
+    "display_text": "clean_text_function",
+    "component_name": "clean_text_function",
+    "block_id": "2",
+    "component_number": 1,
+    "section_number": 2,
+    "link_format": "[[component:2:1:clean_text_function|clean_text_function]]"
+  },
+  {
+    "display_text": "tokenize_function",
+    "component_name": "tokenize_function",
+    "block_id": "2",
+    "component_number": 4,
+    "section_number": 2,
+    "link_format": "[[component:2:4:tokenize_function|tokenize_function]]"
+  },
+  {
+    "display_text": "`clean_text_function`",
+    "component_name": "clean_text_function",
+    "block_id": "2",
+    "component_number": 1,
+    "section_number": 2,
+    "link_format": "[[component:2:1:clean_text_function|`clean_text_function`]]"
+  },
+  {
+    "display_text": "clean_text_docstring",
+    "component_name": "clean_text_docstring",
+    "block_id": "2",
+    "component_number": 2,
+    "section_number": 2,
+    "link_format": "[[component:2:2:clean_text_docstring|clean_text_docstring]]"
+  },
+  {
+    "display_text": "clean_text_return_statement",
+    "component_name": "clean_text_return_statement",
+    "block_id": "2",
+    "component_number": 3,
+    "section_number": 2,
+    "link_format": "[[component:2:3:clean_text_return_statement|clean_text_return_statement]]"
+  },
+  {
+    "display_text": "`tokenize_function`",
+    "component_name": "tokenize_function",
+    "block_id": "2",
+    "component_number": 4,
+    "section_number": 2,
+    "link_format": "[[component:2:4:tokenize_function|`tokenize_function`]]"
+  },
+  {
+    "display_text": "tokenize_docstring",
+    "component_name": "tokenize_docstring",
+    "block_id": "2",
+    "component_number": 5,
+    "section_number": 2,
+    "link_format": "[[component:2:5:tokenize_docstring|tokenize_docstring]]"
+  },
+  {
+    "display_text": "tokenize_return_statement",
+    "component_name": "tokenize_return_statement",
+    "block_id": "2",
+    "component_number": 6,
+    "section_number": 2,
+    "link_format": "[[component:2:6:tokenize_return_statement|tokenize_return_statement]]"
+  },
+  {
+    "display_text": "clean_text_function",
+    "component_name": "clean_text_function",
+    "block_id": "2",
+    "component_number": 1,
+    "section_number": 2,
+    "link_format": "[[component:2:1:clean_text_function|clean_text_function]]"
+  },
+  {
+    "display_text": "tokenize_function",
+    "component_name": "tokenize_function",
+    "block_id": "2",
+    "component_number": 4,
+    "section_number": 2,
+    "link_format": "[[component:2:4:tokenize_function|tokenize_function]]"
+  },
+  {
+    "display_text": "clean_text_docstring",
+    "component_name": "clean_text_docstring",
+    "block_id": "2",
+    "component_number": 2,
+    "section_number": 2,
+    "link_format": "[[component:2:2:clean_text_docstring|clean_text_docstring]]"
+  },
+  {
+    "display_text": "tokenize_docstring",
+    "component_name": "tokenize_docstring",
+    "block_id": "2",
+    "component_number": 5,
+    "section_number": 2,
+    "link_format": "[[component:2:5:tokenize_docstring|tokenize_docstring]]"
+  },
+  {
+    "display_text": "`VectorStore_class`",
+    "component_name": "VectorStore_class",
+    "block_id": "3",
+    "component_number": 1,
+    "section_number": 3,
+    "link_format": "[[component:3:1:VectorStore_class|`VectorStore_class`]]"
+  },
+  {
+    "display_text": "VectorStore_docstring",
+    "component_name": "VectorStore_docstring",
+    "block_id": "3",
+    "component_number": 2,
+    "section_number": 3,
+    "link_format": "[[component:3:2:VectorStore_docstring|VectorStore_docstring]]"
+  },
+  {
+    "display_text": "VectorStore_init_method",
+    "component_name": "VectorStore_init_method",
+    "block_id": "3",
+    "component_number": 3,
+    "section_number": 3,
+    "link_format": "[[component:3:3:VectorStore_init_method|VectorStore_init_method]]"
+  },
+  {
+    "display_text": "VectorStore_vectors_variable",
+    "component_name": "VectorStore_vectors_variable",
+    "block_id": "3",
+    "component_number": 4,
+    "section_number": 3,
+    "link_format": "[[component:3:4:VectorStore_vectors_variable|VectorStore_vectors_variable]]"
+  },
+  {
+    "display_text": "VectorStore_vectors_variable",
+    "component_name": "VectorStore_vectors_variable",
+    "block_id": "3",
+    "component_number": 4,
+    "section_number": 3,
+    "link_format": "[[component:3:4:VectorStore_vectors_variable|VectorStore_vectors_variable]]"
+  },
+  {
+    "display_text": "VectorStore_add_method",
+    "component_name": "VectorStore_add_method",
+    "block_id": "3",
+    "component_number": 5,
+    "section_number": 3,
+    "link_format": "[[component:3:5:VectorStore_add_method|VectorStore_add_method]]"
+  },
+  {
+    "display_text": "VectorStore_add_method_call",
+    "component_name": "VectorStore_add_method_call",
+    "block_id": "3",
+    "component_number": 6,
+    "section_number": 3,
+    "link_format": "[[component:3:6:VectorStore_add_method_call|VectorStore_add_method_call]]"
+  },
+  {
+    "display_text": "VectorStore_add_method_call",
+    "component_name": "VectorStore_add_method_call",
+    "block_id": "3",
+    "component_number": 6,
+    "section_number": 3,
+    "link_format": "[[component:3:6:VectorStore_add_method_call|VectorStore_add_method_call]]"
+  },
+  {
+    "display_text": "VectorStore_search_method",
+    "component_name": "VectorStore_search_method",
+    "block_id": "3",
+    "component_number": 7,
+    "section_number": 3,
+    "link_format": "[[component:3:7:VectorStore_search_method|VectorStore_search_method]]"
+  },
+  {
+    "display_text": "VectorStore_search_docstring",
+    "component_name": "VectorStore_search_docstring",
+    "block_id": "3",
+    "component_number": 8,
+    "section_number": 3,
+    "link_format": "[[component:3:8:VectorStore_search_docstring|VectorStore_search_docstring]]"
+  },
+  {
+    "display_text": "VectorStore_search_return_statement",
+    "component_name": "VectorStore_search_return_statement",
+    "block_id": "3",
+    "component_number": 9,
+    "section_number": 3,
+    "link_format": "[[component:3:9:VectorStore_search_return_statement|VectorStore_search_return_statement]]"
+  },
+  {
+    "display_text": "`build_rag_graph_function`",
+    "component_name": "build_rag_graph_function",
+    "block_id": "4",
+    "component_number": 1,
+    "section_number": 4,
+    "link_format": "[[component:4:1:build_rag_graph_function|`build_rag_graph_function`]]"
+  },
+  {
+    "display_text": "`build_rag_graph_function`",
+    "component_name": "build_rag_graph_function",
+    "block_id": "4",
+    "component_number": 1,
+    "section_number": 4,
+    "link_format": "[[component:4:1:build_rag_graph_function|`build_rag_graph_function`]]"
+  },
+  {
+    "display_text": "`store_variable`",
+    "component_name": "store_variable",
+    "block_id": "4",
+    "component_number": 3,
+    "section_number": 4,
+    "link_format": "[[component:4:3:store_variable|`store_variable`]]"
+  },
+  {
+    "display_text": "`for_loop`",
+    "component_name": "for_loop",
+    "block_id": "4",
+    "component_number": 4,
+    "section_number": 4,
+    "link_format": "[[component:4:4:for_loop|`for_loop`]]"
+  },
+  {
+    "display_text": "`clean_text_function_call`",
+    "component_name": "clean_text_function_call",
+    "block_id": "4",
+    "component_number": 9,
+    "section_number": 4,
+    "link_format": "[[component:4:9:clean_text_function_call|`clean_text_function_call`]]"
+  },
+  {
+    "display_text": "`cleaned_variable`",
+    "component_name": "cleaned_variable",
+    "block_id": "4",
+    "component_number": 5,
+    "section_number": 4,
+    "link_format": "[[component:4:5:cleaned_variable|`cleaned_variable`]]"
+  },
+  {
+    "display_text": "`tokenize_function_call`",
+    "component_name": "tokenize_function_call",
+    "block_id": "4",
+    "component_number": 10,
+    "section_number": 4,
+    "link_format": "[[component:4:10:tokenize_function_call|`tokenize_function_call`]]"
+  },
+  {
+    "display_text": "`tokens_variable`",
+    "component_name": "tokens_variable",
+    "block_id": "4",
+    "component_number": 6,
+    "section_number": 4,
+    "link_format": "[[component:4:6:tokens_variable|`tokens_variable`]]"
+  },
+  {
+    "display_text": "`store_add_expression`",
+    "component_name": "store_add_expression",
+    "block_id": "4",
+    "component_number": 7,
+    "section_number": 4,
+    "link_format": "[[component:4:7:store_add_expression|`store_add_expression`]]"
+  },
+  {
+    "display_text": "`return_statement`",
+    "component_name": "return_statement",
+    "block_id": "4",
+    "component_number": 8,
+    "section_number": 4,
+    "link_format": "[[component:4:8:return_statement|`return_statement`]]"
+  },
+  {
+    "display_text": "`build_rag_graph_docstring`",
+    "component_name": "build_rag_graph_docstring",
+    "block_id": "4",
+    "component_number": 2,
+    "section_number": 4,
+    "link_format": "[[component:4:2:build_rag_graph_docstring|`build_rag_graph_docstring`]]"
+  },
+  {
+    "display_text": "`build_rag_graph_function`",
+    "component_name": "build_rag_graph_function",
+    "block_id": "4",
+    "component_number": 1,
+    "section_number": 4,
+    "link_format": "[[component:4:1:build_rag_graph_function|`build_rag_graph_function`]]"
+  },
+  {
+    "display_text": "`MAX_TOKENS_variable`",
+    "component_name": "MAX_TOKENS_variable",
+    "block_id": "5",
+    "component_number": 1,
+    "section_number": 5,
+    "link_format": "[[component:5:1:MAX_TOKENS_variable|`MAX_TOKENS_variable`]]"
+  },
+  {
+    "display_text": "`TEMPERATURE_variable`",
+    "component_name": "TEMPERATURE_variable",
+    "block_id": "5",
+    "component_number": 2,
+    "section_number": 5,
+    "link_format": "[[component:5:2:TEMPERATURE_variable|`TEMPERATURE_variable`]]"
+  },
+  {
+    "display_text": "`MAX_TOKENS_variable`",
+    "component_name": "MAX_TOKENS_variable",
+    "block_id": "5",
+    "component_number": 1,
+    "section_number": 5,
+    "link_format": "[[component:5:1:MAX_TOKENS_variable|`MAX_TOKENS_variable`]]"
+  },
+  {
+    "display_text": "`TEMPERATURE_variable`",
+    "component_name": "TEMPERATURE_variable",
+    "block_id": "5",
+    "component_number": 2,
+    "section_number": 5,
+    "link_format": "[[component:5:2:TEMPERATURE_variable|`TEMPERATURE_variable`]]"
+  },
+  {
+    "display_text": "tokenize_function",
+    "component_name": "tokenize_function",
+    "block_id": "2",
+    "component_number": 4,
+    "section_number": 5,
+    "link_format": "[[component:2:4:tokenize_function|tokenize_function]]"
+  },
+  {
+    "display_text": "VectorStore_class",
+    "component_name": "VectorStore_class",
+    "block_id": "3",
+    "component_number": 1,
+    "section_number": 5,
+    "link_format": "[[component:3:1:VectorStore_class|VectorStore_class]]"
+  }
+]

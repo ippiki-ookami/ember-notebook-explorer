@@ -1,0 +1,276 @@
+{
+  "run_directory": "ember_output/tiny_demo_20250806_060008",
+  "timestamp": "20250806_060008",
+  "files_created": [
+    "ember_output/tiny_demo_20250806_060008/step4_deep_descriptions/block_4_enhancements.json",
+    "ember_output/tiny_demo_20250806_060008/step4_deep_descriptions/improved_state.json",
+    "ember_output/tiny_demo_20250806_060008/step4_deep_descriptions/improvement_summary.json",
+    "ember_output/tiny_demo_20250806_060008/step4_deep_descriptions/deep_descriptions.json",
+    "ember_output/tiny_demo_20250806_060008/step4_deep_descriptions/block_1_enhancements.json",
+    "ember_output/tiny_demo_20250806_060008/step4_deep_descriptions/block_5_enhancements.json",
+    "ember_output/tiny_demo_20250806_060008/step4_deep_descriptions/expansion_metrics.json",
+    "ember_output/tiny_demo_20250806_060008/step4_deep_descriptions/block_2_enhancements.json",
+    "ember_output/tiny_demo_20250806_060008/step4_deep_descriptions/component_enhancements.json",
+    "ember_output/tiny_demo_20250806_060008/step4_deep_descriptions/block_3_enhancements.json",
+    "ember_output/tiny_demo_20250806_060008/step4_deep_descriptions/example_comparison.json",
+    "ember_output/tiny_demo_20250806_060008/step2_analysis/code_explanation.json",
+    "ember_output/tiny_demo_20250806_060008/step2_analysis/overview.txt",
+    "ember_output/tiny_demo_20250806_060008/step2_analysis/dependency_graph.json",
+    "ember_output/tiny_demo_20250806_060008/step2_analysis/first_block_preview.txt",
+    "ember_output/tiny_demo_20250806_060008/step2_analysis/first_block_full.py",
+    "ember_output/tiny_demo_20250806_060008/step2_analysis/blocks_summary.json",
+    "ember_output/tiny_demo_20250806_060008/step5_walkthrough/component_links_registry.json",
+    "ember_output/tiny_demo_20250806_060008/step5_walkthrough/quality_report.json",
+    "ember_output/tiny_demo_20250806_060008/step5_walkthrough/complete_walkthrough.md",
+    "ember_output/tiny_demo_20250806_060008/step5_walkthrough/section_4_4.md",
+    "ember_output/tiny_demo_20250806_060008/step5_walkthrough/walkthrough_summary.json",
+    "ember_output/tiny_demo_20250806_060008/step5_walkthrough/section_preview.txt",
+    "ember_output/tiny_demo_20250806_060008/step5_walkthrough/section_1_1.md",
+    "ember_output/tiny_demo_20250806_060008/step5_walkthrough/section_5_5.md",
+    "ember_output/tiny_demo_20250806_060008/step5_walkthrough/walkthrough_data.json",
+    "ember_output/tiny_demo_20250806_060008/step5_walkthrough/section_2_2.md",
+    "ember_output/tiny_demo_20250806_060008/step5_walkthrough/complete_walkthrough_preview.md",
+    "ember_output/tiny_demo_20250806_060008/step5_walkthrough/section_3_3.md",
+    "ember_output/tiny_demo_20250806_060008/step3_components/block_details.json",
+    "ember_output/tiny_demo_20250806_060008/step3_components/block_4_components.json",
+    "ember_output/tiny_demo_20250806_060008/step3_components/global_registries.json",
+    "ember_output/tiny_demo_20250806_060008/step3_components/block_1_components.json",
+    "ember_output/tiny_demo_20250806_060008/step3_components/progress_summary.json",
+    "ember_output/tiny_demo_20250806_060008/step3_components/component_examples.json",
+    "ember_output/tiny_demo_20250806_060008/step3_components/final_state.json",
+    "ember_output/tiny_demo_20250806_060008/step3_components/block_3_components.json",
+    "ember_output/tiny_demo_20250806_060008/step3_components/block_5_components.json",
+    "ember_output/tiny_demo_20250806_060008/step3_components/block_2_components.json",
+    "ember_output/tiny_demo_20250806_060008/step1_extraction/extracted_markdown.md",
+    "ember_output/tiny_demo_20250806_060008/step1_extraction/extracted_code.py",
+    "ember_output/tiny_demo_20250806_060008/step1_extraction/extraction_summary.json",
+    "ember_output/tiny_demo_20250806_060008/step1_extraction/code_preview.txt"
+  ],
+  "step_summaries": {
+    "step4_deep_descriptions": [
+      {
+        "filename": "block_4_enhancements.json",
+        "size": 10780,
+        "modified": "2025-08-06T06:04:17.115657"
+      },
+      {
+        "filename": "improved_state.json",
+        "size": 78318,
+        "modified": "2025-08-06T06:04:17.115657"
+      },
+      {
+        "filename": "improvement_summary.json",
+        "size": 135,
+        "modified": "2025-08-06T06:04:17.115657"
+      },
+      {
+        "filename": "deep_descriptions.json",
+        "size": 2,
+        "modified": "2025-08-06T06:01:59.652281"
+      },
+      {
+        "filename": "block_1_enhancements.json",
+        "size": 3874,
+        "modified": "2025-08-06T06:04:17.115657"
+      },
+      {
+        "filename": "block_5_enhancements.json",
+        "size": 2820,
+        "modified": "2025-08-06T06:04:17.115657"
+      },
+      {
+        "filename": "expansion_metrics.json",
+        "size": 2,
+        "modified": "2025-08-06T06:01:59.652281"
+      },
+      {
+        "filename": "block_2_enhancements.json",
+        "size": 6717,
+        "modified": "2025-08-06T06:04:17.115657"
+      },
+      {
+        "filename": "component_enhancements.json",
+        "size": 2004,
+        "modified": "2025-08-06T06:04:17.115657"
+      },
+      {
+        "filename": "block_3_enhancements.json",
+        "size": 7551,
+        "modified": "2025-08-06T06:04:17.115657"
+      },
+      {
+        "filename": "example_comparison.json",
+        "size": 1043,
+        "modified": "2025-08-06T06:04:17.115657"
+      }
+    ],
+    "step2_analysis": [
+      {
+        "filename": "code_explanation.json",
+        "size": 4611,
+        "modified": "2025-08-06T06:00:27.772364"
+      },
+      {
+        "filename": "overview.txt",
+        "size": 270,
+        "modified": "2025-08-06T06:00:27.772364"
+      },
+      {
+        "filename": "dependency_graph.json",
+        "size": 622,
+        "modified": "2025-08-06T06:00:27.772364"
+      },
+      {
+        "filename": "first_block_preview.txt",
+        "size": 97,
+        "modified": "2025-08-06T06:00:27.772364"
+      },
+      {
+        "filename": "first_block_full.py",
+        "size": 97,
+        "modified": "2025-08-06T06:00:27.772364"
+      },
+      {
+        "filename": "blocks_summary.json",
+        "size": 2681,
+        "modified": "2025-08-06T06:00:27.772364"
+      }
+    ],
+    "step5_walkthrough": [
+      {
+        "filename": "component_links_registry.json",
+        "size": 8725,
+        "modified": "2025-08-06T06:04:45.363118"
+      },
+      {
+        "filename": "quality_report.json",
+        "size": 35842,
+        "modified": "2025-08-06T06:04:45.363118"
+      },
+      {
+        "filename": "complete_walkthrough.md",
+        "size": 25090,
+        "modified": "2025-08-06T06:04:45.363118"
+      },
+      {
+        "filename": "section_4_4.md",
+        "size": 5591,
+        "modified": "2025-08-06T06:04:45.363118"
+      },
+      {
+        "filename": "walkthrough_summary.json",
+        "size": 252,
+        "modified": "2025-08-06T06:04:45.363118"
+      },
+      {
+        "filename": "section_preview.txt",
+        "size": 403,
+        "modified": "2025-08-06T06:04:45.363118"
+      },
+      {
+        "filename": "section_1_1.md",
+        "size": 4124,
+        "modified": "2025-08-06T06:04:45.363118"
+      },
+      {
+        "filename": "section_5_5.md",
+        "size": 3954,
+        "modified": "2025-08-06T06:04:45.363118"
+      },
+      {
+        "filename": "walkthrough_data.json",
+        "size": 32506,
+        "modified": "2025-08-06T06:04:45.363118"
+      },
+      {
+        "filename": "section_2_2.md",
+        "size": 5764,
+        "modified": "2025-08-06T06:04:45.363118"
+      },
+      {
+        "filename": "complete_walkthrough_preview.md",
+        "size": 25765,
+        "modified": "2025-08-06T06:04:45.363118"
+      },
+      {
+        "filename": "section_3_3.md",
+        "size": 5155,
+        "modified": "2025-08-06T06:04:45.363118"
+      }
+    ],
+    "step3_components": [
+      {
+        "filename": "block_details.json",
+        "size": 1079,
+        "modified": "2025-08-06T06:01:59.634003"
+      },
+      {
+        "filename": "block_4_components.json",
+        "size": 3626,
+        "modified": "2025-08-06T06:01:59.634003"
+      },
+      {
+        "filename": "global_registries.json",
+        "size": 480,
+        "modified": "2025-08-06T06:01:59.634003"
+      },
+      {
+        "filename": "block_1_components.json",
+        "size": 1124,
+        "modified": "2025-08-06T06:01:59.634003"
+      },
+      {
+        "filename": "progress_summary.json",
+        "size": 110,
+        "modified": "2025-08-06T06:01:59.634003"
+      },
+      {
+        "filename": "component_examples.json",
+        "size": 803,
+        "modified": "2025-08-06T06:01:59.634003"
+      },
+      {
+        "filename": "final_state.json",
+        "size": 38779,
+        "modified": "2025-08-06T06:01:59.624864"
+      },
+      {
+        "filename": "block_3_components.json",
+        "size": 2481,
+        "modified": "2025-08-06T06:01:59.634003"
+      },
+      {
+        "filename": "block_5_components.json",
+        "size": 752,
+        "modified": "2025-08-06T06:01:59.634003"
+      },
+      {
+        "filename": "block_2_components.json",
+        "size": 2338,
+        "modified": "2025-08-06T06:01:59.634003"
+      }
+    ],
+    "step1_extraction": [
+      {
+        "filename": "extracted_markdown.md",
+        "size": 171,
+        "modified": "2025-08-06T06:00:08.273440"
+      },
+      {
+        "filename": "extracted_code.py",
+        "size": 1167,
+        "modified": "2025-08-06T06:00:08.273440"
+      },
+      {
+        "filename": "extraction_summary.json",
+        "size": 213,
+        "modified": "2025-08-06T06:00:08.273440"
+      },
+      {
+        "filename": "code_preview.txt",
+        "size": 503,
+        "modified": "2025-08-06T06:00:08.273440"
+      }
+    ]
+  }
+}

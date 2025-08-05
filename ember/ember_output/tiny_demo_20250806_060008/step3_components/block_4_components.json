@@ -1,0 +1,122 @@
+[
+  {
+    "component_id": "4:1",
+    "name": "build_rag_graph_function",
+    "number": 1,
+    "type": "function",
+    "library": "built-in",
+    "description": "Main function to build RAG pipeline.",
+    "enhanced_description": null,
+    "full_code": "def build_rag_graph(documents):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "4:2",
+    "name": "build_rag_graph_docstring",
+    "number": 2,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Docstring explaining the purpose of the build_rag_graph function.",
+    "enhanced_description": null,
+    "full_code": "\"\"\"Main function to build RAG pipeline.\"\"\"",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "4:3",
+    "name": "store_variable",
+    "number": 3,
+    "type": "variable",
+    "library": "local",
+    "description": "Initializes a VectorStore instance to store tokenized documents.",
+    "enhanced_description": null,
+    "full_code": "store = VectorStore()",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "4:4",
+    "name": "for_loop",
+    "number": 4,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Iterates over each document in the provided list of documents.",
+    "enhanced_description": null,
+    "full_code": "for doc in documents:",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "4:5",
+    "name": "cleaned_variable",
+    "number": 5,
+    "type": "variable",
+    "library": "local",
+    "description": "Stores the cleaned version of the current document after processing it through the clean_text function.",
+    "enhanced_description": null,
+    "full_code": "cleaned = clean_text(doc)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "4:6",
+    "name": "tokens_variable",
+    "number": 6,
+    "type": "variable",
+    "library": "local",
+    "description": "Stores the tokenized version of the cleaned document after processing it through the tokenize function.",
+    "enhanced_description": null,
+    "full_code": "tokens = tokenize(cleaned)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "4:7",
+    "name": "store_add_expression",
+    "number": 7,
+    "type": "expression",
+    "library": "local",
+    "description": "Adds the tokenized document to the vector store.",
+    "enhanced_description": null,
+    "full_code": "store.add(tokens)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "4:8",
+    "name": "return_statement",
+    "number": 8,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Returns the vector store containing all added tokens.",
+    "enhanced_description": null,
+    "full_code": "return store",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "4:9",
+    "name": "clean_text_function_call",
+    "number": 9,
+    "type": "function",
+    "library": "local",
+    "description": "Calls the clean_text function to clean the current document.",
+    "enhanced_description": null,
+    "full_code": "clean_text(doc)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "4:10",
+    "name": "tokenize_function_call",
+    "number": 10,
+    "type": "function",
+    "library": "local",
+    "description": "Calls the tokenize function to tokenize the cleaned document.",
+    "enhanced_description": null,
+    "full_code": "tokenize(cleaned)",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

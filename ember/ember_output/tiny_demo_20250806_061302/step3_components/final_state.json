@@ -1,0 +1,937 @@
+{
+  "code_overview": "This code defines a simple pipeline for processing text documents using a vector storage system. It includes functions for cleaning and tokenizing text, as well as a class for storing and searching vectors derived from the processed documents.",
+  "notebook_path": "tiny_demo.ipynb",
+  "total_blocks": 5,
+  "total_components": 27,
+  "block_states": {
+    "1": {
+      "block_id": "1",
+      "block_name": "Library Imports",
+      "block_type": "imports",
+      "block_content": "# Import necessary libraries\nimport pandas as pd\nfrom langchain import OpenAI\nimport numpy as np",
+      "initial_description": "This block imports necessary libraries for data manipulation and machine learning functionalities. It includes pandas for data handling, langchain for OpenAI integration, and numpy for numerical operations.",
+      "deep_description": "This block imports necessary libraries for data manipulation and machine learning functionalities. It includes pandas for data handling, langchain for OpenAI integration, and numpy for numerical operations.\n\nComponents:\n- pandas_import: Imports the pandas library and aliases it as 'pd' for data manipulation and analysis.\n- langchain_import: Imports the OpenAI module from the langchain library for integration with OpenAI functionalities.\n- numpy_import: Imports the numpy library and aliases it as 'np' for numerical operations.",
+      "component_states": {
+        "1:1": {
+          "component_id": "1:1",
+          "component_name": "pandas_import",
+          "component_number": 1,
+          "type": "import",
+          "library": "pandas",
+          "full_code": "import pandas as pd",
+          "description": "Imports the pandas library and aliases it as 'pd' for data manipulation and analysis.",
+          "enhanced_description": null,
+          "block_id": "1",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "1:2": {
+          "component_id": "1:2",
+          "component_name": "langchain_import",
+          "component_number": 2,
+          "type": "import",
+          "library": "langchain",
+          "full_code": "from langchain import OpenAI",
+          "description": "Imports the OpenAI module from the langchain library for integration with OpenAI functionalities.",
+          "enhanced_description": null,
+          "block_id": "1",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "1:3": {
+          "component_id": "1:3",
+          "component_name": "numpy_import",
+          "component_number": 3,
+          "type": "import",
+          "library": "numpy",
+          "full_code": "import numpy as np",
+          "description": "Imports the numpy library and aliases it as 'np' for numerical operations.",
+          "enhanced_description": null,
+          "block_id": "1",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        }
+      },
+      "initial_pass_complete": true,
+      "dependency_resolution_complete": true,
+      "is_fully_analyzed": true,
+      "depends_on_blocks": [],
+      "depended_by_blocks": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "pending_dependencies": [],
+      "execution_order_index": null,
+      "last_updated": "2025-08-06T06:13:44.994453"
+    },
+    "2": {
+      "block_id": "2",
+      "block_name": "Text Cleaning and Tokenization Functions",
+      "block_type": "utilities",
+      "block_content": "# Helper function to clean text\ndef clean_text(text):\n    \"\"\"Remove extra whitespace and normalize text.\"\"\"\n    return ' '.join(text.split())\n\n# Another helper\ndef tokenize(text):\n    \"\"\"Simple tokenization.\"\"\"\n    return text.lower().split()",
+      "initial_description": "This block contains helper functions for processing text. The 'clean_text' function removes extra whitespace and normalizes the text, while the 'tokenize' function converts the text to lowercase and splits it into tokens. These functions are essential for preparing documents for vector storage.",
+      "deep_description": "This block contains helper functions for processing text. The 'clean_text' function removes extra whitespace and normalizes the text, while the 'tokenize' function converts the text to lowercase and splits it into tokens. These functions are essential for preparing documents for vector storage.\n\nComponents:\n- clean_text_function: Defines a function to clean the input text by removing extra whitespace and normalizing it.\n- clean_text_docstring: Docstring for the clean_text function explaining its purpose.\n- clean_text_return_statement: Returns the cleaned text by joining the split text with a single space.\n- tokenize_function: Defines a function to tokenize the input text by converting it to lowercase and splitting it into tokens.\n- tokenize_docstring: Docstring for the tokenize function explaining its purpose.\n- tokenize_return_statement: Returns the tokenized text by converting it to lowercase and splitting it into a list of tokens.",
+      "component_states": {
+        "2:1": {
+          "component_id": "2:1",
+          "component_name": "clean_text_function",
+          "component_number": 1,
+          "type": "function",
+          "library": "built-in",
+          "full_code": "def clean_text(text):",
+          "description": "Defines a function to clean the input text by removing extra whitespace and normalizing it.",
+          "enhanced_description": null,
+          "block_id": "2",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [
+            "2:2"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [
+            "2:4"
+          ],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "2:2": {
+          "component_id": "2:2",
+          "component_name": "clean_text_docstring",
+          "component_number": 2,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "\"\"\"Remove extra whitespace and normalize text.\"\"\"",
+          "description": "Docstring for the clean_text function explaining its purpose.",
+          "enhanced_description": null,
+          "block_id": "2",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "2:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "2:3": {
+          "component_id": "2:3",
+          "component_name": "clean_text_return_statement",
+          "component_number": 3,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "return ' '.join(text.split())",
+          "description": "Returns the cleaned text by joining the split text with a single space.",
+          "enhanced_description": null,
+          "block_id": "2",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "2:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "2:4": {
+          "component_id": "2:4",
+          "component_name": "tokenize_function",
+          "component_number": 4,
+          "type": "function",
+          "library": "built-in",
+          "full_code": "def tokenize(text):",
+          "description": "Defines a function to tokenize the input text by converting it to lowercase and splitting it into tokens.",
+          "enhanced_description": null,
+          "block_id": "2",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [
+            "2:5"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "2:5": {
+          "component_id": "2:5",
+          "component_name": "tokenize_docstring",
+          "component_number": 5,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "\"\"\"Simple tokenization.\"\"\"",
+          "description": "Docstring for the tokenize function explaining its purpose.",
+          "enhanced_description": null,
+          "block_id": "2",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "2:4"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "2:6": {
+          "component_id": "2:6",
+          "component_name": "tokenize_return_statement",
+          "component_number": 6,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "return text.lower().split()",
+          "description": "Returns the tokenized text by converting it to lowercase and splitting it into a list of tokens.",
+          "enhanced_description": null,
+          "block_id": "2",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "2:4"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        }
+      },
+      "initial_pass_complete": true,
+      "dependency_resolution_complete": true,
+      "is_fully_analyzed": true,
+      "depends_on_blocks": [
+        "1"
+      ],
+      "depended_by_blocks": [
+        "4",
+        "5"
+      ],
+      "pending_dependencies": [],
+      "execution_order_index": null,
+      "last_updated": "2025-08-06T06:13:44.994462"
+    },
+    "3": {
+      "block_id": "3",
+      "block_name": "VectorStore Class",
+      "block_type": "classes",
+      "block_content": "class VectorStore:\n    \"\"\"Simple vector storage for embeddings.\"\"\"\n    def __init__(self):\n        self.vectors = []\n    \n    def add(self, vector):\n        self.vectors.append(vector)\n    \n    def search(self, query_vector, k=5):\n        # Simplified search\n        return self.vectors[:k]",
+      "initial_description": "This block defines the 'VectorStore' class, which is responsible for storing and managing vectors. It includes methods for adding vectors and searching through them. This class is crucial for the functionality of the RAG pipeline as it holds the processed document vectors.",
+      "deep_description": "This block defines the 'VectorStore' class, which is responsible for storing and managing vectors. It includes methods for adding vectors and searching through them. This class is crucial for the functionality of the RAG pipeline as it holds the processed document vectors.\n\nComponents:\n- VectorStore_class: Defines the VectorStore class for managing and storing vectors.\n- VectorStore_docstring: Docstring that describes the purpose of the VectorStore class.\n- VectorStore_init_method: Constructor method that initializes the VectorStore with an empty list of vectors.\n- VectorStore_vectors_variable: Instance variable that holds the list of vectors stored in the VectorStore.\n- VectorStore_add_method: Method to add a new vector to the vectors list.\n- VectorStore_add_vector_parameter: Expression that appends the provided vector to the vectors list.\n- VectorStore_search_method: Method to search for the top k vectors based on a query vector.\n- VectorStore_search_return_statement: Expression that returns the top k vectors from the vectors list.",
+      "component_states": {
+        "3:1": {
+          "component_id": "3:1",
+          "component_name": "VectorStore_class",
+          "component_number": 1,
+          "type": "class",
+          "library": "built-in",
+          "full_code": "class VectorStore:",
+          "description": "Defines the VectorStore class for managing and storing vectors.",
+          "enhanced_description": null,
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [
+            "3:2",
+            "3:3",
+            "3:4"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:2": {
+          "component_id": "3:2",
+          "component_name": "VectorStore_docstring",
+          "component_number": 2,
+          "type": "method",
+          "library": "built-in",
+          "full_code": "    \"\"\"Simple vector storage for embeddings.\"\"\"",
+          "description": "Docstring that describes the purpose of the VectorStore class.",
+          "enhanced_description": null,
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:3": {
+          "component_id": "3:3",
+          "component_name": "VectorStore_init_method",
+          "component_number": 3,
+          "type": "method",
+          "library": "built-in",
+          "full_code": "    def __init__(self):",
+          "description": "Constructor method that initializes the VectorStore with an empty list of vectors.",
+          "enhanced_description": null,
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:4": {
+          "component_id": "3:4",
+          "component_name": "VectorStore_vectors_variable",
+          "component_number": 4,
+          "type": "variable",
+          "library": "built-in",
+          "full_code": "        self.vectors = []",
+          "description": "Instance variable that holds the list of vectors stored in the VectorStore.",
+          "enhanced_description": null,
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:3"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:5": {
+          "component_id": "3:5",
+          "component_name": "VectorStore_add_method",
+          "component_number": 5,
+          "type": "method",
+          "library": "built-in",
+          "full_code": "    def add(self, vector):",
+          "description": "Method to add a new vector to the vectors list.",
+          "enhanced_description": null,
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:6": {
+          "component_id": "3:6",
+          "component_name": "VectorStore_add_vector_parameter",
+          "component_number": 6,
+          "type": "variable",
+          "library": "built-in",
+          "full_code": "        self.vectors.append(vector)",
+          "description": "Expression that appends the provided vector to the vectors list.",
+          "enhanced_description": null,
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:5"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:7": {
+          "component_id": "3:7",
+          "component_name": "VectorStore_search_method",
+          "component_number": 7,
+          "type": "method",
+          "library": "built-in",
+          "full_code": "    def search(self, query_vector, k=5):",
+          "description": "Method to search for the top k vectors based on a query vector.",
+          "enhanced_description": null,
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:8": {
+          "component_id": "3:8",
+          "component_name": "VectorStore_search_return_statement",
+          "component_number": 8,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "        return self.vectors[:k]",
+          "description": "Expression that returns the top k vectors from the vectors list.",
+          "enhanced_description": null,
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:7"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        }
+      },
+      "initial_pass_complete": true,
+      "dependency_resolution_complete": true,
+      "is_fully_analyzed": true,
+      "depends_on_blocks": [
+        "1",
+        "2"
+      ],
+      "depended_by_blocks": [
+        "5"
+      ],
+      "pending_dependencies": [],
+      "execution_order_index": null,
+      "last_updated": "2025-08-06T06:13:44.994465"
+    },
+    "4": {
+      "block_id": "4",
+      "block_name": "RAG Graph Building Function",
+      "block_type": "utilities",
+      "block_content": "def build_rag_graph(documents):\n    \"\"\"Main function to build RAG pipeline.\"\"\"\n    store = VectorStore()\n    \n    for doc in documents:\n        cleaned = clean_text(doc)\n        tokens = tokenize(cleaned)\n        # Add to store (simplified)\n        store.add(tokens)\n    \n    return store",
+      "initial_description": "This block contains the 'build_rag_graph' function, which is the main function for constructing the RAG pipeline. It initializes a 'VectorStore', processes each document by cleaning and tokenizing it, and adds the resulting tokens to the vector store. This function orchestrates the flow of data from raw documents to a structured vector format.",
+      "deep_description": "This block contains the 'build_rag_graph' function, which is the main function for constructing the RAG pipeline. It initializes a 'VectorStore', processes each document by cleaning and tokenizing it, and adds the resulting tokens to the vector store. This function orchestrates the flow of data from raw documents to a structured vector format.\n\nComponents:\n- build_rag_graph_function: Main function to build RAG pipeline.\n- build_rag_graph_docstring: Docstring explaining the purpose of the build_rag_graph function.\n- store_variable: Initializes a new instance of VectorStore to store processed tokens.\n- for_loop: Iterates over each document in the provided documents list.\n- cleaned_variable: Stores the cleaned version of the current document after processing it through clean_text function.\n- tokens_variable: Stores the tokens generated from the cleaned text using the tokenize function.\n- store_add_expression: Adds the generated tokens to the vector store.\n- return_statement: Returns the populated vector store after processing all documents.",
+      "component_states": {
+        "4:1": {
+          "component_id": "4:1",
+          "component_name": "build_rag_graph_function",
+          "component_number": 1,
+          "type": "function",
+          "library": "built-in",
+          "full_code": "def build_rag_graph(documents):",
+          "description": "Main function to build RAG pipeline.",
+          "enhanced_description": null,
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [
+            "4:2",
+            "4:3",
+            "4:4",
+            "4:5"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:2": {
+          "component_id": "4:2",
+          "component_name": "build_rag_graph_docstring",
+          "component_number": 2,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "\"\"\"Main function to build RAG pipeline.\"\"\"",
+          "description": "Docstring explaining the purpose of the build_rag_graph function.",
+          "enhanced_description": null,
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:3": {
+          "component_id": "4:3",
+          "component_name": "store_variable",
+          "component_number": 3,
+          "type": "variable",
+          "library": "local",
+          "full_code": "store = VectorStore()",
+          "description": "Initializes a new instance of VectorStore to store processed tokens.",
+          "enhanced_description": null,
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:4": {
+          "component_id": "4:4",
+          "component_name": "for_loop",
+          "component_number": 4,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "for doc in documents:",
+          "description": "Iterates over each document in the provided documents list.",
+          "enhanced_description": null,
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:1"
+          ],
+          "child_component_ids": [
+            "4:5",
+            "4:6",
+            "4:7"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:5": {
+          "component_id": "4:5",
+          "component_name": "cleaned_variable",
+          "component_number": 5,
+          "type": "variable",
+          "library": "local",
+          "full_code": "cleaned = clean_text(doc)",
+          "description": "Stores the cleaned version of the current document after processing it through clean_text function.",
+          "enhanced_description": null,
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:4"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [
+            "4:8"
+          ],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:6": {
+          "component_id": "4:6",
+          "component_name": "tokens_variable",
+          "component_number": 6,
+          "type": "variable",
+          "library": "local",
+          "full_code": "tokens = tokenize(cleaned)",
+          "description": "Stores the tokens generated from the cleaned text using the tokenize function.",
+          "enhanced_description": null,
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:4"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [
+            "4:9"
+          ],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:7": {
+          "component_id": "4:7",
+          "component_name": "store_add_expression",
+          "component_number": 7,
+          "type": "expression",
+          "library": "local",
+          "full_code": "store.add(tokens)",
+          "description": "Adds the generated tokens to the vector store.",
+          "enhanced_description": null,
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:4"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:8": {
+          "component_id": "4:8",
+          "component_name": "return_statement",
+          "component_number": 8,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "return store",
+          "description": "Returns the populated vector store after processing all documents.",
+          "enhanced_description": null,
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        }
+      },
+      "initial_pass_complete": true,
+      "dependency_resolution_complete": true,
+      "is_fully_analyzed": true,
+      "depends_on_blocks": [
+        "2",
+        "3"
+      ],
+      "depended_by_blocks": [],
+      "pending_dependencies": [],
+      "execution_order_index": null,
+      "last_updated": "2025-08-06T06:13:44.994468"
+    },
+    "5": {
+      "block_id": "5",
+      "block_name": "Configuration Variables",
+      "block_type": "mixed",
+      "block_content": "# Configuration\nMAX_TOKENS = 100\nTEMPERATURE = 0.7",
+      "initial_description": "This block defines configuration variables that can be used throughout the code. 'MAX_TOKENS' and 'TEMPERATURE' are likely parameters for controlling the behavior of the model or processing limits, although they are not directly used in the provided functions.",
+      "deep_description": "This block defines configuration variables that can be used throughout the code. 'MAX_TOKENS' and 'TEMPERATURE' are likely parameters for controlling the behavior of the model or processing limits, although they are not directly used in the provided functions.\n\nComponents:\n- MAX_TOKENS_variable: Defines a constant for the maximum number of tokens allowed in the text processing.\n- TEMPERATURE_variable: Defines a constant for the temperature parameter, likely used to control randomness in text generation.",
+      "component_states": {
+        "5:1": {
+          "component_id": "5:1",
+          "component_name": "MAX_TOKENS_variable",
+          "component_number": 1,
+          "type": "variable",
+          "library": "built-in",
+          "full_code": "MAX_TOKENS = 100",
+          "description": "Defines a constant for the maximum number of tokens allowed in the text processing.",
+          "enhanced_description": null,
+          "block_id": "5",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "5:2": {
+          "component_id": "5:2",
+          "component_name": "TEMPERATURE_variable",
+          "component_number": 2,
+          "type": "variable",
+          "library": "built-in",
+          "full_code": "TEMPERATURE = 0.7",
+          "description": "Defines a constant for the temperature parameter, likely used to control randomness in text generation.",
+          "enhanced_description": null,
+          "block_id": "5",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        }
+      },
+      "initial_pass_complete": true,
+      "dependency_resolution_complete": true,
+      "is_fully_analyzed": true,
+      "depends_on_blocks": [
+        "1"
+      ],
+      "depended_by_blocks": [],
+      "pending_dependencies": [],
+      "execution_order_index": null,
+      "last_updated": "2025-08-06T06:13:44.994474"
+    }
+  },
+  "global_component_registry": {
+    "1:1": {
+      "name": "pandas_import",
+      "type": "import",
+      "description": "Imports the pandas library and aliases it as 'pd' for data manipulation and analysis.",
+      "library": "pandas"
+    },
+    "1:2": {
+      "name": "langchain_import",
+      "type": "import",
+      "description": "Imports the OpenAI module from the langchain library for integration with OpenAI functionalities.",
+      "library": "langchain"
+    },
+    "1:3": {
+      "name": "numpy_import",
+      "type": "import",
+      "description": "Imports the numpy library and aliases it as 'np' for numerical operations.",
+      "library": "numpy"
+    },
+    "2:1": {
+      "name": "clean_text_function",
+      "type": "function",
+      "description": "Defines a function to clean the input text by removing extra whitespace and normalizing it.",
+      "library": "built-in"
+    },
+    "2:2": {
+      "name": "clean_text_docstring",
+      "type": "expression",
+      "description": "Docstring for the clean_text function explaining its purpose.",
+      "library": "built-in"
+    },
+    "2:3": {
+      "name": "clean_text_return_statement",
+      "type": "expression",
+      "description": "Returns the cleaned text by joining the split text with a single space.",
+      "library": "built-in"
+    },
+    "2:4": {
+      "name": "tokenize_function",
+      "type": "function",
+      "description": "Defines a function to tokenize the input text by converting it to lowercase and splitting it into tokens.",
+      "library": "built-in"
+    },
+    "2:5": {
+      "name": "tokenize_docstring",
+      "type": "expression",
+      "description": "Docstring for the tokenize function explaining its purpose.",
+      "library": "built-in"
+    },
+    "2:6": {
+      "name": "tokenize_return_statement",
+      "type": "expression",
+      "description": "Returns the tokenized text by converting it to lowercase and splitting it into a list of tokens.",
+      "library": "built-in"
+    },
+    "3:1": {
+      "name": "VectorStore_class",
+      "type": "class",
+      "description": "Defines the VectorStore class for managing and storing vectors.",
+      "library": "built-in"
+    },
+    "3:2": {
+      "name": "VectorStore_docstring",
+      "type": "method",
+      "description": "Docstring that describes the purpose of the VectorStore class.",
+      "library": "built-in"
+    },
+    "3:3": {
+      "name": "VectorStore_init_method",
+      "type": "method",
+      "description": "Constructor method that initializes the VectorStore with an empty list of vectors.",
+      "library": "built-in"
+    },
+    "3:4": {
+      "name": "VectorStore_vectors_variable",
+      "type": "variable",
+      "description": "Instance variable that holds the list of vectors stored in the VectorStore.",
+      "library": "built-in"
+    },
+    "3:5": {
+      "name": "VectorStore_add_method",
+      "type": "method",
+      "description": "Method to add a new vector to the vectors list.",
+      "library": "built-in"
+    },
+    "3:6": {
+      "name": "VectorStore_add_vector_parameter",
+      "type": "variable",
+      "description": "Expression that appends the provided vector to the vectors list.",
+      "library": "built-in"
+    },
+    "3:7": {
+      "name": "VectorStore_search_method",
+      "type": "method",
+      "description": "Method to search for the top k vectors based on a query vector.",
+      "library": "built-in"
+    },
+    "3:8": {
+      "name": "VectorStore_search_return_statement",
+      "type": "expression",
+      "description": "Expression that returns the top k vectors from the vectors list.",
+      "library": "built-in"
+    },
+    "4:1": {
+      "name": "build_rag_graph_function",
+      "type": "function",
+      "description": "Main function to build RAG pipeline.",
+      "library": "built-in"
+    },
+    "4:2": {
+      "name": "build_rag_graph_docstring",
+      "type": "expression",
+      "description": "Docstring explaining the purpose of the build_rag_graph function.",
+      "library": "built-in"
+    },
+    "4:3": {
+      "name": "store_variable",
+      "type": "variable",
+      "description": "Initializes a new instance of VectorStore to store processed tokens.",
+      "library": "local"
+    },
+    "4:4": {
+      "name": "for_loop",
+      "type": "expression",
+      "description": "Iterates over each document in the provided documents list.",
+      "library": "built-in"
+    },
+    "4:5": {
+      "name": "cleaned_variable",
+      "type": "variable",
+      "description": "Stores the cleaned version of the current document after processing it through clean_text function.",
+      "library": "local"
+    },
+    "4:6": {
+      "name": "tokens_variable",
+      "type": "variable",
+      "description": "Stores the tokens generated from the cleaned text using the tokenize function.",
+      "library": "local"
+    },
+    "4:7": {
+      "name": "store_add_expression",
+      "type": "expression",
+      "description": "Adds the generated tokens to the vector store.",
+      "library": "local"
+    },
+    "4:8": {
+      "name": "return_statement",
+      "type": "expression",
+      "description": "Returns the populated vector store after processing all documents.",
+      "library": "built-in"
+    },
+    "5:1": {
+      "name": "MAX_TOKENS_variable",
+      "type": "variable",
+      "description": "Defines a constant for the maximum number of tokens allowed in the text processing.",
+      "library": "built-in"
+    },
+    "5:2": {
+      "name": "TEMPERATURE_variable",
+      "type": "variable",
+      "description": "Defines a constant for the temperature parameter, likely used to control randomness in text generation.",
+      "library": "built-in"
+    }
+  },
+  "import_registry": {
+    "pandas": [
+      "1:1"
+    ],
+    "langchain": [
+      "1:2"
+    ],
+    "numpy": [
+      "1:3"
+    ]
+  },
+  "function_registry": {
+    "clean_text_function": "2:1",
+    "tokenize_function": "2:4",
+    "build_rag_graph_function": "4:1"
+  },
+  "class_registry": {
+    "VectorStore_class": "3:1"
+  },
+  "analysis_phase": "complete",
+  "execution_order": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "dependency_graph": {
+    "1": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "2": [
+      "4"
+    ],
+    "3": [
+      "4"
+    ]
+  },
+  "blocks_analyzed": 5,
+  "blocks_with_dependencies": 0,
+  "dependencies_resolved": 5,
+  "created_at": "2025-08-06T06:13:22.807879",
+  "last_updated": "2025-08-06T06:14:43.361663",
+  "analysis_config": {},
+  "messages": [
+    "Starting code analysis...",
+    "Extracted 5 blocks",
+    "Extracted 27 components from 5 blocks",
+    "Resolving dependencies for 5 blocks",
+    "Resolved dependencies for 5 blocks",
+    "Analysis complete!"
+  ],
+  "errors": []
+}

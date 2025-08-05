@@ -1,0 +1,1026 @@
+{
+  "code_overview": "The codebase presents a well-structured framework for transforming text documents into a vector store, utilizing a systematic pipeline that emphasizes text cleaning, tokenization, and efficient storage and retrieval of vector representations. At its core, the implementation is built around several key components, including the importation of essential libraries, the definition of helper functions for text processing, and the encapsulation of functionality within a dedicated class. This modular design not only enhances readability and maintainability but also lays the groundwork for future extensions and modifications, showcasing a forward-thinking approach to software development.\n\nThe initial block of the code establishes foundational libraries such as pandas for data manipulation, langchain for language model interactions, and numpy for numerical operations. These libraries are critical as they provide the necessary tools for handling data and performing computations throughout the pipeline. Following this, the helper functions for text cleaning and tokenization play a pivotal role in preparing the input documents. The 'clean_text' function ensures that the text is normalized by removing extraneous whitespace, while the 'tokenize' function converts the cleaned text into a standardized format. This preprocessing step is essential for creating consistent vector representations, which are crucial for the subsequent stages of the pipeline.\n\nCentral to the architecture is the 'VectorStore' class, which encapsulates the logic for managing vector embeddings of the processed documents. This class not only facilitates the addition of vectors but also implements a simplified search mechanism, thereby streamlining the retrieval process. The design promotes separation of concerns, as it distinctly handles the storage and management of vectors, allowing other components of the pipeline to focus on text processing. The 'build_rag_graph' function serves as the orchestrator, linking the various components by initializing the vector store, processing each document through the cleaning and tokenization functions, and ultimately populating the vector store with the resulting tokens. This function exemplifies the flow of data from raw input to structured output, highlighting the interconnectedness of the components and the cohesive nature of the overall architecture.\n\nLastly, the inclusion of configuration variables like 'MAX_TOKENS' and 'TEMPERATURE' indicates a design that is not only functional but also adaptable. Although these variables are not directly utilized in the current implementation, they provide a foundation for potential adjustments in text processing and model behavior, signaling that the codebase is built with scalability in mind. Overall, the architecture reflects a thoughtful integration of modular components that work cohesively to transform text documents into robust vector representations, setting the stage for advanced applications in natural language processing and machine learning. This comprehensive overview underscores the codebase's potential for both immediate utility and future enhancements, making it a valuable asset for developers and researchers alike.",
+  "notebook_path": "tiny_demo.ipynb",
+  "total_blocks": 5,
+  "total_components": 30,
+  "block_states": {
+    "1": {
+      "block_id": "1",
+      "block_name": "Import Libraries",
+      "block_type": "imports",
+      "block_content": "# Import necessary libraries\nimport pandas as pd\nfrom langchain import OpenAI\nimport numpy as np",
+      "initial_description": "This block imports necessary libraries for data manipulation and machine learning. It includes pandas for data handling, langchain for working with language models, and numpy for numerical operations. These libraries provide essential functionalities that will be used throughout the code.",
+      "deep_description": "This block imports necessary libraries for data manipulation and machine learning. It includes pandas for data handling, langchain for working with language models, and numpy for numerical operations. These libraries provide essential functionalities that will be used throughout the code.\n\nComponents:\n- pandas_import: Imports the pandas library and aliases it as 'pd' for data manipulation and analysis.\n- langchain_import: Imports the OpenAI module from the langchain library for working with language models.\n- numpy_import: Imports the numpy library and aliases it as 'np' for numerical operations.",
+      "component_states": {
+        "1:1": {
+          "component_id": "1:1",
+          "component_name": "pandas_import",
+          "component_number": 1,
+          "type": "import",
+          "library": "pandas",
+          "full_code": "import pandas as pd",
+          "description": "Imports the pandas library and aliases it as 'pd' for data manipulation and analysis.",
+          "enhanced_description": "The `pandas_import` component plays a crucial role in the overall architecture by providing powerful data manipulation and analysis capabilities essential for processing text documents within the pipeline. By importing the pandas library and aliasing it as 'pd', this component facilitates efficient handling of structured data, enabling seamless integration with subsequent stages of text cleaning, tokenization, and vector storage. Its interaction with other components, particularly in managing document data, underscores its significance in ensuring that the pipeline operates smoothly and effectively, contributing to the overall goal of transforming raw text into meaningful vector representations.",
+          "block_id": "1",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "1:2": {
+          "component_id": "1:2",
+          "component_name": "langchain_import",
+          "component_number": 2,
+          "type": "import",
+          "library": "langchain",
+          "full_code": "from langchain import OpenAI",
+          "description": "Imports the OpenAI module from the langchain library for working with language models.",
+          "enhanced_description": "The `langchain_import` component plays a crucial role in the architecture by facilitating interactions with advanced language models, specifically through the OpenAI module from the langchain library. This integration is essential for processing and generating natural language, enabling the pipeline to leverage sophisticated language capabilities for tasks such as text analysis and vector representation. By importing this module, the component contributes to the overall functionality of the codebase, allowing for seamless integration of language model features that enhance the text processing and retrieval capabilities within the vector store framework.",
+          "block_id": "1",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "1:3": {
+          "component_id": "1:3",
+          "component_name": "numpy_import",
+          "component_number": 3,
+          "type": "import",
+          "library": "numpy",
+          "full_code": "import numpy as np",
+          "description": "Imports the numpy library and aliases it as 'np' for numerical operations.",
+          "enhanced_description": "The `numpy_import` component plays a crucial role in the overall architecture by providing essential numerical operations that underpin various computations throughout the text processing pipeline. By importing the numpy library and aliasing it as 'np', this component facilitates efficient handling of arrays and mathematical functions, which are vital for manipulating vector representations of text documents. Its integration with other components, such as the vector store management and tokenization processes, ensures that the codebase maintains high performance and scalability, aligning with the architecture's emphasis on modularity and future adaptability.",
+          "block_id": "1",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        }
+      },
+      "initial_pass_complete": true,
+      "dependency_resolution_complete": true,
+      "is_fully_analyzed": true,
+      "depends_on_blocks": [],
+      "depended_by_blocks": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "pending_dependencies": [],
+      "execution_order_index": null,
+      "last_updated": "2025-08-06T06:28:43.752105"
+    },
+    "2": {
+      "block_id": "2",
+      "block_name": "Text Cleaning and Tokenization Functions",
+      "block_type": "utilities",
+      "block_content": "# Helper function to clean text\ndef clean_text(text):\n    \"\"\"Remove extra whitespace and normalize text.\"\"\"\n    return ' '.join(text.split())\n\n# Another helper\ndef tokenize(text):\n    \"\"\"Simple tokenization.\"\"\"\n    return text.lower().split()",
+      "initial_description": "This block contains helper functions for processing text. The 'clean_text' function removes extra whitespace and normalizes the text, while the 'tokenize' function converts the text to lowercase and splits it into tokens. These functions are essential for preparing the documents before they are stored in the vector store.",
+      "deep_description": "This block contains helper functions for processing text. The 'clean_text' function removes extra whitespace and normalizes the text, while the 'tokenize' function converts the text to lowercase and splits it into tokens. These functions are essential for preparing the documents before they are stored in the vector store.\n\nComponents:\n- clean_text_function: Defines a function to clean the input text by removing extra whitespace and normalizing it.\n- clean_text_docstring: Docstring for the clean_text function explaining its purpose.\n- clean_text_return_statement: Returns the cleaned text by joining the split words with a single space.\n- tokenize_function: Defines a function to tokenize the input text by converting it to lowercase and splitting it into tokens.\n- tokenize_docstring: Docstring for the tokenize function explaining its purpose.\n- tokenize_return_statement: Returns the tokenized version of the text by converting it to lowercase and splitting it into a list of tokens.",
+      "component_states": {
+        "2:1": {
+          "component_id": "2:1",
+          "component_name": "clean_text_function",
+          "component_number": 1,
+          "type": "function",
+          "library": "built-in",
+          "full_code": "def clean_text(text):",
+          "description": "Defines a function to clean the input text by removing extra whitespace and normalizing it.",
+          "enhanced_description": "The `clean_text_function` plays a crucial role in the overall architecture by ensuring that the input text is properly normalized and free of extraneous whitespace, which is essential for creating consistent vector representations. By preparing the text for subsequent processing, it directly contributes to the block's purpose of facilitating effective text cleaning and tokenization, thereby enhancing the quality of the data stored in the vector store. This function interacts seamlessly with the `tokenize_function`, as the cleaned output serves as the input for tokenization, exemplifying the interconnectedness of components within the pipeline and reinforcing the modular design that supports maintainability and future scalability.",
+          "block_id": "2",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [
+            "2:2"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "2:2": {
+          "component_id": "2:2",
+          "component_name": "clean_text_docstring",
+          "component_number": 2,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "\"\"\"Remove extra whitespace and normalize text.\"\"\"",
+          "description": "Docstring for the clean_text function explaining its purpose.",
+          "enhanced_description": "The `clean_text_docstring` serves as a crucial documentation element for the `clean_text_function`, which plays a vital role in the overall architecture by ensuring that input text is properly normalized and free of extraneous whitespace. This clarity in purpose not only aids developers in understanding the function's significance within the text processing pipeline but also reinforces the block's objective of preparing documents for effective vectorization. By clearly articulating the function's intent, the docstring enhances maintainability and facilitates seamless interactions with other components, such as the `tokenize_function`, ultimately contributing to the cohesive transformation of raw text into structured vector representations.",
+          "block_id": "2",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "2:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "2:3": {
+          "component_id": "2:3",
+          "component_name": "clean_text_return_statement",
+          "component_number": 3,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "return ' '.join(text.split())",
+          "description": "Returns the cleaned text by joining the split words with a single space.",
+          "enhanced_description": "The `clean_text_return_statement` plays a crucial role in the text processing pipeline by finalizing the output of the `clean_text` function, which is essential for preparing documents for vectorization. By returning the cleaned text\u2014where extraneous whitespace has been removed and words are properly normalized\u2014it ensures that the subsequent tokenization process receives a consistent and standardized input. This interaction not only enhances the overall quality of the vector representations stored in the vector store but also aligns with the architecture's emphasis on modularity and data integrity, ultimately contributing to the robustness of the natural language processing framework.",
+          "block_id": "2",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "2:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "2:4": {
+          "component_id": "2:4",
+          "component_name": "tokenize_function",
+          "component_number": 4,
+          "type": "function",
+          "library": "built-in",
+          "full_code": "def tokenize(text):",
+          "description": "Defines a function to tokenize the input text by converting it to lowercase and splitting it into tokens.",
+          "enhanced_description": "The `tokenize_function` plays a crucial role in the text processing pipeline by transforming cleaned input text into a standardized format, specifically by converting it to lowercase and splitting it into individual tokens. This function directly contributes to the block's purpose of preparing documents for storage in the vector store, ensuring consistency in the representation of text data. By interacting seamlessly with the `clean_text` function, it facilitates a smooth transition from raw input to tokenized output, thereby enhancing the overall architecture's efficiency and effectiveness in managing vector embeddings for natural language processing tasks.",
+          "block_id": "2",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [
+            "2:5"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "2:5": {
+          "component_id": "2:5",
+          "component_name": "tokenize_docstring",
+          "component_number": 5,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "\"\"\"Simple tokenization.\"\"\"",
+          "description": "Docstring for the tokenize function explaining its purpose.",
+          "enhanced_description": "The `tokenize_docstring` serves as a critical documentation element for the `tokenize_function`, elucidating its purpose within the text processing pipeline. By clearly articulating the function's role in converting cleaned text into a standardized list of lowercase tokens, this docstring enhances the overall readability and maintainability of the codebase. Its presence underscores the importance of thorough documentation in facilitating seamless interactions between components, thereby contributing to the block's objective of preparing documents for efficient storage in the vector store.",
+          "block_id": "2",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "2:4"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "2:6": {
+          "component_id": "2:6",
+          "component_name": "tokenize_return_statement",
+          "component_number": 6,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "return text.lower().split()",
+          "description": "Returns the tokenized version of the text by converting it to lowercase and splitting it into a list of tokens.",
+          "enhanced_description": "The `tokenize_return_statement` plays a crucial role in the text processing pipeline by transforming cleaned text into a structured format that is essential for creating vector representations. By converting the text to lowercase and splitting it into a list of tokens, this component ensures consistency and standardization, which are vital for effective storage and retrieval in the vector store. Its interaction with the `tokenize_function` highlights the seamless flow of data from preprocessing to vectorization, reinforcing the overall architecture's emphasis on modularity and clarity in handling text documents.",
+          "block_id": "2",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "2:4"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        }
+      },
+      "initial_pass_complete": true,
+      "dependency_resolution_complete": true,
+      "is_fully_analyzed": true,
+      "depends_on_blocks": [
+        "1"
+      ],
+      "depended_by_blocks": [
+        "3",
+        "4",
+        "5"
+      ],
+      "pending_dependencies": [],
+      "execution_order_index": null,
+      "last_updated": "2025-08-06T06:28:43.752113"
+    },
+    "3": {
+      "block_id": "3",
+      "block_name": "VectorStore Class Definition",
+      "block_type": "classes",
+      "block_content": "class VectorStore:\n    \"\"\"Simple vector storage for embeddings.\"\"\"\n    def __init__(self):\n        self.vectors = []\n    \n    def add(self, vector):\n        self.vectors.append(vector)\n    \n    def search(self, query_vector, k=5):\n        # Simplified search\n        return self.vectors[:k]",
+      "initial_description": "This block defines the 'VectorStore' class, which is responsible for storing and managing vectors (tokenized documents). It includes methods to add vectors and perform a simplified search. This class encapsulates the functionality needed to handle the embeddings of the processed documents.",
+      "deep_description": "This block defines the 'VectorStore' class, which is responsible for storing and managing vectors (tokenized documents). It includes methods to add vectors and perform a simplified search. This class encapsulates the functionality needed to handle the embeddings of the processed documents.\n\nComponents:\n- VectorStore_class: Defines the VectorStore class for managing vector embeddings.\n- VectorStore_docstring: Docstring providing a brief description of the VectorStore class.\n- VectorStore_init_method: Constructor method for initializing the VectorStore instance.\n- VectorStore_vectors_variable: Initializes an empty list to store vectors.\n- VectorStore_add_method: Method to add a vector to the vectors list.\n- VectorStore_add_method_call: Appends the provided vector to the vectors list.\n- VectorStore_search_method: Method to perform a simplified search for the top k vectors.\n- VectorStore_search_method_comment: Comment indicating that the following code performs a simplified search.\n- VectorStore_search_return_statement: Returns the top k vectors from the vectors list.",
+      "component_states": {
+        "3:1": {
+          "component_id": "3:1",
+          "component_name": "VectorStore_class",
+          "component_number": 1,
+          "type": "class",
+          "library": "built-in",
+          "full_code": "class VectorStore:",
+          "description": "Defines the VectorStore class for managing vector embeddings.",
+          "enhanced_description": "The `VectorStore` class plays a pivotal role in the architecture by serving as the central repository for managing vector embeddings of processed documents, thus facilitating efficient storage and retrieval. By encapsulating methods for adding vectors and performing simplified searches, it streamlines the interaction between the text processing pipeline and the vector representation, ensuring a clear separation of concerns. This design not only enhances the maintainability of the code but also allows for seamless integration with other components, such as the text cleaning and tokenization functions, ultimately contributing to a cohesive and scalable framework for natural language processing applications.",
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [
+            "3:2",
+            "3:3",
+            "3:4"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:2": {
+          "component_id": "3:2",
+          "component_name": "VectorStore_docstring",
+          "component_number": 2,
+          "type": "variable",
+          "library": "built-in",
+          "full_code": "\"\"\"Simple vector storage for embeddings.\"\"\"",
+          "description": "Docstring providing a brief description of the VectorStore class.",
+          "enhanced_description": "The `VectorStore_docstring` serves as a foundational element within the `VectorStore` class, providing essential documentation that clarifies the class's purpose and functionality in the broader architecture. By succinctly outlining the role of the `VectorStore` in managing and storing vector embeddings of processed documents, this docstring enhances the readability and maintainability of the code, facilitating easier navigation for developers. Its presence underscores the commitment to clear communication within the codebase, ensuring that interactions with other components, such as the methods for adding and searching vectors, are well understood and effectively utilized in the overall text processing pipeline.",
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:3": {
+          "component_id": "3:3",
+          "component_name": "VectorStore_init_method",
+          "component_number": 3,
+          "type": "method",
+          "library": "built-in",
+          "full_code": "def __init__(self):",
+          "description": "Constructor method for initializing the VectorStore instance.",
+          "enhanced_description": "The `VectorStore_init_method` serves as the foundational constructor for the `VectorStore` class, playing a crucial role in initializing the instance by setting up an empty list to store vector embeddings. This method is integral to the overall architecture, as it establishes the necessary state for managing processed document vectors, thereby enabling the class's subsequent functionalities for adding and retrieving vectors. By ensuring that each `VectorStore` instance is properly initialized, this method facilitates seamless interactions with other components, such as the vector addition and search methods, ultimately contributing to the efficient management of vector representations within the broader text processing pipeline.",
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:1"
+          ],
+          "child_component_ids": [
+            "3:5"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:4": {
+          "component_id": "3:4",
+          "component_name": "VectorStore_vectors_variable",
+          "component_number": 4,
+          "type": "variable",
+          "library": "built-in",
+          "full_code": "self.vectors = []",
+          "description": "Initializes an empty list to store vectors.",
+          "enhanced_description": "The `VectorStore_vectors_variable` serves as a foundational element within the `VectorStore` class, playing a critical role in the architecture by providing a dedicated storage mechanism for the vector embeddings of processed documents. By initializing an empty list to hold these vectors, it facilitates efficient management and retrieval of embeddings, which are essential for the class's functionality in adding and searching for vectors. This variable interacts seamlessly with the `VectorStore_add_method` and `VectorStore_search_method`, ensuring that the overall pipeline can effectively transform and utilize text data in a structured manner, thereby enhancing the system's capability for natural language processing tasks.",
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:3"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:5": {
+          "component_id": "3:5",
+          "component_name": "VectorStore_add_method",
+          "component_number": 5,
+          "type": "method",
+          "library": "built-in",
+          "full_code": "def add(self, vector):",
+          "description": "Method to add a vector to the vectors list.",
+          "enhanced_description": "The `VectorStore_add_method` plays a crucial role in the `VectorStore` class by facilitating the addition of vector embeddings to the internal storage, thereby enabling the effective management of processed document representations. This method directly contributes to the block's purpose by ensuring that each tokenized document is systematically stored, which is essential for subsequent retrieval operations. Its interaction with the `VectorStore_init_method` establishes the foundational structure for the vectors list, while the seamless integration with the overall architecture underscores the importance of modular design in maintaining a cohesive and efficient pipeline for text document processing.",
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:1"
+          ],
+          "child_component_ids": [
+            "3:6"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:6": {
+          "component_id": "3:6",
+          "component_name": "VectorStore_add_method_call",
+          "component_number": 6,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "self.vectors.append(vector)",
+          "description": "Appends the provided vector to the vectors list.",
+          "enhanced_description": "The `VectorStore_add_method_call` is a critical expression within the `VectorStore` class, serving to append newly generated vector embeddings to the internal list of vectors. This functionality is essential for the overall architecture, as it enables the dynamic accumulation of processed document representations, thereby facilitating efficient storage and retrieval during subsequent search operations. By interacting seamlessly with the `VectorStore_add_method`, this component underscores the modular design of the codebase, promoting a clear separation of concerns and enhancing the maintainability and scalability of the vector management system.",
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:5"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:7": {
+          "component_id": "3:7",
+          "component_name": "VectorStore_search_method",
+          "component_number": 7,
+          "type": "method",
+          "library": "built-in",
+          "full_code": "def search(self, query_vector, k=5):",
+          "description": "Method to perform a simplified search for the top k vectors.",
+          "enhanced_description": "The `VectorStore_search_method` plays a crucial role in the `VectorStore` class by enabling efficient retrieval of the top k vector embeddings, which are essential for applications such as similarity searches and information retrieval. This method directly contributes to the block's purpose by providing a streamlined mechanism for accessing stored vectors, thereby enhancing the overall functionality of the vector management system. Its interaction with the `VectorStore_add_method` ensures that newly added vectors can be quickly searched, reflecting the cohesive architecture that facilitates seamless data flow and retrieval within the text processing pipeline.",
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:1"
+          ],
+          "child_component_ids": [
+            "3:8"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:8": {
+          "component_id": "3:8",
+          "component_name": "VectorStore_search_method_comment",
+          "component_number": 8,
+          "type": "variable",
+          "library": "built-in",
+          "full_code": "# Simplified search",
+          "description": "Comment indicating that the following code performs a simplified search.",
+          "enhanced_description": "The `VectorStore_search_method_comment` serves as a crucial annotation within the `VectorStore` class, indicating that the subsequent code is dedicated to executing a simplified search for the top k vectors. This comment enhances the readability and maintainability of the code by clearly delineating the purpose of the following logic, which is integral to the class's functionality of managing vector embeddings. By providing context for the search method, this comment facilitates a better understanding of how the `VectorStore` class interacts with other components in the architecture, ultimately contributing to the seamless retrieval of relevant document representations in the broader text processing pipeline.",
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:7"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "3:9": {
+          "component_id": "3:9",
+          "component_name": "VectorStore_search_return_statement",
+          "component_number": 9,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "return self.vectors[:k]",
+          "description": "Returns the top k vectors from the vectors list.",
+          "enhanced_description": "The `VectorStore_search_return_statement` plays a crucial role in the `VectorStore` class by facilitating the retrieval of the most relevant vector embeddings from the stored list, thereby enabling efficient information access within the larger architecture. This component directly contributes to the block's purpose of managing vector embeddings by providing a mechanism to return the top k vectors, which is essential for applications requiring quick and accurate search capabilities. Its interaction with the `VectorStore_search_method` underscores the cohesive functionality of the class, ensuring that the pipeline can effectively leverage the processed document embeddings for downstream tasks in natural language processing and machine learning.",
+          "block_id": "3",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "3:7"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        }
+      },
+      "initial_pass_complete": true,
+      "dependency_resolution_complete": true,
+      "is_fully_analyzed": true,
+      "depends_on_blocks": [
+        "2"
+      ],
+      "depended_by_blocks": [
+        "4",
+        "5"
+      ],
+      "pending_dependencies": [],
+      "execution_order_index": null,
+      "last_updated": "2025-08-06T06:28:43.752116"
+    },
+    "4": {
+      "block_id": "4",
+      "block_name": "Build RAG Graph Function",
+      "block_type": "utilities",
+      "block_content": "def build_rag_graph(documents):\n    \"\"\"Main function to build RAG pipeline.\"\"\"\n    store = VectorStore()\n    \n    for doc in documents:\n        cleaned = clean_text(doc)\n        tokens = tokenize(cleaned)\n        # Add to store (simplified)\n        store.add(tokens)\n    \n    return store",
+      "initial_description": "This block contains the 'build_rag_graph' function, which is the main function for building the RAG (Retrieval-Augmented Generation) pipeline. It initializes a 'VectorStore', processes each document by cleaning and tokenizing it, and adds the resulting tokens to the vector store. This function orchestrates the flow of data from raw documents to a structured vector representation.",
+      "deep_description": "This block contains the 'build_rag_graph' function, which is the main function for building the RAG (Retrieval-Augmented Generation) pipeline. It initializes a 'VectorStore', processes each document by cleaning and tokenizing it, and adds the resulting tokens to the vector store. This function orchestrates the flow of data from raw documents to a structured vector representation.\n\nComponents:\n- build_rag_graph_function: Main function to build RAG pipeline.\n- build_rag_graph_docstring: Docstring explaining the purpose of the build_rag_graph function.\n- store_variable: Initializes a new instance of the VectorStore class to store tokenized documents.\n- for_loop: Iterates over each document in the provided documents list.\n- cleaned_variable: Stores the cleaned version of the current document after applying the clean_text function.\n- tokens_variable: Stores the tokenized version of the cleaned document after applying the tokenize function.\n- store_add_expression: Adds the tokenized document to the vector store.\n- return_statement: Returns the vector store containing all added tokenized documents.\n- clean_text_function_call: Calls the clean_text function to clean the current document.\n- tokenize_function_call: Calls the tokenize function to tokenize the cleaned document.",
+      "component_states": {
+        "4:1": {
+          "component_id": "4:1",
+          "component_name": "build_rag_graph_function",
+          "component_number": 1,
+          "type": "function",
+          "library": "built-in",
+          "full_code": "def build_rag_graph(documents):",
+          "description": "Main function to build RAG pipeline.",
+          "enhanced_description": "The `build_rag_graph_function` serves as the central orchestrator within the RAG pipeline, seamlessly integrating the processes of text cleaning, tokenization, and vector storage to transform raw documents into structured vector representations. By initializing the `VectorStore` and iterating through each document to apply the `clean_text` and `tokenize` functions, it ensures that the data flows efficiently from input to output, thereby facilitating effective retrieval and management of vector embeddings. This function exemplifies the cohesive architecture of the codebase, highlighting its modular design and the interconnectedness of its components, which collectively enhance the overall functionality and adaptability of the system.",
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [
+            "4:2",
+            "4:3",
+            "4:4",
+            "4:5"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:2": {
+          "component_id": "4:2",
+          "component_name": "build_rag_graph_docstring",
+          "component_number": 2,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "\"\"\"Main function to build RAG pipeline.\"\"\"",
+          "description": "Docstring explaining the purpose of the build_rag_graph function.",
+          "enhanced_description": "The `build_rag_graph_docstring` component serves as a critical documentation element within the `build_rag_graph` function, articulating the purpose and functionality of this pivotal orchestration point in the RAG pipeline. By clearly outlining the function's intent to initialize the vector store and process documents through cleaning and tokenization, this docstring enhances the overall architecture's readability and maintainability. Its presence not only aids developers in understanding the flow of data and interactions among components but also underscores the commitment to creating a well-documented and user-friendly codebase, which is essential for future scalability and collaboration.",
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:3": {
+          "component_id": "4:3",
+          "component_name": "store_variable",
+          "component_number": 3,
+          "type": "variable",
+          "library": "local",
+          "full_code": "store = VectorStore()",
+          "description": "Initializes a new instance of the VectorStore class to store tokenized documents.",
+          "enhanced_description": "The `store_variable` is a pivotal component within the `build_rag_graph` function, serving as the instantiation point for the `VectorStore` class, which is essential for managing and storing the tokenized representations of processed documents. By initializing this variable, the architecture establishes a dedicated repository for vector embeddings, thereby facilitating efficient storage and retrieval throughout the RAG pipeline. Its interaction with the subsequent cleaning and tokenization processes underscores its role in ensuring that the flow of data transitions seamlessly from raw text to structured vector outputs, ultimately enhancing the overall functionality and scalability of the system.",
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:4": {
+          "component_id": "4:4",
+          "component_name": "for_loop",
+          "component_number": 4,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "for doc in documents:",
+          "description": "Iterates over each document in the provided documents list.",
+          "enhanced_description": "The **for_loop** component plays a crucial role in the **build_rag_graph** function by iterating over each document in the provided list, thereby facilitating the systematic processing of raw text into structured vector representations. This iteration is essential for applying the text cleaning and tokenization steps to each document, ensuring that the resulting tokens are consistently prepared for storage in the **VectorStore**. By seamlessly connecting the cleaning and tokenization processes with the vector storage mechanism, the **for_loop** enhances the overall architecture's efficiency and coherence, reinforcing the modular design that allows for easy scalability and future enhancements.",
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:1"
+          ],
+          "child_component_ids": [
+            "4:5",
+            "4:6",
+            "4:7"
+          ],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:5": {
+          "component_id": "4:5",
+          "component_name": "cleaned_variable",
+          "component_number": 5,
+          "type": "variable",
+          "library": "local",
+          "full_code": "cleaned = clean_text(doc)",
+          "description": "Stores the cleaned version of the current document after applying the clean_text function.",
+          "enhanced_description": "The `cleaned_variable` plays a crucial role in the `build_rag_graph` function by storing the normalized version of each document after the application of the `clean_text` function. This step is essential for ensuring that the text is free from extraneous whitespace and inconsistencies, thereby facilitating accurate tokenization in the subsequent stage. By interacting seamlessly with the `for_loop` and the `tokenize_function_call`, the `cleaned_variable` ensures a smooth flow of data through the pipeline, reinforcing the architecture's emphasis on modularity and clarity in transforming raw documents into structured vector representations.",
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:4"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [
+            "4:8"
+          ],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:6": {
+          "component_id": "4:6",
+          "component_name": "tokens_variable",
+          "component_number": 6,
+          "type": "variable",
+          "library": "local",
+          "full_code": "tokens = tokenize(cleaned)",
+          "description": "Stores the tokenized version of the cleaned document after applying the tokenize function.",
+          "enhanced_description": "The `tokens_variable` plays a crucial role in the architecture by storing the tokenized representation of each cleaned document, which is essential for creating consistent vector embeddings. This variable directly contributes to the block's purpose by facilitating the transformation of raw text into a structured format that can be efficiently stored in the `VectorStore`. Its interaction with the `for_loop` and the `tokenize_function_call` underscores the seamless flow of data processing, ensuring that each document is meticulously prepared for subsequent retrieval and analysis within the RAG pipeline.",
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:4"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [
+            "4:9"
+          ],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:7": {
+          "component_id": "4:7",
+          "component_name": "store_add_expression",
+          "component_number": 7,
+          "type": "expression",
+          "library": "local",
+          "full_code": "store.add(tokens)",
+          "description": "Adds the tokenized document to the vector store.",
+          "enhanced_description": "The `store_add_expression` plays a crucial role in the `build_rag_graph` function by facilitating the integration of tokenized documents into the `VectorStore`, thereby ensuring that the processed data is effectively stored for subsequent retrieval. This expression directly interacts with the `for_loop`, which iterates through each document, and relies on the outputs of the `clean_text` and `tokenize` function calls to provide the necessary input for storage. By enabling the seamless addition of tokenized representations to the vector store, it contributes significantly to the overall architecture's goal of transforming raw text into structured vector embeddings, thereby enhancing the functionality and efficiency of the RAG pipeline.",
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:4"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:8": {
+          "component_id": "4:8",
+          "component_name": "return_statement",
+          "component_number": 8,
+          "type": "expression",
+          "library": "built-in",
+          "full_code": "return store",
+          "description": "Returns the vector store containing all added tokenized documents.",
+          "enhanced_description": "The `return_statement` component plays a crucial role in the `build_rag_graph` function by finalizing the data flow and providing the output of the entire RAG pipeline. By returning the populated `VectorStore`, it encapsulates all the tokenized documents that have been processed, thereby facilitating efficient retrieval and further utilization in natural language processing tasks. This interaction with the `cleaned_variable` and the overall architecture underscores the seamless integration of text processing and vector management, reinforcing the function's purpose of transforming raw documents into structured vector representations.",
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:1"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:9": {
+          "component_id": "4:9",
+          "component_name": "clean_text_function_call",
+          "component_number": 9,
+          "type": "function",
+          "library": "local",
+          "full_code": "clean_text(doc)",
+          "description": "Calls the clean_text function to clean the current document.",
+          "enhanced_description": "The `clean_text_function_call` plays a crucial role in the overall architecture by ensuring that each document is properly normalized before further processing. By invoking the `clean_text` function, it prepares the raw input for tokenization, which is essential for generating consistent vector representations. This component interacts directly with the `tokens_variable`, as the cleaned output serves as the foundation for subsequent tokenization, thereby facilitating the seamless flow of data through the RAG pipeline and enhancing the overall effectiveness of the vector store.",
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:5"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "4:10": {
+          "component_id": "4:10",
+          "component_name": "tokenize_function_call",
+          "component_number": 10,
+          "type": "function",
+          "library": "local",
+          "full_code": "tokenize(cleaned)",
+          "description": "Calls the tokenize function to tokenize the cleaned document.",
+          "enhanced_description": "The `tokenize_function_call` plays a crucial role in the architecture by transforming the cleaned text document into a standardized token format, which is essential for creating consistent vector representations. This function directly contributes to the `build_rag_graph` block's purpose by ensuring that each document is properly prepared for storage in the `VectorStore`, thereby facilitating efficient retrieval and management of vector embeddings. Its interaction with the `clean_text` function underscores the seamless flow of data processing, highlighting the interconnectedness of components within the pipeline and reinforcing the overall modular design aimed at enhancing maintainability and scalability.",
+          "block_id": "4",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [
+            "4:6"
+          ],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        }
+      },
+      "initial_pass_complete": true,
+      "dependency_resolution_complete": true,
+      "is_fully_analyzed": true,
+      "depends_on_blocks": [
+        "2",
+        "3"
+      ],
+      "depended_by_blocks": [],
+      "pending_dependencies": [],
+      "execution_order_index": null,
+      "last_updated": "2025-08-06T06:28:43.752119"
+    },
+    "5": {
+      "block_id": "5",
+      "block_name": "Configuration Variables",
+      "block_type": "mixed",
+      "block_content": "# Configuration\nMAX_TOKENS = 100\nTEMPERATURE = 0.7",
+      "initial_description": "This block defines configuration variables that can be used throughout the code. 'MAX_TOKENS' and 'TEMPERATURE' are set to control aspects of the text processing or model behavior, although they are not directly used in the provided code. These variables can be useful for future enhancements or integrations.",
+      "deep_description": "This block defines configuration variables that can be used throughout the code. 'MAX_TOKENS' and 'TEMPERATURE' are set to control aspects of the text processing or model behavior, although they are not directly used in the provided code. These variables can be useful for future enhancements or integrations.\n\nComponents:\n- MAX_TOKENS_variable: Defines a constant for the maximum number of tokens to be used in text processing.\n- TEMPERATURE_variable: Defines a constant for the temperature parameter, which can control the randomness of text generation.",
+      "component_states": {
+        "5:1": {
+          "component_id": "5:1",
+          "component_name": "MAX_TOKENS_variable",
+          "component_number": 1,
+          "type": "variable",
+          "library": "built-in",
+          "full_code": "MAX_TOKENS = 100",
+          "description": "Defines a constant for the maximum number of tokens to be used in text processing.",
+          "enhanced_description": "**Enhanced Description**: The `MAX_TOKENS_variable` plays a crucial role in the architecture by defining a constant that limits the maximum number of tokens processed during text transformation, ensuring efficient handling of input data. Although not directly utilized in the current implementation, it contributes to the block's purpose by providing a configurable parameter that can enhance the scalability and adaptability of the text processing pipeline. This foresight allows for future integrations where token limits may be critical for optimizing performance and managing resource allocation, thereby reinforcing the overall modularity and extensibility of the codebase.",
+          "block_id": "5",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        },
+        "5:2": {
+          "component_id": "5:2",
+          "component_name": "TEMPERATURE_variable",
+          "component_number": 2,
+          "type": "variable",
+          "library": "built-in",
+          "full_code": "TEMPERATURE = 0.7",
+          "description": "Defines a constant for the temperature parameter, which can control the randomness of text generation.",
+          "enhanced_description": "The **TEMPERATURE_variable** plays a crucial role in the architecture by defining a constant that influences the randomness of text generation within the broader context of natural language processing. Although not directly utilized in the current implementation, it serves as a configurable parameter that can enhance the model's adaptability and output variability, aligning with the overall design's emphasis on scalability and future enhancements. By providing this flexibility, the TEMPERATURE_variable contributes to the block's purpose of establishing a foundation for customizable text processing, ensuring that the system can evolve to meet diverse application needs.",
+          "block_id": "5",
+          "line_start": 0,
+          "line_end": 0,
+          "parent_component_ids": [],
+          "child_component_ids": [],
+          "calls_component_ids": [],
+          "called_by_component_ids": [],
+          "external_dependencies": [],
+          "is_resolved": false,
+          "confidence_score": 1.0
+        }
+      },
+      "initial_pass_complete": true,
+      "dependency_resolution_complete": true,
+      "is_fully_analyzed": true,
+      "depends_on_blocks": [],
+      "depended_by_blocks": [],
+      "pending_dependencies": [],
+      "execution_order_index": null,
+      "last_updated": "2025-08-06T06:28:43.752124"
+    }
+  },
+  "global_component_registry": {
+    "1:1": {
+      "name": "pandas_import",
+      "type": "import",
+      "description": "The `pandas_import` component plays a crucial role in the overall architecture by providing powerful data manipulation and analysis capabilities essential for processing text documents within the pipeline. By importing the pandas library and aliasing it as 'pd', this component facilitates efficient handling of structured data, enabling seamless integration with subsequent stages of text cleaning, tokenization, and vector storage. Its interaction with other components, particularly in managing document data, underscores its significance in ensuring that the pipeline operates smoothly and effectively, contributing to the overall goal of transforming raw text into meaningful vector representations.",
+      "library": "pandas"
+    },
+    "1:2": {
+      "name": "langchain_import",
+      "type": "import",
+      "description": "The `langchain_import` component plays a crucial role in the architecture by facilitating interactions with advanced language models, specifically through the OpenAI module from the langchain library. This integration is essential for processing and generating natural language, enabling the pipeline to leverage sophisticated language capabilities for tasks such as text analysis and vector representation. By importing this module, the component contributes to the overall functionality of the codebase, allowing for seamless integration of language model features that enhance the text processing and retrieval capabilities within the vector store framework.",
+      "library": "langchain"
+    },
+    "1:3": {
+      "name": "numpy_import",
+      "type": "import",
+      "description": "The `numpy_import` component plays a crucial role in the overall architecture by providing essential numerical operations that underpin various computations throughout the text processing pipeline. By importing the numpy library and aliasing it as 'np', this component facilitates efficient handling of arrays and mathematical functions, which are vital for manipulating vector representations of text documents. Its integration with other components, such as the vector store management and tokenization processes, ensures that the codebase maintains high performance and scalability, aligning with the architecture's emphasis on modularity and future adaptability.",
+      "library": "numpy"
+    },
+    "2:1": {
+      "name": "clean_text_function",
+      "type": "function",
+      "description": "The `clean_text_function` plays a crucial role in the overall architecture by ensuring that the input text is properly normalized and free of extraneous whitespace, which is essential for creating consistent vector representations. By preparing the text for subsequent processing, it directly contributes to the block's purpose of facilitating effective text cleaning and tokenization, thereby enhancing the quality of the data stored in the vector store. This function interacts seamlessly with the `tokenize_function`, as the cleaned output serves as the input for tokenization, exemplifying the interconnectedness of components within the pipeline and reinforcing the modular design that supports maintainability and future scalability.",
+      "library": "built-in"
+    },
+    "2:2": {
+      "name": "clean_text_docstring",
+      "type": "expression",
+      "description": "The `clean_text_docstring` serves as a crucial documentation element for the `clean_text_function`, which plays a vital role in the overall architecture by ensuring that input text is properly normalized and free of extraneous whitespace. This clarity in purpose not only aids developers in understanding the function's significance within the text processing pipeline but also reinforces the block's objective of preparing documents for effective vectorization. By clearly articulating the function's intent, the docstring enhances maintainability and facilitates seamless interactions with other components, such as the `tokenize_function`, ultimately contributing to the cohesive transformation of raw text into structured vector representations.",
+      "library": "built-in"
+    },
+    "2:3": {
+      "name": "clean_text_return_statement",
+      "type": "expression",
+      "description": "The `clean_text_return_statement` plays a crucial role in the text processing pipeline by finalizing the output of the `clean_text` function, which is essential for preparing documents for vectorization. By returning the cleaned text\u2014where extraneous whitespace has been removed and words are properly normalized\u2014it ensures that the subsequent tokenization process receives a consistent and standardized input. This interaction not only enhances the overall quality of the vector representations stored in the vector store but also aligns with the architecture's emphasis on modularity and data integrity, ultimately contributing to the robustness of the natural language processing framework.",
+      "library": "built-in"
+    },
+    "2:4": {
+      "name": "tokenize_function",
+      "type": "function",
+      "description": "The `tokenize_function` plays a crucial role in the text processing pipeline by transforming cleaned input text into a standardized format, specifically by converting it to lowercase and splitting it into individual tokens. This function directly contributes to the block's purpose of preparing documents for storage in the vector store, ensuring consistency in the representation of text data. By interacting seamlessly with the `clean_text` function, it facilitates a smooth transition from raw input to tokenized output, thereby enhancing the overall architecture's efficiency and effectiveness in managing vector embeddings for natural language processing tasks.",
+      "library": "built-in"
+    },
+    "2:5": {
+      "name": "tokenize_docstring",
+      "type": "expression",
+      "description": "The `tokenize_docstring` serves as a critical documentation element for the `tokenize_function`, elucidating its purpose within the text processing pipeline. By clearly articulating the function's role in converting cleaned text into a standardized list of lowercase tokens, this docstring enhances the overall readability and maintainability of the codebase. Its presence underscores the importance of thorough documentation in facilitating seamless interactions between components, thereby contributing to the block's objective of preparing documents for efficient storage in the vector store.",
+      "library": "built-in"
+    },
+    "2:6": {
+      "name": "tokenize_return_statement",
+      "type": "expression",
+      "description": "The `tokenize_return_statement` plays a crucial role in the text processing pipeline by transforming cleaned text into a structured format that is essential for creating vector representations. By converting the text to lowercase and splitting it into a list of tokens, this component ensures consistency and standardization, which are vital for effective storage and retrieval in the vector store. Its interaction with the `tokenize_function` highlights the seamless flow of data from preprocessing to vectorization, reinforcing the overall architecture's emphasis on modularity and clarity in handling text documents.",
+      "library": "built-in"
+    },
+    "3:1": {
+      "name": "VectorStore_class",
+      "type": "class",
+      "description": "The `VectorStore` class plays a pivotal role in the architecture by serving as the central repository for managing vector embeddings of processed documents, thus facilitating efficient storage and retrieval. By encapsulating methods for adding vectors and performing simplified searches, it streamlines the interaction between the text processing pipeline and the vector representation, ensuring a clear separation of concerns. This design not only enhances the maintainability of the code but also allows for seamless integration with other components, such as the text cleaning and tokenization functions, ultimately contributing to a cohesive and scalable framework for natural language processing applications.",
+      "library": "built-in"
+    },
+    "3:2": {
+      "name": "VectorStore_docstring",
+      "type": "variable",
+      "description": "The `VectorStore_docstring` serves as a foundational element within the `VectorStore` class, providing essential documentation that clarifies the class's purpose and functionality in the broader architecture. By succinctly outlining the role of the `VectorStore` in managing and storing vector embeddings of processed documents, this docstring enhances the readability and maintainability of the code, facilitating easier navigation for developers. Its presence underscores the commitment to clear communication within the codebase, ensuring that interactions with other components, such as the methods for adding and searching vectors, are well understood and effectively utilized in the overall text processing pipeline.",
+      "library": "built-in"
+    },
+    "3:3": {
+      "name": "VectorStore_init_method",
+      "type": "method",
+      "description": "The `VectorStore_init_method` serves as the foundational constructor for the `VectorStore` class, playing a crucial role in initializing the instance by setting up an empty list to store vector embeddings. This method is integral to the overall architecture, as it establishes the necessary state for managing processed document vectors, thereby enabling the class's subsequent functionalities for adding and retrieving vectors. By ensuring that each `VectorStore` instance is properly initialized, this method facilitates seamless interactions with other components, such as the vector addition and search methods, ultimately contributing to the efficient management of vector representations within the broader text processing pipeline.",
+      "library": "built-in"
+    },
+    "3:4": {
+      "name": "VectorStore_vectors_variable",
+      "type": "variable",
+      "description": "The `VectorStore_vectors_variable` serves as a foundational element within the `VectorStore` class, playing a critical role in the architecture by providing a dedicated storage mechanism for the vector embeddings of processed documents. By initializing an empty list to hold these vectors, it facilitates efficient management and retrieval of embeddings, which are essential for the class's functionality in adding and searching for vectors. This variable interacts seamlessly with the `VectorStore_add_method` and `VectorStore_search_method`, ensuring that the overall pipeline can effectively transform and utilize text data in a structured manner, thereby enhancing the system's capability for natural language processing tasks.",
+      "library": "built-in"
+    },
+    "3:5": {
+      "name": "VectorStore_add_method",
+      "type": "method",
+      "description": "The `VectorStore_add_method` plays a crucial role in the `VectorStore` class by facilitating the addition of vector embeddings to the internal storage, thereby enabling the effective management of processed document representations. This method directly contributes to the block's purpose by ensuring that each tokenized document is systematically stored, which is essential for subsequent retrieval operations. Its interaction with the `VectorStore_init_method` establishes the foundational structure for the vectors list, while the seamless integration with the overall architecture underscores the importance of modular design in maintaining a cohesive and efficient pipeline for text document processing.",
+      "library": "built-in"
+    },
+    "3:6": {
+      "name": "VectorStore_add_method_call",
+      "type": "expression",
+      "description": "The `VectorStore_add_method_call` is a critical expression within the `VectorStore` class, serving to append newly generated vector embeddings to the internal list of vectors. This functionality is essential for the overall architecture, as it enables the dynamic accumulation of processed document representations, thereby facilitating efficient storage and retrieval during subsequent search operations. By interacting seamlessly with the `VectorStore_add_method`, this component underscores the modular design of the codebase, promoting a clear separation of concerns and enhancing the maintainability and scalability of the vector management system.",
+      "library": "built-in"
+    },
+    "3:7": {
+      "name": "VectorStore_search_method",
+      "type": "method",
+      "description": "The `VectorStore_search_method` plays a crucial role in the `VectorStore` class by enabling efficient retrieval of the top k vector embeddings, which are essential for applications such as similarity searches and information retrieval. This method directly contributes to the block's purpose by providing a streamlined mechanism for accessing stored vectors, thereby enhancing the overall functionality of the vector management system. Its interaction with the `VectorStore_add_method` ensures that newly added vectors can be quickly searched, reflecting the cohesive architecture that facilitates seamless data flow and retrieval within the text processing pipeline.",
+      "library": "built-in"
+    },
+    "3:8": {
+      "name": "VectorStore_search_method_comment",
+      "type": "variable",
+      "description": "The `VectorStore_search_method_comment` serves as a crucial annotation within the `VectorStore` class, indicating that the subsequent code is dedicated to executing a simplified search for the top k vectors. This comment enhances the readability and maintainability of the code by clearly delineating the purpose of the following logic, which is integral to the class's functionality of managing vector embeddings. By providing context for the search method, this comment facilitates a better understanding of how the `VectorStore` class interacts with other components in the architecture, ultimately contributing to the seamless retrieval of relevant document representations in the broader text processing pipeline.",
+      "library": "built-in"
+    },
+    "3:9": {
+      "name": "VectorStore_search_return_statement",
+      "type": "expression",
+      "description": "The `VectorStore_search_return_statement` plays a crucial role in the `VectorStore` class by facilitating the retrieval of the most relevant vector embeddings from the stored list, thereby enabling efficient information access within the larger architecture. This component directly contributes to the block's purpose of managing vector embeddings by providing a mechanism to return the top k vectors, which is essential for applications requiring quick and accurate search capabilities. Its interaction with the `VectorStore_search_method` underscores the cohesive functionality of the class, ensuring that the pipeline can effectively leverage the processed document embeddings for downstream tasks in natural language processing and machine learning.",
+      "library": "built-in"
+    },
+    "4:1": {
+      "name": "build_rag_graph_function",
+      "type": "function",
+      "description": "The `build_rag_graph_function` serves as the central orchestrator within the RAG pipeline, seamlessly integrating the processes of text cleaning, tokenization, and vector storage to transform raw documents into structured vector representations. By initializing the `VectorStore` and iterating through each document to apply the `clean_text` and `tokenize` functions, it ensures that the data flows efficiently from input to output, thereby facilitating effective retrieval and management of vector embeddings. This function exemplifies the cohesive architecture of the codebase, highlighting its modular design and the interconnectedness of its components, which collectively enhance the overall functionality and adaptability of the system.",
+      "library": "built-in"
+    },
+    "4:2": {
+      "name": "build_rag_graph_docstring",
+      "type": "expression",
+      "description": "The `build_rag_graph_docstring` component serves as a critical documentation element within the `build_rag_graph` function, articulating the purpose and functionality of this pivotal orchestration point in the RAG pipeline. By clearly outlining the function's intent to initialize the vector store and process documents through cleaning and tokenization, this docstring enhances the overall architecture's readability and maintainability. Its presence not only aids developers in understanding the flow of data and interactions among components but also underscores the commitment to creating a well-documented and user-friendly codebase, which is essential for future scalability and collaboration.",
+      "library": "built-in"
+    },
+    "4:3": {
+      "name": "store_variable",
+      "type": "variable",
+      "description": "The `store_variable` is a pivotal component within the `build_rag_graph` function, serving as the instantiation point for the `VectorStore` class, which is essential for managing and storing the tokenized representations of processed documents. By initializing this variable, the architecture establishes a dedicated repository for vector embeddings, thereby facilitating efficient storage and retrieval throughout the RAG pipeline. Its interaction with the subsequent cleaning and tokenization processes underscores its role in ensuring that the flow of data transitions seamlessly from raw text to structured vector outputs, ultimately enhancing the overall functionality and scalability of the system.",
+      "library": "local"
+    },
+    "4:4": {
+      "name": "for_loop",
+      "type": "expression",
+      "description": "The **for_loop** component plays a crucial role in the **build_rag_graph** function by iterating over each document in the provided list, thereby facilitating the systematic processing of raw text into structured vector representations. This iteration is essential for applying the text cleaning and tokenization steps to each document, ensuring that the resulting tokens are consistently prepared for storage in the **VectorStore**. By seamlessly connecting the cleaning and tokenization processes with the vector storage mechanism, the **for_loop** enhances the overall architecture's efficiency and coherence, reinforcing the modular design that allows for easy scalability and future enhancements.",
+      "library": "built-in"
+    },
+    "4:5": {
+      "name": "cleaned_variable",
+      "type": "variable",
+      "description": "The `cleaned_variable` plays a crucial role in the `build_rag_graph` function by storing the normalized version of each document after the application of the `clean_text` function. This step is essential for ensuring that the text is free from extraneous whitespace and inconsistencies, thereby facilitating accurate tokenization in the subsequent stage. By interacting seamlessly with the `for_loop` and the `tokenize_function_call`, the `cleaned_variable` ensures a smooth flow of data through the pipeline, reinforcing the architecture's emphasis on modularity and clarity in transforming raw documents into structured vector representations.",
+      "library": "local"
+    },
+    "4:6": {
+      "name": "tokens_variable",
+      "type": "variable",
+      "description": "The `tokens_variable` plays a crucial role in the architecture by storing the tokenized representation of each cleaned document, which is essential for creating consistent vector embeddings. This variable directly contributes to the block's purpose by facilitating the transformation of raw text into a structured format that can be efficiently stored in the `VectorStore`. Its interaction with the `for_loop` and the `tokenize_function_call` underscores the seamless flow of data processing, ensuring that each document is meticulously prepared for subsequent retrieval and analysis within the RAG pipeline.",
+      "library": "local"
+    },
+    "4:7": {
+      "name": "store_add_expression",
+      "type": "expression",
+      "description": "The `store_add_expression` plays a crucial role in the `build_rag_graph` function by facilitating the integration of tokenized documents into the `VectorStore`, thereby ensuring that the processed data is effectively stored for subsequent retrieval. This expression directly interacts with the `for_loop`, which iterates through each document, and relies on the outputs of the `clean_text` and `tokenize` function calls to provide the necessary input for storage. By enabling the seamless addition of tokenized representations to the vector store, it contributes significantly to the overall architecture's goal of transforming raw text into structured vector embeddings, thereby enhancing the functionality and efficiency of the RAG pipeline.",
+      "library": "local"
+    },
+    "4:8": {
+      "name": "return_statement",
+      "type": "expression",
+      "description": "The `return_statement` component plays a crucial role in the `build_rag_graph` function by finalizing the data flow and providing the output of the entire RAG pipeline. By returning the populated `VectorStore`, it encapsulates all the tokenized documents that have been processed, thereby facilitating efficient retrieval and further utilization in natural language processing tasks. This interaction with the `cleaned_variable` and the overall architecture underscores the seamless integration of text processing and vector management, reinforcing the function's purpose of transforming raw documents into structured vector representations.",
+      "library": "built-in"
+    },
+    "4:9": {
+      "name": "clean_text_function_call",
+      "type": "function",
+      "description": "The `clean_text_function_call` plays a crucial role in the overall architecture by ensuring that each document is properly normalized before further processing. By invoking the `clean_text` function, it prepares the raw input for tokenization, which is essential for generating consistent vector representations. This component interacts directly with the `tokens_variable`, as the cleaned output serves as the foundation for subsequent tokenization, thereby facilitating the seamless flow of data through the RAG pipeline and enhancing the overall effectiveness of the vector store.",
+      "library": "local"
+    },
+    "4:10": {
+      "name": "tokenize_function_call",
+      "type": "function",
+      "description": "The `tokenize_function_call` plays a crucial role in the architecture by transforming the cleaned text document into a standardized token format, which is essential for creating consistent vector representations. This function directly contributes to the `build_rag_graph` block's purpose by ensuring that each document is properly prepared for storage in the `VectorStore`, thereby facilitating efficient retrieval and management of vector embeddings. Its interaction with the `clean_text` function underscores the seamless flow of data processing, highlighting the interconnectedness of components within the pipeline and reinforcing the overall modular design aimed at enhancing maintainability and scalability.",
+      "library": "local"
+    },
+    "5:1": {
+      "name": "MAX_TOKENS_variable",
+      "type": "variable",
+      "description": "**Enhanced Description**: The `MAX_TOKENS_variable` plays a crucial role in the architecture by defining a constant that limits the maximum number of tokens processed during text transformation, ensuring efficient handling of input data. Although not directly utilized in the current implementation, it contributes to the block's purpose by providing a configurable parameter that can enhance the scalability and adaptability of the text processing pipeline. This foresight allows for future integrations where token limits may be critical for optimizing performance and managing resource allocation, thereby reinforcing the overall modularity and extensibility of the codebase.",
+      "library": "built-in"
+    },
+    "5:2": {
+      "name": "TEMPERATURE_variable",
+      "type": "variable",
+      "description": "The **TEMPERATURE_variable** plays a crucial role in the architecture by defining a constant that influences the randomness of text generation within the broader context of natural language processing. Although not directly utilized in the current implementation, it serves as a configurable parameter that can enhance the model's adaptability and output variability, aligning with the overall design's emphasis on scalability and future enhancements. By providing this flexibility, the TEMPERATURE_variable contributes to the block's purpose of establishing a foundation for customizable text processing, ensuring that the system can evolve to meet diverse application needs.",
+      "library": "built-in"
+    }
+  },
+  "import_registry": {
+    "pandas": [
+      "1:1"
+    ],
+    "langchain": [
+      "1:2"
+    ],
+    "numpy": [
+      "1:3"
+    ]
+  },
+  "function_registry": {
+    "clean_text_function": "2:1",
+    "tokenize_function": "2:4",
+    "build_rag_graph_function": "4:1",
+    "clean_text_function_call": "4:9",
+    "tokenize_function_call": "4:10"
+  },
+  "class_registry": {
+    "VectorStore_class": "3:1"
+  },
+  "analysis_phase": "complete",
+  "execution_order": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "dependency_graph": {
+    "1": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "2": [
+      "4"
+    ],
+    "3": [
+      "4"
+    ]
+  },
+  "blocks_analyzed": 5,
+  "blocks_with_dependencies": 0,
+  "dependencies_resolved": 5,
+  "created_at": "2025-08-06T06:28:27.055158",
+  "last_updated": "2025-08-06T06:29:27.009935",
+  "analysis_config": {},
+  "messages": [
+    "Starting code analysis...",
+    "Extracted 5 blocks",
+    "Extracted 30 components from 5 blocks",
+    "Resolving dependencies for 5 blocks",
+    "Resolved dependencies for 5 blocks",
+    "Analysis complete!"
+  ],
+  "errors": []
+}

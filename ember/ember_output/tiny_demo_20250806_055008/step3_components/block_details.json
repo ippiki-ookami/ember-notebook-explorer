@@ -1,0 +1,47 @@
+[
+  {
+    "block_id": "1",
+    "block_name": "Import Libraries",
+    "block_type": "imports",
+    "component_count": 3,
+    "is_complete": true,
+    "has_dependencies": false,
+    "dependency_count": 0
+  },
+  {
+    "block_id": "2",
+    "block_name": "Text Cleaning and Tokenization Functions",
+    "block_type": "utilities",
+    "component_count": 6,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "3",
+    "block_name": "VectorStore Class Definition",
+    "block_type": "classes",
+    "component_count": 7,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "4",
+    "block_name": "RAG Graph Building Function",
+    "block_type": "utilities",
+    "component_count": 8,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 2
+  },
+  {
+    "block_id": "5",
+    "block_name": "Configuration Variables",
+    "block_type": "mixed",
+    "component_count": 2,
+    "is_complete": true,
+    "has_dependencies": false,
+    "dependency_count": 0
+  }
+]

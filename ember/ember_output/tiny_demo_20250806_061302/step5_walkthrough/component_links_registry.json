@@ -1,0 +1,146 @@
+[
+  {
+    "display_text": "VectorStore_class",
+    "component_name": "VectorStore_class",
+    "block_id": "3",
+    "component_number": 1,
+    "section_number": 3,
+    "link_format": "[[component:3:1:VectorStore_class|VectorStore_class]]"
+  },
+  {
+    "display_text": "VectorStore_docstring",
+    "component_name": "VectorStore_docstring",
+    "block_id": "3",
+    "component_number": 2,
+    "section_number": 3,
+    "link_format": "[[component:3:2:VectorStore_docstring|VectorStore_docstring]]"
+  },
+  {
+    "display_text": "VectorStore_init_method",
+    "component_name": "VectorStore_init_method",
+    "block_id": "3",
+    "component_number": 3,
+    "section_number": 3,
+    "link_format": "[[component:3:3:VectorStore_init_method|VectorStore_init_method]]"
+  },
+  {
+    "display_text": "VectorStore_vectors_variable",
+    "component_name": "VectorStore_vectors_variable",
+    "block_id": "3",
+    "component_number": 4,
+    "section_number": 3,
+    "link_format": "[[component:3:4:VectorStore_vectors_variable|VectorStore_vectors_variable]]"
+  },
+  {
+    "display_text": "VectorStore_add_method",
+    "component_name": "VectorStore_add_method",
+    "block_id": "3",
+    "component_number": 5,
+    "section_number": 3,
+    "link_format": "[[component:3:5:VectorStore_add_method|VectorStore_add_method]]"
+  },
+  {
+    "display_text": "VectorStore_add_vector_parameter",
+    "component_name": "VectorStore_add_vector_parameter",
+    "block_id": "3",
+    "component_number": 6,
+    "section_number": 3,
+    "link_format": "[[component:3:6:VectorStore_add_vector_parameter|VectorStore_add_vector_parameter]]"
+  },
+  {
+    "display_text": "VectorStore_search_method",
+    "component_name": "VectorStore_search_method",
+    "block_id": "3",
+    "component_number": 7,
+    "section_number": 3,
+    "link_format": "[[component:3:7:VectorStore_search_method|VectorStore_search_method]]"
+  },
+  {
+    "display_text": "VectorStore_search_return_statement",
+    "component_name": "VectorStore_search_return_statement",
+    "block_id": "3",
+    "component_number": 8,
+    "section_number": 3,
+    "link_format": "[[component:3:8:VectorStore_search_return_statement|VectorStore_search_return_statement]]"
+  },
+  {
+    "display_text": "VectorStore_class",
+    "component_name": "VectorStore_class",
+    "block_id": "3",
+    "component_number": 1,
+    "section_number": 3,
+    "link_format": "[[component:3:1:VectorStore_class|VectorStore_class]]"
+  },
+  {
+    "display_text": "VectorStore_docstring",
+    "component_name": "VectorStore_docstring",
+    "block_id": "3",
+    "component_number": 2,
+    "section_number": 3,
+    "link_format": "[[component:3:2:VectorStore_docstring|VectorStore_docstring]]"
+  },
+  {
+    "display_text": "VectorStore_init_method",
+    "component_name": "VectorStore_init_method",
+    "block_id": "3",
+    "component_number": 3,
+    "section_number": 3,
+    "link_format": "[[component:3:3:VectorStore_init_method|VectorStore_init_method]]"
+  },
+  {
+    "display_text": "VectorStore_vectors_variable",
+    "component_name": "VectorStore_vectors_variable",
+    "block_id": "3",
+    "component_number": 4,
+    "section_number": 3,
+    "link_format": "[[component:3:4:VectorStore_vectors_variable|VectorStore_vectors_variable]]"
+  },
+  {
+    "display_text": "VectorStore_add_method",
+    "component_name": "VectorStore_add_method",
+    "block_id": "3",
+    "component_number": 5,
+    "section_number": 3,
+    "link_format": "[[component:3:5:VectorStore_add_method|VectorStore_add_method]]"
+  },
+  {
+    "display_text": "VectorStore_add_vector_parameter",
+    "component_name": "VectorStore_add_vector_parameter",
+    "block_id": "3",
+    "component_number": 6,
+    "section_number": 3,
+    "link_format": "[[component:3:6:VectorStore_add_vector_parameter|VectorStore_add_vector_parameter]]"
+  },
+  {
+    "display_text": "VectorStore_search_method",
+    "component_name": "VectorStore_search_method",
+    "block_id": "3",
+    "component_number": 7,
+    "section_number": 3,
+    "link_format": "[[component:3:7:VectorStore_search_method|VectorStore_search_method]]"
+  },
+  {
+    "display_text": "VectorStore_search_return_statement",
+    "component_name": "VectorStore_search_return_statement",
+    "block_id": "3",
+    "component_number": 8,
+    "section_number": 3,
+    "link_format": "[[component:3:8:VectorStore_search_return_statement|VectorStore_search_return_statement]]"
+  },
+  {
+    "display_text": "`MAX_TOKENS_variable`",
+    "component_name": "MAX_TOKENS_variable",
+    "block_id": "5",
+    "component_number": 1,
+    "section_number": 5,
+    "link_format": "[[component:5:1:MAX_TOKENS_variable|`MAX_TOKENS_variable`]]"
+  },
+  {
+    "display_text": "`TEMPERATURE_variable`",
+    "component_name": "TEMPERATURE_variable",
+    "block_id": "5",
+    "component_number": 2,
+    "section_number": 5,
+    "link_format": "[[component:5:2:TEMPERATURE_variable|`TEMPERATURE_variable`]]"
+  }
+]

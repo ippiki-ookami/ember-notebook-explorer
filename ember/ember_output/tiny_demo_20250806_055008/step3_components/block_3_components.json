@@ -1,0 +1,86 @@
+[
+  {
+    "component_id": "3:1",
+    "name": "VectorStore_class",
+    "number": 1,
+    "type": "class",
+    "library": "built-in",
+    "description": "Defines the VectorStore class for managing vector embeddings.",
+    "enhanced_description": null,
+    "full_code": "class VectorStore:",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:2",
+    "name": "VectorStore_constructor",
+    "number": 2,
+    "type": "method",
+    "library": "built-in",
+    "description": "Constructor method that initializes an empty list to store vectors.",
+    "enhanced_description": null,
+    "full_code": "def __init__(self):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:3",
+    "name": "vectors_variable",
+    "number": 3,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Instance variable that holds the list of vectors.",
+    "enhanced_description": null,
+    "full_code": "self.vectors = []",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:4",
+    "name": "add_method",
+    "number": 4,
+    "type": "method",
+    "library": "built-in",
+    "description": "Method to add a new vector to the vectors list.",
+    "enhanced_description": null,
+    "full_code": "def add(self, vector):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:5",
+    "name": "append_expression",
+    "number": 5,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Expression that appends the provided vector to the vectors list.",
+    "enhanced_description": null,
+    "full_code": "self.vectors.append(vector)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:6",
+    "name": "search_method",
+    "number": 6,
+    "type": "method",
+    "library": "built-in",
+    "description": "Method to perform a simplified search for the top k vectors.",
+    "enhanced_description": null,
+    "full_code": "def search(self, query_vector, k=5):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:7",
+    "name": "search_expression",
+    "number": 7,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Expression that returns the first k vectors from the vectors list.",
+    "enhanced_description": null,
+    "full_code": "return self.vectors[:k]",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

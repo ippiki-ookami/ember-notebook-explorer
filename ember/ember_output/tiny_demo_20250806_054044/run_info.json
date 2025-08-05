@@ -1,0 +1,266 @@
+{
+  "notebook": "tiny_demo.ipynb",
+  "timestamp": "20250806_054044",
+  "start_time": "2025-08-06T05:40:44.535504",
+  "steps_completed": [
+    {
+      "step": "1_extraction",
+      "filename": "extracted_code.py",
+      "description": "Python code extracted from notebook",
+      "timestamp": "2025-08-06T05:40:44.536637"
+    },
+    {
+      "step": "1_extraction",
+      "filename": "extracted_markdown.md",
+      "description": "Markdown content extracted from notebook",
+      "timestamp": "2025-08-06T05:40:44.537107"
+    },
+    {
+      "step": "1_extraction",
+      "filename": "extraction_summary.json",
+      "description": "Summary of extraction process",
+      "timestamp": "2025-08-06T05:40:44.537501"
+    },
+    {
+      "step": "1_extraction",
+      "filename": "code_preview.txt",
+      "description": "Preview of extracted Python code",
+      "timestamp": "2025-08-06T05:40:44.537971"
+    },
+    {
+      "step": "2_analysis",
+      "filename": "code_explanation.json",
+      "description": "Complete block-level analysis",
+      "timestamp": "2025-08-06T05:41:02.903014"
+    },
+    {
+      "step": "2_analysis",
+      "filename": "overview.txt",
+      "description": "High-level code overview",
+      "timestamp": "2025-08-06T05:41:02.903402"
+    },
+    {
+      "step": "2_analysis",
+      "filename": "blocks_summary.json",
+      "description": "Summary of all code blocks",
+      "timestamp": "2025-08-06T05:41:02.903949"
+    },
+    {
+      "step": "2_analysis",
+      "filename": "dependency_graph.json",
+      "description": "Block dependency relationships",
+      "timestamp": "2025-08-06T05:41:02.904470"
+    },
+    {
+      "step": "2_analysis",
+      "filename": "first_block_preview.txt",
+      "description": "Preview of first code block",
+      "timestamp": "2025-08-06T05:41:02.904878"
+    },
+    {
+      "step": "2_analysis",
+      "filename": "first_block_full.py",
+      "description": "Complete first block code",
+      "timestamp": "2025-08-06T05:41:02.905173"
+    },
+    {
+      "step": "3_components",
+      "filename": "final_state.json",
+      "description": "Complete component analysis state",
+      "timestamp": "2025-08-06T05:42:29.591988"
+    },
+    {
+      "step": "3_components",
+      "filename": "progress_summary.json",
+      "description": "Analysis progress summary",
+      "timestamp": "2025-08-06T05:42:29.592930"
+    },
+    {
+      "step": "3_components",
+      "filename": "block_details.json",
+      "description": "Detailed block analysis results",
+      "timestamp": "2025-08-06T05:42:29.593659"
+    },
+    {
+      "step": "3_components",
+      "filename": "global_registries.json",
+      "description": "Global component registries",
+      "timestamp": "2025-08-06T05:42:29.594164"
+    },
+    {
+      "step": "3_components",
+      "filename": "component_examples.json",
+      "description": "Example components from first block",
+      "timestamp": "2025-08-06T05:42:29.594807"
+    },
+    {
+      "step": "3_components",
+      "filename": "block_1_components.json",
+      "description": "All components in block 1",
+      "timestamp": "2025-08-06T05:42:29.595275"
+    },
+    {
+      "step": "3_components",
+      "filename": "block_2_components.json",
+      "description": "All components in block 2",
+      "timestamp": "2025-08-06T05:42:29.595648"
+    },
+    {
+      "step": "3_components",
+      "filename": "block_3_components.json",
+      "description": "All components in block 3",
+      "timestamp": "2025-08-06T05:42:29.596167"
+    },
+    {
+      "step": "3_components",
+      "filename": "block_4_components.json",
+      "description": "All components in block 4",
+      "timestamp": "2025-08-06T05:42:29.596595"
+    },
+    {
+      "step": "3_components",
+      "filename": "block_5_components.json",
+      "description": "All components in block 5",
+      "timestamp": "2025-08-06T05:42:29.596933"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "deep_descriptions.json",
+      "description": "Generated deep descriptions for all blocks",
+      "timestamp": "2025-08-06T05:42:29.622161"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "expansion_metrics.json",
+      "description": "Metrics on description expansion",
+      "timestamp": "2025-08-06T05:42:29.623360"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "improved_state.json",
+      "description": "State after iterative improvement",
+      "timestamp": "2025-08-06T05:44:08.630843"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "improvement_summary.json",
+      "description": "Summary of improvement process",
+      "timestamp": "2025-08-06T05:44:08.631538"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "example_comparison.json",
+      "description": "Before/after comparison for example block",
+      "timestamp": "2025-08-06T05:44:08.632129"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "component_enhancements.json",
+      "description": "Examples of component enhancements",
+      "timestamp": "2025-08-06T05:44:08.632763"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "block_1_enhancements.json",
+      "description": "All enhancements for block 1",
+      "timestamp": "2025-08-06T05:44:08.633267"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "block_2_enhancements.json",
+      "description": "All enhancements for block 2",
+      "timestamp": "2025-08-06T05:44:08.633660"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "block_3_enhancements.json",
+      "description": "All enhancements for block 3",
+      "timestamp": "2025-08-06T05:44:08.634095"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "block_4_enhancements.json",
+      "description": "All enhancements for block 4",
+      "timestamp": "2025-08-06T05:44:08.636875"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "block_5_enhancements.json",
+      "description": "All enhancements for block 5",
+      "timestamp": "2025-08-06T05:44:08.637275"
+    },
+    {
+      "step": "5_walkthrough",
+      "filename": "walkthrough_introduction.txt",
+      "description": "Educational walkthrough introduction",
+      "timestamp": "2025-08-06T05:44:31.428497"
+    },
+    {
+      "step": "5_walkthrough",
+      "filename": "complete_walkthrough.md",
+      "description": "Complete educational walkthrough in markdown",
+      "timestamp": "2025-08-06T05:44:31.428993"
+    },
+    {
+      "step": "5_walkthrough",
+      "filename": "section_1_1.md",
+      "description": "Section 1: Import Libraries",
+      "timestamp": "2025-08-06T05:44:31.429555"
+    },
+    {
+      "step": "5_walkthrough",
+      "filename": "section_2_2.md",
+      "description": "Section 2: Text Cleaning and Tokenization Functions",
+      "timestamp": "2025-08-06T05:44:31.429900"
+    },
+    {
+      "step": "5_walkthrough",
+      "filename": "section_3_3.md",
+      "description": "Section 3: VectorStore Class",
+      "timestamp": "2025-08-06T05:44:31.430231"
+    },
+    {
+      "step": "5_walkthrough",
+      "filename": "section_4_4.md",
+      "description": "Section 4: Build RAG Graph Function",
+      "timestamp": "2025-08-06T05:44:31.430597"
+    },
+    {
+      "step": "5_walkthrough",
+      "filename": "section_5_5.md",
+      "description": "Section 5: Configuration Variables",
+      "timestamp": "2025-08-06T05:44:31.430934"
+    },
+    {
+      "step": "5_walkthrough",
+      "filename": "walkthrough_data.json",
+      "description": "Complete walkthrough data structure",
+      "timestamp": "2025-08-06T05:44:31.431709"
+    },
+    {
+      "step": "5_walkthrough",
+      "filename": "quality_report.json",
+      "description": "Walkthrough quality and validation report",
+      "timestamp": "2025-08-06T05:44:31.432597"
+    },
+    {
+      "step": "5_walkthrough",
+      "filename": "component_links_registry.json",
+      "description": "Registry of all component links for VS Code extension",
+      "timestamp": "2025-08-06T05:44:31.433476"
+    },
+    {
+      "step": "5_walkthrough",
+      "filename": "walkthrough_summary.json",
+      "description": "Summary statistics for walkthrough generation",
+      "timestamp": "2025-08-06T05:44:31.434105"
+    },
+    {
+      "step": "5_walkthrough",
+      "filename": "section_preview.txt",
+      "description": "Preview of first walkthrough section",
+      "timestamp": "2025-08-06T05:44:31.434619"
+    }
+  ],
+  "last_updated": "2025-08-06T05:44:31.434621"
+}

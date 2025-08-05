@@ -1,0 +1,110 @@
+[
+  {
+    "component_id": "3:1",
+    "name": "VectorStore_class",
+    "number": 1,
+    "type": "class",
+    "library": "built-in",
+    "description": "Defines the VectorStore class for managing vector embeddings.",
+    "enhanced_description": null,
+    "full_code": "class VectorStore:",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:2",
+    "name": "VectorStore_docstring",
+    "number": 2,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Docstring providing a brief description of the VectorStore class.",
+    "enhanced_description": null,
+    "full_code": "\"\"\"Simple vector storage for embeddings.\"\"\"",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:3",
+    "name": "VectorStore_init_method",
+    "number": 3,
+    "type": "method",
+    "library": "built-in",
+    "description": "Constructor method for initializing the VectorStore instance.",
+    "enhanced_description": null,
+    "full_code": "def __init__(self):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:4",
+    "name": "VectorStore_vectors_variable",
+    "number": 4,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Initializes an empty list to store vectors.",
+    "enhanced_description": null,
+    "full_code": "self.vectors = []",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:5",
+    "name": "VectorStore_add_method",
+    "number": 5,
+    "type": "method",
+    "library": "built-in",
+    "description": "Method to add a vector to the vectors list.",
+    "enhanced_description": null,
+    "full_code": "def add(self, vector):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:6",
+    "name": "VectorStore_add_method_call",
+    "number": 6,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Appends the provided vector to the vectors list.",
+    "enhanced_description": null,
+    "full_code": "self.vectors.append(vector)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:7",
+    "name": "VectorStore_search_method",
+    "number": 7,
+    "type": "method",
+    "library": "built-in",
+    "description": "Method to perform a simplified search for the top k vectors.",
+    "enhanced_description": null,
+    "full_code": "def search(self, query_vector, k=5):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:8",
+    "name": "VectorStore_search_method_comment",
+    "number": 8,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Comment indicating that the following code performs a simplified search.",
+    "enhanced_description": null,
+    "full_code": "# Simplified search",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:9",
+    "name": "VectorStore_search_return_statement",
+    "number": 9,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Returns the top k vectors from the vectors list.",
+    "enhanced_description": null,
+    "full_code": "return self.vectors[:k]",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

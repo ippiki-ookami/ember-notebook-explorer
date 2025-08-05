@@ -1,0 +1,11 @@
+{
+  "notebook": "tiny_demo.ipynb",
+  "sections_generated": 5,
+  "total_components": 30,
+  "components_covered": 30,
+  "coverage_percentage": 100.0,
+  "quality_score": 74.3,
+  "total_links": 50,
+  "broken_links": 0,
+  "duplicate_links": 18
+}

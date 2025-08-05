@@ -1,0 +1,22 @@
+# Generated from tiny_demo.ipynb
+# Python cells extracted in order
+
+
+# ========== Cell 2 ==========
+# Import necessary libraries
+import pandas as pd
+from langchain import OpenAI
+import numpy as np
+
+# ========== Cell 3 ==========
+# Helper function to clean text
+def clean_text(text):
+    """Remove extra whitespace and normalize text."""
+    return ' '.join(text.split())
+
+# Another helper
+def tokenize(text):
+    """Simple tokenization."""
+    return text.lower().split()
+
+# ========== Cell 4 =======...

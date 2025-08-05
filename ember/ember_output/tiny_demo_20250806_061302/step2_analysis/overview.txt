@@ -1,0 +1,1 @@
+This code defines a simple pipeline for processing text documents using a vector storage system. It includes functions for cleaning and tokenizing text, as well as a class for storing and searching vectors derived from the processed documents.

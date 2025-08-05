@@ -1,0 +1,74 @@
+[
+  {
+    "component_id": "2:1",
+    "name": "clean_text_function",
+    "number": 1,
+    "type": "function",
+    "library": "built-in",
+    "description": "Removes extra whitespace and normalizes the input text.",
+    "enhanced_description": null,
+    "full_code": "def clean_text(text):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "2:2",
+    "name": "clean_text_docstring",
+    "number": 2,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Docstring explaining the purpose of the clean_text function.",
+    "enhanced_description": null,
+    "full_code": "\"\"\"Remove extra whitespace and normalize text.\"\"\"",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "2:3",
+    "name": "clean_text_return_statement",
+    "number": 3,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Returns the cleaned text by removing extra whitespace.",
+    "enhanced_description": null,
+    "full_code": "return ' '.join(text.split())",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "2:4",
+    "name": "tokenize_function",
+    "number": 4,
+    "type": "function",
+    "library": "built-in",
+    "description": "Converts the input text to lowercase and splits it into tokens.",
+    "enhanced_description": null,
+    "full_code": "def tokenize(text):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "2:5",
+    "name": "tokenize_docstring",
+    "number": 5,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Docstring explaining the purpose of the tokenize function.",
+    "enhanced_description": null,
+    "full_code": "\"\"\"Simple tokenization.\"\"\"",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "2:6",
+    "name": "tokenize_return_statement",
+    "number": 6,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Returns the tokenized version of the input text.",
+    "enhanced_description": null,
+    "full_code": "return text.lower().split()",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

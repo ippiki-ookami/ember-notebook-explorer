@@ -1,0 +1,194 @@
+{
+  "notebook": "tiny_demo.ipynb",
+  "timestamp": "20250806_055008",
+  "start_time": "2025-08-06T05:50:08.198540",
+  "steps_completed": [
+    {
+      "step": "1_extraction",
+      "filename": "extracted_code.py",
+      "description": "Python code extracted from notebook",
+      "timestamp": "2025-08-06T05:50:08.199699"
+    },
+    {
+      "step": "1_extraction",
+      "filename": "extracted_markdown.md",
+      "description": "Markdown content extracted from notebook",
+      "timestamp": "2025-08-06T05:50:08.199974"
+    },
+    {
+      "step": "1_extraction",
+      "filename": "extraction_summary.json",
+      "description": "Summary of extraction process",
+      "timestamp": "2025-08-06T05:50:08.200413"
+    },
+    {
+      "step": "1_extraction",
+      "filename": "code_preview.txt",
+      "description": "Preview of extracted Python code",
+      "timestamp": "2025-08-06T05:50:08.200785"
+    },
+    {
+      "step": "2_analysis",
+      "filename": "code_explanation.json",
+      "description": "Complete block-level analysis",
+      "timestamp": "2025-08-06T05:50:27.162060"
+    },
+    {
+      "step": "2_analysis",
+      "filename": "overview.txt",
+      "description": "High-level code overview",
+      "timestamp": "2025-08-06T05:50:27.162405"
+    },
+    {
+      "step": "2_analysis",
+      "filename": "blocks_summary.json",
+      "description": "Summary of all code blocks",
+      "timestamp": "2025-08-06T05:50:27.200638"
+    },
+    {
+      "step": "2_analysis",
+      "filename": "dependency_graph.json",
+      "description": "Block dependency relationships",
+      "timestamp": "2025-08-06T05:50:27.201271"
+    },
+    {
+      "step": "2_analysis",
+      "filename": "first_block_preview.txt",
+      "description": "Preview of first code block",
+      "timestamp": "2025-08-06T05:50:27.201753"
+    },
+    {
+      "step": "2_analysis",
+      "filename": "first_block_full.py",
+      "description": "Complete first block code",
+      "timestamp": "2025-08-06T05:50:27.202058"
+    },
+    {
+      "step": "3_components",
+      "filename": "final_state.json",
+      "description": "Complete component analysis state",
+      "timestamp": "2025-08-06T05:51:39.560998"
+    },
+    {
+      "step": "3_components",
+      "filename": "progress_summary.json",
+      "description": "Analysis progress summary",
+      "timestamp": "2025-08-06T05:51:39.561726"
+    },
+    {
+      "step": "3_components",
+      "filename": "block_details.json",
+      "description": "Detailed block analysis results",
+      "timestamp": "2025-08-06T05:51:39.562284"
+    },
+    {
+      "step": "3_components",
+      "filename": "global_registries.json",
+      "description": "Global component registries",
+      "timestamp": "2025-08-06T05:51:39.562728"
+    },
+    {
+      "step": "3_components",
+      "filename": "component_examples.json",
+      "description": "Example components from first block",
+      "timestamp": "2025-08-06T05:51:39.563292"
+    },
+    {
+      "step": "3_components",
+      "filename": "block_1_components.json",
+      "description": "All components in block 1",
+      "timestamp": "2025-08-06T05:51:39.563723"
+    },
+    {
+      "step": "3_components",
+      "filename": "block_2_components.json",
+      "description": "All components in block 2",
+      "timestamp": "2025-08-06T05:51:39.564126"
+    },
+    {
+      "step": "3_components",
+      "filename": "block_3_components.json",
+      "description": "All components in block 3",
+      "timestamp": "2025-08-06T05:51:39.564460"
+    },
+    {
+      "step": "3_components",
+      "filename": "block_4_components.json",
+      "description": "All components in block 4",
+      "timestamp": "2025-08-06T05:51:39.564807"
+    },
+    {
+      "step": "3_components",
+      "filename": "block_5_components.json",
+      "description": "All components in block 5",
+      "timestamp": "2025-08-06T05:51:39.565097"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "deep_descriptions.json",
+      "description": "Generated deep descriptions for all blocks",
+      "timestamp": "2025-08-06T05:51:39.585316"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "expansion_metrics.json",
+      "description": "Metrics on description expansion",
+      "timestamp": "2025-08-06T05:51:39.585838"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "improved_state.json",
+      "description": "State after iterative improvement",
+      "timestamp": "2025-08-06T05:53:38.340420"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "improvement_summary.json",
+      "description": "Summary of improvement process",
+      "timestamp": "2025-08-06T05:53:38.341054"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "example_comparison.json",
+      "description": "Before/after comparison for example block",
+      "timestamp": "2025-08-06T05:53:38.341618"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "component_enhancements.json",
+      "description": "Examples of component enhancements",
+      "timestamp": "2025-08-06T05:53:38.342233"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "block_1_enhancements.json",
+      "description": "All enhancements for block 1",
+      "timestamp": "2025-08-06T05:53:38.342742"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "block_2_enhancements.json",
+      "description": "All enhancements for block 2",
+      "timestamp": "2025-08-06T05:53:38.343130"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "block_3_enhancements.json",
+      "description": "All enhancements for block 3",
+      "timestamp": "2025-08-06T05:53:38.343505"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "block_4_enhancements.json",
+      "description": "All enhancements for block 4",
+      "timestamp": "2025-08-06T05:53:38.343889"
+    },
+    {
+      "step": "4_deep_descriptions",
+      "filename": "block_5_enhancements.json",
+      "description": "All enhancements for block 5",
+      "timestamp": "2025-08-06T05:53:38.344253"
+    }
+  ],
+  "last_updated": "2025-08-06T05:53:38.344255"
+}

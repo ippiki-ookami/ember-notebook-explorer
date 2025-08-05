@@ -1,0 +1,26 @@
+[
+  {
+    "component_id": "5:1",
+    "name": "MAX_TOKENS_variable",
+    "number": 1,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Defines a constant for the maximum number of tokens allowed in the text processing.",
+    "enhanced_description": null,
+    "full_code": "MAX_TOKENS = 100",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "5:2",
+    "name": "TEMPERATURE_variable",
+    "number": 2,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Defines a constant for the temperature parameter, likely used to control randomness in text generation.",
+    "enhanced_description": null,
+    "full_code": "TEMPERATURE = 0.7",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

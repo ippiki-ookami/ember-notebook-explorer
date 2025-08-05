@@ -1,0 +1,26 @@
+[
+  {
+    "component_id": "1:1",
+    "name": "pandas_import",
+    "type": "import",
+    "description": "Imports the pandas library and aliases it as 'pd' for data manipulation and analysis.",
+    "library": "pandas",
+    "code_preview": "import pandas as pd"
+  },
+  {
+    "component_id": "1:2",
+    "name": "langchain_import",
+    "type": "import",
+    "description": "Imports the OpenAI module from the langchain library for working with language models.",
+    "library": "langchain",
+    "code_preview": "from langchain import OpenAI"
+  },
+  {
+    "component_id": "1:3",
+    "name": "numpy_import",
+    "type": "import",
+    "description": "Imports the numpy library and aliases it as 'np' for numerical operations.",
+    "library": "numpy",
+    "code_preview": "import numpy as np"
+  }
+]

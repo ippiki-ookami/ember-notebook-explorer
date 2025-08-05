@@ -1,0 +1,104 @@
+{
+  "overview": "This code defines a simple pipeline for processing text documents using a vector storage system. It includes functions for cleaning and tokenizing text, as well as a class for storing and searching vectors derived from the processed documents.",
+  "blocks": [
+    {
+      "id": "1",
+      "name": "Library Imports",
+      "description": "This block imports necessary libraries for data manipulation and machine learning. It includes pandas for data handling, langchain for OpenAI integration, and numpy for numerical operations. These libraries provide essential functionalities that will be used throughout the code.",
+      "content": "# Import necessary libraries\nimport pandas as pd\nfrom langchain import OpenAI\nimport numpy as np\n",
+      "dependencies": [],
+      "dependents": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Text Cleaning and Tokenization Functions",
+      "description": "This block contains helper functions for processing text. The 'clean_text' function removes extra whitespace and normalizes the text, while the 'tokenize' function converts the text to lowercase and splits it into tokens. These functions are essential for preparing the text data before it is stored in the vector store.",
+      "content": "# Helper function to clean text\ndef clean_text(text):\n    \"\"\"Remove extra whitespace and normalize text.\"\"\"\n    return ' '.join(text.split())\n\n# Another helper\ndef tokenize(text):\n    \"\"\"Simple tokenization.\"\"\"\n    return text.lower().split()\n",
+      "dependencies": [
+        "1"
+      ],
+      "dependents": [
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "VectorStore Class",
+      "description": "This block defines the 'VectorStore' class, which is responsible for storing and managing vectors. It includes methods for adding vectors and searching through them. The class maintains a list of vectors and provides a simplified search functionality, which is crucial for the retrieval-augmented generation (RAG) process.",
+      "content": "class VectorStore:\n    \"\"\"Simple vector storage for embeddings.\"\"\"\n    def __init__(self):\n        self.vectors = []\n    \n    def add(self, vector):\n        self.vectors.append(vector)\n    \n    def search(self, query_vector, k=5):\n        # Simplified search\n        return self.vectors[:k]\n",
+      "dependencies": [
+        "1",
+        "2"
+      ],
+      "dependents": [
+        "5"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "RAG Graph Building Function",
+      "description": "This block contains the 'build_rag_graph' function, which is the main function for constructing the RAG pipeline. It initializes a 'VectorStore' instance, processes a list of documents by cleaning and tokenizing them, and adds the resulting tokens to the vector store. This function orchestrates the flow of data from raw documents to a structured vector representation.",
+      "content": "def build_rag_graph(documents):\n    \"\"\"Main function to build RAG pipeline.\"\"\"\n    store = VectorStore()\n    \n    for doc in documents:\n        cleaned = clean_text(doc)\n        tokens = tokenize(cleaned)\n        # Add to store (simplified)\n        store.add(tokens)\n    \n    return store\n",
+      "dependencies": [
+        "2",
+        "3"
+      ],
+      "dependents": []
+    },
+    {
+      "id": "5",
+      "name": "Configuration Variables",
+      "description": "This block defines configuration variables that can be used throughout the code. 'MAX_TOKENS' and 'TEMPERATURE' are set to control aspects of the text processing or model behavior, although they are not directly used in the provided code. These variables can be useful for future enhancements or integrations.",
+      "content": "# Configuration\nMAX_TOKENS = 100\nTEMPERATURE = 0.7\n",
+      "dependencies": [
+        "1"
+      ],
+      "dependents": []
+    }
+  ],
+  "edges": [
+    {
+      "from_id": "1",
+      "to": "2",
+      "type": "uses"
+    },
+    {
+      "from_id": "1",
+      "to": "3",
+      "type": "uses"
+    },
+    {
+      "from_id": "1",
+      "to": "4",
+      "type": "uses"
+    },
+    {
+      "from_id": "1",
+      "to": "5",
+      "type": "uses"
+    },
+    {
+      "from_id": "2",
+      "to": "4",
+      "type": "uses"
+    },
+    {
+      "from_id": "3",
+      "to": "4",
+      "type": "uses"
+    }
+  ],
+  "execution_order": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ]
+}
