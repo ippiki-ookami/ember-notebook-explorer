@@ -1,0 +1,26 @@
+[
+  {
+    "component_id": "4:1",
+    "name": "OpenAIEmbeddings_import",
+    "number": 1,
+    "type": "import",
+    "library": "langchain_openai",
+    "description": "Imports the OpenAIEmbeddings class from the langchain_openai.embeddings module for use in creating embeddings.",
+    "enhanced_description": null,
+    "full_code": "from langchain_openai.embeddings import OpenAIEmbeddings",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "4:2",
+    "name": "embedding_model_initialization",
+    "number": 2,
+    "type": "variable",
+    "library": "local",
+    "description": "Initializes an instance of OpenAIEmbeddings with a specified model for generating text embeddings.",
+    "enhanced_description": null,
+    "full_code": "embedding_model = OpenAIEmbeddings(model=\"text-embedding-3-small\")",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

@@ -1,0 +1,16 @@
+# Generated from multi_agent.ipynb
+# Python cells extracted in order
+
+
+# ========== Cell 5 ==========
+import os
+import getpass
+
+os.environ["OPENAI_API_KEY"] = getpass.getpass("OpenAI API Key:")
+os.environ["TAVILY_API_KEY"] = getpass.getpass("TAVILY_API_KEY")
+
+# ========== Cell 9 ==========
+from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import PyMuPDFLoader
+
+directory_loader = DirectoryLoader("data", glob="**/*.pdf", loader_cls=PyMuPDFLo...

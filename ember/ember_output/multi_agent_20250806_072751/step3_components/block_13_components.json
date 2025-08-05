@@ -1,0 +1,38 @@
+[
+  {
+    "component_id": "13:1",
+    "name": "agent_node_function",
+    "number": 1,
+    "type": "function",
+    "library": "built-in",
+    "description": "Defines a function that creates an agent node within the state graph, allowing agents to invoke their functionalities.",
+    "enhanced_description": null,
+    "full_code": "def agent_node(state, agent, name):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "13:2",
+    "name": "agent_invoke_call",
+    "number": 2,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Calls the invoke method of the agent with the current state, storing the result.",
+    "enhanced_description": null,
+    "full_code": "result = agent.invoke(state)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "13:3",
+    "name": "return_message_structure",
+    "number": 3,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Returns a structured message containing the output from the agent, formatted as a dictionary.",
+    "enhanced_description": null,
+    "full_code": "return {\"messages\": [HumanMessage(content=result[\"output\"], name=name)]}",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

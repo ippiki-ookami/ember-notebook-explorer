@@ -1,1 +1,0 @@
-This codebase provides a structured pipeline for processing text documents into a vector store, essential for various natural language processing tasks. By leveraging libraries like pandas, langchain, and numpy, it ensures efficient data handling and model interaction, making it a valuable resource for developers working with text data.

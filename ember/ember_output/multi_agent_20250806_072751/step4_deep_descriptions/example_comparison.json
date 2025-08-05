@@ -1,0 +1,7 @@
+{
+  "block_id": "1",
+  "block_name": "Environment Setup",
+  "initial_description": "This block sets up the environment by importing necessary libraries and configuring API keys for OpenAI and Tavily. It ensures that the application has access to the required services for document processing and language model interactions.",
+  "deep_description": "This block sets up the environment by importing necessary libraries and configuring API keys for OpenAI and Tavily. It ensures that the application has access to the required services for document processing and language model interactions.\n\nComponents:\n- os_import: Imports the os module, which provides a way of using operating system dependent functionality.\n- getpass_import: Imports the getpass module, which allows secure password input without echoing.\n- set_openai_api_key: Sets the OpenAI API key in the environment variables by prompting the user for input securely.\n- set_tavily_api_key: Sets the Tavily API key in the environment variables by prompting the user for input securely.",
+  "improvement_ratio": 2.8875
+}

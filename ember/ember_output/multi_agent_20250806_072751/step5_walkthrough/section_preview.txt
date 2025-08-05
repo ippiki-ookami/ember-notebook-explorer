@@ -1,0 +1,5 @@
+# Educational Walkthrough: Environment Setup Block
+
+## Purpose and Architecture
+
+The **Environment Setup** block is a foundational component of the application, designed to prepare the necessary environment for document processing and language model interactions. This block ensures that the application can securely access the required services by importing essential libraries and configuring API k...

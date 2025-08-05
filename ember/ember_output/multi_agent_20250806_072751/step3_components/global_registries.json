@@ -1,0 +1,86 @@
+{
+  "function_registry": {
+    "tiktoken_len_function": "3:3",
+    "retrieve_function": "9:9",
+    "generate_function": "9:12",
+    "fetch_arxiv_papers_function": "11:8",
+    "create_dynamic_rag_system_function": "11:34",
+    "dynamic_retrieve_function": "11:44",
+    "dynamic_generate_function": "11:48",
+    "agent_node_function": "21:5",
+    "create_agent_function": "14:1",
+    "create_team_supervisor_function": "15:1",
+    "retrieve_information_function": "17:2",
+    "enter_chain_function": "25:1"
+  },
+  "class_registry": {
+    "State_class": "9:5",
+    "MessagesPlaceholder_class": "14:8",
+    "ResearchTeamState_class": "18:5"
+  },
+  "import_registry": {
+    "built-in": [
+      "1:1",
+      "1:2",
+      "11:1",
+      "11:4",
+      "11:5",
+      "12:1",
+      "18:1",
+      "18:2"
+    ],
+    "langchain_community": [
+      "2:1",
+      "2:2",
+      "5:1",
+      "11:6",
+      "16:1"
+    ],
+    "tiktoken": [
+      "3:1"
+    ],
+    "langchain": [
+      "3:2",
+      "12:2",
+      "12:3"
+    ],
+    "langchain_openai": [
+      "4:1",
+      "8:1",
+      "12:8",
+      "18:4"
+    ],
+    "langchain_core": [
+      "7:1",
+      "12:4",
+      "12:5",
+      "12:6",
+      "12:7",
+      "18:3"
+    ],
+    "local": [
+      "9:1",
+      "9:2",
+      "9:3",
+      "9:4",
+      "17:1"
+    ],
+    "arxiv": [
+      "11:3"
+    ],
+    "typing": [
+      "11:7"
+    ],
+    "langgraph": [
+      "12:9"
+    ],
+    "IPython": [
+      "24:1"
+    ]
+  },
+  "summary": {
+    "functions": 12,
+    "classes": 3,
+    "imports": 11
+  }
+}

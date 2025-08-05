@@ -1,0 +1,14 @@
+[
+  {
+    "component_id": "19:1",
+    "name": "ChatOpenAI_initialization",
+    "number": 1,
+    "type": "variable",
+    "library": "local",
+    "description": "Initializes a ChatOpenAI model with the specified model parameter for use in the document writing process.",
+    "enhanced_description": null,
+    "full_code": "llm = ChatOpenAI(model=\"gpt-4o-mini\")",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

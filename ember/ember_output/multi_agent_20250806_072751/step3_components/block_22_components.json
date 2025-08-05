@@ -1,0 +1,26 @@
+[
+  {
+    "component_id": "22:1",
+    "name": "doc_writing_supervisor_variable",
+    "number": 1,
+    "type": "variable",
+    "library": "built-in",
+    "description": "This variable holds the result of the create_team_supervisor function, which sets up a supervisor agent for managing document writing tasks.",
+    "enhanced_description": null,
+    "full_code": "doc_writing_supervisor = create_team_supervisor(",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "22:2",
+    "name": "create_team_supervisor_function_call",
+    "number": 2,
+    "type": "expression",
+    "library": "built-in",
+    "description": "This expression calls the create_team_supervisor function with parameters that define the supervisor's role and the team members involved in the document writing process.",
+    "enhanced_description": null,
+    "full_code": "create_team_supervisor(llm, (\"You are a supervisor tasked with managing a conversation between the\" \" following workers: {team_members}. You should always verify the technical\" \" contents after any edits are made. \" \"Given the following user request,\" \" respond with the worker to act next. Each worker will perform a\" \" task and respond with their results and status. When each team is finished,\" \" you must respond with FINISH.\"), [\"DocWriter\", \"NoteTaker\", \"EmpathyEditor\", \"CopyEditor\"],)",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

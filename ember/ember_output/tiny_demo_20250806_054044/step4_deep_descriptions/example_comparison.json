@@ -1,7 +1,0 @@
-{
-  "block_id": "1",
-  "block_name": "Import Libraries",
-  "initial_description": "This block imports necessary libraries for data manipulation and machine learning. It includes pandas for data handling, langchain for working with language models, and numpy for numerical operations. These libraries provide essential functionalities that will be used throughout the code.",
-  "deep_description": "This block imports necessary libraries for data manipulation and machine learning. It includes pandas for data handling, langchain for working with language models, and numpy for numerical operations. These libraries provide essential functionalities that will be used throughout the code.\n\nComponents:\n- pandas_import: Imports the pandas library and aliases it as 'pd' for data manipulation and analysis.\n- langchain_import: Imports the OpenAI module from the langchain library for working with language models.\n- numpy_import: Imports the numpy library and aliases it as 'np' for numerical operations.",
-  "improvement_ratio": 2.086505190311419
-}

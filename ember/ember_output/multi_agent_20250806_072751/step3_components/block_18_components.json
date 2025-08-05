@@ -1,0 +1,98 @@
+[
+  {
+    "component_id": "18:1",
+    "name": "functools_import",
+    "number": 1,
+    "type": "import",
+    "library": "built-in",
+    "description": "Imports the functools module, which provides higher-order functions and operations on callable objects.",
+    "enhanced_description": null,
+    "full_code": "import functools",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "18:2",
+    "name": "operator_import",
+    "number": 2,
+    "type": "import",
+    "library": "built-in",
+    "description": "Imports the operator module, which exports a set of efficient functions corresponding to the intrinsic operators of Python.",
+    "enhanced_description": null,
+    "full_code": "import operator",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "18:3",
+    "name": "AIMessage_import",
+    "number": 3,
+    "type": "import",
+    "library": "langchain_core",
+    "description": "Imports message classes from the langchain_core.messages module, which are used for handling different types of messages in the RAG system.",
+    "enhanced_description": null,
+    "full_code": "from langchain_core.messages import AIMessage, BaseMessage, HumanMessage",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "18:4",
+    "name": "ChatOpenAI_import",
+    "number": 4,
+    "type": "import",
+    "library": "langchain_openai",
+    "description": "Imports the ChatOpenAI class from the langchain_openai.chat_models module, which is used for initializing the OpenAI chat model.",
+    "enhanced_description": null,
+    "full_code": "from langchain_openai.chat_models import ChatOpenAI",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "18:5",
+    "name": "ResearchTeamState_class",
+    "number": 5,
+    "type": "class",
+    "library": "built-in",
+    "description": "Defines a TypedDict for managing the state of the document writing process, including messages, team members, and the next action.",
+    "enhanced_description": null,
+    "full_code": "class ResearchTeamState(TypedDict):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "18:6",
+    "name": "messages_field",
+    "number": 6,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Defines a field in the ResearchTeamState class to hold a list of messages, annotated with operator.add for type hinting.",
+    "enhanced_description": null,
+    "full_code": "messages: Annotated[List[BaseMessage], operator.add]",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "18:7",
+    "name": "team_members_field",
+    "number": 7,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Defines a field in the ResearchTeamState class to hold a list of team member names.",
+    "enhanced_description": null,
+    "full_code": "team_members: List[str]",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "18:8",
+    "name": "next_field",
+    "number": 8,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Defines a field in the ResearchTeamState class to hold the next action to be taken in the document writing process.",
+    "enhanced_description": null,
+    "full_code": "next: str",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

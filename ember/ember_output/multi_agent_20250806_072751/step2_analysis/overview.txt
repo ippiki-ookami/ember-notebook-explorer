@@ -1,0 +1,1 @@
+This code implements a Retrieval-Augmented Generation (RAG) system that utilizes various language models and document loaders to process and respond to queries about student loans. It integrates multiple agents for research, response generation, and document management, allowing for a collaborative approach to generating informative responses based on user queries.

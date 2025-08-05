@@ -1,0 +1,98 @@
+[
+  {
+    "component_id": "25:1",
+    "name": "enter_chain_function",
+    "number": 1,
+    "type": "function",
+    "library": "built-in",
+    "description": "Defines a function that processes a message and a list of team members, returning a structured result.",
+    "enhanced_description": null,
+    "full_code": "def enter_chain(message: str, members: List[str]):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "25:2",
+    "name": "results_variable",
+    "number": 2,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Initializes a dictionary to store messages and team members.",
+    "enhanced_description": null,
+    "full_code": "results = {",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "25:3",
+    "name": "messages_assignment",
+    "number": 3,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Adds a key to the results dictionary that contains a list of HumanMessage objects initialized with the provided message.",
+    "enhanced_description": null,
+    "full_code": "\"messages\": [HumanMessage(content=message)],",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "25:4",
+    "name": "team_members_assignment",
+    "number": 4,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Adds a key to the results dictionary that contains a string of team members joined by commas.",
+    "enhanced_description": null,
+    "full_code": "\"team_members\": \", \".join(members),",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "25:5",
+    "name": "return_statement",
+    "number": 5,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Returns the results dictionary from the enter_chain function.",
+    "enhanced_description": null,
+    "full_code": "return results",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "25:6",
+    "name": "authoring_chain_variable",
+    "number": 6,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Initializes the authoring_chain variable to hold a functional composition of the enter_chain function and the authoring_graph compilation.",
+    "enhanced_description": null,
+    "full_code": "authoring_chain = (",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "25:7",
+    "name": "partial_function_call",
+    "number": 7,
+    "type": "expression",
+    "library": "functools",
+    "description": "Creates a partial function of enter_chain with the members argument set to the nodes of the authoring_graph.",
+    "enhanced_description": null,
+    "full_code": "functools.partial(enter_chain, members=authoring_graph.nodes)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "25:8",
+    "name": "compile_method_call",
+    "number": 8,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Calls the compile method on the authoring_graph to prepare it for use in the authoring_chain.",
+    "enhanced_description": null,
+    "full_code": "authoring_graph.compile()",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

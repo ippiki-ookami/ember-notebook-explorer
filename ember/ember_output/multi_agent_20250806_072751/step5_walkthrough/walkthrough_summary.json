@@ -1,0 +1,11 @@
+{
+  "notebook": "multi_agent.ipynb",
+  "sections_generated": 25,
+  "total_components": 189,
+  "components_covered": 132,
+  "coverage_percentage": 69.84126984126983,
+  "quality_score": 41.7,
+  "total_links": 197,
+  "broken_links": 0,
+  "duplicate_links": 130
+}

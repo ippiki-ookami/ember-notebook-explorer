@@ -1,0 +1,236 @@
+[
+  {
+    "block_id": "1",
+    "block_name": "Environment Setup",
+    "block_type": "imports",
+    "component_count": 4,
+    "is_complete": true,
+    "has_dependencies": false,
+    "dependency_count": 0
+  },
+  {
+    "block_id": "2",
+    "block_name": "Document Loading",
+    "block_type": "imports",
+    "component_count": 4,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "3",
+    "block_name": "Text Processing",
+    "block_type": "imports",
+    "component_count": 7,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "4",
+    "block_name": "Embedding Model Initialization",
+    "block_type": "imports",
+    "component_count": 2,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "5",
+    "block_name": "Vector Store Creation",
+    "block_type": "imports",
+    "component_count": 2,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "6",
+    "block_name": "Retriever Setup",
+    "block_type": "mixed",
+    "component_count": 1,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "7",
+    "block_name": "Prompt Template Definition",
+    "block_type": "imports",
+    "component_count": 3,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "8",
+    "block_name": "Chat Model Initialization",
+    "block_type": "imports",
+    "component_count": 2,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "9",
+    "block_name": "State Graph Definition",
+    "block_type": "imports",
+    "component_count": 19,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "10",
+    "block_name": "RAG Graph Invocation",
+    "block_type": "mixed",
+    "component_count": 1,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "11",
+    "block_name": "Dynamic RAG System Functions",
+    "block_type": "imports",
+    "component_count": 57,
+    "is_complete": true,
+    "has_dependencies": false,
+    "dependency_count": 0
+  },
+  {
+    "block_id": "12",
+    "block_name": "Agent and Team Setup",
+    "block_type": "imports",
+    "component_count": 9,
+    "is_complete": true,
+    "has_dependencies": false,
+    "dependency_count": 0
+  },
+  {
+    "block_id": "13",
+    "block_name": "Agent Node Function",
+    "block_type": "utilities",
+    "component_count": 3,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "14",
+    "block_name": "Agent Creation Functions",
+    "block_type": "utilities",
+    "component_count": 8,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "15",
+    "block_name": "Team Supervisor Creation",
+    "block_type": "utilities",
+    "component_count": 10,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "16",
+    "block_name": "Tavily Tool Initialization",
+    "block_type": "imports",
+    "component_count": 2,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "17",
+    "block_name": "Information Retrieval Tool",
+    "block_type": "imports",
+    "component_count": 4,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "18",
+    "block_name": "Document Writing State Definition",
+    "block_type": "imports",
+    "component_count": 8,
+    "is_complete": true,
+    "has_dependencies": false,
+    "dependency_count": 0
+  },
+  {
+    "block_id": "19",
+    "block_name": "LLM Initialization for Document Writing",
+    "block_type": "mixed",
+    "component_count": 1,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "20",
+    "block_name": "Search Agent Setup",
+    "block_type": "mixed",
+    "component_count": 4,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "21",
+    "block_name": "Research Agent Setup",
+    "block_type": "mixed",
+    "component_count": 5,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "22",
+    "block_name": "Team Supervisor for Document Writing",
+    "block_type": "mixed",
+    "component_count": 2,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "23",
+    "block_name": "Document Writing State Graph Definition",
+    "block_type": "mixed",
+    "component_count": 13,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "24",
+    "block_name": "Document Writing Graph Visualization",
+    "block_type": "imports",
+    "component_count": 4,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "25",
+    "block_name": "Authoring Chain Definition",
+    "block_type": "utilities",
+    "component_count": 8,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  },
+  {
+    "block_id": "26",
+    "block_name": "Authoring Chain Invocation",
+    "block_type": "mixed",
+    "component_count": 6,
+    "is_complete": true,
+    "has_dependencies": true,
+    "dependency_count": 1
+  }
+]

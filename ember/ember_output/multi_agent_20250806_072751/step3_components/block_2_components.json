@@ -1,0 +1,50 @@
+[
+  {
+    "component_id": "2:1",
+    "name": "DirectoryLoader_import",
+    "number": 1,
+    "type": "import",
+    "library": "langchain_community",
+    "description": "Imports the DirectoryLoader class from the langchain_community.document_loaders module for loading documents from a directory.",
+    "enhanced_description": null,
+    "full_code": "from langchain_community.document_loaders import DirectoryLoader",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "2:2",
+    "name": "PyMuPDFLoader_import",
+    "number": 2,
+    "type": "import",
+    "library": "langchain_community",
+    "description": "Imports the PyMuPDFLoader class from the langchain_community.document_loaders module for loading PDF documents.",
+    "enhanced_description": null,
+    "full_code": "from langchain_community.document_loaders import PyMuPDFLoader",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "2:3",
+    "name": "directory_loader_variable",
+    "number": 3,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Creates an instance of DirectoryLoader to load PDF documents from the specified 'data' directory using the PyMuPDFLoader.",
+    "enhanced_description": null,
+    "full_code": "directory_loader = DirectoryLoader(\"data\", glob=\"**/*.pdf\", loader_cls=PyMuPDFLoader)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "2:4",
+    "name": "loan_knowledge_resources_variable",
+    "number": 4,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Calls the load method on the directory_loader instance to load the PDF documents and store the content in loan_knowledge_resources.",
+    "enhanced_description": null,
+    "full_code": "loan_knowledge_resources = directory_loader.load()",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "component_id": "3:1",
+    "name": "tiktoken_import",
+    "number": 1,
+    "type": "import",
+    "library": "tiktoken",
+    "description": "Imports the tiktoken library for tokenization.",
+    "enhanced_description": null,
+    "full_code": "import tiktoken",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:2",
+    "name": "text_splitter_import",
+    "number": 2,
+    "type": "import",
+    "library": "langchain",
+    "description": "Imports the RecursiveCharacterTextSplitter class from langchain's text_splitter module.",
+    "enhanced_description": null,
+    "full_code": "from langchain.text_splitter import RecursiveCharacterTextSplitter",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:3",
+    "name": "tiktoken_len_function",
+    "number": 3,
+    "type": "function",
+    "library": "built-in",
+    "description": "Defines a function to calculate the token length of the provided text using the tiktoken library.",
+    "enhanced_description": null,
+    "full_code": "def tiktoken_len(text):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:4",
+    "name": "tiktoken_len_tokenization",
+    "number": 4,
+    "type": "expression",
+    "library": "tiktoken",
+    "description": "Calls the tiktoken encoding function to tokenize the input text.",
+    "enhanced_description": null,
+    "full_code": "tokens = tiktoken.encoding_for_model(\"gpt-4o\").encode(\n        text,\n    )",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:5",
+    "name": "tiktoken_len_return",
+    "number": 5,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Returns the length of the tokenized text.",
+    "enhanced_description": null,
+    "full_code": "return len(tokens)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:6",
+    "name": "text_splitter_initialization",
+    "number": 6,
+    "type": "variable",
+    "library": "langchain",
+    "description": "Initializes a RecursiveCharacterTextSplitter instance with specified parameters.",
+    "enhanced_description": null,
+    "full_code": "text_splitter = RecursiveCharacterTextSplitter(\n    chunk_size = 750,\n    chunk_overlap = 0,\n    length_function = tiktoken_len,\n)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "3:7",
+    "name": "loan_knowledge_chunks_variable",
+    "number": 7,
+    "type": "variable",
+    "library": "langchain",
+    "description": "Calls the split_documents method on the text_splitter to process loan knowledge resources into chunks.",
+    "enhanced_description": null,
+    "full_code": "loan_knowledge_chunks = text_splitter.split_documents(loan_knowledge_resources)",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

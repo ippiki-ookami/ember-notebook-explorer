@@ -1,0 +1,50 @@
+[
+  {
+    "component_id": "20:1",
+    "name": "search_agent_creation",
+    "number": 1,
+    "type": "variable",
+    "library": "local",
+    "description": "Creates a search agent that utilizes the Tavily search tool for fetching information.",
+    "enhanced_description": null,
+    "full_code": "search_agent = create_agent(",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "20:2",
+    "name": "create_agent_function_call",
+    "number": 2,
+    "type": "expression",
+    "library": "local",
+    "description": "Calls the create_agent function to initialize the search agent with the specified parameters.",
+    "enhanced_description": null,
+    "full_code": "create_agent(llm, [tavily_tool], \"You are a research assistant who can search for up-to-date info using the tavily search engine.\")",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "20:3",
+    "name": "search_node_creation",
+    "number": 3,
+    "type": "variable",
+    "library": "local",
+    "description": "Creates a partial function for the agent_node with the search_agent and a specified name.",
+    "enhanced_description": null,
+    "full_code": "search_node = functools.partial(agent_node, agent=search_agent, name=\"Search\")",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "20:4",
+    "name": "functools_partial_function_call",
+    "number": 4,
+    "type": "expression",
+    "library": "local",
+    "description": "Calls functools.partial to create a new function that calls agent_node with specific arguments.",
+    "enhanced_description": null,
+    "full_code": "functools.partial(agent_node, agent=search_agent, name=\"Search\")",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

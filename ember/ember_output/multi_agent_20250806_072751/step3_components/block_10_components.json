@@ -1,0 +1,14 @@
+[
+  {
+    "component_id": "10:1",
+    "name": "rag_graph_invoke_call",
+    "number": 1,
+    "type": "expression",
+    "library": "built-in",
+    "description": "This line invokes the 'invoke' method on the 'rag_graph' object, passing a dictionary with a question about the maximum loan amount as an argument.",
+    "enhanced_description": null,
+    "full_code": "rag_graph.invoke({\"question\" : \"What is the maximum loan amount?\"})",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

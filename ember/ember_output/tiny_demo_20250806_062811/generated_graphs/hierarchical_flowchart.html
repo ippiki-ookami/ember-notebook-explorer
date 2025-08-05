@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ember Hierarchical Flowchart</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background: #2980b9;
+        }
+        
+        #flowchart {
+            width: 100%;
+            height: 1180px;
+            border: 1px solid #34495e;
+            border-radius: 8px;
+            background: #34495e;
+            overflow: auto;
+        }
+        
+        /* outer group boxes — dashed outlines, no fill */
+        .block {
+            fill: none;
+            stroke-width: 2;
+            stroke-dasharray: 4,4;
+            stroke: #ffffff80;   /* semiopaque white */
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .block:hover {
+            stroke-width: 3;
+            stroke-dasharray: none;
+        }
+        
+        /* the inner "boxes" — solid fill, rounded */
+        .component {
+            stroke: none;
+            fill-opacity: 1;
+            rx: 5px;
+            ry: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .component:hover {
+            opacity: 0.9;
+        }
+        
+        .block-title {
+            font-size: 12px;
+            font-weight: bold;
+            text-anchor: start;       /* left‐aligned */
+            fill: white;
+            pointer-events: none;
+            /* position will be set in JS */
+        }
+        
+        .component-label {
+            font-size: 11px;
+            text-anchor: start;
+            fill: white;
+            pointer-events: none;
+        }
+        
+        .connection {
+            stroke: #7f8c8d;
+            stroke-width: 2;
+            fill: none;
+            marker-end: url(#arrowhead);
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            pointer-events: none;
+            font-size: 12px;
+            max-width: 300px;
+            z-index: 1000;
+            border: 1px solid #7f8c8d;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-align: center;
+            flex: 1;
+            border: 1px solid #7f8c8d;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .legend {
+            background: #34495e;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border: 1px solid #7f8c8d;
+        }
+        
+        .legend-item {
+            display: inline-block;
+            margin: 5px 10px;
+            color: white;
+        }
+        
+        .legend-color {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            border: 1px solid #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Ember Hierarchical Flowchart</h1>
+            <p>Analysis: tiny_demo_20250806_062811</p>
+        </div>
+        
+        <div class="controls">
+            <button onclick="resetView()">Reset View</button>
+            <button onclick="toggleComponents()">Toggle Components</button>
+            <button onclick="exportSVG()">Export SVG</button>
+        </div>
+        
+        <svg id="flowchart" width="1200" height="1180">
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                        refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#7f8c8d" />
+                </marker>
+            </defs>
+        </svg>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div>Code Blocks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">30</div>
+                <div>Components</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div>Dependencies</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div>Levels</div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <h3>Legend</h3>
+            <div>
+                <strong>Block Types:</strong><br>
+                <span class="legend-item"><span class="legend-color" style="background: #2c3e50;"></span>Imports</span>
+                <span class="legend-item"><span class="legend-color" style="background: #8e44ad;"></span>Classes</span>
+                <span class="legend-item"><span class="legend-color" style="background: #27ae60;"></span>Utilities</span>
+                <span class="legend-item"><span class="legend-color" style="background: #e67e22;"></span>Functions</span>
+                <span class="legend-item"><span class="legend-color" style="background: #34495e;"></span>Mixed</span>
+                <span class="legend-item"><span class="legend-color" style="background: #16a085;"></span>Config</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tooltip" id="tooltip" style="display: none;"></div>
+    
+    <script>
+        // Flowchart data
+        const flowchartData = {
+        "type": "hierarchical_flowchart",
+        "canvas": {
+                "width": 1200,
+                "height": 1180
+        },
+        "blocks": [
+                {
+                        "id": "1",
+                        "name": "Import Libraries",
+                        "type": "imports",
+                        "x": 450,
+                        "y": 50,
+                        "width": 300,
+                        "height": 185,
+                        "color": "#2c3e50",
+                        "level": 0,
+                        "components": [
+                                {
+                                        "id": "1:1",
+                                        "name": "pandas_import",
+                                        "type": "import",
+                                        "x": 460,
+                                        "y": 100,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#3498db",
+                                        "description": "Imports the pandas library and aliases it as 'pd' for data manipulation and analysis.",
+                                        "library": "pandas",
+                                        "code": "import pandas as pd"
+                                },
+                                {
+                                        "id": "1:2",
+                                        "name": "langchain_import",
+                                        "type": "import",
+                                        "x": 460,
+                                        "y": 135,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#3498db",
+                                        "description": "Imports the OpenAI module from the langchain library for working with language models.",
+                                        "library": "langchain",
+                                        "code": "from langchain import OpenAI"
+                                },
+                                {
+                                        "id": "1:3",
+                                        "name": "numpy_import",
+                                        "type": "import",
+                                        "x": 460,
+                                        "y": 170,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#3498db",
+                                        "description": "Imports the numpy library and aliases it as 'np' for numerical operations.",
+                                        "library": "numpy",
+                                        "code": "import numpy as np"
+                                }
+                        ]
+                },
+                {
+                        "id": "2",
+                        "name": "Text Cleaning and Tokenization Functions",
+                        "type": "utilities",
+                        "x": 450,
+                        "y": 250,
+                        "width": 316,
+                        "height": 290,
+                        "color": "#27ae60",
+                        "level": 1,
+                        "components": [
+                                {
+                                        "id": "2:1",
+                                        "name": "clean_text_function",
+                                        "type": "function",
+                                        "x": 460,
+                                        "y": 300,
+                                        "width": 296,
+                                        "height": 30,
+                                        "color": "#2ecc71",
+                                        "description": "Defines a function to clean the input text by removing extra whitespace and normalizing it.",
+                                        "library": "built-in",
+                                        "code": "def clean_text(text):"
+                                },
+                                {
+                                        "id": "2:2",
+                                        "name": "clean_text_docstring",
+                                        "type": "expression",
+                                        "x": 460,
+                                        "y": 335,
+                                        "width": 296,
+                                        "height": 30,
+                                        "color": "#1abc9c",
+                                        "description": "Docstring for the clean_text function explaining its purpose.",
+                                        "library": "built-in",
+                                        "code": "\"\"\"Remove extra whitespace and normalize text.\"\"\""
+                                },
+                                {
+                                        "id": "2:3",
+                                        "name": "clean_text_return_statement",
+                                        "type": "expression",
+                                        "x": 460,
+                                        "y": 370,
+                                        "width": 296,
+                                        "height": 30,
+                                        "color": "#1abc9c",
+                                        "description": "Returns the cleaned text by joining the split words with a single space.",
+                                        "library": "built-in",
+                                        "code": "return ' '.join(text.split())"
+                                },
+                                {
+                                        "id": "2:4",
+                                        "name": "tokenize_function",
+                                        "type": "function",
+                                        "x": 460,
+                                        "y": 405,
+                                        "width": 296,
+                                        "height": 30,
+                                        "color": "#2ecc71",
+                                        "description": "Defines a function to tokenize the input text by converting it to lowercase and splitting it into tokens.",
+                                        "library": "built-in",
+                                        "code": "def tokenize(text):"
+                                },
+                                {
+                                        "id": "2:5",
+                                        "name": "tokenize_docstring",
+                                        "type": "expression",
+                                        "x": 460,
+                                        "y": 440,
+                                        "width": 296,
+                                        "height": 30,
+                                        "color": "#1abc9c",
+                                        "description": "Docstring for the tokenize function explaining its purpose.",
+                                        "library": "built-in",
+                                        "code": "\"\"\"Simple tokenization.\"\"\""
+                                },
+                                {
+                                        "id": "2:6",
+                                        "name": "tokenize_return_statement",
+                                        "type": "expression",
+                                        "x": 460,
+                                        "y": 475,
+                                        "width": 296,
+                                        "height": 30,
+                                        "color": "#1abc9c",
+                                        "description": "Returns the tokenized version of the text by converting it to lowercase and splitting it into a list of tokens.",
+                                        "library": "built-in",
+                                        "code": "return text.lower().split()"
+                                }
+                        ]
+                },
+                {
+                        "id": "3",
+                        "name": "VectorStore Class Definition",
+                        "type": "classes",
+                        "x": 450,
+                        "y": 450,
+                        "width": 380,
+                        "height": 395,
+                        "color": "#8e44ad",
+                        "level": 2,
+                        "components": [
+                                {
+                                        "id": "3:1",
+                                        "name": "VectorStore_class",
+                                        "type": "class",
+                                        "x": 460,
+                                        "y": 500,
+                                        "width": 360,
+                                        "height": 30,
+                                        "color": "#9b59b6",
+                                        "description": "Defines the VectorStore class for managing vector embeddings.",
+                                        "library": "built-in",
+                                        "code": "class VectorStore:"
+                                },
+                                {
+                                        "id": "3:2",
+                                        "name": "VectorStore_docstring",
+                                        "type": "variable",
+                                        "x": 460,
+                                        "y": 535,
+                                        "width": 360,
+                                        "height": 30,
+                                        "color": "#f39c12",
+                                        "description": "Docstring providing a brief description of the VectorStore class.",
+                                        "library": "built-in",
+                                        "code": "\"\"\"Simple vector storage for embeddings.\"\"\""
+                                },
+                                {
+                                        "id": "3:3",
+                                        "name": "VectorStore_init_method",
+                                        "type": "method",
+                                        "x": 460,
+                                        "y": 570,
+                                        "width": 360,
+                                        "height": 30,
+                                        "color": "#e74c3c",
+                                        "description": "Constructor method for initializing the VectorStore instance.",
+                                        "library": "built-in",
+                                        "code": "def __init__(self):"
+                                },
+                                {
+                                        "id": "3:4",
+                                        "name": "VectorStore_vectors_variable",
+                                        "type": "variable",
+                                        "x": 460,
+                                        "y": 605,
+                                        "width": 360,
+                                        "height": 30,
+                                        "color": "#f39c12",
+                                        "description": "Initializes an empty list to store vectors.",
+                                        "library": "built-in",
+                                        "code": "self.vectors = []"
+                                },
+                                {
+                                        "id": "3:5",
+                                        "name": "VectorStore_add_method",
+                                        "type": "method",
+                                        "x": 460,
+                                        "y": 640,
+                                        "width": 360,
+                                        "height": 30,
+                                        "color": "#e74c3c",
+                                        "description": "Method to add a vector to the vectors list.",
+                                        "library": "built-in",
+                                        "code": "def add(self, vector):"
+                                },
+                                {
+                                        "id": "3:6",
+                                        "name": "VectorStore_add_method_call",
+                                        "type": "expression",
+                                        "x": 460,
+                                        "y": 675,
+                                        "width": 360,
+                                        "height": 30,
+                                        "color": "#1abc9c",
+                                        "description": "Appends the provided vector to the vectors list.",
+                                        "library": "built-in",
+                                        "code": "self.vectors.append(vector)"
+                                },
+                                {
+                                        "id": "3:7",
+                                        "name": "VectorStore_search_method",
+                                        "type": "method",
+                                        "x": 460,
+                                        "y": 710,
+                                        "width": 360,
+                                        "height": 30,
+                                        "color": "#e74c3c",
+                                        "description": "Method to perform a simplified search for the top k vectors.",
+                                        "library": "built-in",
+                                        "code": "def search(self, query_vector, k=5):"
+                                },
+                                {
+                                        "id": "3:8",
+                                        "name": "VectorStore_search_method_comment",
+                                        "type": "variable",
+                                        "x": 460,
+                                        "y": 745,
+                                        "width": 360,
+                                        "height": 30,
+                                        "color": "#f39c12",
+                                        "description": "Comment indicating that the following code performs a simplified search.",
+                                        "library": "built-in",
+                                        "code": "# Simplified search"
+                                },
+                                {
+                                        "id": "3:9",
+                                        "name": "VectorStore_search_return_statement",
+                                        "type": "expression",
+                                        "x": 460,
+                                        "y": 780,
+                                        "width": 360,
+                                        "height": 30,
+                                        "color": "#1abc9c",
+                                        "description": "Returns the top k vectors from the vectors list.",
+                                        "library": "built-in",
+                                        "code": "return self.vectors[:k]"
+                                }
+                        ]
+                },
+                {
+                        "id": "4",
+                        "name": "Build RAG Graph Function",
+                        "type": "utilities",
+                        "x": 450,
+                        "y": 650,
+                        "width": 300,
+                        "height": 430,
+                        "color": "#27ae60",
+                        "level": 3,
+                        "components": [
+                                {
+                                        "id": "4:1",
+                                        "name": "build_rag_graph_function",
+                                        "type": "function",
+                                        "x": 460,
+                                        "y": 700,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#2ecc71",
+                                        "description": "Main function to build RAG pipeline.",
+                                        "library": "built-in",
+                                        "code": "def build_rag_graph(documents):"
+                                },
+                                {
+                                        "id": "4:2",
+                                        "name": "build_rag_graph_docstring",
+                                        "type": "expression",
+                                        "x": 460,
+                                        "y": 735,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#1abc9c",
+                                        "description": "Docstring explaining the purpose of the build_rag_graph function.",
+                                        "library": "built-in",
+                                        "code": "\"\"\"Main function to build RAG pipeline.\"\"\""
+                                },
+                                {
+                                        "id": "4:3",
+                                        "name": "store_variable",
+                                        "type": "variable",
+                                        "x": 460,
+                                        "y": 770,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#f39c12",
+                                        "description": "Initializes a new instance of the VectorStore class to store tokenized documents.",
+                                        "library": "local",
+                                        "code": "store = VectorStore()"
+                                },
+                                {
+                                        "id": "4:4",
+                                        "name": "for_loop",
+                                        "type": "expression",
+                                        "x": 460,
+                                        "y": 805,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#1abc9c",
+                                        "description": "Iterates over each document in the provided documents list.",
+                                        "library": "built-in",
+                                        "code": "for doc in documents:"
+                                },
+                                {
+                                        "id": "4:5",
+                                        "name": "cleaned_variable",
+                                        "type": "variable",
+                                        "x": 460,
+                                        "y": 840,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#f39c12",
+                                        "description": "Stores the cleaned version of the current document after applying the clean_text function.",
+                                        "library": "local",
+                                        "code": "cleaned = clean_text(doc)"
+                                },
+                                {
+                                        "id": "4:6",
+                                        "name": "tokens_variable",
+                                        "type": "variable",
+                                        "x": 460,
+                                        "y": 875,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#f39c12",
+                                        "description": "Stores the tokenized version of the cleaned document after applying the tokenize function.",
+                                        "library": "local",
+                                        "code": "tokens = tokenize(cleaned)"
+                                },
+                                {
+                                        "id": "4:7",
+                                        "name": "store_add_expression",
+                                        "type": "expression",
+                                        "x": 460,
+                                        "y": 910,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#1abc9c",
+                                        "description": "Adds the tokenized document to the vector store.",
+                                        "library": "local",
+                                        "code": "store.add(tokens)"
+                                },
+                                {
+                                        "id": "4:8",
+                                        "name": "return_statement",
+                                        "type": "expression",
+                                        "x": 460,
+                                        "y": 945,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#1abc9c",
+                                        "description": "Returns the vector store containing all added tokenized documents.",
+                                        "library": "built-in",
+                                        "code": "return store"
+                                },
+                                {
+                                        "id": "4:9",
+                                        "name": "clean_text_function_call",
+                                        "type": "function",
+                                        "x": 460,
+                                        "y": 980,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#2ecc71",
+                                        "description": "Calls the clean_text function to clean the current document.",
+                                        "library": "local",
+                                        "code": "clean_text(doc)"
+                                },
+                                {
+                                        "id": "4:10",
+                                        "name": "tokenize_function_call",
+                                        "type": "function",
+                                        "x": 460,
+                                        "y": 1015,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#2ecc71",
+                                        "description": "Calls the tokenize function to tokenize the cleaned document.",
+                                        "library": "local",
+                                        "code": "tokenize(cleaned)"
+                                }
+                        ]
+                },
+                {
+                        "id": "5",
+                        "name": "Configuration Variables",
+                        "type": "mixed",
+                        "x": 450,
+                        "y": 850,
+                        "width": 300,
+                        "height": 150,
+                        "color": "#34495e",
+                        "level": 4,
+                        "components": [
+                                {
+                                        "id": "5:1",
+                                        "name": "MAX_TOKENS_variable",
+                                        "type": "variable",
+                                        "x": 460,
+                                        "y": 900,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#f39c12",
+                                        "description": "Defines a constant for the maximum number of tokens to be used in text processing.",
+                                        "library": "built-in",
+                                        "code": "MAX_TOKENS = 100"
+                                },
+                                {
+                                        "id": "5:2",
+                                        "name": "TEMPERATURE_variable",
+                                        "type": "variable",
+                                        "x": 460,
+                                        "y": 935,
+                                        "width": 280,
+                                        "height": 30,
+                                        "color": "#f39c12",
+                                        "description": "Defines a constant for the temperature parameter, which can control the randomness of text generation.",
+                                        "library": "built-in",
+                                        "code": "TEMPERATURE = 0.7"
+                                }
+                        ]
+                }
+        ],
+        "connections": [
+                {
+                        "source": "1",
+                        "target": "2",
+                        "type": "uses",
+                        "points": [
+                                {
+                                        "x": 600,
+                                        "y": 235
+                                },
+                                {
+                                        "x": 608,
+                                        "y": 250
+                                }
+                        ]
+                },
+                {
+                        "source": "1",
+                        "target": "3",
+                        "type": "uses",
+                        "points": [
+                                {
+                                        "x": 600,
+                                        "y": 235
+                                },
+                                {
+                                        "x": 640,
+                                        "y": 450
+                                }
+                        ]
+                },
+                {
+                        "source": "1",
+                        "target": "4",
+                        "type": "uses",
+                        "points": [
+                                {
+                                        "x": 600,
+                                        "y": 235
+                                },
+                                {
+                                        "x": 600,
+                                        "y": 650
+                                }
+                        ]
+                },
+                {
+                        "source": "1",
+                        "target": "5",
+                        "type": "uses",
+                        "points": [
+                                {
+                                        "x": 600,
+                                        "y": 235
+                                },
+                                {
+                                        "x": 600,
+                                        "y": 850
+                                }
+                        ]
+                },
+                {
+                        "source": "2",
+                        "target": "4",
+                        "type": "uses",
+                        "points": [
+                                {
+                                        "x": 608,
+                                        "y": 540
+                                },
+                                {
+                                        "x": 600,
+                                        "y": 650
+                                }
+                        ]
+                },
+                {
+                        "source": "3",
+                        "target": "4",
+                        "type": "uses",
+                        "points": [
+                                {
+                                        "x": 640,
+                                        "y": 845
+                                },
+                                {
+                                        "x": 600,
+                                        "y": 650
+                                }
+                        ]
+                }
+        ],
+        "metadata": {
+                "total_blocks": 5,
+                "execution_order": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5"
+                ],
+                "analysis_directory": "ember/ember_output/tiny_demo_20250806_062811"
+        }
+};
+        
+        const svg = d3.select("#flowchart");
+        const tooltip = d3.select("#tooltip");
+        
+        let showComponents = true;
+        
+        function renderFlowchart() {
+            // Clear previous content
+            svg.selectAll("*").remove();
+            
+            // Re-add arrow marker
+            svg.append("defs")
+                .append("marker")
+                .attr("id", "arrowhead")
+                .attr("markerWidth", 10)
+                .attr("markerHeight", 7)
+                .attr("refX", 9)
+                .attr("refY", 3.5)
+                .attr("orient", "auto")
+                .append("polygon")
+                .attr("points", "0 0, 10 3.5, 0 7")
+                .attr("fill", "#7f8c8d");
+            
+            // Draw connections first (so they appear behind blocks)
+            svg.selectAll(".connection")
+                .data(flowchartData.connections)
+                .enter()
+                .append("path")
+                .attr("class", "connection")
+                .attr("d", d => {
+                    const points = d.points;
+                    return `M ${points[0].x} ${points[0].y} L ${points[1].x} ${points[1].y}`;
+                });
+            
+            // Draw blocks
+            const blockGroups = svg.selectAll(".block-group")
+                .data(flowchartData.blocks)
+                .enter()
+                .append("g")
+                .attr("class", "block-group");
+            
+            // Block rectangles
+            blockGroups.append("rect")
+                .attr("class", "block")
+                .attr("x", d => d.x)
+                .attr("y", d => d.y)
+                .attr("width", d => d.width)
+                .attr("height", d => d.height)
+                .attr("fill", d => d.color)
+                .on("mouseover", (event, d) => {
+                    tooltip.style("display", "block")
+                        .html(`
+                            <strong>${d.name}</strong><br>
+                            Type: ${d.type}<br>
+                            Level: ${d.level}<br>
+                            Components: ${d.components.length}
+                        `)
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 10) + "px");
+                })
+                .on("mouseout", () => {
+                    tooltip.style("display", "none");
+                });
+            
+            // Block titles
+            blockGroups.append("text")
+                .attr("class", "block-title")
+                .attr("x", d => d.x + 10)      // 10px from left edge
+                .attr("y", d => d.y + 18)      // 18px down from top edge
+                .text(d => d.name);
+            
+            // Components within blocks
+            if (showComponents) {
+                blockGroups.each(function(blockData) {
+                    const blockGroup = d3.select(this);
+                    
+                    blockGroup.selectAll(".component")
+                        .data(blockData.components)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "component")
+                        .attr("x", d => d.x)
+                        .attr("y", d => d.y)
+                        .attr("width", d => d.width)
+                        .attr("height", d => d.height)
+                        .attr("fill", d => d.color)
+                        .attr("rx", 4)
+                        .attr("ry", 4)
+                        .on("mouseover", (event, d) => {
+                            tooltip.style("display", "block")
+                                .html(`
+                                    <strong>${d.name}</strong><br>
+                                    Type: ${d.type}<br>
+                                    Library: ${d.library}<br>
+                                    <em>${d.description.substring(0, 100)}${d.description.length > 100 ? "..." : ""}</em>
+                                `)
+                                .style("left", (event.pageX + 10) + "px")
+                                .style("top", (event.pageY - 10) + "px");
+                        })
+                        .on("mouseout", () => {
+                            tooltip.style("display", "none");
+                        });
+                    
+                    // Component labels
+                    blockGroup.selectAll(".component-label")
+                        .data(blockData.components)
+                        .enter()
+                        .append("text")
+                        .attr("class", "component-label")
+                        .attr("x", d => d.x + 8)
+                        .attr("y", d => d.y + d.height / 2 + 4)
+                        .attr("fill", "white")
+                        .text(d => d.name);
+                });
+            }
+        }
+        
+        function resetView() {
+            renderFlowchart();
+        }
+        
+        function toggleComponents() {
+            showComponents = !showComponents;
+            renderFlowchart();
+        }
+        
+        function exportSVG() {
+            const svgElement = document.getElementById("flowchart");
+            const svgData = new XMLSerializer().serializeToString(svgElement);
+            const blob = new Blob([svgData], {type: "image/svg+xml"});
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "ember_flowchart.svg";
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        // Initial render
+        renderFlowchart();
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+  {
+    "component_id": "16:1",
+    "name": "TavilySearchResults_import",
+    "number": 1,
+    "type": "import",
+    "library": "langchain_community",
+    "description": "Imports the TavilySearchResults class from the langchain_community.tools.tavily_search module for use in the RAG system.",
+    "enhanced_description": null,
+    "full_code": "from langchain_community.tools.tavily_search import TavilySearchResults",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "16:2",
+    "name": "tavily_tool_initialization",
+    "number": 2,
+    "type": "variable",
+    "library": "local",
+    "description": "Initializes an instance of TavilySearchResults with a maximum of 5 results, allowing the search agent to fetch up-to-date information.",
+    "enhanced_description": null,
+    "full_code": "tavily_tool = TavilySearchResults(max_results=5)",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

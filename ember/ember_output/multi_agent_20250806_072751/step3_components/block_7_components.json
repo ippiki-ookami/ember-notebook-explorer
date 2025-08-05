@@ -1,0 +1,38 @@
+[
+  {
+    "component_id": "7:1",
+    "name": "ChatPromptTemplate_import",
+    "number": 1,
+    "type": "import",
+    "library": "langchain_core",
+    "description": "Imports the ChatPromptTemplate class from the langchain_core.prompts module for creating structured chat prompts.",
+    "enhanced_description": null,
+    "full_code": "from langchain_core.prompts import ChatPromptTemplate",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "7:2",
+    "name": "HUMAN_TEMPLATE_variable",
+    "number": 2,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Defines a string template for the human input in the chat prompt, including placeholders for context and query.",
+    "enhanced_description": null,
+    "full_code": "HUMAN_TEMPLATE = \"\"\"\n#CONTEXT:\n{context}\n\nQUERY:\n{query}\n\nUse the provide context to answer the provided user query. Only use the provided context to answer the query. If you do not know the answer, or it's not contained in the provided context respond with \"I don't know\"\n\"\"\"",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "7:3",
+    "name": "chat_prompt_variable",
+    "number": 3,
+    "type": "variable",
+    "library": "langchain_core",
+    "description": "Creates an instance of ChatPromptTemplate using the HUMAN_TEMPLATE and prepares it for use in the chat system.",
+    "enhanced_description": null,
+    "full_code": "chat_prompt = ChatPromptTemplate.from_messages([\n    (\"human\", HUMAN_TEMPLATE)\n])",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

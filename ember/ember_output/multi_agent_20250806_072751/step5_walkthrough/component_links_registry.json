@@ -1,0 +1,1578 @@
+[
+  {
+    "display_text": "`os_import`",
+    "component_name": "os_import",
+    "block_id": "1",
+    "component_number": 1,
+    "section_number": 1,
+    "link_format": "[[component:1:1:os_import|`os_import`]]"
+  },
+  {
+    "display_text": "getpass_import",
+    "component_name": "getpass_import",
+    "block_id": "1",
+    "component_number": 2,
+    "section_number": 1,
+    "link_format": "[[component:1:2:getpass_import|getpass_import]]"
+  },
+  {
+    "display_text": "set_openai_api_key",
+    "component_name": "set_openai_api_key",
+    "block_id": "1",
+    "component_number": 3,
+    "section_number": 1,
+    "link_format": "[[component:1:3:set_openai_api_key|set_openai_api_key]]"
+  },
+  {
+    "display_text": "set_tavily_api_key",
+    "component_name": "set_tavily_api_key",
+    "block_id": "1",
+    "component_number": 4,
+    "section_number": 1,
+    "link_format": "[[component:1:4:set_tavily_api_key|set_tavily_api_key]]"
+  },
+  {
+    "display_text": "`os_import`",
+    "component_name": "os_import",
+    "block_id": "1",
+    "component_number": 1,
+    "section_number": 1,
+    "link_format": "[[component:1:1:os_import|`os_import`]]"
+  },
+  {
+    "display_text": "getpass_import",
+    "component_name": "getpass_import",
+    "block_id": "1",
+    "component_number": 2,
+    "section_number": 1,
+    "link_format": "[[component:1:2:getpass_import|getpass_import]]"
+  },
+  {
+    "display_text": "set_openai_api_key",
+    "component_name": "set_openai_api_key",
+    "block_id": "1",
+    "component_number": 3,
+    "section_number": 1,
+    "link_format": "[[component:1:3:set_openai_api_key|set_openai_api_key]]"
+  },
+  {
+    "display_text": "set_tavily_api_key",
+    "component_name": "set_tavily_api_key",
+    "block_id": "1",
+    "component_number": 4,
+    "section_number": 1,
+    "link_format": "[[component:1:4:set_tavily_api_key|set_tavily_api_key]]"
+  },
+  {
+    "display_text": "DirectoryLoader_import",
+    "component_name": "DirectoryLoader_import",
+    "block_id": "2",
+    "component_number": 1,
+    "section_number": 2,
+    "link_format": "[[component:2:1:DirectoryLoader_import|DirectoryLoader_import]]"
+  },
+  {
+    "display_text": "PyMuPDFLoader_import",
+    "component_name": "PyMuPDFLoader_import",
+    "block_id": "2",
+    "component_number": 2,
+    "section_number": 2,
+    "link_format": "[[component:2:2:PyMuPDFLoader_import|PyMuPDFLoader_import]]"
+  },
+  {
+    "display_text": "directory_loader_variable",
+    "component_name": "directory_loader_variable",
+    "block_id": "2",
+    "component_number": 3,
+    "section_number": 2,
+    "link_format": "[[component:2:3:directory_loader_variable|directory_loader_variable]]"
+  },
+  {
+    "display_text": "loan_knowledge_resources_variable",
+    "component_name": "loan_knowledge_resources_variable",
+    "block_id": "2",
+    "component_number": 4,
+    "section_number": 2,
+    "link_format": "[[component:2:4:loan_knowledge_resources_variable|loan_knowledge_resources_variable]]"
+  },
+  {
+    "display_text": "tiktoken_import",
+    "component_name": "tiktoken_import",
+    "block_id": "3",
+    "component_number": 1,
+    "section_number": 3,
+    "link_format": "[[component:3:1:tiktoken_import|tiktoken_import]]"
+  },
+  {
+    "display_text": "text_splitter_import",
+    "component_name": "text_splitter_import",
+    "block_id": "3",
+    "component_number": 2,
+    "section_number": 3,
+    "link_format": "[[component:3:2:text_splitter_import|text_splitter_import]]"
+  },
+  {
+    "display_text": "tiktoken_len_function",
+    "component_name": "tiktoken_len_function",
+    "block_id": "3",
+    "component_number": 3,
+    "section_number": 3,
+    "link_format": "[[component:3:3:tiktoken_len_function|tiktoken_len_function]]"
+  },
+  {
+    "display_text": "tiktoken_len_tokenization",
+    "component_name": "tiktoken_len_tokenization",
+    "block_id": "3",
+    "component_number": 4,
+    "section_number": 3,
+    "link_format": "[[component:3:4:tiktoken_len_tokenization|tiktoken_len_tokenization]]"
+  },
+  {
+    "display_text": "tiktoken_len_return",
+    "component_name": "tiktoken_len_return",
+    "block_id": "3",
+    "component_number": 5,
+    "section_number": 3,
+    "link_format": "[[component:3:5:tiktoken_len_return|tiktoken_len_return]]"
+  },
+  {
+    "display_text": "text_splitter_initialization",
+    "component_name": "text_splitter_initialization",
+    "block_id": "3",
+    "component_number": 6,
+    "section_number": 3,
+    "link_format": "[[component:3:6:text_splitter_initialization|text_splitter_initialization]]"
+  },
+  {
+    "display_text": "loan_knowledge_chunks_variable",
+    "component_name": "loan_knowledge_chunks_variable",
+    "block_id": "3",
+    "component_number": 7,
+    "section_number": 3,
+    "link_format": "[[component:3:7:loan_knowledge_chunks_variable|loan_knowledge_chunks_variable]]"
+  },
+  {
+    "display_text": "tiktoken_import",
+    "component_name": "tiktoken_import",
+    "block_id": "3",
+    "component_number": 1,
+    "section_number": 3,
+    "link_format": "[[component:3:1:tiktoken_import|tiktoken_import]]"
+  },
+  {
+    "display_text": "text_splitter_import",
+    "component_name": "text_splitter_import",
+    "block_id": "3",
+    "component_number": 2,
+    "section_number": 3,
+    "link_format": "[[component:3:2:text_splitter_import|text_splitter_import]]"
+  },
+  {
+    "display_text": "tiktoken_len_function",
+    "component_name": "tiktoken_len_function",
+    "block_id": "3",
+    "component_number": 3,
+    "section_number": 3,
+    "link_format": "[[component:3:3:tiktoken_len_function|tiktoken_len_function]]"
+  },
+  {
+    "display_text": "tiktoken_len_tokenization",
+    "component_name": "tiktoken_len_tokenization",
+    "block_id": "3",
+    "component_number": 4,
+    "section_number": 3,
+    "link_format": "[[component:3:4:tiktoken_len_tokenization|tiktoken_len_tokenization]]"
+  },
+  {
+    "display_text": "tiktoken_len_return",
+    "component_name": "tiktoken_len_return",
+    "block_id": "3",
+    "component_number": 5,
+    "section_number": 3,
+    "link_format": "[[component:3:5:tiktoken_len_return|tiktoken_len_return]]"
+  },
+  {
+    "display_text": "text_splitter_initialization",
+    "component_name": "text_splitter_initialization",
+    "block_id": "3",
+    "component_number": 6,
+    "section_number": 3,
+    "link_format": "[[component:3:6:text_splitter_initialization|text_splitter_initialization]]"
+  },
+  {
+    "display_text": "loan_knowledge_chunks_variable",
+    "component_name": "loan_knowledge_chunks_variable",
+    "block_id": "3",
+    "component_number": 7,
+    "section_number": 3,
+    "link_format": "[[component:3:7:loan_knowledge_chunks_variable|loan_knowledge_chunks_variable]]"
+  },
+  {
+    "display_text": "`qdrant_retriever_assignment`",
+    "component_name": "qdrant_retriever_assignment",
+    "block_id": "6",
+    "component_number": 1,
+    "section_number": 6,
+    "link_format": "[[component:6:1:qdrant_retriever_assignment|`qdrant_retriever_assignment`]]"
+  },
+  {
+    "display_text": "`qdrant_retriever_assignment`",
+    "component_name": "qdrant_retriever_assignment",
+    "block_id": "6",
+    "component_number": 1,
+    "section_number": 6,
+    "link_format": "[[component:6:1:qdrant_retriever_assignment|`qdrant_retriever_assignment`]]"
+  },
+  {
+    "display_text": "`qdrant_retriever_assignment`",
+    "component_name": "qdrant_retriever_assignment",
+    "block_id": "6",
+    "component_number": 1,
+    "section_number": 6,
+    "link_format": "[[component:6:1:qdrant_retriever_assignment|`qdrant_retriever_assignment`]]"
+  },
+  {
+    "display_text": "`qdrant_retriever_assignment`",
+    "component_name": "qdrant_retriever_assignment",
+    "block_id": "6",
+    "component_number": 1,
+    "section_number": 6,
+    "link_format": "[[component:6:1:qdrant_retriever_assignment|`qdrant_retriever_assignment`]]"
+  },
+  {
+    "display_text": "`qdrant_retriever_assignment`",
+    "component_name": "qdrant_retriever_assignment",
+    "block_id": "6",
+    "component_number": 1,
+    "section_number": 6,
+    "link_format": "[[component:6:1:qdrant_retriever_assignment|`qdrant_retriever_assignment`]]"
+  },
+  {
+    "display_text": "ChatPromptTemplate_import",
+    "component_name": "ChatPromptTemplate_import",
+    "block_id": "7",
+    "component_number": 1,
+    "section_number": 7,
+    "link_format": "[[component:7:1:ChatPromptTemplate_import|ChatPromptTemplate_import]]"
+  },
+  {
+    "display_text": "HUMAN_TEMPLATE_variable",
+    "component_name": "HUMAN_TEMPLATE_variable",
+    "block_id": "7",
+    "component_number": 2,
+    "section_number": 7,
+    "link_format": "[[component:7:2:HUMAN_TEMPLATE_variable|HUMAN_TEMPLATE_variable]]"
+  },
+  {
+    "display_text": "chat_prompt_variable",
+    "component_name": "chat_prompt_variable",
+    "block_id": "7",
+    "component_number": 3,
+    "section_number": 7,
+    "link_format": "[[component:7:3:chat_prompt_variable|chat_prompt_variable]]"
+  },
+  {
+    "display_text": "ChatPromptTemplate_import",
+    "component_name": "ChatPromptTemplate_import",
+    "block_id": "7",
+    "component_number": 1,
+    "section_number": 7,
+    "link_format": "[[component:7:1:ChatPromptTemplate_import|ChatPromptTemplate_import]]"
+  },
+  {
+    "display_text": "HUMAN_TEMPLATE_variable",
+    "component_name": "HUMAN_TEMPLATE_variable",
+    "block_id": "7",
+    "component_number": 2,
+    "section_number": 7,
+    "link_format": "[[component:7:2:HUMAN_TEMPLATE_variable|HUMAN_TEMPLATE_variable]]"
+  },
+  {
+    "display_text": "chat_prompt_variable",
+    "component_name": "chat_prompt_variable",
+    "block_id": "7",
+    "component_number": 3,
+    "section_number": 7,
+    "link_format": "[[component:7:3:chat_prompt_variable|chat_prompt_variable]]"
+  },
+  {
+    "display_text": "ChatOpenAI_import",
+    "component_name": "ChatOpenAI_import",
+    "block_id": "8",
+    "component_number": 1,
+    "section_number": 8,
+    "link_format": "[[component:8:1:ChatOpenAI_import|ChatOpenAI_import]]"
+  },
+  {
+    "display_text": "openai_chat_model_initialization",
+    "component_name": "openai_chat_model_initialization",
+    "block_id": "8",
+    "component_number": 2,
+    "section_number": 8,
+    "link_format": "[[component:8:2:openai_chat_model_initialization|openai_chat_model_initialization]]"
+  },
+  {
+    "display_text": "langgraph_imports",
+    "component_name": "langgraph_imports",
+    "block_id": "9",
+    "component_number": 1,
+    "section_number": 9,
+    "link_format": "[[component:9:1:langgraph_imports|langgraph_imports]]"
+  },
+  {
+    "display_text": "typing_extensions_import",
+    "component_name": "typing_extensions_import",
+    "block_id": "9",
+    "component_number": 2,
+    "section_number": 9,
+    "link_format": "[[component:9:2:typing_extensions_import|typing_extensions_import]]"
+  },
+  {
+    "display_text": "langchain_core_documents_import",
+    "component_name": "langchain_core_documents_import",
+    "block_id": "9",
+    "component_number": 3,
+    "section_number": 9,
+    "link_format": "[[component:9:3:langchain_core_documents_import|langchain_core_documents_import]]"
+  },
+  {
+    "display_text": "langchain_core_output_parsers_import",
+    "component_name": "langchain_core_output_parsers_import",
+    "block_id": "9",
+    "component_number": 4,
+    "section_number": 9,
+    "link_format": "[[component:9:4:langchain_core_output_parsers_import|langchain_core_output_parsers_import]]"
+  },
+  {
+    "display_text": "State_class",
+    "component_name": "State_class",
+    "block_id": "9",
+    "component_number": 5,
+    "section_number": 9,
+    "link_format": "[[component:9:5:State_class|State_class]]"
+  },
+  {
+    "display_text": "State_question_attribute",
+    "component_name": "State_question_attribute",
+    "block_id": "9",
+    "component_number": 6,
+    "section_number": 9,
+    "link_format": "[[component:9:6:State_question_attribute|State_question_attribute]]"
+  },
+  {
+    "display_text": "State_context_attribute",
+    "component_name": "State_context_attribute",
+    "block_id": "9",
+    "component_number": 7,
+    "section_number": 9,
+    "link_format": "[[component:9:7:State_context_attribute|State_context_attribute]]"
+  },
+  {
+    "display_text": "State_response_attribute",
+    "component_name": "State_response_attribute",
+    "block_id": "9",
+    "component_number": 8,
+    "section_number": 9,
+    "link_format": "[[component:9:8:State_response_attribute|State_response_attribute]]"
+  },
+  {
+    "display_text": "retrieve_function",
+    "component_name": "retrieve_function",
+    "block_id": "9",
+    "component_number": 9,
+    "section_number": 9,
+    "link_format": "[[component:9:9:retrieve_function|retrieve_function]]"
+  },
+  {
+    "display_text": "retrieve_function_body",
+    "component_name": "retrieve_function_body",
+    "block_id": "9",
+    "component_number": 10,
+    "section_number": 9,
+    "link_format": "[[component:9:10:retrieve_function_body|retrieve_function_body]]"
+  },
+  {
+    "display_text": "retrieve_return_statement",
+    "component_name": "retrieve_return_statement",
+    "block_id": "9",
+    "component_number": 11,
+    "section_number": 9,
+    "link_format": "[[component:9:11:retrieve_return_statement|retrieve_return_statement]]"
+  },
+  {
+    "display_text": "generate_function",
+    "component_name": "generate_function",
+    "block_id": "9",
+    "component_number": 12,
+    "section_number": 9,
+    "link_format": "[[component:9:12:generate_function|generate_function]]"
+  },
+  {
+    "display_text": "generate_chain_setup",
+    "component_name": "generate_chain_setup",
+    "block_id": "9",
+    "component_number": 13,
+    "section_number": 9,
+    "link_format": "[[component:9:13:generate_chain_setup|generate_chain_setup]]"
+  },
+  {
+    "display_text": "generate_function_body",
+    "component_name": "generate_function_body",
+    "block_id": "9",
+    "component_number": 14,
+    "section_number": 9,
+    "link_format": "[[component:9:14:generate_function_body|generate_function_body]]"
+  },
+  {
+    "display_text": "generate_return_statement",
+    "component_name": "generate_return_statement",
+    "block_id": "9",
+    "component_number": 15,
+    "section_number": 9,
+    "link_format": "[[component:9:15:generate_return_statement|generate_return_statement]]"
+  },
+  {
+    "display_text": "graph_builder_initialization",
+    "component_name": "graph_builder_initialization",
+    "block_id": "9",
+    "component_number": 16,
+    "section_number": 9,
+    "link_format": "[[component:9:16:graph_builder_initialization|graph_builder_initialization]]"
+  },
+  {
+    "display_text": "graph_builder_add_sequence",
+    "component_name": "graph_builder_add_sequence",
+    "block_id": "9",
+    "component_number": 17,
+    "section_number": 9,
+    "link_format": "[[component:9:17:graph_builder_add_sequence|graph_builder_add_sequence]]"
+  },
+  {
+    "display_text": "graph_builder_add_edge",
+    "component_name": "graph_builder_add_edge",
+    "block_id": "9",
+    "component_number": 18,
+    "section_number": 9,
+    "link_format": "[[component:9:18:graph_builder_add_edge|graph_builder_add_edge]]"
+  },
+  {
+    "display_text": "rag_graph_compilation",
+    "component_name": "rag_graph_compilation",
+    "block_id": "9",
+    "component_number": 19,
+    "section_number": 9,
+    "link_format": "[[component:9:19:rag_graph_compilation|rag_graph_compilation]]"
+  },
+  {
+    "display_text": "`typing_imports`",
+    "component_name": "typing_imports",
+    "block_id": "12",
+    "component_number": 1,
+    "section_number": 11,
+    "link_format": "[[component:12:1:typing_imports|`typing_imports`]]"
+  },
+  {
+    "display_text": "`langchain_agents_imports`",
+    "component_name": "langchain_agents_imports",
+    "block_id": "12",
+    "component_number": 2,
+    "section_number": 11,
+    "link_format": "[[component:12:2:langchain_agents_imports|`langchain_agents_imports`]]"
+  },
+  {
+    "display_text": "`langchain_output_parsers_imports`",
+    "component_name": "langchain_output_parsers_imports",
+    "block_id": "12",
+    "component_number": 3,
+    "section_number": 11,
+    "link_format": "[[component:12:3:langchain_output_parsers_imports|`langchain_output_parsers_imports`]]"
+  },
+  {
+    "display_text": "`langchain_prompts_imports`",
+    "component_name": "langchain_prompts_imports",
+    "block_id": "12",
+    "component_number": 4,
+    "section_number": 11,
+    "link_format": "[[component:12:4:langchain_prompts_imports|`langchain_prompts_imports`]]"
+  },
+  {
+    "display_text": "`langchain_messages_imports`",
+    "component_name": "langchain_messages_imports",
+    "block_id": "12",
+    "component_number": 5,
+    "section_number": 11,
+    "link_format": "[[component:12:5:langchain_messages_imports|`langchain_messages_imports`]]"
+  },
+  {
+    "display_text": "`langchain_runnables_imports`",
+    "component_name": "langchain_runnables_imports",
+    "block_id": "12",
+    "component_number": 6,
+    "section_number": 11,
+    "link_format": "[[component:12:6:langchain_runnables_imports|`langchain_runnables_imports`]]"
+  },
+  {
+    "display_text": "`langchain_tools_imports`",
+    "component_name": "langchain_tools_imports",
+    "block_id": "12",
+    "component_number": 7,
+    "section_number": 11,
+    "link_format": "[[component:12:7:langchain_tools_imports|`langchain_tools_imports`]]"
+  },
+  {
+    "display_text": "`langchain_openai_imports`",
+    "component_name": "langchain_openai_imports",
+    "block_id": "12",
+    "component_number": 8,
+    "section_number": 11,
+    "link_format": "[[component:12:8:langchain_openai_imports|`langchain_openai_imports`]]"
+  },
+  {
+    "display_text": "`langgraph_imports`",
+    "component_name": "langgraph_imports",
+    "block_id": "12",
+    "component_number": 9,
+    "section_number": 11,
+    "link_format": "[[component:12:9:langgraph_imports|`langgraph_imports`]]"
+  },
+  {
+    "display_text": "`typing_imports`",
+    "component_name": "typing_imports",
+    "block_id": "12",
+    "component_number": 1,
+    "section_number": 11,
+    "link_format": "[[component:12:1:typing_imports|`typing_imports`]]"
+  },
+  {
+    "display_text": "`langchain_agents_imports`",
+    "component_name": "langchain_agents_imports",
+    "block_id": "12",
+    "component_number": 2,
+    "section_number": 11,
+    "link_format": "[[component:12:2:langchain_agents_imports|`langchain_agents_imports`]]"
+  },
+  {
+    "display_text": "`langchain_output_parsers_imports`",
+    "component_name": "langchain_output_parsers_imports",
+    "block_id": "12",
+    "component_number": 3,
+    "section_number": 11,
+    "link_format": "[[component:12:3:langchain_output_parsers_imports|`langchain_output_parsers_imports`]]"
+  },
+  {
+    "display_text": "`agent_node_function`",
+    "component_name": "agent_node_function",
+    "block_id": "13",
+    "component_number": 1,
+    "section_number": 12,
+    "link_format": "[[component:13:1:agent_node_function|`agent_node_function`]]"
+  },
+  {
+    "display_text": "`agent_node_function`",
+    "component_name": "agent_node_function",
+    "block_id": "13",
+    "component_number": 1,
+    "section_number": 12,
+    "link_format": "[[component:13:1:agent_node_function|`agent_node_function`]]"
+  },
+  {
+    "display_text": "agent_invoke_call",
+    "component_name": "agent_invoke_call",
+    "block_id": "13",
+    "component_number": 2,
+    "section_number": 12,
+    "link_format": "[[component:13:2:agent_invoke_call|agent_invoke_call]]"
+  },
+  {
+    "display_text": "return_message_structure",
+    "component_name": "return_message_structure",
+    "block_id": "13",
+    "component_number": 3,
+    "section_number": 12,
+    "link_format": "[[component:13:3:return_message_structure|return_message_structure]]"
+  },
+  {
+    "display_text": "`agent_node_function`",
+    "component_name": "agent_node_function",
+    "block_id": "13",
+    "component_number": 1,
+    "section_number": 12,
+    "link_format": "[[component:13:1:agent_node_function|`agent_node_function`]]"
+  },
+  {
+    "display_text": "`agent_node_function`",
+    "component_name": "agent_node_function",
+    "block_id": "13",
+    "component_number": 1,
+    "section_number": 12,
+    "link_format": "[[component:13:1:agent_node_function|`agent_node_function`]]"
+  },
+  {
+    "display_text": "agent_invoke_call",
+    "component_name": "agent_invoke_call",
+    "block_id": "13",
+    "component_number": 2,
+    "section_number": 12,
+    "link_format": "[[component:13:2:agent_invoke_call|agent_invoke_call]]"
+  },
+  {
+    "display_text": "return_message_structure",
+    "component_name": "return_message_structure",
+    "block_id": "13",
+    "component_number": 3,
+    "section_number": 12,
+    "link_format": "[[component:13:3:return_message_structure|return_message_structure]]"
+  },
+  {
+    "display_text": "create_agent_function",
+    "component_name": "create_agent_function",
+    "block_id": "14",
+    "component_number": 1,
+    "section_number": 13,
+    "link_format": "[[component:14:1:create_agent_function|create_agent_function]]"
+  },
+  {
+    "display_text": "create_agent_function",
+    "component_name": "create_agent_function",
+    "block_id": "14",
+    "component_number": 1,
+    "section_number": 13,
+    "link_format": "[[component:14:1:create_agent_function|create_agent_function]]"
+  },
+  {
+    "display_text": "create_agent_function_docstring",
+    "component_name": "create_agent_function_docstring",
+    "block_id": "14",
+    "component_number": 2,
+    "section_number": 13,
+    "link_format": "[[component:14:2:create_agent_function_docstring|create_agent_function_docstring]]"
+  },
+  {
+    "display_text": "create_agent_function",
+    "component_name": "create_agent_function",
+    "block_id": "14",
+    "component_number": 1,
+    "section_number": 13,
+    "link_format": "[[component:14:1:create_agent_function|create_agent_function]]"
+  },
+  {
+    "display_text": "system_prompt_modification",
+    "component_name": "system_prompt_modification",
+    "block_id": "14",
+    "component_number": 3,
+    "section_number": 13,
+    "link_format": "[[component:14:3:system_prompt_modification|system_prompt_modification]]"
+  },
+  {
+    "display_text": "prompt_creation",
+    "component_name": "prompt_creation",
+    "block_id": "14",
+    "component_number": 4,
+    "section_number": 13,
+    "link_format": "[[component:14:4:prompt_creation|prompt_creation]]"
+  },
+  {
+    "display_text": "agent_creation",
+    "component_name": "agent_creation",
+    "block_id": "14",
+    "component_number": 5,
+    "section_number": 13,
+    "link_format": "[[component:14:5:agent_creation|agent_creation]]"
+  },
+  {
+    "display_text": "create_agent_function",
+    "component_name": "create_agent_function",
+    "block_id": "14",
+    "component_number": 1,
+    "section_number": 13,
+    "link_format": "[[component:14:1:create_agent_function|create_agent_function]]"
+  },
+  {
+    "display_text": "executor_creation",
+    "component_name": "executor_creation",
+    "block_id": "14",
+    "component_number": 6,
+    "section_number": 13,
+    "link_format": "[[component:14:6:executor_creation|executor_creation]]"
+  },
+  {
+    "display_text": "return_executor",
+    "component_name": "return_executor",
+    "block_id": "14",
+    "component_number": 7,
+    "section_number": 13,
+    "link_format": "[[component:14:7:return_executor|return_executor]]"
+  },
+  {
+    "display_text": "MessagesPlaceholder_class",
+    "component_name": "MessagesPlaceholder_class",
+    "block_id": "14",
+    "component_number": 8,
+    "section_number": 13,
+    "link_format": "[[component:14:8:MessagesPlaceholder_class|MessagesPlaceholder_class]]"
+  },
+  {
+    "display_text": "create_agent_function",
+    "component_name": "create_agent_function",
+    "block_id": "14",
+    "component_number": 1,
+    "section_number": 13,
+    "link_format": "[[component:14:1:create_agent_function|create_agent_function]]"
+  },
+  {
+    "display_text": "create_agent_function_docstring",
+    "component_name": "create_agent_function_docstring",
+    "block_id": "14",
+    "component_number": 2,
+    "section_number": 13,
+    "link_format": "[[component:14:2:create_agent_function_docstring|create_agent_function_docstring]]"
+  },
+  {
+    "display_text": "system_prompt_modification",
+    "component_name": "system_prompt_modification",
+    "block_id": "14",
+    "component_number": 3,
+    "section_number": 13,
+    "link_format": "[[component:14:3:system_prompt_modification|system_prompt_modification]]"
+  },
+  {
+    "display_text": "prompt_creation",
+    "component_name": "prompt_creation",
+    "block_id": "14",
+    "component_number": 4,
+    "section_number": 13,
+    "link_format": "[[component:14:4:prompt_creation|prompt_creation]]"
+  },
+  {
+    "display_text": "agent_creation",
+    "component_name": "agent_creation",
+    "block_id": "14",
+    "component_number": 5,
+    "section_number": 13,
+    "link_format": "[[component:14:5:agent_creation|agent_creation]]"
+  },
+  {
+    "display_text": "executor_creation",
+    "component_name": "executor_creation",
+    "block_id": "14",
+    "component_number": 6,
+    "section_number": 13,
+    "link_format": "[[component:14:6:executor_creation|executor_creation]]"
+  },
+  {
+    "display_text": "return_executor",
+    "component_name": "return_executor",
+    "block_id": "14",
+    "component_number": 7,
+    "section_number": 13,
+    "link_format": "[[component:14:7:return_executor|return_executor]]"
+  },
+  {
+    "display_text": "MessagesPlaceholder_class",
+    "component_name": "MessagesPlaceholder_class",
+    "block_id": "14",
+    "component_number": 8,
+    "section_number": 13,
+    "link_format": "[[component:14:8:MessagesPlaceholder_class|MessagesPlaceholder_class]]"
+  },
+  {
+    "display_text": "`create_team_supervisor_function`",
+    "component_name": "create_team_supervisor_function",
+    "block_id": "15",
+    "component_number": 1,
+    "section_number": 14,
+    "link_format": "[[component:15:1:create_team_supervisor_function|`create_team_supervisor_function`]]"
+  },
+  {
+    "display_text": "`create_team_supervisor_docstring`",
+    "component_name": "create_team_supervisor_docstring",
+    "block_id": "15",
+    "component_number": 2,
+    "section_number": 14,
+    "link_format": "[[component:15:2:create_team_supervisor_docstring|`create_team_supervisor_docstring`]]"
+  },
+  {
+    "display_text": "options_variable",
+    "component_name": "options_variable",
+    "block_id": "15",
+    "component_number": 3,
+    "section_number": 14,
+    "link_format": "[[component:15:3:options_variable|options_variable]]"
+  },
+  {
+    "display_text": "function_def_variable",
+    "component_name": "function_def_variable",
+    "block_id": "15",
+    "component_number": 4,
+    "section_number": 14,
+    "link_format": "[[component:15:4:function_def_variable|function_def_variable]]"
+  },
+  {
+    "display_text": "prompt_variable",
+    "component_name": "prompt_variable",
+    "block_id": "15",
+    "component_number": 5,
+    "section_number": 14,
+    "link_format": "[[component:15:5:prompt_variable|prompt_variable]]"
+  },
+  {
+    "display_text": "ChatPromptTemplate_from_messages_call",
+    "component_name": "ChatPromptTemplate_from_messages_call",
+    "block_id": "15",
+    "component_number": 6,
+    "section_number": 14,
+    "link_format": "[[component:15:6:ChatPromptTemplate_from_messages_call|ChatPromptTemplate_from_messages_call]]"
+  },
+  {
+    "display_text": "MessagesPlaceholder_variable",
+    "component_name": "MessagesPlaceholder_variable",
+    "block_id": "15",
+    "component_number": 7,
+    "section_number": 14,
+    "link_format": "[[component:15:7:MessagesPlaceholder_variable|MessagesPlaceholder_variable]]"
+  },
+  {
+    "display_text": "return_expression",
+    "component_name": "return_expression",
+    "block_id": "15",
+    "component_number": 8,
+    "section_number": 14,
+    "link_format": "[[component:15:8:return_expression|return_expression]]"
+  },
+  {
+    "display_text": "llm_bind_functions_call",
+    "component_name": "llm_bind_functions_call",
+    "block_id": "15",
+    "component_number": 9,
+    "section_number": 14,
+    "link_format": "[[component:15:9:llm_bind_functions_call|llm_bind_functions_call]]"
+  },
+  {
+    "display_text": "JsonOutputFunctionsParser_variable",
+    "component_name": "JsonOutputFunctionsParser_variable",
+    "block_id": "15",
+    "component_number": 10,
+    "section_number": 14,
+    "link_format": "[[component:15:10:JsonOutputFunctionsParser_variable|JsonOutputFunctionsParser_variable]]"
+  },
+  {
+    "display_text": "`create_team_supervisor_function`",
+    "component_name": "create_team_supervisor_function",
+    "block_id": "15",
+    "component_number": 1,
+    "section_number": 14,
+    "link_format": "[[component:15:1:create_team_supervisor_function|`create_team_supervisor_function`]]"
+  },
+  {
+    "display_text": "`create_team_supervisor_docstring`",
+    "component_name": "create_team_supervisor_docstring",
+    "block_id": "15",
+    "component_number": 2,
+    "section_number": 14,
+    "link_format": "[[component:15:2:create_team_supervisor_docstring|`create_team_supervisor_docstring`]]"
+  },
+  {
+    "display_text": "TavilySearchResults_import",
+    "component_name": "TavilySearchResults_import",
+    "block_id": "16",
+    "component_number": 1,
+    "section_number": 15,
+    "link_format": "[[component:16:1:TavilySearchResults_import|TavilySearchResults_import]]"
+  },
+  {
+    "display_text": "tavily_tool_initialization",
+    "component_name": "tavily_tool_initialization",
+    "block_id": "16",
+    "component_number": 2,
+    "section_number": 15,
+    "link_format": "[[component:16:2:tavily_tool_initialization|tavily_tool_initialization]]"
+  },
+  {
+    "display_text": "`functools_import`",
+    "component_name": "functools_import",
+    "block_id": "18",
+    "component_number": 1,
+    "section_number": 17,
+    "link_format": "[[component:18:1:functools_import|`functools_import`]]"
+  },
+  {
+    "display_text": "operator_import",
+    "component_name": "operator_import",
+    "block_id": "18",
+    "component_number": 2,
+    "section_number": 17,
+    "link_format": "[[component:18:2:operator_import|operator_import]]"
+  },
+  {
+    "display_text": "AIMessage_import",
+    "component_name": "AIMessage_import",
+    "block_id": "18",
+    "component_number": 3,
+    "section_number": 17,
+    "link_format": "[[component:18:3:AIMessage_import|AIMessage_import]]"
+  },
+  {
+    "display_text": "ChatOpenAI_import",
+    "component_name": "ChatOpenAI_import",
+    "block_id": "18",
+    "component_number": 4,
+    "section_number": 17,
+    "link_format": "[[component:18:4:ChatOpenAI_import|ChatOpenAI_import]]"
+  },
+  {
+    "display_text": "ResearchTeamState_class",
+    "component_name": "ResearchTeamState_class",
+    "block_id": "18",
+    "component_number": 5,
+    "section_number": 17,
+    "link_format": "[[component:18:5:ResearchTeamState_class|ResearchTeamState_class]]"
+  },
+  {
+    "display_text": "messages_field",
+    "component_name": "messages_field",
+    "block_id": "18",
+    "component_number": 6,
+    "section_number": 17,
+    "link_format": "[[component:18:6:messages_field|messages_field]]"
+  },
+  {
+    "display_text": "team_members_field",
+    "component_name": "team_members_field",
+    "block_id": "18",
+    "component_number": 7,
+    "section_number": 17,
+    "link_format": "[[component:18:7:team_members_field|team_members_field]]"
+  },
+  {
+    "display_text": "next_field",
+    "component_name": "next_field",
+    "block_id": "18",
+    "component_number": 8,
+    "section_number": 17,
+    "link_format": "[[component:18:8:next_field|next_field]]"
+  },
+  {
+    "display_text": "search_agent_creation",
+    "component_name": "search_agent_creation",
+    "block_id": "20",
+    "component_number": 1,
+    "section_number": 19,
+    "link_format": "[[component:20:1:search_agent_creation|search_agent_creation]]"
+  },
+  {
+    "display_text": "search_agent_creation",
+    "component_name": "search_agent_creation",
+    "block_id": "20",
+    "component_number": 1,
+    "section_number": 19,
+    "link_format": "[[component:20:1:search_agent_creation|search_agent_creation]]"
+  },
+  {
+    "display_text": "create_agent_function_call",
+    "component_name": "create_agent_function_call",
+    "block_id": "20",
+    "component_number": 2,
+    "section_number": 19,
+    "link_format": "[[component:20:2:create_agent_function_call|create_agent_function_call]]"
+  },
+  {
+    "display_text": "search_node_creation",
+    "component_name": "search_node_creation",
+    "block_id": "20",
+    "component_number": 3,
+    "section_number": 19,
+    "link_format": "[[component:20:3:search_node_creation|search_node_creation]]"
+  },
+  {
+    "display_text": "create_agent_function_call",
+    "component_name": "create_agent_function_call",
+    "block_id": "20",
+    "component_number": 2,
+    "section_number": 19,
+    "link_format": "[[component:20:2:create_agent_function_call|create_agent_function_call]]"
+  },
+  {
+    "display_text": "search_agent_creation",
+    "component_name": "search_agent_creation",
+    "block_id": "20",
+    "component_number": 1,
+    "section_number": 19,
+    "link_format": "[[component:20:1:search_agent_creation|search_agent_creation]]"
+  },
+  {
+    "display_text": "search_node_creation",
+    "component_name": "search_node_creation",
+    "block_id": "20",
+    "component_number": 3,
+    "section_number": 19,
+    "link_format": "[[component:20:3:search_node_creation|search_node_creation]]"
+  },
+  {
+    "display_text": "search_node_creation",
+    "component_name": "search_node_creation",
+    "block_id": "20",
+    "component_number": 3,
+    "section_number": 19,
+    "link_format": "[[component:20:3:search_node_creation|search_node_creation]]"
+  },
+  {
+    "display_text": "search_agent_creation",
+    "component_name": "search_agent_creation",
+    "block_id": "20",
+    "component_number": 1,
+    "section_number": 19,
+    "link_format": "[[component:20:1:search_agent_creation|search_agent_creation]]"
+  },
+  {
+    "display_text": "functools_partial_function_call",
+    "component_name": "functools_partial_function_call",
+    "block_id": "20",
+    "component_number": 4,
+    "section_number": 19,
+    "link_format": "[[component:20:4:functools_partial_function_call|functools_partial_function_call]]"
+  },
+  {
+    "display_text": "functools_partial_function_call",
+    "component_name": "functools_partial_function_call",
+    "block_id": "20",
+    "component_number": 4,
+    "section_number": 19,
+    "link_format": "[[component:20:4:functools_partial_function_call|functools_partial_function_call]]"
+  },
+  {
+    "display_text": "search_node_creation",
+    "component_name": "search_node_creation",
+    "block_id": "20",
+    "component_number": 3,
+    "section_number": 19,
+    "link_format": "[[component:20:3:search_node_creation|search_node_creation]]"
+  },
+  {
+    "display_text": "search_agent_creation",
+    "component_name": "search_agent_creation",
+    "block_id": "20",
+    "component_number": 1,
+    "section_number": 19,
+    "link_format": "[[component:20:1:search_agent_creation|search_agent_creation]]"
+  },
+  {
+    "display_text": "create_agent_function_call",
+    "component_name": "create_agent_function_call",
+    "block_id": "20",
+    "component_number": 2,
+    "section_number": 19,
+    "link_format": "[[component:20:2:create_agent_function_call|create_agent_function_call]]"
+  },
+  {
+    "display_text": "search_node_creation",
+    "component_name": "search_node_creation",
+    "block_id": "20",
+    "component_number": 3,
+    "section_number": 19,
+    "link_format": "[[component:20:3:search_node_creation|search_node_creation]]"
+  },
+  {
+    "display_text": "functools_partial_function_call",
+    "component_name": "functools_partial_function_call",
+    "block_id": "20",
+    "component_number": 4,
+    "section_number": 19,
+    "link_format": "[[component:20:4:functools_partial_function_call|functools_partial_function_call]]"
+  },
+  {
+    "display_text": "`research_agent_creation`",
+    "component_name": "research_agent_creation",
+    "block_id": "21",
+    "component_number": 1,
+    "section_number": 20,
+    "link_format": "[[component:21:1:research_agent_creation|`research_agent_creation`]]"
+  },
+  {
+    "display_text": "`research_agent_creation`",
+    "component_name": "research_agent_creation",
+    "block_id": "21",
+    "component_number": 1,
+    "section_number": 20,
+    "link_format": "[[component:21:1:research_agent_creation|`research_agent_creation`]]"
+  },
+  {
+    "display_text": "`research_agent_parameters`",
+    "component_name": "research_agent_parameters",
+    "block_id": "21",
+    "component_number": 2,
+    "section_number": 20,
+    "link_format": "[[component:21:2:research_agent_parameters|`research_agent_parameters`]]"
+  },
+  {
+    "display_text": "`research_agent_role_description`",
+    "component_name": "research_agent_role_description",
+    "block_id": "21",
+    "component_number": 3,
+    "section_number": 20,
+    "link_format": "[[component:21:3:research_agent_role_description|`research_agent_role_description`]]"
+  },
+  {
+    "display_text": "`research_agent_parameters`",
+    "component_name": "research_agent_parameters",
+    "block_id": "21",
+    "component_number": 2,
+    "section_number": 20,
+    "link_format": "[[component:21:2:research_agent_parameters|`research_agent_parameters`]]"
+  },
+  {
+    "display_text": "`research_agent_parameters`",
+    "component_name": "research_agent_parameters",
+    "block_id": "21",
+    "component_number": 2,
+    "section_number": 20,
+    "link_format": "[[component:21:2:research_agent_parameters|`research_agent_parameters`]]"
+  },
+  {
+    "display_text": "`research_agent_creation`",
+    "component_name": "research_agent_creation",
+    "block_id": "21",
+    "component_number": 1,
+    "section_number": 20,
+    "link_format": "[[component:21:1:research_agent_creation|`research_agent_creation`]]"
+  },
+  {
+    "display_text": "`research_agent_role_description`",
+    "component_name": "research_agent_role_description",
+    "block_id": "21",
+    "component_number": 3,
+    "section_number": 20,
+    "link_format": "[[component:21:3:research_agent_role_description|`research_agent_role_description`]]"
+  },
+  {
+    "display_text": "`research_agent_role_description`",
+    "component_name": "research_agent_role_description",
+    "block_id": "21",
+    "component_number": 3,
+    "section_number": 20,
+    "link_format": "[[component:21:3:research_agent_role_description|`research_agent_role_description`]]"
+  },
+  {
+    "display_text": "`research_node_creation`",
+    "component_name": "research_node_creation",
+    "block_id": "21",
+    "component_number": 4,
+    "section_number": 20,
+    "link_format": "[[component:21:4:research_node_creation|`research_node_creation`]]"
+  },
+  {
+    "display_text": "`research_node_creation`",
+    "component_name": "research_node_creation",
+    "block_id": "21",
+    "component_number": 4,
+    "section_number": 20,
+    "link_format": "[[component:21:4:research_node_creation|`research_node_creation`]]"
+  },
+  {
+    "display_text": "`agent_node_function`",
+    "component_name": "agent_node_function",
+    "block_id": "21",
+    "component_number": 5,
+    "section_number": 20,
+    "link_format": "[[component:21:5:agent_node_function|`agent_node_function`]]"
+  },
+  {
+    "display_text": "`research_node_creation`",
+    "component_name": "research_node_creation",
+    "block_id": "21",
+    "component_number": 4,
+    "section_number": 20,
+    "link_format": "[[component:21:4:research_node_creation|`research_node_creation`]]"
+  },
+  {
+    "display_text": "`research_agent_creation`",
+    "component_name": "research_agent_creation",
+    "block_id": "21",
+    "component_number": 1,
+    "section_number": 20,
+    "link_format": "[[component:21:1:research_agent_creation|`research_agent_creation`]]"
+  },
+  {
+    "display_text": "`research_agent_parameters`",
+    "component_name": "research_agent_parameters",
+    "block_id": "21",
+    "component_number": 2,
+    "section_number": 20,
+    "link_format": "[[component:21:2:research_agent_parameters|`research_agent_parameters`]]"
+  },
+  {
+    "display_text": "`research_agent_role_description`",
+    "component_name": "research_agent_role_description",
+    "block_id": "21",
+    "component_number": 3,
+    "section_number": 20,
+    "link_format": "[[component:21:3:research_agent_role_description|`research_agent_role_description`]]"
+  },
+  {
+    "display_text": "`research_node_creation`",
+    "component_name": "research_node_creation",
+    "block_id": "21",
+    "component_number": 4,
+    "section_number": 20,
+    "link_format": "[[component:21:4:research_node_creation|`research_node_creation`]]"
+  },
+  {
+    "display_text": "`agent_node_function`",
+    "component_name": "agent_node_function",
+    "block_id": "21",
+    "component_number": 5,
+    "section_number": 20,
+    "link_format": "[[component:21:5:agent_node_function|`agent_node_function`]]"
+  },
+  {
+    "display_text": "`authoring_graph_variable`",
+    "component_name": "authoring_graph_variable",
+    "block_id": "23",
+    "component_number": 1,
+    "section_number": 22,
+    "link_format": "[[component:23:1:authoring_graph_variable|`authoring_graph_variable`]]"
+  },
+  {
+    "display_text": "`add_node_doc_writer`",
+    "component_name": "add_node_doc_writer",
+    "block_id": "23",
+    "component_number": 2,
+    "section_number": 22,
+    "link_format": "[[component:23:2:add_node_doc_writer|`add_node_doc_writer`]]"
+  },
+  {
+    "display_text": "`add_node_note_taker`",
+    "component_name": "add_node_note_taker",
+    "block_id": "23",
+    "component_number": 3,
+    "section_number": 22,
+    "link_format": "[[component:23:3:add_node_note_taker|`add_node_note_taker`]]"
+  },
+  {
+    "display_text": "`add_node_copy_editor`",
+    "component_name": "add_node_copy_editor",
+    "block_id": "23",
+    "component_number": 4,
+    "section_number": 22,
+    "link_format": "[[component:23:4:add_node_copy_editor|`add_node_copy_editor`]]"
+  },
+  {
+    "display_text": "`add_node_empathy_editor`",
+    "component_name": "add_node_empathy_editor",
+    "block_id": "23",
+    "component_number": 5,
+    "section_number": 22,
+    "link_format": "[[component:23:5:add_node_empathy_editor|`add_node_empathy_editor`]]"
+  },
+  {
+    "display_text": "`add_node_supervisor`",
+    "component_name": "add_node_supervisor",
+    "block_id": "23",
+    "component_number": 6,
+    "section_number": 22,
+    "link_format": "[[component:23:6:add_node_supervisor|`add_node_supervisor`]]"
+  },
+  {
+    "display_text": "`add_edge_doc_writer_supervisor`",
+    "component_name": "add_edge_doc_writer_supervisor",
+    "block_id": "23",
+    "component_number": 7,
+    "section_number": 22,
+    "link_format": "[[component:23:7:add_edge_doc_writer_supervisor|`add_edge_doc_writer_supervisor`]]"
+  },
+  {
+    "display_text": "`add_edge_note_taker_supervisor`",
+    "component_name": "add_edge_note_taker_supervisor",
+    "block_id": "23",
+    "component_number": 8,
+    "section_number": 22,
+    "link_format": "[[component:23:8:add_edge_note_taker_supervisor|`add_edge_note_taker_supervisor`]]"
+  },
+  {
+    "display_text": "`add_edge_copy_editor_supervisor`",
+    "component_name": "add_edge_copy_editor_supervisor",
+    "block_id": "23",
+    "component_number": 9,
+    "section_number": 22,
+    "link_format": "[[component:23:9:add_edge_copy_editor_supervisor|`add_edge_copy_editor_supervisor`]]"
+  },
+  {
+    "display_text": "`add_edge_empathy_editor_supervisor`",
+    "component_name": "add_edge_empathy_editor_supervisor",
+    "block_id": "23",
+    "component_number": 10,
+    "section_number": 22,
+    "link_format": "[[component:23:10:add_edge_empathy_editor_supervisor|`add_edge_empathy_editor_supervisor`]]"
+  },
+  {
+    "display_text": "`add_conditional_edges_supervisor`",
+    "component_name": "add_conditional_edges_supervisor",
+    "block_id": "23",
+    "component_number": 11,
+    "section_number": 22,
+    "link_format": "[[component:23:11:add_conditional_edges_supervisor|`add_conditional_edges_supervisor`]]"
+  },
+  {
+    "display_text": "`set_entry_point_supervisor`",
+    "component_name": "set_entry_point_supervisor",
+    "block_id": "23",
+    "component_number": 12,
+    "section_number": 22,
+    "link_format": "[[component:23:12:set_entry_point_supervisor|`set_entry_point_supervisor`]]"
+  },
+  {
+    "display_text": "`compile_authoring_graph`",
+    "component_name": "compile_authoring_graph",
+    "block_id": "23",
+    "component_number": 13,
+    "section_number": 22,
+    "link_format": "[[component:23:13:compile_authoring_graph|`compile_authoring_graph`]]"
+  },
+  {
+    "display_text": "`enter_chain_function`",
+    "component_name": "enter_chain_function",
+    "block_id": "25",
+    "component_number": 1,
+    "section_number": 24,
+    "link_format": "[[component:25:1:enter_chain_function|`enter_chain_function`]]"
+  },
+  {
+    "display_text": "results_variable",
+    "component_name": "results_variable",
+    "block_id": "25",
+    "component_number": 2,
+    "section_number": 24,
+    "link_format": "[[component:25:2:results_variable|results_variable]]"
+  },
+  {
+    "display_text": "results_variable",
+    "component_name": "results_variable",
+    "block_id": "25",
+    "component_number": 2,
+    "section_number": 24,
+    "link_format": "[[component:25:2:results_variable|results_variable]]"
+  },
+  {
+    "display_text": "messages_assignment",
+    "component_name": "messages_assignment",
+    "block_id": "25",
+    "component_number": 3,
+    "section_number": 24,
+    "link_format": "[[component:25:3:messages_assignment|messages_assignment]]"
+  },
+  {
+    "display_text": "team_members_assignment",
+    "component_name": "team_members_assignment",
+    "block_id": "25",
+    "component_number": 4,
+    "section_number": 24,
+    "link_format": "[[component:25:4:team_members_assignment|team_members_assignment]]"
+  },
+  {
+    "display_text": "return_statement",
+    "component_name": "return_statement",
+    "block_id": "25",
+    "component_number": 5,
+    "section_number": 24,
+    "link_format": "[[component:25:5:return_statement|return_statement]]"
+  },
+  {
+    "display_text": "authoring_chain_variable",
+    "component_name": "authoring_chain_variable",
+    "block_id": "25",
+    "component_number": 6,
+    "section_number": 24,
+    "link_format": "[[component:25:6:authoring_chain_variable|authoring_chain_variable]]"
+  },
+  {
+    "display_text": "partial_function_call",
+    "component_name": "partial_function_call",
+    "block_id": "25",
+    "component_number": 7,
+    "section_number": 24,
+    "link_format": "[[component:25:7:partial_function_call|partial_function_call]]"
+  },
+  {
+    "display_text": "compile_method_call",
+    "component_name": "compile_method_call",
+    "block_id": "25",
+    "component_number": 8,
+    "section_number": 24,
+    "link_format": "[[component:25:8:compile_method_call|compile_method_call]]"
+  },
+  {
+    "display_text": "`enter_chain_function`",
+    "component_name": "enter_chain_function",
+    "block_id": "25",
+    "component_number": 1,
+    "section_number": 24,
+    "link_format": "[[component:25:1:enter_chain_function|`enter_chain_function`]]"
+  },
+  {
+    "display_text": "results_variable",
+    "component_name": "results_variable",
+    "block_id": "25",
+    "component_number": 2,
+    "section_number": 24,
+    "link_format": "[[component:25:2:results_variable|results_variable]]"
+  },
+  {
+    "display_text": "messages_assignment",
+    "component_name": "messages_assignment",
+    "block_id": "25",
+    "component_number": 3,
+    "section_number": 24,
+    "link_format": "[[component:25:3:messages_assignment|messages_assignment]]"
+  },
+  {
+    "display_text": "team_members_assignment",
+    "component_name": "team_members_assignment",
+    "block_id": "25",
+    "component_number": 4,
+    "section_number": 24,
+    "link_format": "[[component:25:4:team_members_assignment|team_members_assignment]]"
+  },
+  {
+    "display_text": "return_statement",
+    "component_name": "return_statement",
+    "block_id": "25",
+    "component_number": 5,
+    "section_number": 24,
+    "link_format": "[[component:25:5:return_statement|return_statement]]"
+  },
+  {
+    "display_text": "authoring_chain_variable",
+    "component_name": "authoring_chain_variable",
+    "block_id": "25",
+    "component_number": 6,
+    "section_number": 24,
+    "link_format": "[[component:25:6:authoring_chain_variable|authoring_chain_variable]]"
+  },
+  {
+    "display_text": "partial_function_call",
+    "component_name": "partial_function_call",
+    "block_id": "25",
+    "component_number": 7,
+    "section_number": 24,
+    "link_format": "[[component:25:7:partial_function_call|partial_function_call]]"
+  },
+  {
+    "display_text": "compile_method_call",
+    "component_name": "compile_method_call",
+    "block_id": "25",
+    "component_number": 8,
+    "section_number": 24,
+    "link_format": "[[component:25:8:compile_method_call|compile_method_call]]"
+  },
+  {
+    "display_text": "customer_assistance_request",
+    "component_name": "customer_assistance_request",
+    "block_id": "26",
+    "component_number": 2,
+    "section_number": 25,
+    "link_format": "[[component:26:2:customer_assistance_request|customer_assistance_request]]"
+  },
+  {
+    "display_text": "recursion_limit_dict",
+    "component_name": "recursion_limit_dict",
+    "block_id": "26",
+    "component_number": 3,
+    "section_number": 25,
+    "link_format": "[[component:26:3:recursion_limit_dict|recursion_limit_dict]]"
+  },
+  {
+    "display_text": "authoring_chain_stream_loop",
+    "component_name": "authoring_chain_stream_loop",
+    "block_id": "26",
+    "component_number": 1,
+    "section_number": 25,
+    "link_format": "[[component:26:1:authoring_chain_stream_loop|authoring_chain_stream_loop]]"
+  },
+  {
+    "display_text": "customer_assistance_request",
+    "component_name": "customer_assistance_request",
+    "block_id": "26",
+    "component_number": 2,
+    "section_number": 25,
+    "link_format": "[[component:26:2:customer_assistance_request|customer_assistance_request]]"
+  },
+  {
+    "display_text": "end_check",
+    "component_name": "end_check",
+    "block_id": "26",
+    "component_number": 6,
+    "section_number": 25,
+    "link_format": "[[component:26:6:end_check|end_check]]"
+  },
+  {
+    "display_text": "print_response",
+    "component_name": "print_response",
+    "block_id": "26",
+    "component_number": 4,
+    "section_number": 25,
+    "link_format": "[[component:26:4:print_response|print_response]]"
+  },
+  {
+    "display_text": "authoring_chain_stream_loop",
+    "component_name": "authoring_chain_stream_loop",
+    "block_id": "26",
+    "component_number": 1,
+    "section_number": 25,
+    "link_format": "[[component:26:1:authoring_chain_stream_loop|authoring_chain_stream_loop]]"
+  },
+  {
+    "display_text": "end_check",
+    "component_name": "end_check",
+    "block_id": "26",
+    "component_number": 6,
+    "section_number": 25,
+    "link_format": "[[component:26:6:end_check|end_check]]"
+  },
+  {
+    "display_text": "print_separator",
+    "component_name": "print_separator",
+    "block_id": "26",
+    "component_number": 5,
+    "section_number": 25,
+    "link_format": "[[component:26:5:print_separator|print_separator]]"
+  },
+  {
+    "display_text": "end_check",
+    "component_name": "end_check",
+    "block_id": "26",
+    "component_number": 6,
+    "section_number": 25,
+    "link_format": "[[component:26:6:end_check|end_check]]"
+  },
+  {
+    "display_text": "end_check",
+    "component_name": "end_check",
+    "block_id": "26",
+    "component_number": 6,
+    "section_number": 25,
+    "link_format": "[[component:26:6:end_check|end_check]]"
+  },
+  {
+    "display_text": "end_check",
+    "component_name": "end_check",
+    "block_id": "26",
+    "component_number": 6,
+    "section_number": 25,
+    "link_format": "[[component:26:6:end_check|end_check]]"
+  },
+  {
+    "display_text": "customer_assistance_request",
+    "component_name": "customer_assistance_request",
+    "block_id": "26",
+    "component_number": 2,
+    "section_number": 25,
+    "link_format": "[[component:26:2:customer_assistance_request|customer_assistance_request]]"
+  },
+  {
+    "display_text": "end_check",
+    "component_name": "end_check",
+    "block_id": "26",
+    "component_number": 6,
+    "section_number": 25,
+    "link_format": "[[component:26:6:end_check|end_check]]"
+  }
+]

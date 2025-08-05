@@ -1,0 +1,50 @@
+[
+  {
+    "component_id": "17:1",
+    "name": "import_typing_and_langchain_tools",
+    "number": 1,
+    "type": "import",
+    "library": "local",
+    "description": "Imports necessary types from the typing module and the tool decorator from langchain_core.tools.",
+    "enhanced_description": null,
+    "full_code": "from typing import Annotated, List, Tuple, Union\nfrom langchain_core.tools import tool",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "17:2",
+    "name": "retrieve_information_function",
+    "number": 2,
+    "type": "function",
+    "library": "local",
+    "description": "Defines a function that retrieves information about student loan policies using the RAG system.",
+    "enhanced_description": null,
+    "full_code": "@tool\ndef retrieve_information(\n    query: Annotated[str, \"query to ask the retrieve information tool\"]\n    ):",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "17:3",
+    "name": "retrieve_information_docstring",
+    "number": 3,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Provides a docstring for the retrieve_information function, explaining its purpose.",
+    "enhanced_description": null,
+    "full_code": "  \"\"\"Use Retrieval Augmented Generation to retrieve information about student loan policies\"\"\"",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "17:4",
+    "name": "rag_graph_invocation",
+    "number": 4,
+    "type": "expression",
+    "library": "local",
+    "description": "Invokes the rag_graph with the provided query to retrieve relevant information.",
+    "enhanced_description": null,
+    "full_code": "  return rag_graph.invoke({\"question\" : query})",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

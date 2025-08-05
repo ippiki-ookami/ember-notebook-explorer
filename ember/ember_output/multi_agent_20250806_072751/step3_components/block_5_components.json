@@ -1,0 +1,26 @@
+[
+  {
+    "component_id": "5:1",
+    "name": "Qdrant_import",
+    "number": 1,
+    "type": "import",
+    "library": "langchain_community",
+    "description": "Imports the Qdrant class from the langchain_community.vectorstores module, which is used to create a vector store for document retrieval.",
+    "enhanced_description": null,
+    "full_code": "from langchain_community.vectorstores import Qdrant",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "5:2",
+    "name": "qdrant_vectorstore_creation",
+    "number": 2,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Creates an instance of the Qdrant vector store using the from_documents method, which takes document chunks, an embedding model, and a location for storage.",
+    "enhanced_description": null,
+    "full_code": "qdrant_vectorstore = Qdrant.from_documents(\n    documents=loan_knowledge_chunks,\n    embedding=embedding_model,\n    location=':memory:'\n)",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

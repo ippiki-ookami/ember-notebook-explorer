@@ -1,0 +1,146 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Import Libraries",
+      "type": "block",
+      "blockType": "imports",
+      "group": 1,
+      "size": 35,
+      "color": "#cc3d3d",
+      "description": "Block 1: Import Libraries (3 components)",
+      "componentCount": 3,
+      "isComplete": true,
+      "hasDependencies": false,
+      "dependencyCount": 0,
+      "fx": null,
+      "fy": null
+    },
+    {
+      "id": "2",
+      "name": "Text Cleaning and Tokenization Functions",
+      "type": "block",
+      "blockType": "utilities",
+      "group": 2,
+      "size": 50,
+      "color": "#afcc3d",
+      "description": "Block 2: Text Cleaning and Tokenization Functions (6 components)",
+      "componentCount": 6,
+      "isComplete": true,
+      "hasDependencies": true,
+      "dependencyCount": 1,
+      "fx": null,
+      "fy": null
+    },
+    {
+      "id": "3",
+      "name": "VectorStore Class Definition",
+      "type": "block",
+      "blockType": "classes",
+      "group": 3,
+      "size": 65,
+      "color": "#3dcc76",
+      "description": "Block 3: VectorStore Class Definition (9 components)",
+      "componentCount": 9,
+      "isComplete": true,
+      "hasDependencies": true,
+      "dependencyCount": 1,
+      "fx": null,
+      "fy": null
+    },
+    {
+      "id": "4",
+      "name": "Build RAG Graph Function",
+      "type": "block",
+      "blockType": "utilities",
+      "group": 4,
+      "size": 70,
+      "color": "#3d76cc",
+      "description": "Block 4: Build RAG Graph Function (10 components)",
+      "componentCount": 10,
+      "isComplete": true,
+      "hasDependencies": true,
+      "dependencyCount": 2,
+      "fx": null,
+      "fy": null
+    },
+    {
+      "id": "5",
+      "name": "Configuration Variables",
+      "type": "block",
+      "blockType": "mixed",
+      "group": 5,
+      "size": 30,
+      "color": "#af3dcc",
+      "description": "Block 5: Configuration Variables (2 components)",
+      "componentCount": 2,
+      "isComplete": true,
+      "hasDependencies": false,
+      "dependencyCount": 0,
+      "fx": null,
+      "fy": null
+    }
+  ],
+  "links": [
+    {
+      "source": "1",
+      "target": "2",
+      "type": "uses",
+      "weight": 1,
+      "color": "#cc3d3d",
+      "strokeWidth": 2
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "uses",
+      "weight": 1,
+      "color": "#cc3d3d",
+      "strokeWidth": 2
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "uses",
+      "weight": 1,
+      "color": "#cc3d3d",
+      "strokeWidth": 2
+    },
+    {
+      "source": "1",
+      "target": "5",
+      "type": "uses",
+      "weight": 1,
+      "color": "#cc3d3d",
+      "strokeWidth": 2
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "type": "uses",
+      "weight": 1,
+      "color": "#afcc3d",
+      "strokeWidth": 2
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "type": "uses",
+      "weight": 1,
+      "color": "#3dcc76",
+      "strokeWidth": 2
+    }
+  ],
+  "metadata": {
+    "type": "block_level",
+    "total_blocks": 5,
+    "total_edges": 6,
+    "execution_order": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  }
+}

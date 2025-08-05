@@ -1,0 +1,5155 @@
+{
+  "validation_results": {
+    "coverage_analysis": {
+      "total_components": 189,
+      "linked_components": 132,
+      "coverage_percentage": 69.84126984126983,
+      "missing_count": 57
+    },
+    "link_quality": {
+      "total_links": 507,
+      "unique_components": 132,
+      "avg_display_text_length": 26.22879684418146,
+      "descriptive_links": 233,
+      "generic_links": 274
+    },
+    "missing_components": {
+      "11": [
+        {
+          "name": "sys_import",
+          "type": "import",
+          "block_id": "11",
+          "component_number": 1,
+          "description": "Imports the sys module for system-specific parameters and functions."
+        },
+        {
+          "name": "pip_install_command",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 2,
+          "description": "Executes a command to upgrade the arxiv package using pip."
+        },
+        {
+          "name": "arxiv_import",
+          "type": "import",
+          "block_id": "11",
+          "component_number": 3,
+          "description": "Imports the arxiv module for accessing ArXiv papers."
+        },
+        {
+          "name": "tempfile_import",
+          "type": "import",
+          "block_id": "11",
+          "component_number": 4,
+          "description": "Imports the tempfile module for creating temporary files and directories."
+        },
+        {
+          "name": "os_import",
+          "type": "import",
+          "block_id": "11",
+          "component_number": 5,
+          "description": "Imports the os module for interacting with the operating system."
+        },
+        {
+          "name": "PyMuPDFLoader_import",
+          "type": "import",
+          "block_id": "11",
+          "component_number": 6,
+          "description": "Imports the PyMuPDFLoader class for loading PDF documents."
+        },
+        {
+          "name": "List_Optional_imports",
+          "type": "import",
+          "block_id": "11",
+          "component_number": 7,
+          "description": "Imports List and Optional types for type hinting."
+        },
+        {
+          "name": "fetch_arxiv_papers_function",
+          "type": "function",
+          "block_id": "11",
+          "component_number": 8,
+          "description": "Fetches papers from ArXiv based on a search query and returns processed document chunks."
+        },
+        {
+          "name": "fetch_arxiv_papers_docstring",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 9,
+          "description": "Docstring explaining the purpose and parameters of the fetch_arxiv_papers function."
+        },
+        {
+          "name": "arxiv_client_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 10,
+          "description": "Creates an instance of the ArXiv client for fetching papers."
+        },
+        {
+          "name": "arxiv_search_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 11,
+          "description": "Creates a search object for querying ArXiv papers."
+        },
+        {
+          "name": "arxiv_search_query",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 12,
+          "description": "Sets the query parameter for the ArXiv search."
+        },
+        {
+          "name": "arxiv_search_max_results",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 13,
+          "description": "Sets the maximum number of results to fetch from the ArXiv search."
+        },
+        {
+          "name": "arxiv_search_sort_by",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 14,
+          "description": "Sets the sorting criterion for the ArXiv search results."
+        },
+        {
+          "name": "all_chunks_variable",
+          "type": "variable",
+          "block_id": "11",
+          "component_number": 15,
+          "description": "Initializes an empty list to store document chunks fetched from ArXiv."
+        },
+        {
+          "name": "temp_dir_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 16,
+          "description": "Creates a temporary directory for downloading PDF files."
+        },
+        {
+          "name": "paper_processing_loop",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 17,
+          "description": "Iterates over the results of the ArXiv search."
+        },
+        {
+          "name": "try_block_start",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 18,
+          "description": "Begins a try block to handle potential errors during paper processing."
+        },
+        {
+          "name": "pdf_download",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 19,
+          "description": "Downloads the PDF of the current paper to the temporary directory."
+        },
+        {
+          "name": "pdf_loader_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 20,
+          "description": "Creates a loader instance for processing the downloaded PDF."
+        },
+        {
+          "name": "documents_loading",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 21,
+          "description": "Loads the content of the PDF into document objects."
+        },
+        {
+          "name": "metadata_update_loop",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 22,
+          "description": "Iterates over the loaded documents to update their metadata."
+        },
+        {
+          "name": "metadata_update",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 23,
+          "description": "Updates the metadata of each document with paper details."
+        },
+        {
+          "name": "title_metadata",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 24,
+          "description": "Adds the title of the paper to the document's metadata."
+        },
+        {
+          "name": "authors_metadata",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 25,
+          "description": "Adds the authors of the paper to the document's metadata."
+        },
+        {
+          "name": "published_metadata",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 26,
+          "description": "Adds the publication date of the paper to the document's metadata."
+        },
+        {
+          "name": "arxiv_id_metadata",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 27,
+          "description": "Adds the ArXiv ID of the paper to the document's metadata."
+        },
+        {
+          "name": "summary_metadata",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 28,
+          "description": "Adds a summary of the paper to the document's metadata, truncating if necessary."
+        },
+        {
+          "name": "chunks_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 29,
+          "description": "Splits the loaded documents into smaller chunks for processing."
+        },
+        {
+          "name": "all_chunks_update",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 30,
+          "description": "Adds the newly created chunks to the all_chunks list."
+        },
+        {
+          "name": "error_handling",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 31,
+          "description": "Handles exceptions that occur during the processing of papers."
+        },
+        {
+          "name": "error_logging",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 32,
+          "description": "Logs an error message if a paper fails to process."
+        },
+        {
+          "name": "return_all_chunks",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 33,
+          "description": "Returns the list of all processed document chunks."
+        },
+        {
+          "name": "create_dynamic_rag_system_function",
+          "type": "function",
+          "block_id": "11",
+          "component_number": 34,
+          "description": "Creates a RAG system with dynamically fetched ArXiv papers."
+        },
+        {
+          "name": "create_dynamic_rag_system_docstring",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 35,
+          "description": "Docstring explaining the purpose and parameters of the create_dynamic_rag_system function."
+        },
+        {
+          "name": "fetch_papers_print",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 36,
+          "description": "Prints a message indicating the start of the paper fetching process."
+        },
+        {
+          "name": "knowledge_chunks_variable",
+          "type": "variable",
+          "block_id": "11",
+          "component_number": 37,
+          "description": "Stores the document chunks fetched from ArXiv based on the query."
+        },
+        {
+          "name": "fetched_chunks_print",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 38,
+          "description": "Prints the number of document chunks fetched from ArXiv."
+        },
+        {
+          "name": "vectorstore_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 39,
+          "description": "Creates a vector store from the fetched document chunks."
+        },
+        {
+          "name": "vectorstore_documents",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 40,
+          "description": "Sets the documents parameter for the vector store creation."
+        },
+        {
+          "name": "vectorstore_embedding",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 41,
+          "description": "Sets the embedding model parameter for the vector store creation."
+        },
+        {
+          "name": "vectorstore_location",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 42,
+          "description": "Sets the location parameter for the vector store creation."
+        },
+        {
+          "name": "retriever_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 43,
+          "description": "Creates a retriever from the vector store."
+        },
+        {
+          "name": "dynamic_retrieve_function",
+          "type": "function",
+          "block_id": "11",
+          "component_number": 44,
+          "description": "Defines a function to retrieve documents based on the current state."
+        },
+        {
+          "name": "dynamic_retrieve_docstring",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 45,
+          "description": "Docstring explaining the purpose of the dynamic_retrieve function."
+        },
+        {
+          "name": "retrieved_docs_variable",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 46,
+          "description": "Retrieves documents based on the question in the current state."
+        },
+        {
+          "name": "dynamic_retrieve_return",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 47,
+          "description": "Returns the retrieved documents as part of the state."
+        },
+        {
+          "name": "dynamic_generate_function",
+          "type": "function",
+          "block_id": "11",
+          "component_number": 48,
+          "description": "Defines a function to generate responses based on the current state."
+        },
+        {
+          "name": "dynamic_generate_docstring",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 49,
+          "description": "Docstring explaining the purpose of the dynamic_generate function."
+        },
+        {
+          "name": "generator_chain_variable",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 50,
+          "description": "Creates a chain for generating responses using the chat prompt and model."
+        },
+        {
+          "name": "response_variable",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 51,
+          "description": "Generates a response based on the current question and context."
+        },
+        {
+          "name": "dynamic_generate_return",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 52,
+          "description": "Returns the generated response as part of the state."
+        },
+        {
+          "name": "graph_builder_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 53,
+          "description": "Creates a StateGraph instance for building the RAG graph."
+        },
+        {
+          "name": "graph_builder_sequence",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 54,
+          "description": "Adds the dynamic retrieve and generate functions to the graph builder's sequence."
+        },
+        {
+          "name": "graph_builder_edge",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 55,
+          "description": "Adds an edge to the graph builder connecting the start to the dynamic retrieve function."
+        },
+        {
+          "name": "dynamic_rag_graph_variable",
+          "type": "variable",
+          "block_id": "11",
+          "component_number": 56,
+          "description": "Compiles the graph builder into a dynamic RAG graph."
+        },
+        {
+          "name": "return_rag_system",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 57,
+          "description": "Returns the vector store, retriever, and dynamic RAG graph."
+        }
+      ]
+    },
+    "broken_links": [],
+    "duplicate_links": [
+      {
+        "component_key": "1:1",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "1",
+            "component_number": 1,
+            "component_name": "os_import",
+            "display_text": "[[component:1:1:os_import|os_import",
+            "full_link": "[[component:1:1:os_import|[[component:1:1:os_import|os_import]]"
+          },
+          {
+            "block_id": "1",
+            "component_number": 1,
+            "component_name": "os_import",
+            "display_text": "[[component:1:1:os_import|OS_IMPORT",
+            "full_link": "[[component:1:1:os_import|[[component:1:1:os_import|OS_IMPORT]]"
+          }
+        ]
+      },
+      {
+        "component_key": "1:2",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "1",
+            "component_number": 2,
+            "component_name": "getpass_import",
+            "display_text": "getpass_import",
+            "full_link": "[[component:1:2:getpass_import|getpass_import]]"
+          },
+          {
+            "block_id": "1",
+            "component_number": 2,
+            "component_name": "getpass_import",
+            "display_text": "getpass_import",
+            "full_link": "[[component:1:2:getpass_import|getpass_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "1:3",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "1",
+            "component_number": 3,
+            "component_name": "set_openai_api_key",
+            "display_text": "set_openai_api_key",
+            "full_link": "[[component:1:3:set_openai_api_key|set_openai_api_key]]"
+          },
+          {
+            "block_id": "1",
+            "component_number": 3,
+            "component_name": "set_openai_api_key",
+            "display_text": "set_openai_api_key",
+            "full_link": "[[component:1:3:set_openai_api_key|set_openai_api_key]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:12",
+        "count": 22,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "GENERATE_FUNCTION",
+            "full_link": "[[component:9:12:generate_function|GENERATE_FUNCTION]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate_function",
+            "full_link": "[[component:9:12:generate_function|generate_function]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 12,
+            "component_name": "generate_function",
+            "display_text": "generate",
+            "full_link": "[[component:9:12:generate_function|generate]]"
+          }
+        ]
+      },
+      {
+        "component_key": "1:4",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "1",
+            "component_number": 4,
+            "component_name": "set_tavily_api_key",
+            "display_text": "set_tavily_api_key",
+            "full_link": "[[component:1:4:set_tavily_api_key|set_tavily_api_key]]"
+          },
+          {
+            "block_id": "1",
+            "component_number": 4,
+            "component_name": "set_tavily_api_key",
+            "display_text": "set_tavily_api_key",
+            "full_link": "[[component:1:4:set_tavily_api_key|set_tavily_api_key]]"
+          }
+        ]
+      },
+      {
+        "component_key": "2:1",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "2",
+            "component_number": 1,
+            "component_name": "DirectoryLoader_import",
+            "display_text": "directoryloader_import",
+            "full_link": "[[component:2:1:DirectoryLoader_import|directoryloader_import]]"
+          },
+          {
+            "block_id": "2",
+            "component_number": 1,
+            "component_name": "DirectoryLoader_import",
+            "display_text": "DirectoryLoader_import",
+            "full_link": "[[component:2:1:DirectoryLoader_import|DirectoryLoader_import]]"
+          },
+          {
+            "block_id": "2",
+            "component_number": 1,
+            "component_name": "DirectoryLoader_import",
+            "display_text": "DirectoryLoader_import",
+            "full_link": "[[component:2:1:DirectoryLoader_import|DirectoryLoader_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "2:3",
+        "count": 6,
+        "links": [
+          {
+            "block_id": "2",
+            "component_number": 3,
+            "component_name": "directory_loader_variable",
+            "display_text": "DIRECTORY_LOADER_VARIABLE",
+            "full_link": "[[component:2:3:directory_loader_variable|DIRECTORY_LOADER_VARIABLE]]"
+          },
+          {
+            "block_id": "2",
+            "component_number": 3,
+            "component_name": "directory_loader_variable",
+            "display_text": "directory_loader_variable",
+            "full_link": "[[component:2:3:directory_loader_variable|directory_loader_variable]]"
+          },
+          {
+            "block_id": "2",
+            "component_number": 3,
+            "component_name": "directory_loader_variable",
+            "display_text": "directory_loader_variable",
+            "full_link": "[[component:2:3:directory_loader_variable|directory_loader_variable]]"
+          },
+          {
+            "block_id": "2",
+            "component_number": 3,
+            "component_name": "directory_loader_variable",
+            "display_text": "DIRECTORY_LOADER_VARIABLE",
+            "full_link": "[[component:2:3:directory_loader_variable|DIRECTORY_LOADER_VARIABLE]]"
+          },
+          {
+            "block_id": "2",
+            "component_number": 3,
+            "component_name": "directory_loader_variable",
+            "display_text": "directory_loader_variable",
+            "full_link": "[[component:2:3:directory_loader_variable|directory_loader_variable]]"
+          },
+          {
+            "block_id": "2",
+            "component_number": 3,
+            "component_name": "directory_loader_variable",
+            "display_text": "DIRECTORY_LOADER_VARIABLE",
+            "full_link": "[[component:2:3:directory_loader_variable|DIRECTORY_LOADER_VARIABLE]]"
+          }
+        ]
+      },
+      {
+        "component_key": "2:2",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "2",
+            "component_number": 2,
+            "component_name": "PyMuPDFLoader_import",
+            "display_text": "PyMuPDFLoader_import",
+            "full_link": "[[component:2:2:PyMuPDFLoader_import|PyMuPDFLoader_import]]"
+          },
+          {
+            "block_id": "2",
+            "component_number": 2,
+            "component_name": "PyMuPDFLoader_import",
+            "display_text": "PyMuPDFLoader_import",
+            "full_link": "[[component:2:2:PyMuPDFLoader_import|PyMuPDFLoader_import]]"
+          },
+          {
+            "block_id": "2",
+            "component_number": 2,
+            "component_name": "PyMuPDFLoader_import",
+            "display_text": "pymupdfloader_import",
+            "full_link": "[[component:2:2:PyMuPDFLoader_import|pymupdfloader_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "2:4",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "2",
+            "component_number": 4,
+            "component_name": "loan_knowledge_resources_variable",
+            "display_text": "LOAN_KNOWLEDGE_RESOURCES_VARIABLE",
+            "full_link": "[[component:2:4:loan_knowledge_resources_variable|LOAN_KNOWLEDGE_RESOURCES_VARIABLE]]"
+          },
+          {
+            "block_id": "2",
+            "component_number": 4,
+            "component_name": "loan_knowledge_resources_variable",
+            "display_text": "loan_knowledge_resources_variable",
+            "full_link": "[[component:2:4:loan_knowledge_resources_variable|loan_knowledge_resources_variable]]"
+          },
+          {
+            "block_id": "2",
+            "component_number": 4,
+            "component_name": "loan_knowledge_resources_variable",
+            "display_text": "loan_knowledge_resources_variable",
+            "full_link": "[[component:2:4:loan_knowledge_resources_variable|loan_knowledge_resources_variable]]"
+          }
+        ]
+      },
+      {
+        "component_key": "3:1",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "3",
+            "component_number": 1,
+            "component_name": "tiktoken_import",
+            "display_text": "TIKTOKEN_IMPORT",
+            "full_link": "[[component:3:1:tiktoken_import|TIKTOKEN_IMPORT]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 1,
+            "component_name": "tiktoken_import",
+            "display_text": "tiktoken_import",
+            "full_link": "[[component:3:1:tiktoken_import|tiktoken_import]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 1,
+            "component_name": "tiktoken_import",
+            "display_text": "tiktoken_import",
+            "full_link": "[[component:3:1:tiktoken_import|tiktoken_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "3:2",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "3",
+            "component_number": 2,
+            "component_name": "text_splitter_import",
+            "display_text": "text_splitter_import",
+            "full_link": "[[component:3:2:text_splitter_import|text_splitter_import]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 2,
+            "component_name": "text_splitter_import",
+            "display_text": "text_splitter_import",
+            "full_link": "[[component:3:2:text_splitter_import|text_splitter_import]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 2,
+            "component_name": "text_splitter_import",
+            "display_text": "text_splitter_import",
+            "full_link": "[[component:3:2:text_splitter_import|text_splitter_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "3:3",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "3",
+            "component_number": 3,
+            "component_name": "tiktoken_len_function",
+            "display_text": "tiktoken_len_function",
+            "full_link": "[[component:3:3:tiktoken_len_function|tiktoken_len_function]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 3,
+            "component_name": "tiktoken_len_function",
+            "display_text": "tiktoken_len_function",
+            "full_link": "[[component:3:3:tiktoken_len_function|tiktoken_len_function]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 3,
+            "component_name": "tiktoken_len_function",
+            "display_text": "tiktoken_len_function",
+            "full_link": "[[component:3:3:tiktoken_len_function|tiktoken_len_function]]"
+          }
+        ]
+      },
+      {
+        "component_key": "3:4",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "3",
+            "component_number": 4,
+            "component_name": "tiktoken_len_tokenization",
+            "display_text": "TIKTOKEN_LEN_TOKENIZATION",
+            "full_link": "[[component:3:4:tiktoken_len_tokenization|TIKTOKEN_LEN_TOKENIZATION]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 4,
+            "component_name": "tiktoken_len_tokenization",
+            "display_text": "tiktoken_len_tokenization",
+            "full_link": "[[component:3:4:tiktoken_len_tokenization|tiktoken_len_tokenization]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 4,
+            "component_name": "tiktoken_len_tokenization",
+            "display_text": "tiktoken_len_tokenization",
+            "full_link": "[[component:3:4:tiktoken_len_tokenization|tiktoken_len_tokenization]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:9",
+        "count": 9,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 9,
+            "component_name": "retrieve_function",
+            "display_text": "retrieve",
+            "full_link": "[[component:9:9:retrieve_function|retrieve]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 9,
+            "component_name": "retrieve_function",
+            "display_text": "retrieve",
+            "full_link": "[[component:9:9:retrieve_function|retrieve]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 9,
+            "component_name": "retrieve_function",
+            "display_text": "retrieve",
+            "full_link": "[[component:9:9:retrieve_function|retrieve]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 9,
+            "component_name": "retrieve_function",
+            "display_text": "retrieve",
+            "full_link": "[[component:9:9:retrieve_function|retrieve]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 9,
+            "component_name": "retrieve_function",
+            "display_text": "RETRIEVE_FUNCTION",
+            "full_link": "[[component:9:9:retrieve_function|RETRIEVE_FUNCTION]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 9,
+            "component_name": "retrieve_function",
+            "display_text": "retrieve_function",
+            "full_link": "[[component:9:9:retrieve_function|retrieve_function]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 9,
+            "component_name": "retrieve_function",
+            "display_text": "retrieve",
+            "full_link": "[[component:9:9:retrieve_function|retrieve]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 9,
+            "component_name": "retrieve_function",
+            "display_text": "retrieve",
+            "full_link": "[[component:9:9:retrieve_function|retrieve]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 9,
+            "component_name": "retrieve_function",
+            "display_text": "retrieve",
+            "full_link": "[[component:9:9:retrieve_function|retrieve]]"
+          }
+        ]
+      },
+      {
+        "component_key": "3:5",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "3",
+            "component_number": 5,
+            "component_name": "tiktoken_len_return",
+            "display_text": "TIKTOKEN_LEN_RETURN",
+            "full_link": "[[component:3:5:tiktoken_len_return|TIKTOKEN_LEN_RETURN]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 5,
+            "component_name": "tiktoken_len_return",
+            "display_text": "tiktoken_len_return",
+            "full_link": "[[component:3:5:tiktoken_len_return|tiktoken_len_return]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 5,
+            "component_name": "tiktoken_len_return",
+            "display_text": "tiktoken_len_return",
+            "full_link": "[[component:3:5:tiktoken_len_return|tiktoken_len_return]]"
+          }
+        ]
+      },
+      {
+        "component_key": "3:6",
+        "count": 4,
+        "links": [
+          {
+            "block_id": "3",
+            "component_number": 6,
+            "component_name": "text_splitter_initialization",
+            "display_text": "TEXT_SPLITTER_INITIALIZATION",
+            "full_link": "[[component:3:6:text_splitter_initialization|TEXT_SPLITTER_INITIALIZATION]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 6,
+            "component_name": "text_splitter_initialization",
+            "display_text": "text_splitter_initialization",
+            "full_link": "[[component:3:6:text_splitter_initialization|text_splitter_initialization]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 6,
+            "component_name": "text_splitter_initialization",
+            "display_text": "text splitter initialization",
+            "full_link": "[[component:3:6:text_splitter_initialization|text splitter initialization]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 6,
+            "component_name": "text_splitter_initialization",
+            "display_text": "text_splitter_initialization",
+            "full_link": "[[component:3:6:text_splitter_initialization|text_splitter_initialization]]"
+          }
+        ]
+      },
+      {
+        "component_key": "3:7",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "3",
+            "component_number": 7,
+            "component_name": "loan_knowledge_chunks_variable",
+            "display_text": "LOAN_KNOWLEDGE_CHUNKS_VARIABLE",
+            "full_link": "[[component:3:7:loan_knowledge_chunks_variable|LOAN_KNOWLEDGE_CHUNKS_VARIABLE]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 7,
+            "component_name": "loan_knowledge_chunks_variable",
+            "display_text": "loan_knowledge_chunks_variable",
+            "full_link": "[[component:3:7:loan_knowledge_chunks_variable|loan_knowledge_chunks_variable]]"
+          },
+          {
+            "block_id": "3",
+            "component_number": 7,
+            "component_name": "loan_knowledge_chunks_variable",
+            "display_text": "loan_knowledge_chunks_variable",
+            "full_link": "[[component:3:7:loan_knowledge_chunks_variable|loan_knowledge_chunks_variable]]"
+          }
+        ]
+      },
+      {
+        "component_key": "4:2",
+        "count": 7,
+        "links": [
+          {
+            "block_id": "4",
+            "component_number": 2,
+            "component_name": "embedding_model_initialization",
+            "display_text": "embedding model initialization",
+            "full_link": "[[component:4:2:embedding_model_initialization|embedding model initialization]]"
+          },
+          {
+            "block_id": "4",
+            "component_number": 2,
+            "component_name": "embedding_model_initialization",
+            "display_text": "embedding model initialization",
+            "full_link": "[[component:4:2:embedding_model_initialization|embedding model initialization]]"
+          },
+          {
+            "block_id": "4",
+            "component_number": 2,
+            "component_name": "embedding_model_initialization",
+            "display_text": "EMBEDDING_MODEL_INITIALIZATION",
+            "full_link": "[[component:4:2:embedding_model_initialization|EMBEDDING_MODEL_INITIALIZATION]]"
+          },
+          {
+            "block_id": "4",
+            "component_number": 2,
+            "component_name": "embedding_model_initialization",
+            "display_text": "EMBEDDING_MODEL_INITIALIZATION",
+            "full_link": "[[component:4:2:embedding_model_initialization|EMBEDDING_MODEL_INITIALIZATION]]"
+          },
+          {
+            "block_id": "4",
+            "component_number": 2,
+            "component_name": "embedding_model_initialization",
+            "display_text": "embedding_model_initialization",
+            "full_link": "[[component:4:2:embedding_model_initialization|embedding_model_initialization]]"
+          },
+          {
+            "block_id": "4",
+            "component_number": 2,
+            "component_name": "embedding_model_initialization",
+            "display_text": "embedding model initialization",
+            "full_link": "[[component:4:2:embedding_model_initialization|embedding model initialization]]"
+          },
+          {
+            "block_id": "4",
+            "component_number": 2,
+            "component_name": "embedding_model_initialization",
+            "display_text": "EMBEDDING_MODEL_INITIALIZATION",
+            "full_link": "[[component:4:2:embedding_model_initialization|EMBEDDING_MODEL_INITIALIZATION]]"
+          }
+        ]
+      },
+      {
+        "component_key": "4:1",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "4",
+            "component_number": 1,
+            "component_name": "OpenAIEmbeddings_import",
+            "display_text": "OpenAIEmbeddings_import",
+            "full_link": "[[component:4:1:OpenAIEmbeddings_import|OpenAIEmbeddings_import]]"
+          },
+          {
+            "block_id": "4",
+            "component_number": 1,
+            "component_name": "OpenAIEmbeddings_import",
+            "display_text": "OpenAIEmbeddings_import",
+            "full_link": "[[component:4:1:OpenAIEmbeddings_import|OpenAIEmbeddings_import]]"
+          },
+          {
+            "block_id": "4",
+            "component_number": 1,
+            "component_name": "OpenAIEmbeddings_import",
+            "display_text": "OPENAIEMBEDDINGS_IMPORT",
+            "full_link": "[[component:4:1:OpenAIEmbeddings_import|OPENAIEMBEDDINGS_IMPORT]]"
+          },
+          {
+            "block_id": "4",
+            "component_number": 1,
+            "component_name": "OpenAIEmbeddings_import",
+            "display_text": "openaiembeddings_import",
+            "full_link": "[[component:4:1:OpenAIEmbeddings_import|openaiembeddings_import]]"
+          },
+          {
+            "block_id": "4",
+            "component_number": 1,
+            "component_name": "OpenAIEmbeddings_import",
+            "display_text": "OPENAIEMBEDDINGS_IMPORT",
+            "full_link": "[[component:4:1:OpenAIEmbeddings_import|OPENAIEMBEDDINGS_IMPORT]]"
+          }
+        ]
+      },
+      {
+        "component_key": "5:1",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "5",
+            "component_number": 1,
+            "component_name": "Qdrant_import",
+            "display_text": "QDRANT_IMPORT",
+            "full_link": "[[component:5:1:Qdrant_import|QDRANT_IMPORT]]"
+          },
+          {
+            "block_id": "5",
+            "component_number": 1,
+            "component_name": "Qdrant_import",
+            "display_text": "Qdrant_import",
+            "full_link": "[[component:5:1:Qdrant_import|Qdrant_import]]"
+          },
+          {
+            "block_id": "5",
+            "component_number": 1,
+            "component_name": "Qdrant_import",
+            "display_text": "qdrant_import",
+            "full_link": "[[component:5:1:Qdrant_import|qdrant_import]]"
+          },
+          {
+            "block_id": "5",
+            "component_number": 1,
+            "component_name": "Qdrant_import",
+            "display_text": "QDRANT_IMPORT",
+            "full_link": "[[component:5:1:Qdrant_import|QDRANT_IMPORT]]"
+          },
+          {
+            "block_id": "5",
+            "component_number": 1,
+            "component_name": "Qdrant_import",
+            "display_text": "Qdrant_import",
+            "full_link": "[[component:5:1:Qdrant_import|Qdrant_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "5:2",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "5",
+            "component_number": 2,
+            "component_name": "qdrant_vectorstore_creation",
+            "display_text": "qdrant_vectorstore_creation",
+            "full_link": "[[component:5:2:qdrant_vectorstore_creation|qdrant_vectorstore_creation]]"
+          },
+          {
+            "block_id": "5",
+            "component_number": 2,
+            "component_name": "qdrant_vectorstore_creation",
+            "display_text": "QDRANT_VECTORSTORE_CREATION",
+            "full_link": "[[component:5:2:qdrant_vectorstore_creation|QDRANT_VECTORSTORE_CREATION]]"
+          },
+          {
+            "block_id": "5",
+            "component_number": 2,
+            "component_name": "qdrant_vectorstore_creation",
+            "display_text": "qdrant_vectorstore_creation",
+            "full_link": "[[component:5:2:qdrant_vectorstore_creation|qdrant_vectorstore_creation]]"
+          },
+          {
+            "block_id": "5",
+            "component_number": 2,
+            "component_name": "qdrant_vectorstore_creation",
+            "display_text": "QDRANT_VECTORSTORE_CREATION",
+            "full_link": "[[component:5:2:qdrant_vectorstore_creation|QDRANT_VECTORSTORE_CREATION]]"
+          },
+          {
+            "block_id": "5",
+            "component_number": 2,
+            "component_name": "qdrant_vectorstore_creation",
+            "display_text": "qdrant_vectorstore_creation",
+            "full_link": "[[component:5:2:qdrant_vectorstore_creation|qdrant_vectorstore_creation]]"
+          }
+        ]
+      },
+      {
+        "component_key": "6:1",
+        "count": 6,
+        "links": [
+          {
+            "block_id": "6",
+            "component_number": 1,
+            "component_name": "qdrant_retriever_assignment",
+            "display_text": "QDRANT_RETRIEVER_ASSIGNMENT",
+            "full_link": "[[component:6:1:qdrant_retriever_assignment|QDRANT_RETRIEVER_ASSIGNMENT]]"
+          },
+          {
+            "block_id": "6",
+            "component_number": 1,
+            "component_name": "qdrant_retriever_assignment",
+            "display_text": "[[component:6:1:qdrant_retriever_assignment|QDRANT_RETRIEVER_ASSIGNMENT",
+            "full_link": "[[component:6:1:qdrant_retriever_assignment|[[component:6:1:qdrant_retriever_assignment|QDRANT_RETRIEVER_ASSIGNMENT]]"
+          },
+          {
+            "block_id": "6",
+            "component_number": 1,
+            "component_name": "qdrant_retriever_assignment",
+            "display_text": "[[component:6:1:qdrant_retriever_assignment|qdrant_retriever_assignment",
+            "full_link": "[[component:6:1:qdrant_retriever_assignment|[[component:6:1:qdrant_retriever_assignment|qdrant_retriever_assignment]]"
+          },
+          {
+            "block_id": "6",
+            "component_number": 1,
+            "component_name": "qdrant_retriever_assignment",
+            "display_text": "`[[component:6:1:qdrant_retriever_assignment|qdrant_retriever_assignment",
+            "full_link": "[[component:6:1:qdrant_retriever_assignment|`[[component:6:1:qdrant_retriever_assignment|qdrant_retriever_assignment]]"
+          },
+          {
+            "block_id": "6",
+            "component_number": 1,
+            "component_name": "qdrant_retriever_assignment",
+            "display_text": "[[component:6:1:qdrant_retriever_assignment|QDRANT_RETRIEVER_ASSIGNMENT",
+            "full_link": "[[component:6:1:qdrant_retriever_assignment|[[component:6:1:qdrant_retriever_assignment|QDRANT_RETRIEVER_ASSIGNMENT]]"
+          },
+          {
+            "block_id": "6",
+            "component_number": 1,
+            "component_name": "qdrant_retriever_assignment",
+            "display_text": "[[component:6:1:qdrant_retriever_assignment|qdrant_retriever_assignment",
+            "full_link": "[[component:6:1:qdrant_retriever_assignment|[[component:6:1:qdrant_retriever_assignment|qdrant_retriever_assignment]]"
+          }
+        ]
+      },
+      {
+        "component_key": "7:1",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "7",
+            "component_number": 1,
+            "component_name": "ChatPromptTemplate_import",
+            "display_text": "CHATPROMPTTEMPLATE_IMPORT",
+            "full_link": "[[component:7:1:ChatPromptTemplate_import|CHATPROMPTTEMPLATE_IMPORT]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 1,
+            "component_name": "ChatPromptTemplate_import",
+            "display_text": "chatprompttemplate_import",
+            "full_link": "[[component:7:1:ChatPromptTemplate_import|chatprompttemplate_import]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 1,
+            "component_name": "ChatPromptTemplate_import",
+            "display_text": "ChatPromptTemplate_import",
+            "full_link": "[[component:7:1:ChatPromptTemplate_import|ChatPromptTemplate_import]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 1,
+            "component_name": "ChatPromptTemplate_import",
+            "display_text": "ChatPromptTemplate_import",
+            "full_link": "[[component:7:1:ChatPromptTemplate_import|ChatPromptTemplate_import]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 1,
+            "component_name": "ChatPromptTemplate_import",
+            "display_text": "ChatPromptTemplate_import",
+            "full_link": "[[component:7:1:ChatPromptTemplate_import|ChatPromptTemplate_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "7:2",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "7",
+            "component_number": 2,
+            "component_name": "HUMAN_TEMPLATE_variable",
+            "display_text": "HUMAN_TEMPLATE_variable",
+            "full_link": "[[component:7:2:HUMAN_TEMPLATE_variable|HUMAN_TEMPLATE_variable]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 2,
+            "component_name": "HUMAN_TEMPLATE_variable",
+            "display_text": "human_template_variable",
+            "full_link": "[[component:7:2:HUMAN_TEMPLATE_variable|human_template_variable]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 2,
+            "component_name": "HUMAN_TEMPLATE_variable",
+            "display_text": "HUMAN_TEMPLATE_variable",
+            "full_link": "[[component:7:2:HUMAN_TEMPLATE_variable|HUMAN_TEMPLATE_variable]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 2,
+            "component_name": "HUMAN_TEMPLATE_variable",
+            "display_text": "HUMAN_TEMPLATE_VARIABLE",
+            "full_link": "[[component:7:2:HUMAN_TEMPLATE_variable|HUMAN_TEMPLATE_VARIABLE]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 2,
+            "component_name": "HUMAN_TEMPLATE_variable",
+            "display_text": "HUMAN_TEMPLATE_variable",
+            "full_link": "[[component:7:2:HUMAN_TEMPLATE_variable|HUMAN_TEMPLATE_variable]]"
+          }
+        ]
+      },
+      {
+        "component_key": "7:3",
+        "count": 6,
+        "links": [
+          {
+            "block_id": "7",
+            "component_number": 3,
+            "component_name": "chat_prompt_variable",
+            "display_text": "CHAT_PROMPT_VARIABLE",
+            "full_link": "[[component:7:3:chat_prompt_variable|CHAT_PROMPT_VARIABLE]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 3,
+            "component_name": "chat_prompt_variable",
+            "display_text": "chat_prompt_variable",
+            "full_link": "[[component:7:3:chat_prompt_variable|chat_prompt_variable]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 3,
+            "component_name": "chat_prompt_variable",
+            "display_text": "CHAT_PROMPT_VARIABLE",
+            "full_link": "[[component:7:3:chat_prompt_variable|CHAT_PROMPT_VARIABLE]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 3,
+            "component_name": "chat_prompt_variable",
+            "display_text": "chat_prompt_variable",
+            "full_link": "[[component:7:3:chat_prompt_variable|chat_prompt_variable]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 3,
+            "component_name": "chat_prompt_variable",
+            "display_text": "chat_prompt_variable",
+            "full_link": "[[component:7:3:chat_prompt_variable|chat_prompt_variable]]"
+          },
+          {
+            "block_id": "7",
+            "component_number": 3,
+            "component_name": "chat_prompt_variable",
+            "display_text": "chat_prompt_variable",
+            "full_link": "[[component:7:3:chat_prompt_variable|chat_prompt_variable]]"
+          }
+        ]
+      },
+      {
+        "component_key": "8:1",
+        "count": 6,
+        "links": [
+          {
+            "block_id": "8",
+            "component_number": 1,
+            "component_name": "ChatOpenAI_import",
+            "display_text": "ChatOpenAI_import",
+            "full_link": "[[component:8:1:ChatOpenAI_import|ChatOpenAI_import]]"
+          },
+          {
+            "block_id": "8",
+            "component_number": 1,
+            "component_name": "ChatOpenAI_import",
+            "display_text": "CHATOPENAI_IMPORT",
+            "full_link": "[[component:8:1:ChatOpenAI_import|CHATOPENAI_IMPORT]]"
+          },
+          {
+            "block_id": "8",
+            "component_number": 1,
+            "component_name": "ChatOpenAI_import",
+            "display_text": "chatopenai_import",
+            "full_link": "[[component:8:1:ChatOpenAI_import|chatopenai_import]]"
+          },
+          {
+            "block_id": "8",
+            "component_number": 1,
+            "component_name": "ChatOpenAI_import",
+            "display_text": "ChatOpenAI_import",
+            "full_link": "[[component:8:1:ChatOpenAI_import|ChatOpenAI_import]]"
+          },
+          {
+            "block_id": "8",
+            "component_number": 1,
+            "component_name": "ChatOpenAI_import",
+            "display_text": "ChatOpenAI_import",
+            "full_link": "[[component:8:1:ChatOpenAI_import|ChatOpenAI_import]]"
+          },
+          {
+            "block_id": "8",
+            "component_number": 1,
+            "component_name": "ChatOpenAI_import",
+            "display_text": "CHATOPENAI_IMPORT",
+            "full_link": "[[component:8:1:ChatOpenAI_import|CHATOPENAI_IMPORT]]"
+          }
+        ]
+      },
+      {
+        "component_key": "8:2",
+        "count": 6,
+        "links": [
+          {
+            "block_id": "8",
+            "component_number": 2,
+            "component_name": "openai_chat_model_initialization",
+            "display_text": "OPENAI_CHAT_MODEL_INITIALIZATION",
+            "full_link": "[[component:8:2:openai_chat_model_initialization|OPENAI_CHAT_MODEL_INITIALIZATION]]"
+          },
+          {
+            "block_id": "8",
+            "component_number": 2,
+            "component_name": "openai_chat_model_initialization",
+            "display_text": "openai_chat_model_initialization",
+            "full_link": "[[component:8:2:openai_chat_model_initialization|openai_chat_model_initialization]]"
+          },
+          {
+            "block_id": "8",
+            "component_number": 2,
+            "component_name": "openai_chat_model_initialization",
+            "display_text": "OPENAI_CHAT_MODEL_INITIALIZATION",
+            "full_link": "[[component:8:2:openai_chat_model_initialization|OPENAI_CHAT_MODEL_INITIALIZATION]]"
+          },
+          {
+            "block_id": "8",
+            "component_number": 2,
+            "component_name": "openai_chat_model_initialization",
+            "display_text": "openai_chat_model_initialization",
+            "full_link": "[[component:8:2:openai_chat_model_initialization|openai_chat_model_initialization]]"
+          },
+          {
+            "block_id": "8",
+            "component_number": 2,
+            "component_name": "openai_chat_model_initialization",
+            "display_text": "openai_chat_model_initialization",
+            "full_link": "[[component:8:2:openai_chat_model_initialization|openai_chat_model_initialization]]"
+          },
+          {
+            "block_id": "8",
+            "component_number": 2,
+            "component_name": "openai_chat_model_initialization",
+            "display_text": "OPENAI_CHAT_MODEL_INITIALIZATION",
+            "full_link": "[[component:8:2:openai_chat_model_initialization|OPENAI_CHAT_MODEL_INITIALIZATION]]"
+          }
+        ]
+      },
+      {
+        "component_key": "18:4",
+        "count": 4,
+        "links": [
+          {
+            "block_id": "18",
+            "component_number": 4,
+            "component_name": "ChatOpenAI_import",
+            "display_text": "ChatOpenAI_import",
+            "full_link": "[[component:18:4:ChatOpenAI_import|ChatOpenAI_import]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 4,
+            "component_name": "ChatOpenAI_import",
+            "display_text": "CHATOPENAI_IMPORT",
+            "full_link": "[[component:18:4:ChatOpenAI_import|CHATOPENAI_IMPORT]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 4,
+            "component_name": "ChatOpenAI_import",
+            "display_text": "chatopenai_import",
+            "full_link": "[[component:18:4:ChatOpenAI_import|chatopenai_import]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 4,
+            "component_name": "ChatOpenAI_import",
+            "display_text": "ChatOpenAI_import",
+            "full_link": "[[component:18:4:ChatOpenAI_import|ChatOpenAI_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:5",
+        "count": 26,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "state_class",
+            "full_link": "[[component:9:5:State_class|state_class]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State_class",
+            "full_link": "[[component:9:5:State_class|State_class]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State_class",
+            "full_link": "[[component:9:5:State_class|State_class]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 5,
+            "component_name": "State_class",
+            "display_text": "State",
+            "full_link": "[[component:9:5:State_class|State]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:1",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 1,
+            "component_name": "langgraph_imports",
+            "display_text": "langgraph_imports",
+            "full_link": "[[component:9:1:langgraph_imports|langgraph_imports]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 1,
+            "component_name": "langgraph_imports",
+            "display_text": "langgraph_imports",
+            "full_link": "[[component:9:1:langgraph_imports|langgraph_imports]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 1,
+            "component_name": "langgraph_imports",
+            "display_text": "langgraph_imports",
+            "full_link": "[[component:9:1:langgraph_imports|langgraph_imports]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:2",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 2,
+            "component_name": "typing_extensions_import",
+            "display_text": "TYPING_EXTENSIONS_IMPORT",
+            "full_link": "[[component:9:2:typing_extensions_import|TYPING_EXTENSIONS_IMPORT]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 2,
+            "component_name": "typing_extensions_import",
+            "display_text": "typing_extensions_import",
+            "full_link": "[[component:9:2:typing_extensions_import|typing_extensions_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:3",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 3,
+            "component_name": "langchain_core_documents_import",
+            "display_text": "LANGCHAIN_CORE_DOCUMENTS_IMPORT",
+            "full_link": "[[component:9:3:langchain_core_documents_import|LANGCHAIN_CORE_DOCUMENTS_IMPORT]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 3,
+            "component_name": "langchain_core_documents_import",
+            "display_text": "langchain_core_documents_import",
+            "full_link": "[[component:9:3:langchain_core_documents_import|langchain_core_documents_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:4",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 4,
+            "component_name": "langchain_core_output_parsers_import",
+            "display_text": "langchain_core_output_parsers_import",
+            "full_link": "[[component:9:4:langchain_core_output_parsers_import|langchain_core_output_parsers_import]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 4,
+            "component_name": "langchain_core_output_parsers_import",
+            "display_text": "langchain_core_output_parsers_import",
+            "full_link": "[[component:9:4:langchain_core_output_parsers_import|langchain_core_output_parsers_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:6",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 6,
+            "component_name": "State_question_attribute",
+            "display_text": "state_question_attribute",
+            "full_link": "[[component:9:6:State_question_attribute|state_question_attribute]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 6,
+            "component_name": "State_question_attribute",
+            "display_text": "State_question_attribute",
+            "full_link": "[[component:9:6:State_question_attribute|State_question_attribute]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:7",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 7,
+            "component_name": "State_context_attribute",
+            "display_text": "state_context_attribute",
+            "full_link": "[[component:9:7:State_context_attribute|state_context_attribute]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 7,
+            "component_name": "State_context_attribute",
+            "display_text": "State_context_attribute",
+            "full_link": "[[component:9:7:State_context_attribute|State_context_attribute]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:8",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 8,
+            "component_name": "State_response_attribute",
+            "display_text": "state_response_attribute",
+            "full_link": "[[component:9:8:State_response_attribute|state_response_attribute]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 8,
+            "component_name": "State_response_attribute",
+            "display_text": "State_response_attribute",
+            "full_link": "[[component:9:8:State_response_attribute|State_response_attribute]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:10",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 10,
+            "component_name": "retrieve_function_body",
+            "display_text": "retrieve_function_body",
+            "full_link": "[[component:9:10:retrieve_function_body|retrieve_function_body]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 10,
+            "component_name": "retrieve_function_body",
+            "display_text": "retrieve_function_body",
+            "full_link": "[[component:9:10:retrieve_function_body|retrieve_function_body]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:11",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 11,
+            "component_name": "retrieve_return_statement",
+            "display_text": "RETRIEVE_RETURN_STATEMENT",
+            "full_link": "[[component:9:11:retrieve_return_statement|RETRIEVE_RETURN_STATEMENT]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 11,
+            "component_name": "retrieve_return_statement",
+            "display_text": "retrieve_return_statement",
+            "full_link": "[[component:9:11:retrieve_return_statement|retrieve_return_statement]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:13",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 13,
+            "component_name": "generate_chain_setup",
+            "display_text": "generate_chain_setup",
+            "full_link": "[[component:9:13:generate_chain_setup|generate_chain_setup]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 13,
+            "component_name": "generate_chain_setup",
+            "display_text": "generate_chain_setup",
+            "full_link": "[[component:9:13:generate_chain_setup|generate_chain_setup]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:14",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 14,
+            "component_name": "generate_function_body",
+            "display_text": "GENERATE_FUNCTION_BODY",
+            "full_link": "[[component:9:14:generate_function_body|GENERATE_FUNCTION_BODY]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 14,
+            "component_name": "generate_function_body",
+            "display_text": "generate_function_body",
+            "full_link": "[[component:9:14:generate_function_body|generate_function_body]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:15",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 15,
+            "component_name": "generate_return_statement",
+            "display_text": "GENERATE_RETURN_STATEMENT",
+            "full_link": "[[component:9:15:generate_return_statement|GENERATE_RETURN_STATEMENT]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 15,
+            "component_name": "generate_return_statement",
+            "display_text": "generate_return_statement",
+            "full_link": "[[component:9:15:generate_return_statement|generate_return_statement]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:16",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 16,
+            "component_name": "graph_builder_initialization",
+            "display_text": "graph_builder_initialization",
+            "full_link": "[[component:9:16:graph_builder_initialization|graph_builder_initialization]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 16,
+            "component_name": "graph_builder_initialization",
+            "display_text": "graph_builder_initialization",
+            "full_link": "[[component:9:16:graph_builder_initialization|graph_builder_initialization]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:17",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 17,
+            "component_name": "graph_builder_add_sequence",
+            "display_text": "GRAPH_BUILDER_ADD_SEQUENCE",
+            "full_link": "[[component:9:17:graph_builder_add_sequence|GRAPH_BUILDER_ADD_SEQUENCE]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 17,
+            "component_name": "graph_builder_add_sequence",
+            "display_text": "graph_builder_add_sequence",
+            "full_link": "[[component:9:17:graph_builder_add_sequence|graph_builder_add_sequence]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:18",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 18,
+            "component_name": "graph_builder_add_edge",
+            "display_text": "graph_builder_add_edge",
+            "full_link": "[[component:9:18:graph_builder_add_edge|graph_builder_add_edge]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 18,
+            "component_name": "graph_builder_add_edge",
+            "display_text": "graph_builder_add_edge",
+            "full_link": "[[component:9:18:graph_builder_add_edge|graph_builder_add_edge]]"
+          }
+        ]
+      },
+      {
+        "component_key": "9:19",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "9",
+            "component_number": 19,
+            "component_name": "rag_graph_compilation",
+            "display_text": "rag_graph_compilation",
+            "full_link": "[[component:9:19:rag_graph_compilation|rag_graph_compilation]]"
+          },
+          {
+            "block_id": "9",
+            "component_number": 19,
+            "component_name": "rag_graph_compilation",
+            "display_text": "rag_graph_compilation",
+            "full_link": "[[component:9:19:rag_graph_compilation|rag_graph_compilation]]"
+          }
+        ]
+      },
+      {
+        "component_key": "17:4",
+        "count": 7,
+        "links": [
+          {
+            "block_id": "17",
+            "component_number": 4,
+            "component_name": "rag_graph_invocation",
+            "display_text": "rag graph invocation",
+            "full_link": "[[component:17:4:rag_graph_invocation|rag graph invocation]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 4,
+            "component_name": "rag_graph_invocation",
+            "display_text": "rag graph invocation",
+            "full_link": "[[component:17:4:rag_graph_invocation|rag graph invocation]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 4,
+            "component_name": "rag_graph_invocation",
+            "display_text": "rag graph invocation",
+            "full_link": "[[component:17:4:rag_graph_invocation|rag graph invocation]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 4,
+            "component_name": "rag_graph_invocation",
+            "display_text": "rag_graph_invocation",
+            "full_link": "[[component:17:4:rag_graph_invocation|rag_graph_invocation]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 4,
+            "component_name": "rag_graph_invocation",
+            "display_text": "rag_graph_invocation",
+            "full_link": "[[component:17:4:rag_graph_invocation|rag_graph_invocation]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 4,
+            "component_name": "rag_graph_invocation",
+            "display_text": "rag_graph_invocation",
+            "full_link": "[[component:17:4:rag_graph_invocation|rag_graph_invocation]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 4,
+            "component_name": "rag_graph_invocation",
+            "display_text": "RAG_GRAPH_INVOCATION",
+            "full_link": "[[component:17:4:rag_graph_invocation|RAG_GRAPH_INVOCATION]]"
+          }
+        ]
+      },
+      {
+        "component_key": "10:1",
+        "count": 6,
+        "links": [
+          {
+            "block_id": "10",
+            "component_number": 1,
+            "component_name": "rag_graph_invoke_call",
+            "display_text": "rag_graph_invoke_call",
+            "full_link": "[[component:10:1:rag_graph_invoke_call|rag_graph_invoke_call]]"
+          },
+          {
+            "block_id": "10",
+            "component_number": 1,
+            "component_name": "rag_graph_invoke_call",
+            "display_text": "RAG_GRAPH_INVOKE_CALL",
+            "full_link": "[[component:10:1:rag_graph_invoke_call|RAG_GRAPH_INVOKE_CALL]]"
+          },
+          {
+            "block_id": "10",
+            "component_number": 1,
+            "component_name": "rag_graph_invoke_call",
+            "display_text": "rag_graph_invoke_call",
+            "full_link": "[[component:10:1:rag_graph_invoke_call|rag_graph_invoke_call]]"
+          },
+          {
+            "block_id": "10",
+            "component_number": 1,
+            "component_name": "rag_graph_invoke_call",
+            "display_text": "RAG_GRAPH_INVOKE_CALL",
+            "full_link": "[[component:10:1:rag_graph_invoke_call|RAG_GRAPH_INVOKE_CALL]]"
+          },
+          {
+            "block_id": "10",
+            "component_number": 1,
+            "component_name": "rag_graph_invoke_call",
+            "display_text": "rag_graph_invoke_call",
+            "full_link": "[[component:10:1:rag_graph_invoke_call|rag_graph_invoke_call]]"
+          },
+          {
+            "block_id": "10",
+            "component_number": 1,
+            "component_name": "rag_graph_invoke_call",
+            "display_text": "RAG_GRAPH_INVOKE_CALL",
+            "full_link": "[[component:10:1:rag_graph_invoke_call|RAG_GRAPH_INVOKE_CALL]]"
+          }
+        ]
+      },
+      {
+        "component_key": "12:1",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "12",
+            "component_number": 1,
+            "component_name": "typing_imports",
+            "display_text": "TYPING_IMPORTS",
+            "full_link": "[[component:12:1:typing_imports|TYPING_IMPORTS]]"
+          },
+          {
+            "block_id": "12",
+            "component_number": 1,
+            "component_name": "typing_imports",
+            "display_text": "[[component:12:1:typing_imports|TYPING_IMPORTS",
+            "full_link": "[[component:12:1:typing_imports|[[component:12:1:typing_imports|TYPING_IMPORTS]]"
+          },
+          {
+            "block_id": "12",
+            "component_number": 1,
+            "component_name": "typing_imports",
+            "display_text": "[[component:12:1:typing_imports|typing_imports",
+            "full_link": "[[component:12:1:typing_imports|[[component:12:1:typing_imports|typing_imports]]"
+          }
+        ]
+      },
+      {
+        "component_key": "12:2",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "12",
+            "component_number": 2,
+            "component_name": "langchain_agents_imports",
+            "display_text": "LANGCHAIN_AGENTS_IMPORTS",
+            "full_link": "[[component:12:2:langchain_agents_imports|LANGCHAIN_AGENTS_IMPORTS]]"
+          },
+          {
+            "block_id": "12",
+            "component_number": 2,
+            "component_name": "langchain_agents_imports",
+            "display_text": "[[component:12:2:langchain_agents_imports|LANGCHAIN_AGENTS_IMPORTS",
+            "full_link": "[[component:12:2:langchain_agents_imports|[[component:12:2:langchain_agents_imports|LANGCHAIN_AGENTS_IMPORTS]]"
+          },
+          {
+            "block_id": "12",
+            "component_number": 2,
+            "component_name": "langchain_agents_imports",
+            "display_text": "[[component:12:2:langchain_agents_imports|langchain_agents_imports",
+            "full_link": "[[component:12:2:langchain_agents_imports|[[component:12:2:langchain_agents_imports|langchain_agents_imports]]"
+          }
+        ]
+      },
+      {
+        "component_key": "12:3",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "12",
+            "component_number": 3,
+            "component_name": "langchain_output_parsers_imports",
+            "display_text": "LANGCHAIN_OUTPUT_PARSERS_IMPORTS",
+            "full_link": "[[component:12:3:langchain_output_parsers_imports|LANGCHAIN_OUTPUT_PARSERS_IMPORTS]]"
+          },
+          {
+            "block_id": "12",
+            "component_number": 3,
+            "component_name": "langchain_output_parsers_imports",
+            "display_text": "[[component:12:3:langchain_output_parsers_imports|LANGCHAIN_OUTPUT_PARSERS_IMPORTS",
+            "full_link": "[[component:12:3:langchain_output_parsers_imports|[[component:12:3:langchain_output_parsers_imports|LANGCHAIN_OUTPUT_PARSERS_IMPORTS]]"
+          },
+          {
+            "block_id": "12",
+            "component_number": 3,
+            "component_name": "langchain_output_parsers_imports",
+            "display_text": "[[component:12:3:langchain_output_parsers_imports|langchain_output_parsers_imports",
+            "full_link": "[[component:12:3:langchain_output_parsers_imports|[[component:12:3:langchain_output_parsers_imports|langchain_output_parsers_imports]]"
+          }
+        ]
+      },
+      {
+        "component_key": "12:4",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "12",
+            "component_number": 4,
+            "component_name": "langchain_prompts_imports",
+            "display_text": "langchain_prompts_imports",
+            "full_link": "[[component:12:4:langchain_prompts_imports|langchain_prompts_imports]]"
+          },
+          {
+            "block_id": "12",
+            "component_number": 4,
+            "component_name": "langchain_prompts_imports",
+            "display_text": "[[component:12:4:langchain_prompts_imports|langchain_prompts_imports",
+            "full_link": "[[component:12:4:langchain_prompts_imports|[[component:12:4:langchain_prompts_imports|langchain_prompts_imports]]"
+          }
+        ]
+      },
+      {
+        "component_key": "14:8",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "14",
+            "component_number": 8,
+            "component_name": "MessagesPlaceholder_class",
+            "display_text": "MessagesPlaceholder",
+            "full_link": "[[component:14:8:MessagesPlaceholder_class|MessagesPlaceholder]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 8,
+            "component_name": "MessagesPlaceholder_class",
+            "display_text": "MessagesPlaceholder_class",
+            "full_link": "[[component:14:8:MessagesPlaceholder_class|MessagesPlaceholder_class]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 8,
+            "component_name": "MessagesPlaceholder_class",
+            "display_text": "MessagesPlaceholder_class",
+            "full_link": "[[component:14:8:MessagesPlaceholder_class|MessagesPlaceholder_class]]"
+          }
+        ]
+      },
+      {
+        "component_key": "12:5",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "12",
+            "component_number": 5,
+            "component_name": "langchain_messages_imports",
+            "display_text": "langchain_messages_imports",
+            "full_link": "[[component:12:5:langchain_messages_imports|langchain_messages_imports]]"
+          },
+          {
+            "block_id": "12",
+            "component_number": 5,
+            "component_name": "langchain_messages_imports",
+            "display_text": "[[component:12:5:langchain_messages_imports|langchain_messages_imports",
+            "full_link": "[[component:12:5:langchain_messages_imports|[[component:12:5:langchain_messages_imports|langchain_messages_imports]]"
+          }
+        ]
+      },
+      {
+        "component_key": "12:6",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "12",
+            "component_number": 6,
+            "component_name": "langchain_runnables_imports",
+            "display_text": "langchain_runnables_imports",
+            "full_link": "[[component:12:6:langchain_runnables_imports|langchain_runnables_imports]]"
+          },
+          {
+            "block_id": "12",
+            "component_number": 6,
+            "component_name": "langchain_runnables_imports",
+            "display_text": "[[component:12:6:langchain_runnables_imports|langchain_runnables_imports",
+            "full_link": "[[component:12:6:langchain_runnables_imports|[[component:12:6:langchain_runnables_imports|langchain_runnables_imports]]"
+          }
+        ]
+      },
+      {
+        "component_key": "12:7",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "12",
+            "component_number": 7,
+            "component_name": "langchain_tools_imports",
+            "display_text": "LANGCHAIN_TOOLS_IMPORTS",
+            "full_link": "[[component:12:7:langchain_tools_imports|LANGCHAIN_TOOLS_IMPORTS]]"
+          },
+          {
+            "block_id": "12",
+            "component_number": 7,
+            "component_name": "langchain_tools_imports",
+            "display_text": "[[component:12:7:langchain_tools_imports|LANGCHAIN_TOOLS_IMPORTS",
+            "full_link": "[[component:12:7:langchain_tools_imports|[[component:12:7:langchain_tools_imports|LANGCHAIN_TOOLS_IMPORTS]]"
+          }
+        ]
+      },
+      {
+        "component_key": "12:8",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "12",
+            "component_number": 8,
+            "component_name": "langchain_openai_imports",
+            "display_text": "langchain_openai_imports",
+            "full_link": "[[component:12:8:langchain_openai_imports|langchain_openai_imports]]"
+          },
+          {
+            "block_id": "12",
+            "component_number": 8,
+            "component_name": "langchain_openai_imports",
+            "display_text": "[[component:12:8:langchain_openai_imports|langchain_openai_imports",
+            "full_link": "[[component:12:8:langchain_openai_imports|[[component:12:8:langchain_openai_imports|langchain_openai_imports]]"
+          }
+        ]
+      },
+      {
+        "component_key": "13:1",
+        "count": 9,
+        "links": [
+          {
+            "block_id": "13",
+            "component_number": 1,
+            "component_name": "agent_node_function",
+            "display_text": "agent node function",
+            "full_link": "[[component:13:1:agent_node_function|agent node function]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 1,
+            "component_name": "agent_node_function",
+            "display_text": "agent_node_function",
+            "full_link": "[[component:13:1:agent_node_function|agent_node_function]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 1,
+            "component_name": "agent_node_function",
+            "display_text": "AGENT_NODE_FUNCTION",
+            "full_link": "[[component:13:1:agent_node_function|AGENT_NODE_FUNCTION]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 1,
+            "component_name": "agent_node_function",
+            "display_text": "[[component:21:5:agent_node_function|agent_node_function",
+            "full_link": "[[component:13:1:agent_node_function|[[component:21:5:agent_node_function|agent_node_function]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 1,
+            "component_name": "agent_node_function",
+            "display_text": "[[component:21:5:agent_node_function|AGENT_NODE_FUNCTION",
+            "full_link": "[[component:13:1:agent_node_function|[[component:21:5:agent_node_function|AGENT_NODE_FUNCTION]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 1,
+            "component_name": "agent_node_function",
+            "display_text": "`[[component:13:1:agent_node_function|agent_node_function",
+            "full_link": "[[component:13:1:agent_node_function|`[[component:13:1:agent_node_function|agent_node_function]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 1,
+            "component_name": "agent_node_function",
+            "display_text": "agent node function",
+            "full_link": "[[component:13:1:agent_node_function|agent node function]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 1,
+            "component_name": "agent_node_function",
+            "display_text": "`[[component:13:1:agent_node_function|AGENT_NODE_FUNCTION",
+            "full_link": "[[component:13:1:agent_node_function|`[[component:13:1:agent_node_function|AGENT_NODE_FUNCTION]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 1,
+            "component_name": "agent_node_function",
+            "display_text": "agent node function",
+            "full_link": "[[component:13:1:agent_node_function|agent node function]]"
+          }
+        ]
+      },
+      {
+        "component_key": "21:5",
+        "count": 4,
+        "links": [
+          {
+            "block_id": "21",
+            "component_number": 5,
+            "component_name": "agent_node_function",
+            "display_text": "agent node function",
+            "full_link": "[[component:21:5:agent_node_function|agent node function]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 5,
+            "component_name": "agent_node_function",
+            "display_text": "[[component:13:1:agent_node_function|agent_node_function",
+            "full_link": "[[component:21:5:agent_node_function|[[component:13:1:agent_node_function|agent_node_function]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 5,
+            "component_name": "agent_node_function",
+            "display_text": "[[component:13:1:agent_node_function|AGENT_NODE_FUNCTION",
+            "full_link": "[[component:21:5:agent_node_function|[[component:13:1:agent_node_function|AGENT_NODE_FUNCTION]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 5,
+            "component_name": "agent_node_function",
+            "display_text": "[[component:21:5:agent_node_function|agent_node_function",
+            "full_link": "[[component:21:5:agent_node_function|[[component:21:5:agent_node_function|agent_node_function]]"
+          }
+        ]
+      },
+      {
+        "component_key": "13:2",
+        "count": 4,
+        "links": [
+          {
+            "block_id": "13",
+            "component_number": 2,
+            "component_name": "agent_invoke_call",
+            "display_text": "agent_invoke_call",
+            "full_link": "[[component:13:2:agent_invoke_call|agent_invoke_call]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 2,
+            "component_name": "agent_invoke_call",
+            "display_text": "agent_invoke_call",
+            "full_link": "[[component:13:2:agent_invoke_call|agent_invoke_call]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 2,
+            "component_name": "agent_invoke_call",
+            "display_text": "agent_invoke_call",
+            "full_link": "[[component:13:2:agent_invoke_call|agent_invoke_call]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 2,
+            "component_name": "agent_invoke_call",
+            "display_text": "agent_invoke_call",
+            "full_link": "[[component:13:2:agent_invoke_call|agent_invoke_call]]"
+          }
+        ]
+      },
+      {
+        "component_key": "13:3",
+        "count": 4,
+        "links": [
+          {
+            "block_id": "13",
+            "component_number": 3,
+            "component_name": "return_message_structure",
+            "display_text": "RETURN_MESSAGE_STRUCTURE",
+            "full_link": "[[component:13:3:return_message_structure|RETURN_MESSAGE_STRUCTURE]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 3,
+            "component_name": "return_message_structure",
+            "display_text": "return_message_structure",
+            "full_link": "[[component:13:3:return_message_structure|return_message_structure]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 3,
+            "component_name": "return_message_structure",
+            "display_text": "return_message_structure",
+            "full_link": "[[component:13:3:return_message_structure|return_message_structure]]"
+          },
+          {
+            "block_id": "13",
+            "component_number": 3,
+            "component_name": "return_message_structure",
+            "display_text": "return_message_structure",
+            "full_link": "[[component:13:3:return_message_structure|return_message_structure]]"
+          }
+        ]
+      },
+      {
+        "component_key": "14:5",
+        "count": 6,
+        "links": [
+          {
+            "block_id": "14",
+            "component_number": 5,
+            "component_name": "agent_creation",
+            "display_text": "agent creation",
+            "full_link": "[[component:14:5:agent_creation|agent creation]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 5,
+            "component_name": "agent_creation",
+            "display_text": "agent creation",
+            "full_link": "[[component:14:5:agent_creation|agent creation]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 5,
+            "component_name": "agent_creation",
+            "display_text": "agent creation",
+            "full_link": "[[component:14:5:agent_creation|agent creation]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 5,
+            "component_name": "agent_creation",
+            "display_text": "agent_creation",
+            "full_link": "[[component:14:5:agent_creation|agent_creation]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 5,
+            "component_name": "agent_creation",
+            "display_text": "agent_creation",
+            "full_link": "[[component:14:5:agent_creation|agent_creation]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 5,
+            "component_name": "agent_creation",
+            "display_text": "agent creation",
+            "full_link": "[[component:14:5:agent_creation|agent creation]]"
+          }
+        ]
+      },
+      {
+        "component_key": "14:1",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "14",
+            "component_number": 1,
+            "component_name": "create_agent_function",
+            "display_text": "create_agent_function",
+            "full_link": "[[component:14:1:create_agent_function|create_agent_function]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 1,
+            "component_name": "create_agent_function",
+            "display_text": "create_agent_function",
+            "full_link": "[[component:14:1:create_agent_function|create_agent_function]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 1,
+            "component_name": "create_agent_function",
+            "display_text": "create_agent_function",
+            "full_link": "[[component:14:1:create_agent_function|create_agent_function]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 1,
+            "component_name": "create_agent_function",
+            "display_text": "create_agent_function",
+            "full_link": "[[component:14:1:create_agent_function|create_agent_function]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 1,
+            "component_name": "create_agent_function",
+            "display_text": "create_agent_function",
+            "full_link": "[[component:14:1:create_agent_function|create_agent_function]]"
+          }
+        ]
+      },
+      {
+        "component_key": "14:2",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "14",
+            "component_number": 2,
+            "component_name": "create_agent_function_docstring",
+            "display_text": "create_agent_function_docstring",
+            "full_link": "[[component:14:2:create_agent_function_docstring|create_agent_function_docstring]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 2,
+            "component_name": "create_agent_function_docstring",
+            "display_text": "create_agent_function_docstring",
+            "full_link": "[[component:14:2:create_agent_function_docstring|create_agent_function_docstring]]"
+          }
+        ]
+      },
+      {
+        "component_key": "14:3",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "14",
+            "component_number": 3,
+            "component_name": "system_prompt_modification",
+            "display_text": "system prompt modification",
+            "full_link": "[[component:14:3:system_prompt_modification|system prompt modification]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 3,
+            "component_name": "system_prompt_modification",
+            "display_text": "system_prompt_modification",
+            "full_link": "[[component:14:3:system_prompt_modification|system_prompt_modification]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 3,
+            "component_name": "system_prompt_modification",
+            "display_text": "system_prompt_modification",
+            "full_link": "[[component:14:3:system_prompt_modification|system_prompt_modification]]"
+          }
+        ]
+      },
+      {
+        "component_key": "14:4",
+        "count": 4,
+        "links": [
+          {
+            "block_id": "14",
+            "component_number": 4,
+            "component_name": "prompt_creation",
+            "display_text": "prompt creation",
+            "full_link": "[[component:14:4:prompt_creation|prompt creation]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 4,
+            "component_name": "prompt_creation",
+            "display_text": "prompt_creation",
+            "full_link": "[[component:14:4:prompt_creation|prompt_creation]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 4,
+            "component_name": "prompt_creation",
+            "display_text": "prompt creation",
+            "full_link": "[[component:14:4:prompt_creation|prompt creation]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 4,
+            "component_name": "prompt_creation",
+            "display_text": "prompt_creation",
+            "full_link": "[[component:14:4:prompt_creation|prompt_creation]]"
+          }
+        ]
+      },
+      {
+        "component_key": "14:6",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "14",
+            "component_number": 6,
+            "component_name": "executor_creation",
+            "display_text": "executor creation",
+            "full_link": "[[component:14:6:executor_creation|executor creation]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 6,
+            "component_name": "executor_creation",
+            "display_text": "executor_creation",
+            "full_link": "[[component:14:6:executor_creation|executor_creation]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 6,
+            "component_name": "executor_creation",
+            "display_text": "executor_creation",
+            "full_link": "[[component:14:6:executor_creation|executor_creation]]"
+          }
+        ]
+      },
+      {
+        "component_key": "14:7",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "14",
+            "component_number": 7,
+            "component_name": "return_executor",
+            "display_text": "return executor",
+            "full_link": "[[component:14:7:return_executor|return executor]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 7,
+            "component_name": "return_executor",
+            "display_text": "return_executor",
+            "full_link": "[[component:14:7:return_executor|return_executor]]"
+          },
+          {
+            "block_id": "14",
+            "component_number": 7,
+            "component_name": "return_executor",
+            "display_text": "return_executor",
+            "full_link": "[[component:14:7:return_executor|return_executor]]"
+          }
+        ]
+      },
+      {
+        "component_key": "15:1",
+        "count": 8,
+        "links": [
+          {
+            "block_id": "15",
+            "component_number": 1,
+            "component_name": "create_team_supervisor_function",
+            "display_text": "create_team_supervisor_function",
+            "full_link": "[[component:15:1:create_team_supervisor_function|create_team_supervisor_function]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 1,
+            "component_name": "create_team_supervisor_function",
+            "display_text": "[[component:15:1:create_team_supervisor_function|CREATE_TEAM_SUPERVISOR_FUNCTION",
+            "full_link": "[[component:15:1:create_team_supervisor_function|[[component:15:1:create_team_supervisor_function|CREATE_TEAM_SUPERVISOR_FUNCTION]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 1,
+            "component_name": "create_team_supervisor_function",
+            "display_text": "create_team_supervisor_function",
+            "full_link": "[[component:15:1:create_team_supervisor_function|create_team_supervisor_function]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 1,
+            "component_name": "create_team_supervisor_function",
+            "display_text": "CREATE_TEAM_SUPERVISOR_FUNCTION",
+            "full_link": "[[component:15:1:create_team_supervisor_function|CREATE_TEAM_SUPERVISOR_FUNCTION]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 1,
+            "component_name": "create_team_supervisor_function",
+            "display_text": "create_team_supervisor_function",
+            "full_link": "[[component:15:1:create_team_supervisor_function|create_team_supervisor_function]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 1,
+            "component_name": "create_team_supervisor_function",
+            "display_text": "[[component:15:1:create_team_supervisor_function|CREATE_TEAM_SUPERVISOR_FUNCTION",
+            "full_link": "[[component:15:1:create_team_supervisor_function|[[component:15:1:create_team_supervisor_function|CREATE_TEAM_SUPERVISOR_FUNCTION]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 1,
+            "component_name": "create_team_supervisor_function",
+            "display_text": "create_team_supervisor",
+            "full_link": "[[component:15:1:create_team_supervisor_function|create_team_supervisor]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 1,
+            "component_name": "create_team_supervisor_function",
+            "display_text": "create_team_supervisor",
+            "full_link": "[[component:15:1:create_team_supervisor_function|create_team_supervisor]]"
+          }
+        ]
+      },
+      {
+        "component_key": "15:2",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "15",
+            "component_number": 2,
+            "component_name": "create_team_supervisor_docstring",
+            "display_text": "create_team_supervisor_docstring",
+            "full_link": "[[component:15:2:create_team_supervisor_docstring|create_team_supervisor_docstring]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 2,
+            "component_name": "create_team_supervisor_docstring",
+            "display_text": "[[component:15:2:create_team_supervisor_docstring|CREATE_TEAM_SUPERVISOR_DOCSTRING",
+            "full_link": "[[component:15:2:create_team_supervisor_docstring|[[component:15:2:create_team_supervisor_docstring|CREATE_TEAM_SUPERVISOR_DOCSTRING]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 2,
+            "component_name": "create_team_supervisor_docstring",
+            "display_text": "`[[component:15:2:create_team_supervisor_docstring|create_team_supervisor_docstring",
+            "full_link": "[[component:15:2:create_team_supervisor_docstring|`[[component:15:2:create_team_supervisor_docstring|create_team_supervisor_docstring]]"
+          }
+        ]
+      },
+      {
+        "component_key": "15:3",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "15",
+            "component_number": 3,
+            "component_name": "options_variable",
+            "display_text": "options_variable",
+            "full_link": "[[component:15:3:options_variable|options_variable]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 3,
+            "component_name": "options_variable",
+            "display_text": "options_variable",
+            "full_link": "[[component:15:3:options_variable|options_variable]]"
+          }
+        ]
+      },
+      {
+        "component_key": "15:4",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "15",
+            "component_number": 4,
+            "component_name": "function_def_variable",
+            "display_text": "FUNCTION_DEF_VARIABLE",
+            "full_link": "[[component:15:4:function_def_variable|FUNCTION_DEF_VARIABLE]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 4,
+            "component_name": "function_def_variable",
+            "display_text": "function_def_variable",
+            "full_link": "[[component:15:4:function_def_variable|function_def_variable]]"
+          }
+        ]
+      },
+      {
+        "component_key": "15:5",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "15",
+            "component_number": 5,
+            "component_name": "prompt_variable",
+            "display_text": "prompt_variable",
+            "full_link": "[[component:15:5:prompt_variable|prompt_variable]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 5,
+            "component_name": "prompt_variable",
+            "display_text": "prompt_variable",
+            "full_link": "[[component:15:5:prompt_variable|prompt_variable]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 5,
+            "component_name": "prompt_variable",
+            "display_text": "PROMPT_VARIABLE",
+            "full_link": "[[component:15:5:prompt_variable|PROMPT_VARIABLE]]"
+          }
+        ]
+      },
+      {
+        "component_key": "15:6",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "15",
+            "component_number": 6,
+            "component_name": "ChatPromptTemplate_from_messages_call",
+            "display_text": "CHATPROMPTTEMPLATE_FROM_MESSAGES_CALL",
+            "full_link": "[[component:15:6:ChatPromptTemplate_from_messages_call|CHATPROMPTTEMPLATE_FROM_MESSAGES_CALL]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 6,
+            "component_name": "ChatPromptTemplate_from_messages_call",
+            "display_text": "ChatPromptTemplate_from_messages_call",
+            "full_link": "[[component:15:6:ChatPromptTemplate_from_messages_call|ChatPromptTemplate_from_messages_call]]"
+          }
+        ]
+      },
+      {
+        "component_key": "15:7",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "15",
+            "component_number": 7,
+            "component_name": "MessagesPlaceholder_variable",
+            "display_text": "MessagesPlaceholder_variable",
+            "full_link": "[[component:15:7:MessagesPlaceholder_variable|MessagesPlaceholder_variable]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 7,
+            "component_name": "MessagesPlaceholder_variable",
+            "display_text": "MessagesPlaceholder_variable",
+            "full_link": "[[component:15:7:MessagesPlaceholder_variable|MessagesPlaceholder_variable]]"
+          }
+        ]
+      },
+      {
+        "component_key": "15:8",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "15",
+            "component_number": 8,
+            "component_name": "return_expression",
+            "display_text": "return_expression",
+            "full_link": "[[component:15:8:return_expression|return_expression]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 8,
+            "component_name": "return_expression",
+            "display_text": "return_expression",
+            "full_link": "[[component:15:8:return_expression|return_expression]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 8,
+            "component_name": "return_expression",
+            "display_text": "RETURN_EXPRESSION",
+            "full_link": "[[component:15:8:return_expression|RETURN_EXPRESSION]]"
+          }
+        ]
+      },
+      {
+        "component_key": "15:9",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "15",
+            "component_number": 9,
+            "component_name": "llm_bind_functions_call",
+            "display_text": "llm_bind_functions_call",
+            "full_link": "[[component:15:9:llm_bind_functions_call|llm_bind_functions_call]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 9,
+            "component_name": "llm_bind_functions_call",
+            "display_text": "llm_bind_functions_call",
+            "full_link": "[[component:15:9:llm_bind_functions_call|llm_bind_functions_call]]"
+          }
+        ]
+      },
+      {
+        "component_key": "15:10",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "15",
+            "component_number": 10,
+            "component_name": "JsonOutputFunctionsParser_variable",
+            "display_text": "JsonOutputFunctionsParser_variable",
+            "full_link": "[[component:15:10:JsonOutputFunctionsParser_variable|JsonOutputFunctionsParser_variable]]"
+          },
+          {
+            "block_id": "15",
+            "component_number": 10,
+            "component_name": "JsonOutputFunctionsParser_variable",
+            "display_text": "JsonOutputFunctionsParser_variable",
+            "full_link": "[[component:15:10:JsonOutputFunctionsParser_variable|JsonOutputFunctionsParser_variable]]"
+          }
+        ]
+      },
+      {
+        "component_key": "16:2",
+        "count": 10,
+        "links": [
+          {
+            "block_id": "16",
+            "component_number": 2,
+            "component_name": "tavily_tool_initialization",
+            "display_text": "tavily tool initialization",
+            "full_link": "[[component:16:2:tavily_tool_initialization|tavily tool initialization]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 2,
+            "component_name": "tavily_tool_initialization",
+            "display_text": "tavily tool initialization",
+            "full_link": "[[component:16:2:tavily_tool_initialization|tavily tool initialization]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 2,
+            "component_name": "tavily_tool_initialization",
+            "display_text": "TAVILY_TOOL_INITIALIZATION",
+            "full_link": "[[component:16:2:tavily_tool_initialization|TAVILY_TOOL_INITIALIZATION]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 2,
+            "component_name": "tavily_tool_initialization",
+            "display_text": "tavily_tool_initialization",
+            "full_link": "[[component:16:2:tavily_tool_initialization|tavily_tool_initialization]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 2,
+            "component_name": "tavily_tool_initialization",
+            "display_text": "TAVILY_TOOL_INITIALIZATION",
+            "full_link": "[[component:16:2:tavily_tool_initialization|TAVILY_TOOL_INITIALIZATION]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 2,
+            "component_name": "tavily_tool_initialization",
+            "display_text": "tavily_tool_initialization",
+            "full_link": "[[component:16:2:tavily_tool_initialization|tavily_tool_initialization]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 2,
+            "component_name": "tavily_tool_initialization",
+            "display_text": "TAVILY_TOOL_INITIALIZATION",
+            "full_link": "[[component:16:2:tavily_tool_initialization|TAVILY_TOOL_INITIALIZATION]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 2,
+            "component_name": "tavily_tool_initialization",
+            "display_text": "tavily_tool_initialization",
+            "full_link": "[[component:16:2:tavily_tool_initialization|tavily_tool_initialization]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 2,
+            "component_name": "tavily_tool_initialization",
+            "display_text": "tavily tool initialization",
+            "full_link": "[[component:16:2:tavily_tool_initialization|tavily tool initialization]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 2,
+            "component_name": "tavily_tool_initialization",
+            "display_text": "tavily_tool_initialization",
+            "full_link": "[[component:16:2:tavily_tool_initialization|tavily_tool_initialization]]"
+          }
+        ]
+      },
+      {
+        "component_key": "16:1",
+        "count": 7,
+        "links": [
+          {
+            "block_id": "16",
+            "component_number": 1,
+            "component_name": "TavilySearchResults_import",
+            "display_text": "TAVILYSEARCHRESULTS_IMPORT",
+            "full_link": "[[component:16:1:TavilySearchResults_import|TAVILYSEARCHRESULTS_IMPORT]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 1,
+            "component_name": "TavilySearchResults_import",
+            "display_text": "tavilysearchresults_import",
+            "full_link": "[[component:16:1:TavilySearchResults_import|tavilysearchresults_import]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 1,
+            "component_name": "TavilySearchResults_import",
+            "display_text": "TavilySearchResults_import",
+            "full_link": "[[component:16:1:TavilySearchResults_import|TavilySearchResults_import]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 1,
+            "component_name": "TavilySearchResults_import",
+            "display_text": "TAVILYSEARCHRESULTS_IMPORT",
+            "full_link": "[[component:16:1:TavilySearchResults_import|TAVILYSEARCHRESULTS_IMPORT]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 1,
+            "component_name": "TavilySearchResults_import",
+            "display_text": "TavilySearchResults_import",
+            "full_link": "[[component:16:1:TavilySearchResults_import|TavilySearchResults_import]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 1,
+            "component_name": "TavilySearchResults_import",
+            "display_text": "tavilysearchresults_import",
+            "full_link": "[[component:16:1:TavilySearchResults_import|tavilysearchresults_import]]"
+          },
+          {
+            "block_id": "16",
+            "component_number": 1,
+            "component_name": "TavilySearchResults_import",
+            "display_text": "TavilySearchResults_import",
+            "full_link": "[[component:16:1:TavilySearchResults_import|TavilySearchResults_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "17:1",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "17",
+            "component_number": 1,
+            "component_name": "import_typing_and_langchain_tools",
+            "display_text": "IMPORT_TYPING_AND_LANGCHAIN_TOOLS",
+            "full_link": "[[component:17:1:import_typing_and_langchain_tools|IMPORT_TYPING_AND_LANGCHAIN_TOOLS]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 1,
+            "component_name": "import_typing_and_langchain_tools",
+            "display_text": "IMPORT_TYPING_AND_LANGCHAIN_TOOLS",
+            "full_link": "[[component:17:1:import_typing_and_langchain_tools|IMPORT_TYPING_AND_LANGCHAIN_TOOLS]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 1,
+            "component_name": "import_typing_and_langchain_tools",
+            "display_text": "import_typing_and_langchain_tools",
+            "full_link": "[[component:17:1:import_typing_and_langchain_tools|import_typing_and_langchain_tools]]"
+          }
+        ]
+      },
+      {
+        "component_key": "17:2",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "17",
+            "component_number": 2,
+            "component_name": "retrieve_information_function",
+            "display_text": "retrieve_information_function",
+            "full_link": "[[component:17:2:retrieve_information_function|retrieve_information_function]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 2,
+            "component_name": "retrieve_information_function",
+            "display_text": "retrieve_information_function",
+            "full_link": "[[component:17:2:retrieve_information_function|retrieve_information_function]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 2,
+            "component_name": "retrieve_information_function",
+            "display_text": "RETRIEVE_INFORMATION_FUNCTION",
+            "full_link": "[[component:17:2:retrieve_information_function|RETRIEVE_INFORMATION_FUNCTION]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 2,
+            "component_name": "retrieve_information_function",
+            "display_text": "RETRIEVE_INFORMATION_FUNCTION",
+            "full_link": "[[component:17:2:retrieve_information_function|RETRIEVE_INFORMATION_FUNCTION]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 2,
+            "component_name": "retrieve_information_function",
+            "display_text": "retrieve_information_function",
+            "full_link": "[[component:17:2:retrieve_information_function|retrieve_information_function]]"
+          }
+        ]
+      },
+      {
+        "component_key": "17:3",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "17",
+            "component_number": 3,
+            "component_name": "retrieve_information_docstring",
+            "display_text": "RETRIEVE_INFORMATION_DOCSTRING",
+            "full_link": "[[component:17:3:retrieve_information_docstring|RETRIEVE_INFORMATION_DOCSTRING]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 3,
+            "component_name": "retrieve_information_docstring",
+            "display_text": "RETRIEVE_INFORMATION_DOCSTRING",
+            "full_link": "[[component:17:3:retrieve_information_docstring|RETRIEVE_INFORMATION_DOCSTRING]]"
+          },
+          {
+            "block_id": "17",
+            "component_number": 3,
+            "component_name": "retrieve_information_docstring",
+            "display_text": "retrieve_information_docstring",
+            "full_link": "[[component:17:3:retrieve_information_docstring|retrieve_information_docstring]]"
+          }
+        ]
+      },
+      {
+        "component_key": "18:1",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "18",
+            "component_number": 1,
+            "component_name": "functools_import",
+            "display_text": "functools_import",
+            "full_link": "[[component:18:1:functools_import|functools_import]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 1,
+            "component_name": "functools_import",
+            "display_text": "[[component:18:1:functools_import|FUNCTOOLS_IMPORT",
+            "full_link": "[[component:18:1:functools_import|[[component:18:1:functools_import|FUNCTOOLS_IMPORT]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 1,
+            "component_name": "functools_import",
+            "display_text": "functools_import",
+            "full_link": "[[component:18:1:functools_import|functools_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "18:2",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "18",
+            "component_number": 2,
+            "component_name": "operator_import",
+            "display_text": "OPERATOR_IMPORT",
+            "full_link": "[[component:18:2:operator_import|OPERATOR_IMPORT]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 2,
+            "component_name": "operator_import",
+            "display_text": "operator_import",
+            "full_link": "[[component:18:2:operator_import|operator_import]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 2,
+            "component_name": "operator_import",
+            "display_text": "operator_import",
+            "full_link": "[[component:18:2:operator_import|operator_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "18:5",
+        "count": 7,
+        "links": [
+          {
+            "block_id": "18",
+            "component_number": 5,
+            "component_name": "ResearchTeamState_class",
+            "display_text": "researchteamstate_class",
+            "full_link": "[[component:18:5:ResearchTeamState_class|researchteamstate_class]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 5,
+            "component_name": "ResearchTeamState_class",
+            "display_text": "ResearchTeamState",
+            "full_link": "[[component:18:5:ResearchTeamState_class|ResearchTeamState]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 5,
+            "component_name": "ResearchTeamState_class",
+            "display_text": "ResearchTeamState_class",
+            "full_link": "[[component:18:5:ResearchTeamState_class|ResearchTeamState_class]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 5,
+            "component_name": "ResearchTeamState_class",
+            "display_text": "ResearchTeamState_class",
+            "full_link": "[[component:18:5:ResearchTeamState_class|ResearchTeamState_class]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 5,
+            "component_name": "ResearchTeamState_class",
+            "display_text": "ResearchTeamState",
+            "full_link": "[[component:18:5:ResearchTeamState_class|ResearchTeamState]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 5,
+            "component_name": "ResearchTeamState_class",
+            "display_text": "RESEARCHTEAMSTATE_CLASS",
+            "full_link": "[[component:18:5:ResearchTeamState_class|RESEARCHTEAMSTATE_CLASS]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 5,
+            "component_name": "ResearchTeamState_class",
+            "display_text": "researchteamstate_class",
+            "full_link": "[[component:18:5:ResearchTeamState_class|researchteamstate_class]]"
+          }
+        ]
+      },
+      {
+        "component_key": "18:3",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "18",
+            "component_number": 3,
+            "component_name": "AIMessage_import",
+            "display_text": "aimessage_import",
+            "full_link": "[[component:18:3:AIMessage_import|aimessage_import]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 3,
+            "component_name": "AIMessage_import",
+            "display_text": "AIMessage_import",
+            "full_link": "[[component:18:3:AIMessage_import|AIMessage_import]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 3,
+            "component_name": "AIMessage_import",
+            "display_text": "AIMESSAGE_IMPORT",
+            "full_link": "[[component:18:3:AIMessage_import|AIMESSAGE_IMPORT]]"
+          }
+        ]
+      },
+      {
+        "component_key": "18:6",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "18",
+            "component_number": 6,
+            "component_name": "messages_field",
+            "display_text": "messages_field",
+            "full_link": "[[component:18:6:messages_field|messages_field]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 6,
+            "component_name": "messages_field",
+            "display_text": "messages_field",
+            "full_link": "[[component:18:6:messages_field|messages_field]]"
+          }
+        ]
+      },
+      {
+        "component_key": "18:7",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "18",
+            "component_number": 7,
+            "component_name": "team_members_field",
+            "display_text": "TEAM_MEMBERS_FIELD",
+            "full_link": "[[component:18:7:team_members_field|TEAM_MEMBERS_FIELD]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 7,
+            "component_name": "team_members_field",
+            "display_text": "team_members_field",
+            "full_link": "[[component:18:7:team_members_field|team_members_field]]"
+          }
+        ]
+      },
+      {
+        "component_key": "18:8",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "18",
+            "component_number": 8,
+            "component_name": "next_field",
+            "display_text": "NEXT_FIELD",
+            "full_link": "[[component:18:8:next_field|NEXT_FIELD]]"
+          },
+          {
+            "block_id": "18",
+            "component_number": 8,
+            "component_name": "next_field",
+            "display_text": "next_field",
+            "full_link": "[[component:18:8:next_field|next_field]]"
+          }
+        ]
+      },
+      {
+        "component_key": "19:1",
+        "count": 6,
+        "links": [
+          {
+            "block_id": "19",
+            "component_number": 1,
+            "component_name": "ChatOpenAI_initialization",
+            "display_text": "CHATOPENAI_INITIALIZATION",
+            "full_link": "[[component:19:1:ChatOpenAI_initialization|CHATOPENAI_INITIALIZATION]]"
+          },
+          {
+            "block_id": "19",
+            "component_number": 1,
+            "component_name": "ChatOpenAI_initialization",
+            "display_text": "ChatOpenAI_initialization",
+            "full_link": "[[component:19:1:ChatOpenAI_initialization|ChatOpenAI_initialization]]"
+          },
+          {
+            "block_id": "19",
+            "component_number": 1,
+            "component_name": "ChatOpenAI_initialization",
+            "display_text": "chatopenai_initialization",
+            "full_link": "[[component:19:1:ChatOpenAI_initialization|chatopenai_initialization]]"
+          },
+          {
+            "block_id": "19",
+            "component_number": 1,
+            "component_name": "ChatOpenAI_initialization",
+            "display_text": "CHATOPENAI_INITIALIZATION",
+            "full_link": "[[component:19:1:ChatOpenAI_initialization|CHATOPENAI_INITIALIZATION]]"
+          },
+          {
+            "block_id": "19",
+            "component_number": 1,
+            "component_name": "ChatOpenAI_initialization",
+            "display_text": "ChatOpenAI_initialization",
+            "full_link": "[[component:19:1:ChatOpenAI_initialization|ChatOpenAI_initialization]]"
+          },
+          {
+            "block_id": "19",
+            "component_number": 1,
+            "component_name": "ChatOpenAI_initialization",
+            "display_text": "chatopenai_initialization",
+            "full_link": "[[component:19:1:ChatOpenAI_initialization|chatopenai_initialization]]"
+          }
+        ]
+      },
+      {
+        "component_key": "20:1",
+        "count": 7,
+        "links": [
+          {
+            "block_id": "20",
+            "component_number": 1,
+            "component_name": "search_agent_creation",
+            "display_text": "search_agent_creation",
+            "full_link": "[[component:20:1:search_agent_creation|search_agent_creation]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 1,
+            "component_name": "search_agent_creation",
+            "display_text": "SEARCH_AGENT_CREATION",
+            "full_link": "[[component:20:1:search_agent_creation|SEARCH_AGENT_CREATION]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 1,
+            "component_name": "search_agent_creation",
+            "display_text": "search_agent_creation",
+            "full_link": "[[component:20:1:search_agent_creation|search_agent_creation]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 1,
+            "component_name": "search_agent_creation",
+            "display_text": "search_agent_creation",
+            "full_link": "[[component:20:1:search_agent_creation|search_agent_creation]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 1,
+            "component_name": "search_agent_creation",
+            "display_text": "search_agent_creation",
+            "full_link": "[[component:20:1:search_agent_creation|search_agent_creation]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 1,
+            "component_name": "search_agent_creation",
+            "display_text": "search_agent_creation",
+            "full_link": "[[component:20:1:search_agent_creation|search_agent_creation]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 1,
+            "component_name": "search_agent_creation",
+            "display_text": "search_agent_creation",
+            "full_link": "[[component:20:1:search_agent_creation|search_agent_creation]]"
+          }
+        ]
+      },
+      {
+        "component_key": "20:2",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "20",
+            "component_number": 2,
+            "component_name": "create_agent_function_call",
+            "display_text": "CREATE_AGENT_FUNCTION_CALL",
+            "full_link": "[[component:20:2:create_agent_function_call|CREATE_AGENT_FUNCTION_CALL]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 2,
+            "component_name": "create_agent_function_call",
+            "display_text": "create_agent_function_call",
+            "full_link": "[[component:20:2:create_agent_function_call|create_agent_function_call]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 2,
+            "component_name": "create_agent_function_call",
+            "display_text": "create_agent_function_call",
+            "full_link": "[[component:20:2:create_agent_function_call|create_agent_function_call]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 2,
+            "component_name": "create_agent_function_call",
+            "display_text": "create_agent_function_call",
+            "full_link": "[[component:20:2:create_agent_function_call|create_agent_function_call]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 2,
+            "component_name": "create_agent_function_call",
+            "display_text": "create_agent_function_call",
+            "full_link": "[[component:20:2:create_agent_function_call|create_agent_function_call]]"
+          }
+        ]
+      },
+      {
+        "component_key": "20:3",
+        "count": 7,
+        "links": [
+          {
+            "block_id": "20",
+            "component_number": 3,
+            "component_name": "search_node_creation",
+            "display_text": "search_node_creation",
+            "full_link": "[[component:20:3:search_node_creation|search_node_creation]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 3,
+            "component_name": "search_node_creation",
+            "display_text": "search_node_creation",
+            "full_link": "[[component:20:3:search_node_creation|search_node_creation]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 3,
+            "component_name": "search_node_creation",
+            "display_text": "SEARCH_NODE_CREATION",
+            "full_link": "[[component:20:3:search_node_creation|SEARCH_NODE_CREATION]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 3,
+            "component_name": "search_node_creation",
+            "display_text": "search_node_creation",
+            "full_link": "[[component:20:3:search_node_creation|search_node_creation]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 3,
+            "component_name": "search_node_creation",
+            "display_text": "search_node_creation",
+            "full_link": "[[component:20:3:search_node_creation|search_node_creation]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 3,
+            "component_name": "search_node_creation",
+            "display_text": "search_node_creation",
+            "full_link": "[[component:20:3:search_node_creation|search_node_creation]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 3,
+            "component_name": "search_node_creation",
+            "display_text": "search_node_creation",
+            "full_link": "[[component:20:3:search_node_creation|search_node_creation]]"
+          }
+        ]
+      },
+      {
+        "component_key": "20:4",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "20",
+            "component_number": 4,
+            "component_name": "functools_partial_function_call",
+            "display_text": "FUNCTOOLS_PARTIAL_FUNCTION_CALL",
+            "full_link": "[[component:20:4:functools_partial_function_call|FUNCTOOLS_PARTIAL_FUNCTION_CALL]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 4,
+            "component_name": "functools_partial_function_call",
+            "display_text": "functools_partial_function_call",
+            "full_link": "[[component:20:4:functools_partial_function_call|functools_partial_function_call]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 4,
+            "component_name": "functools_partial_function_call",
+            "display_text": "functools_partial_function_call",
+            "full_link": "[[component:20:4:functools_partial_function_call|functools_partial_function_call]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 4,
+            "component_name": "functools_partial_function_call",
+            "display_text": "functools_partial_function_call",
+            "full_link": "[[component:20:4:functools_partial_function_call|functools_partial_function_call]]"
+          },
+          {
+            "block_id": "20",
+            "component_number": 4,
+            "component_name": "functools_partial_function_call",
+            "display_text": "functools_partial_function_call",
+            "full_link": "[[component:20:4:functools_partial_function_call|functools_partial_function_call]]"
+          }
+        ]
+      },
+      {
+        "component_key": "21:1",
+        "count": 4,
+        "links": [
+          {
+            "block_id": "21",
+            "component_number": 1,
+            "component_name": "research_agent_creation",
+            "display_text": "[[component:21:1:research_agent_creation|RESEARCH_AGENT_CREATION",
+            "full_link": "[[component:21:1:research_agent_creation|[[component:21:1:research_agent_creation|RESEARCH_AGENT_CREATION]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 1,
+            "component_name": "research_agent_creation",
+            "display_text": "[[component:21:1:research_agent_creation|research_agent_creation",
+            "full_link": "[[component:21:1:research_agent_creation|[[component:21:1:research_agent_creation|research_agent_creation]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 1,
+            "component_name": "research_agent_creation",
+            "display_text": "[[component:21:1:research_agent_creation|RESEARCH_AGENT_CREATION",
+            "full_link": "[[component:21:1:research_agent_creation|[[component:21:1:research_agent_creation|RESEARCH_AGENT_CREATION]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 1,
+            "component_name": "research_agent_creation",
+            "display_text": "[[component:21:1:research_agent_creation|research_agent_creation",
+            "full_link": "[[component:21:1:research_agent_creation|[[component:21:1:research_agent_creation|research_agent_creation]]"
+          }
+        ]
+      },
+      {
+        "component_key": "21:2",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "21",
+            "component_number": 2,
+            "component_name": "research_agent_parameters",
+            "display_text": "[[component:21:2:research_agent_parameters|RESEARCH_AGENT_PARAMETERS",
+            "full_link": "[[component:21:2:research_agent_parameters|[[component:21:2:research_agent_parameters|RESEARCH_AGENT_PARAMETERS]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 2,
+            "component_name": "research_agent_parameters",
+            "display_text": "research agent parameters",
+            "full_link": "[[component:21:2:research_agent_parameters|research agent parameters]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 2,
+            "component_name": "research_agent_parameters",
+            "display_text": "[[component:21:2:research_agent_parameters|research_agent_parameters",
+            "full_link": "[[component:21:2:research_agent_parameters|[[component:21:2:research_agent_parameters|research_agent_parameters]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 2,
+            "component_name": "research_agent_parameters",
+            "display_text": "[[component:21:2:research_agent_parameters|RESEARCH_AGENT_PARAMETERS",
+            "full_link": "[[component:21:2:research_agent_parameters|[[component:21:2:research_agent_parameters|RESEARCH_AGENT_PARAMETERS]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 2,
+            "component_name": "research_agent_parameters",
+            "display_text": "[[component:21:2:research_agent_parameters|research_agent_parameters",
+            "full_link": "[[component:21:2:research_agent_parameters|[[component:21:2:research_agent_parameters|research_agent_parameters]]"
+          }
+        ]
+      },
+      {
+        "component_key": "21:3",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "21",
+            "component_number": 3,
+            "component_name": "research_agent_role_description",
+            "display_text": "[[component:21:3:research_agent_role_description|RESEARCH_AGENT_ROLE_DESCRIPTION",
+            "full_link": "[[component:21:3:research_agent_role_description|[[component:21:3:research_agent_role_description|RESEARCH_AGENT_ROLE_DESCRIPTION]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 3,
+            "component_name": "research_agent_role_description",
+            "display_text": "research agent role description",
+            "full_link": "[[component:21:3:research_agent_role_description|research agent role description]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 3,
+            "component_name": "research_agent_role_description",
+            "display_text": "[[component:21:3:research_agent_role_description|research_agent_role_description",
+            "full_link": "[[component:21:3:research_agent_role_description|[[component:21:3:research_agent_role_description|research_agent_role_description]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 3,
+            "component_name": "research_agent_role_description",
+            "display_text": "`[[component:21:3:research_agent_role_description|RESEARCH_AGENT_ROLE_DESCRIPTION",
+            "full_link": "[[component:21:3:research_agent_role_description|`[[component:21:3:research_agent_role_description|RESEARCH_AGENT_ROLE_DESCRIPTION]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 3,
+            "component_name": "research_agent_role_description",
+            "display_text": "[[component:21:3:research_agent_role_description|RESEARCH_AGENT_ROLE_DESCRIPTION",
+            "full_link": "[[component:21:3:research_agent_role_description|[[component:21:3:research_agent_role_description|RESEARCH_AGENT_ROLE_DESCRIPTION]]"
+          }
+        ]
+      },
+      {
+        "component_key": "21:4",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "21",
+            "component_number": 4,
+            "component_name": "research_node_creation",
+            "display_text": "research node creation",
+            "full_link": "[[component:21:4:research_node_creation|research node creation]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 4,
+            "component_name": "research_node_creation",
+            "display_text": "[[component:21:4:research_node_creation|research_node_creation",
+            "full_link": "[[component:21:4:research_node_creation|[[component:21:4:research_node_creation|research_node_creation]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 4,
+            "component_name": "research_node_creation",
+            "display_text": "[[component:21:4:research_node_creation|RESEARCH_NODE_CREATION",
+            "full_link": "[[component:21:4:research_node_creation|[[component:21:4:research_node_creation|RESEARCH_NODE_CREATION]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 4,
+            "component_name": "research_node_creation",
+            "display_text": "[[component:21:4:research_node_creation|research_node_creation",
+            "full_link": "[[component:21:4:research_node_creation|[[component:21:4:research_node_creation|research_node_creation]]"
+          },
+          {
+            "block_id": "21",
+            "component_number": 4,
+            "component_name": "research_node_creation",
+            "display_text": "[[component:21:4:research_node_creation|RESEARCH_NODE_CREATION",
+            "full_link": "[[component:21:4:research_node_creation|[[component:21:4:research_node_creation|RESEARCH_NODE_CREATION]]"
+          }
+        ]
+      },
+      {
+        "component_key": "22:1",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "22",
+            "component_number": 1,
+            "component_name": "doc_writing_supervisor_variable",
+            "display_text": "doc_writing_supervisor_variable",
+            "full_link": "[[component:22:1:doc_writing_supervisor_variable|doc_writing_supervisor_variable]]"
+          },
+          {
+            "block_id": "22",
+            "component_number": 1,
+            "component_name": "doc_writing_supervisor_variable",
+            "display_text": "DOC_WRITING_SUPERVISOR_VARIABLE",
+            "full_link": "[[component:22:1:doc_writing_supervisor_variable|DOC_WRITING_SUPERVISOR_VARIABLE]]"
+          },
+          {
+            "block_id": "22",
+            "component_number": 1,
+            "component_name": "doc_writing_supervisor_variable",
+            "display_text": "doc_writing_supervisor_variable",
+            "full_link": "[[component:22:1:doc_writing_supervisor_variable|doc_writing_supervisor_variable]]"
+          },
+          {
+            "block_id": "22",
+            "component_number": 1,
+            "component_name": "doc_writing_supervisor_variable",
+            "display_text": "DOC_WRITING_SUPERVISOR_VARIABLE",
+            "full_link": "[[component:22:1:doc_writing_supervisor_variable|DOC_WRITING_SUPERVISOR_VARIABLE]]"
+          },
+          {
+            "block_id": "22",
+            "component_number": 1,
+            "component_name": "doc_writing_supervisor_variable",
+            "display_text": "doc_writing_supervisor_variable",
+            "full_link": "[[component:22:1:doc_writing_supervisor_variable|doc_writing_supervisor_variable]]"
+          }
+        ]
+      },
+      {
+        "component_key": "22:2",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "22",
+            "component_number": 2,
+            "component_name": "create_team_supervisor_function_call",
+            "display_text": "CREATE_TEAM_SUPERVISOR_FUNCTION_CALL",
+            "full_link": "[[component:22:2:create_team_supervisor_function_call|CREATE_TEAM_SUPERVISOR_FUNCTION_CALL]]"
+          },
+          {
+            "block_id": "22",
+            "component_number": 2,
+            "component_name": "create_team_supervisor_function_call",
+            "display_text": "create_team_supervisor_function_call",
+            "full_link": "[[component:22:2:create_team_supervisor_function_call|create_team_supervisor_function_call]]"
+          },
+          {
+            "block_id": "22",
+            "component_number": 2,
+            "component_name": "create_team_supervisor_function_call",
+            "display_text": "CREATE_TEAM_SUPERVISOR_FUNCTION_CALL",
+            "full_link": "[[component:22:2:create_team_supervisor_function_call|CREATE_TEAM_SUPERVISOR_FUNCTION_CALL]]"
+          },
+          {
+            "block_id": "22",
+            "component_number": 2,
+            "component_name": "create_team_supervisor_function_call",
+            "display_text": "create_team_supervisor_function_call",
+            "full_link": "[[component:22:2:create_team_supervisor_function_call|create_team_supervisor_function_call]]"
+          },
+          {
+            "block_id": "22",
+            "component_number": 2,
+            "component_name": "create_team_supervisor_function_call",
+            "display_text": "CREATE_TEAM_SUPERVISOR_FUNCTION_CALL",
+            "full_link": "[[component:22:2:create_team_supervisor_function_call|CREATE_TEAM_SUPERVISOR_FUNCTION_CALL]]"
+          }
+        ]
+      },
+      {
+        "component_key": "23:1",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "23",
+            "component_number": 1,
+            "component_name": "authoring_graph_variable",
+            "display_text": "AUTHORING_GRAPH_VARIABLE",
+            "full_link": "[[component:23:1:authoring_graph_variable|AUTHORING_GRAPH_VARIABLE]]"
+          },
+          {
+            "block_id": "23",
+            "component_number": 1,
+            "component_name": "authoring_graph_variable",
+            "display_text": "[[component:23:1:authoring_graph_variable|AUTHORING_GRAPH_VARIABLE",
+            "full_link": "[[component:23:1:authoring_graph_variable|[[component:23:1:authoring_graph_variable|AUTHORING_GRAPH_VARIABLE]]"
+          }
+        ]
+      },
+      {
+        "component_key": "23:2",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "23",
+            "component_number": 2,
+            "component_name": "add_node_doc_writer",
+            "display_text": "add_node_doc_writer",
+            "full_link": "[[component:23:2:add_node_doc_writer|add_node_doc_writer]]"
+          },
+          {
+            "block_id": "23",
+            "component_number": 2,
+            "component_name": "add_node_doc_writer",
+            "display_text": "[[component:23:2:add_node_doc_writer|add_node_doc_writer",
+            "full_link": "[[component:23:2:add_node_doc_writer|[[component:23:2:add_node_doc_writer|add_node_doc_writer]]"
+          }
+        ]
+      },
+      {
+        "component_key": "23:3",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "23",
+            "component_number": 3,
+            "component_name": "add_node_note_taker",
+            "display_text": "ADD_NODE_NOTE_TAKER",
+            "full_link": "[[component:23:3:add_node_note_taker|ADD_NODE_NOTE_TAKER]]"
+          },
+          {
+            "block_id": "23",
+            "component_number": 3,
+            "component_name": "add_node_note_taker",
+            "display_text": "[[component:23:3:add_node_note_taker|ADD_NODE_NOTE_TAKER",
+            "full_link": "[[component:23:3:add_node_note_taker|[[component:23:3:add_node_note_taker|ADD_NODE_NOTE_TAKER]]"
+          }
+        ]
+      },
+      {
+        "component_key": "23:4",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "23",
+            "component_number": 4,
+            "component_name": "add_node_copy_editor",
+            "display_text": "ADD_NODE_COPY_EDITOR",
+            "full_link": "[[component:23:4:add_node_copy_editor|ADD_NODE_COPY_EDITOR]]"
+          },
+          {
+            "block_id": "23",
+            "component_number": 4,
+            "component_name": "add_node_copy_editor",
+            "display_text": "[[component:23:4:add_node_copy_editor|ADD_NODE_COPY_EDITOR",
+            "full_link": "[[component:23:4:add_node_copy_editor|[[component:23:4:add_node_copy_editor|ADD_NODE_COPY_EDITOR]]"
+          }
+        ]
+      },
+      {
+        "component_key": "23:5",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "23",
+            "component_number": 5,
+            "component_name": "add_node_empathy_editor",
+            "display_text": "ADD_NODE_EMPATHY_EDITOR",
+            "full_link": "[[component:23:5:add_node_empathy_editor|ADD_NODE_EMPATHY_EDITOR]]"
+          },
+          {
+            "block_id": "23",
+            "component_number": 5,
+            "component_name": "add_node_empathy_editor",
+            "display_text": "[[component:23:5:add_node_empathy_editor|ADD_NODE_EMPATHY_EDITOR",
+            "full_link": "[[component:23:5:add_node_empathy_editor|[[component:23:5:add_node_empathy_editor|ADD_NODE_EMPATHY_EDITOR]]"
+          }
+        ]
+      },
+      {
+        "component_key": "23:6",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "23",
+            "component_number": 6,
+            "component_name": "add_node_supervisor",
+            "display_text": "add_node_supervisor",
+            "full_link": "[[component:23:6:add_node_supervisor|add_node_supervisor]]"
+          },
+          {
+            "block_id": "23",
+            "component_number": 6,
+            "component_name": "add_node_supervisor",
+            "display_text": "[[component:23:6:add_node_supervisor|add_node_supervisor",
+            "full_link": "[[component:23:6:add_node_supervisor|[[component:23:6:add_node_supervisor|add_node_supervisor]]"
+          }
+        ]
+      },
+      {
+        "component_key": "23:7",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "23",
+            "component_number": 7,
+            "component_name": "add_edge_doc_writer_supervisor",
+            "display_text": "add_edge_doc_writer_supervisor",
+            "full_link": "[[component:23:7:add_edge_doc_writer_supervisor|add_edge_doc_writer_supervisor]]"
+          },
+          {
+            "block_id": "23",
+            "component_number": 7,
+            "component_name": "add_edge_doc_writer_supervisor",
+            "display_text": "[[component:23:7:add_edge_doc_writer_supervisor|add_edge_doc_writer_supervisor",
+            "full_link": "[[component:23:7:add_edge_doc_writer_supervisor|[[component:23:7:add_edge_doc_writer_supervisor|add_edge_doc_writer_supervisor]]"
+          }
+        ]
+      },
+      {
+        "component_key": "23:8",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "23",
+            "component_number": 8,
+            "component_name": "add_edge_note_taker_supervisor",
+            "display_text": "add_edge_note_taker_supervisor",
+            "full_link": "[[component:23:8:add_edge_note_taker_supervisor|add_edge_note_taker_supervisor]]"
+          },
+          {
+            "block_id": "23",
+            "component_number": 8,
+            "component_name": "add_edge_note_taker_supervisor",
+            "display_text": "[[component:23:8:add_edge_note_taker_supervisor|add_edge_note_taker_supervisor",
+            "full_link": "[[component:23:8:add_edge_note_taker_supervisor|[[component:23:8:add_edge_note_taker_supervisor|add_edge_note_taker_supervisor]]"
+          }
+        ]
+      },
+      {
+        "component_key": "23:9",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "23",
+            "component_number": 9,
+            "component_name": "add_edge_copy_editor_supervisor",
+            "display_text": "ADD_EDGE_COPY_EDITOR_SUPERVISOR",
+            "full_link": "[[component:23:9:add_edge_copy_editor_supervisor|ADD_EDGE_COPY_EDITOR_SUPERVISOR]]"
+          },
+          {
+            "block_id": "23",
+            "component_number": 9,
+            "component_name": "add_edge_copy_editor_supervisor",
+            "display_text": "[[component:23:9:add_edge_copy_editor_supervisor|ADD_EDGE_COPY_EDITOR_SUPERVISOR",
+            "full_link": "[[component:23:9:add_edge_copy_editor_supervisor|[[component:23:9:add_edge_copy_editor_supervisor|ADD_EDGE_COPY_EDITOR_SUPERVISOR]]"
+          }
+        ]
+      },
+      {
+        "component_key": "23:10",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "23",
+            "component_number": 10,
+            "component_name": "add_edge_empathy_editor_supervisor",
+            "display_text": "add_edge_empathy_editor_supervisor",
+            "full_link": "[[component:23:10:add_edge_empathy_editor_supervisor|add_edge_empathy_editor_supervisor]]"
+          },
+          {
+            "block_id": "23",
+            "component_number": 10,
+            "component_name": "add_edge_empathy_editor_supervisor",
+            "display_text": "[[component:23:10:add_edge_empathy_editor_supervisor|add_edge_empathy_editor_supervisor",
+            "full_link": "[[component:23:10:add_edge_empathy_editor_supervisor|[[component:23:10:add_edge_empathy_editor_supervisor|add_edge_empathy_editor_supervisor]]"
+          }
+        ]
+      },
+      {
+        "component_key": "23:11",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "23",
+            "component_number": 11,
+            "component_name": "add_conditional_edges_supervisor",
+            "display_text": "add_conditional_edges_supervisor",
+            "full_link": "[[component:23:11:add_conditional_edges_supervisor|add_conditional_edges_supervisor]]"
+          },
+          {
+            "block_id": "23",
+            "component_number": 11,
+            "component_name": "add_conditional_edges_supervisor",
+            "display_text": "[[component:23:11:add_conditional_edges_supervisor|add_conditional_edges_supervisor",
+            "full_link": "[[component:23:11:add_conditional_edges_supervisor|[[component:23:11:add_conditional_edges_supervisor|add_conditional_edges_supervisor]]"
+          }
+        ]
+      },
+      {
+        "component_key": "23:12",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "23",
+            "component_number": 12,
+            "component_name": "set_entry_point_supervisor",
+            "display_text": "set_entry_point_supervisor",
+            "full_link": "[[component:23:12:set_entry_point_supervisor|set_entry_point_supervisor]]"
+          },
+          {
+            "block_id": "23",
+            "component_number": 12,
+            "component_name": "set_entry_point_supervisor",
+            "display_text": "[[component:23:12:set_entry_point_supervisor|set_entry_point_supervisor",
+            "full_link": "[[component:23:12:set_entry_point_supervisor|[[component:23:12:set_entry_point_supervisor|set_entry_point_supervisor]]"
+          }
+        ]
+      },
+      {
+        "component_key": "24:1",
+        "count": 4,
+        "links": [
+          {
+            "block_id": "24",
+            "component_number": 1,
+            "component_name": "IPython_display_import",
+            "display_text": "IPython_display_import",
+            "full_link": "[[component:24:1:IPython_display_import|IPython_display_import]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 1,
+            "component_name": "IPython_display_import",
+            "display_text": "IPYTHON_DISPLAY_IMPORT",
+            "full_link": "[[component:24:1:IPython_display_import|IPYTHON_DISPLAY_IMPORT]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 1,
+            "component_name": "IPython_display_import",
+            "display_text": "ipython_display_import",
+            "full_link": "[[component:24:1:IPython_display_import|ipython_display_import]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 1,
+            "component_name": "IPython_display_import",
+            "display_text": "IPython_display_import",
+            "full_link": "[[component:24:1:IPython_display_import|IPython_display_import]]"
+          }
+        ]
+      },
+      {
+        "component_key": "24:4",
+        "count": 4,
+        "links": [
+          {
+            "block_id": "24",
+            "component_number": 4,
+            "component_name": "draw_mermaid_png_method_call",
+            "display_text": "draw_mermaid_png_method_call",
+            "full_link": "[[component:24:4:draw_mermaid_png_method_call|draw_mermaid_png_method_call]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 4,
+            "component_name": "draw_mermaid_png_method_call",
+            "display_text": "DRAW_MERMAID_PNG_METHOD_CALL",
+            "full_link": "[[component:24:4:draw_mermaid_png_method_call|DRAW_MERMAID_PNG_METHOD_CALL]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 4,
+            "component_name": "draw_mermaid_png_method_call",
+            "display_text": "draw_mermaid_png_method_call",
+            "full_link": "[[component:24:4:draw_mermaid_png_method_call|draw_mermaid_png_method_call]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 4,
+            "component_name": "draw_mermaid_png_method_call",
+            "display_text": "DRAW_MERMAID_PNG_METHOD_CALL",
+            "full_link": "[[component:24:4:draw_mermaid_png_method_call|DRAW_MERMAID_PNG_METHOD_CALL]]"
+          }
+        ]
+      },
+      {
+        "component_key": "24:3",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "24",
+            "component_number": 3,
+            "component_name": "Image_function_call",
+            "display_text": "IMAGE_FUNCTION_CALL",
+            "full_link": "[[component:24:3:Image_function_call|IMAGE_FUNCTION_CALL]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 3,
+            "component_name": "Image_function_call",
+            "display_text": "image_function_call",
+            "full_link": "[[component:24:3:Image_function_call|image_function_call]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 3,
+            "component_name": "Image_function_call",
+            "display_text": "Image_function_call",
+            "full_link": "[[component:24:3:Image_function_call|Image_function_call]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 3,
+            "component_name": "Image_function_call",
+            "display_text": "IMAGE_FUNCTION_CALL",
+            "full_link": "[[component:24:3:Image_function_call|IMAGE_FUNCTION_CALL]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 3,
+            "component_name": "Image_function_call",
+            "display_text": "image_function_call",
+            "full_link": "[[component:24:3:Image_function_call|image_function_call]]"
+          }
+        ]
+      },
+      {
+        "component_key": "24:2",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "24",
+            "component_number": 2,
+            "component_name": "display_function_call",
+            "display_text": "display_function_call",
+            "full_link": "[[component:24:2:display_function_call|display_function_call]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 2,
+            "component_name": "display_function_call",
+            "display_text": "DISPLAY_FUNCTION_CALL",
+            "full_link": "[[component:24:2:display_function_call|DISPLAY_FUNCTION_CALL]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 2,
+            "component_name": "display_function_call",
+            "display_text": "display_function_call",
+            "full_link": "[[component:24:2:display_function_call|display_function_call]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 2,
+            "component_name": "display_function_call",
+            "display_text": "DISPLAY_FUNCTION_CALL",
+            "full_link": "[[component:24:2:display_function_call|DISPLAY_FUNCTION_CALL]]"
+          },
+          {
+            "block_id": "24",
+            "component_number": 2,
+            "component_name": "display_function_call",
+            "display_text": "display_function_call",
+            "full_link": "[[component:24:2:display_function_call|display_function_call]]"
+          }
+        ]
+      },
+      {
+        "component_key": "25:1",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "25",
+            "component_number": 1,
+            "component_name": "enter_chain_function",
+            "display_text": "enter_chain_function",
+            "full_link": "[[component:25:1:enter_chain_function|enter_chain_function]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 1,
+            "component_name": "enter_chain_function",
+            "display_text": "[[component:25:1:enter_chain_function|ENTER_CHAIN_FUNCTION",
+            "full_link": "[[component:25:1:enter_chain_function|[[component:25:1:enter_chain_function|ENTER_CHAIN_FUNCTION]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 1,
+            "component_name": "enter_chain_function",
+            "display_text": "enter_chain",
+            "full_link": "[[component:25:1:enter_chain_function|enter_chain]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 1,
+            "component_name": "enter_chain_function",
+            "display_text": "enter_chain",
+            "full_link": "[[component:25:1:enter_chain_function|enter_chain]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 1,
+            "component_name": "enter_chain_function",
+            "display_text": "`[[component:25:1:enter_chain_function|enter_chain_function",
+            "full_link": "[[component:25:1:enter_chain_function|`[[component:25:1:enter_chain_function|enter_chain_function]]"
+          }
+        ]
+      },
+      {
+        "component_key": "25:2",
+        "count": 4,
+        "links": [
+          {
+            "block_id": "25",
+            "component_number": 2,
+            "component_name": "results_variable",
+            "display_text": "results_variable",
+            "full_link": "[[component:25:2:results_variable|results_variable]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 2,
+            "component_name": "results_variable",
+            "display_text": "RESULTS_VARIABLE",
+            "full_link": "[[component:25:2:results_variable|RESULTS_VARIABLE]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 2,
+            "component_name": "results_variable",
+            "display_text": "results_variable",
+            "full_link": "[[component:25:2:results_variable|results_variable]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 2,
+            "component_name": "results_variable",
+            "display_text": "results_variable",
+            "full_link": "[[component:25:2:results_variable|results_variable]]"
+          }
+        ]
+      },
+      {
+        "component_key": "25:3",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "25",
+            "component_number": 3,
+            "component_name": "messages_assignment",
+            "display_text": "MESSAGES_ASSIGNMENT",
+            "full_link": "[[component:25:3:messages_assignment|MESSAGES_ASSIGNMENT]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 3,
+            "component_name": "messages_assignment",
+            "display_text": "messages_assignment",
+            "full_link": "[[component:25:3:messages_assignment|messages_assignment]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 3,
+            "component_name": "messages_assignment",
+            "display_text": "messages_assignment",
+            "full_link": "[[component:25:3:messages_assignment|messages_assignment]]"
+          }
+        ]
+      },
+      {
+        "component_key": "25:4",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "25",
+            "component_number": 4,
+            "component_name": "team_members_assignment",
+            "display_text": "TEAM_MEMBERS_ASSIGNMENT",
+            "full_link": "[[component:25:4:team_members_assignment|TEAM_MEMBERS_ASSIGNMENT]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 4,
+            "component_name": "team_members_assignment",
+            "display_text": "team_members_assignment",
+            "full_link": "[[component:25:4:team_members_assignment|team_members_assignment]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 4,
+            "component_name": "team_members_assignment",
+            "display_text": "team_members_assignment",
+            "full_link": "[[component:25:4:team_members_assignment|team_members_assignment]]"
+          }
+        ]
+      },
+      {
+        "component_key": "25:5",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "25",
+            "component_number": 5,
+            "component_name": "return_statement",
+            "display_text": "RETURN_STATEMENT",
+            "full_link": "[[component:25:5:return_statement|RETURN_STATEMENT]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 5,
+            "component_name": "return_statement",
+            "display_text": "return_statement",
+            "full_link": "[[component:25:5:return_statement|return_statement]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 5,
+            "component_name": "return_statement",
+            "display_text": "return_statement",
+            "full_link": "[[component:25:5:return_statement|return_statement]]"
+          }
+        ]
+      },
+      {
+        "component_key": "25:6",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "25",
+            "component_number": 6,
+            "component_name": "authoring_chain_variable",
+            "display_text": "authoring_chain_variable",
+            "full_link": "[[component:25:6:authoring_chain_variable|authoring_chain_variable]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 6,
+            "component_name": "authoring_chain_variable",
+            "display_text": "authoring_chain_variable",
+            "full_link": "[[component:25:6:authoring_chain_variable|authoring_chain_variable]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 6,
+            "component_name": "authoring_chain_variable",
+            "display_text": "authoring_chain_variable",
+            "full_link": "[[component:25:6:authoring_chain_variable|authoring_chain_variable]]"
+          }
+        ]
+      },
+      {
+        "component_key": "25:7",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "25",
+            "component_number": 7,
+            "component_name": "partial_function_call",
+            "display_text": "PARTIAL_FUNCTION_CALL",
+            "full_link": "[[component:25:7:partial_function_call|PARTIAL_FUNCTION_CALL]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 7,
+            "component_name": "partial_function_call",
+            "display_text": "partial_function_call",
+            "full_link": "[[component:25:7:partial_function_call|partial_function_call]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 7,
+            "component_name": "partial_function_call",
+            "display_text": "partial_function_call",
+            "full_link": "[[component:25:7:partial_function_call|partial_function_call]]"
+          }
+        ]
+      },
+      {
+        "component_key": "25:8",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "25",
+            "component_number": 8,
+            "component_name": "compile_method_call",
+            "display_text": "compile_method_call",
+            "full_link": "[[component:25:8:compile_method_call|compile_method_call]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 8,
+            "component_name": "compile_method_call",
+            "display_text": "compile_method_call",
+            "full_link": "[[component:25:8:compile_method_call|compile_method_call]]"
+          },
+          {
+            "block_id": "25",
+            "component_number": 8,
+            "component_name": "compile_method_call",
+            "display_text": "compile_method_call",
+            "full_link": "[[component:25:8:compile_method_call|compile_method_call]]"
+          }
+        ]
+      },
+      {
+        "component_key": "26:2",
+        "count": 5,
+        "links": [
+          {
+            "block_id": "26",
+            "component_number": 2,
+            "component_name": "customer_assistance_request",
+            "display_text": "customer_assistance_request",
+            "full_link": "[[component:26:2:customer_assistance_request|customer_assistance_request]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 2,
+            "component_name": "customer_assistance_request",
+            "display_text": "customer_assistance_request",
+            "full_link": "[[component:26:2:customer_assistance_request|customer_assistance_request]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 2,
+            "component_name": "customer_assistance_request",
+            "display_text": "customer_assistance_request",
+            "full_link": "[[component:26:2:customer_assistance_request|customer_assistance_request]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 2,
+            "component_name": "customer_assistance_request",
+            "display_text": "customer assistance request",
+            "full_link": "[[component:26:2:customer_assistance_request|customer assistance request]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 2,
+            "component_name": "customer_assistance_request",
+            "display_text": "customer_assistance_request",
+            "full_link": "[[component:26:2:customer_assistance_request|customer_assistance_request]]"
+          }
+        ]
+      },
+      {
+        "component_key": "26:3",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "26",
+            "component_number": 3,
+            "component_name": "recursion_limit_dict",
+            "display_text": "RECURSION_LIMIT_DICT",
+            "full_link": "[[component:26:3:recursion_limit_dict|RECURSION_LIMIT_DICT]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 3,
+            "component_name": "recursion_limit_dict",
+            "display_text": "recursion_limit_dict",
+            "full_link": "[[component:26:3:recursion_limit_dict|recursion_limit_dict]]"
+          }
+        ]
+      },
+      {
+        "component_key": "26:1",
+        "count": 3,
+        "links": [
+          {
+            "block_id": "26",
+            "component_number": 1,
+            "component_name": "authoring_chain_stream_loop",
+            "display_text": "AUTHORING_CHAIN_STREAM_LOOP",
+            "full_link": "[[component:26:1:authoring_chain_stream_loop|AUTHORING_CHAIN_STREAM_LOOP]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 1,
+            "component_name": "authoring_chain_stream_loop",
+            "display_text": "authoring_chain_stream_loop",
+            "full_link": "[[component:26:1:authoring_chain_stream_loop|authoring_chain_stream_loop]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 1,
+            "component_name": "authoring_chain_stream_loop",
+            "display_text": "authoring_chain_stream_loop",
+            "full_link": "[[component:26:1:authoring_chain_stream_loop|authoring_chain_stream_loop]]"
+          }
+        ]
+      },
+      {
+        "component_key": "26:6",
+        "count": 7,
+        "links": [
+          {
+            "block_id": "26",
+            "component_number": 6,
+            "component_name": "end_check",
+            "display_text": "end_check",
+            "full_link": "[[component:26:6:end_check|end_check]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 6,
+            "component_name": "end_check",
+            "display_text": "end_check",
+            "full_link": "[[component:26:6:end_check|end_check]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 6,
+            "component_name": "end_check",
+            "display_text": "end_check",
+            "full_link": "[[component:26:6:end_check|end_check]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 6,
+            "component_name": "end_check",
+            "display_text": "end_check",
+            "full_link": "[[component:26:6:end_check|end_check]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 6,
+            "component_name": "end_check",
+            "display_text": "end_check",
+            "full_link": "[[component:26:6:end_check|end_check]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 6,
+            "component_name": "end_check",
+            "display_text": "end_check",
+            "full_link": "[[component:26:6:end_check|end_check]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 6,
+            "component_name": "end_check",
+            "display_text": "end_check",
+            "full_link": "[[component:26:6:end_check|end_check]]"
+          }
+        ]
+      },
+      {
+        "component_key": "26:4",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "26",
+            "component_number": 4,
+            "component_name": "print_response",
+            "display_text": "PRINT_RESPONSE",
+            "full_link": "[[component:26:4:print_response|PRINT_RESPONSE]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 4,
+            "component_name": "print_response",
+            "display_text": "print_response",
+            "full_link": "[[component:26:4:print_response|print_response]]"
+          }
+        ]
+      },
+      {
+        "component_key": "26:5",
+        "count": 2,
+        "links": [
+          {
+            "block_id": "26",
+            "component_number": 5,
+            "component_name": "print_separator",
+            "display_text": "PRINT_SEPARATOR",
+            "full_link": "[[component:26:5:print_separator|PRINT_SEPARATOR]]"
+          },
+          {
+            "block_id": "26",
+            "component_number": 5,
+            "component_name": "print_separator",
+            "display_text": "print_separator",
+            "full_link": "[[component:26:5:print_separator|print_separator]]"
+          }
+        ]
+      }
+    ],
+    "overall_score": 41.7
+  },
+  "coverage_analysis": {
+    "total_components": 189,
+    "components_covered": 132,
+    "coverage_percentage": 69.84126984126983,
+    "missing_components": {
+      "11": [
+        {
+          "name": "sys_import",
+          "type": "import",
+          "block_id": "11",
+          "component_number": 1,
+          "description": "Imports the sys module for system-specific parameters and functions."
+        },
+        {
+          "name": "pip_install_command",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 2,
+          "description": "Executes a command to upgrade the arxiv package using pip."
+        },
+        {
+          "name": "arxiv_import",
+          "type": "import",
+          "block_id": "11",
+          "component_number": 3,
+          "description": "Imports the arxiv module for accessing ArXiv papers."
+        },
+        {
+          "name": "tempfile_import",
+          "type": "import",
+          "block_id": "11",
+          "component_number": 4,
+          "description": "Imports the tempfile module for creating temporary files and directories."
+        },
+        {
+          "name": "os_import",
+          "type": "import",
+          "block_id": "11",
+          "component_number": 5,
+          "description": "Imports the os module for interacting with the operating system."
+        },
+        {
+          "name": "PyMuPDFLoader_import",
+          "type": "import",
+          "block_id": "11",
+          "component_number": 6,
+          "description": "Imports the PyMuPDFLoader class for loading PDF documents."
+        },
+        {
+          "name": "List_Optional_imports",
+          "type": "import",
+          "block_id": "11",
+          "component_number": 7,
+          "description": "Imports List and Optional types for type hinting."
+        },
+        {
+          "name": "fetch_arxiv_papers_function",
+          "type": "function",
+          "block_id": "11",
+          "component_number": 8,
+          "description": "Fetches papers from ArXiv based on a search query and returns processed document chunks."
+        },
+        {
+          "name": "fetch_arxiv_papers_docstring",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 9,
+          "description": "Docstring explaining the purpose and parameters of the fetch_arxiv_papers function."
+        },
+        {
+          "name": "arxiv_client_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 10,
+          "description": "Creates an instance of the ArXiv client for fetching papers."
+        },
+        {
+          "name": "arxiv_search_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 11,
+          "description": "Creates a search object for querying ArXiv papers."
+        },
+        {
+          "name": "arxiv_search_query",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 12,
+          "description": "Sets the query parameter for the ArXiv search."
+        },
+        {
+          "name": "arxiv_search_max_results",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 13,
+          "description": "Sets the maximum number of results to fetch from the ArXiv search."
+        },
+        {
+          "name": "arxiv_search_sort_by",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 14,
+          "description": "Sets the sorting criterion for the ArXiv search results."
+        },
+        {
+          "name": "all_chunks_variable",
+          "type": "variable",
+          "block_id": "11",
+          "component_number": 15,
+          "description": "Initializes an empty list to store document chunks fetched from ArXiv."
+        },
+        {
+          "name": "temp_dir_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 16,
+          "description": "Creates a temporary directory for downloading PDF files."
+        },
+        {
+          "name": "paper_processing_loop",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 17,
+          "description": "Iterates over the results of the ArXiv search."
+        },
+        {
+          "name": "try_block_start",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 18,
+          "description": "Begins a try block to handle potential errors during paper processing."
+        },
+        {
+          "name": "pdf_download",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 19,
+          "description": "Downloads the PDF of the current paper to the temporary directory."
+        },
+        {
+          "name": "pdf_loader_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 20,
+          "description": "Creates a loader instance for processing the downloaded PDF."
+        },
+        {
+          "name": "documents_loading",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 21,
+          "description": "Loads the content of the PDF into document objects."
+        },
+        {
+          "name": "metadata_update_loop",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 22,
+          "description": "Iterates over the loaded documents to update their metadata."
+        },
+        {
+          "name": "metadata_update",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 23,
+          "description": "Updates the metadata of each document with paper details."
+        },
+        {
+          "name": "title_metadata",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 24,
+          "description": "Adds the title of the paper to the document's metadata."
+        },
+        {
+          "name": "authors_metadata",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 25,
+          "description": "Adds the authors of the paper to the document's metadata."
+        },
+        {
+          "name": "published_metadata",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 26,
+          "description": "Adds the publication date of the paper to the document's metadata."
+        },
+        {
+          "name": "arxiv_id_metadata",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 27,
+          "description": "Adds the ArXiv ID of the paper to the document's metadata."
+        },
+        {
+          "name": "summary_metadata",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 28,
+          "description": "Adds a summary of the paper to the document's metadata, truncating if necessary."
+        },
+        {
+          "name": "chunks_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 29,
+          "description": "Splits the loaded documents into smaller chunks for processing."
+        },
+        {
+          "name": "all_chunks_update",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 30,
+          "description": "Adds the newly created chunks to the all_chunks list."
+        },
+        {
+          "name": "error_handling",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 31,
+          "description": "Handles exceptions that occur during the processing of papers."
+        },
+        {
+          "name": "error_logging",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 32,
+          "description": "Logs an error message if a paper fails to process."
+        },
+        {
+          "name": "return_all_chunks",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 33,
+          "description": "Returns the list of all processed document chunks."
+        },
+        {
+          "name": "create_dynamic_rag_system_function",
+          "type": "function",
+          "block_id": "11",
+          "component_number": 34,
+          "description": "Creates a RAG system with dynamically fetched ArXiv papers."
+        },
+        {
+          "name": "create_dynamic_rag_system_docstring",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 35,
+          "description": "Docstring explaining the purpose and parameters of the create_dynamic_rag_system function."
+        },
+        {
+          "name": "fetch_papers_print",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 36,
+          "description": "Prints a message indicating the start of the paper fetching process."
+        },
+        {
+          "name": "knowledge_chunks_variable",
+          "type": "variable",
+          "block_id": "11",
+          "component_number": 37,
+          "description": "Stores the document chunks fetched from ArXiv based on the query."
+        },
+        {
+          "name": "fetched_chunks_print",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 38,
+          "description": "Prints the number of document chunks fetched from ArXiv."
+        },
+        {
+          "name": "vectorstore_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 39,
+          "description": "Creates a vector store from the fetched document chunks."
+        },
+        {
+          "name": "vectorstore_documents",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 40,
+          "description": "Sets the documents parameter for the vector store creation."
+        },
+        {
+          "name": "vectorstore_embedding",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 41,
+          "description": "Sets the embedding model parameter for the vector store creation."
+        },
+        {
+          "name": "vectorstore_location",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 42,
+          "description": "Sets the location parameter for the vector store creation."
+        },
+        {
+          "name": "retriever_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 43,
+          "description": "Creates a retriever from the vector store."
+        },
+        {
+          "name": "dynamic_retrieve_function",
+          "type": "function",
+          "block_id": "11",
+          "component_number": 44,
+          "description": "Defines a function to retrieve documents based on the current state."
+        },
+        {
+          "name": "dynamic_retrieve_docstring",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 45,
+          "description": "Docstring explaining the purpose of the dynamic_retrieve function."
+        },
+        {
+          "name": "retrieved_docs_variable",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 46,
+          "description": "Retrieves documents based on the question in the current state."
+        },
+        {
+          "name": "dynamic_retrieve_return",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 47,
+          "description": "Returns the retrieved documents as part of the state."
+        },
+        {
+          "name": "dynamic_generate_function",
+          "type": "function",
+          "block_id": "11",
+          "component_number": 48,
+          "description": "Defines a function to generate responses based on the current state."
+        },
+        {
+          "name": "dynamic_generate_docstring",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 49,
+          "description": "Docstring explaining the purpose of the dynamic_generate function."
+        },
+        {
+          "name": "generator_chain_variable",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 50,
+          "description": "Creates a chain for generating responses using the chat prompt and model."
+        },
+        {
+          "name": "response_variable",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 51,
+          "description": "Generates a response based on the current question and context."
+        },
+        {
+          "name": "dynamic_generate_return",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 52,
+          "description": "Returns the generated response as part of the state."
+        },
+        {
+          "name": "graph_builder_creation",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 53,
+          "description": "Creates a StateGraph instance for building the RAG graph."
+        },
+        {
+          "name": "graph_builder_sequence",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 54,
+          "description": "Adds the dynamic retrieve and generate functions to the graph builder's sequence."
+        },
+        {
+          "name": "graph_builder_edge",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 55,
+          "description": "Adds an edge to the graph builder connecting the start to the dynamic retrieve function."
+        },
+        {
+          "name": "dynamic_rag_graph_variable",
+          "type": "variable",
+          "block_id": "11",
+          "component_number": 56,
+          "description": "Compiles the graph builder into a dynamic RAG graph."
+        },
+        {
+          "name": "return_rag_system",
+          "type": "expression",
+          "block_id": "11",
+          "component_number": 57,
+          "description": "Returns the vector store, retriever, and dynamic RAG graph."
+        }
+      ]
+    }
+  },
+  "link_quality": {
+    "total_links": 507,
+    "unique_components": 132,
+    "avg_display_text_length": 26.22879684418146,
+    "descriptive_links": 233,
+    "generic_links": 274
+  },
+  "overall_score": 41.7
+}

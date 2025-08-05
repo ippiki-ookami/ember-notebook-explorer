@@ -1,0 +1,122 @@
+[
+  {
+    "component_id": "15:1",
+    "name": "create_team_supervisor_function",
+    "number": 1,
+    "type": "function",
+    "library": "built-in",
+    "description": "Defines a function to create a team supervisor agent that manages interactions between worker agents.",
+    "enhanced_description": null,
+    "full_code": "def create_team_supervisor(llm: ChatOpenAI, system_prompt, members) -> str:",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "15:2",
+    "name": "create_team_supervisor_docstring",
+    "number": 2,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Docstring that describes the purpose of the create_team_supervisor function.",
+    "enhanced_description": null,
+    "full_code": "\"\"\"An LLM-based router.\"\"\"",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "15:3",
+    "name": "options_variable",
+    "number": 3,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Creates a list of options for the next role, including a FINISH option.",
+    "enhanced_description": null,
+    "full_code": "options = [\"FINISH\"] + members",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "15:4",
+    "name": "function_def_variable",
+    "number": 4,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Defines a function schema for routing the next role in the team.",
+    "enhanced_description": null,
+    "full_code": "function_def = {\"name\": \"route\", \"description\": \"Select the next role.\", \"parameters\": {\"title\": \"routeSchema\", \"type\": \"object\", \"properties\": {\"next\": {\"title\": \"Next\", \"anyOf\": [{\"enum\": options},],},}, \"required\": [\"next\"],},}",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "15:5",
+    "name": "prompt_variable",
+    "number": 5,
+    "type": "variable",
+    "library": "built-in",
+    "description": "Creates a prompt template for the team supervisor agent using the provided system prompt and members.",
+    "enhanced_description": null,
+    "full_code": "prompt = ChatPromptTemplate.from_messages([(\"system\", system_prompt), MessagesPlaceholder(variable_name=\"messages\"), (\"system\", \"Given the conversation above, who should act next? Or should we FINISH? Select one of: {options}\",),]).partial(options=str(options), team_members=\", \".join(members))",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "15:6",
+    "name": "ChatPromptTemplate_from_messages_call",
+    "number": 6,
+    "type": "expression",
+    "library": "local",
+    "description": "Calls the from_messages method of ChatPromptTemplate to create a prompt from the provided messages.",
+    "enhanced_description": null,
+    "full_code": "ChatPromptTemplate.from_messages([(\"system\", system_prompt), MessagesPlaceholder(variable_name=\"messages\"), (\"system\", \"Given the conversation above, who should act next? Or should we FINISH? Select one of: {options}\",),])",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "15:7",
+    "name": "MessagesPlaceholder_variable",
+    "number": 7,
+    "type": "variable",
+    "library": "local",
+    "description": "Creates a placeholder for messages in the prompt template.",
+    "enhanced_description": null,
+    "full_code": "MessagesPlaceholder(variable_name=\"messages\")",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "15:8",
+    "name": "return_expression",
+    "number": 8,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Returns the result of binding functions to the prompt and parsing the output.",
+    "enhanced_description": null,
+    "full_code": "return (prompt | llm.bind_functions(functions=[function_def], function_call=\"route\") | JsonOutputFunctionsParser())",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "15:9",
+    "name": "llm_bind_functions_call",
+    "number": 9,
+    "type": "expression",
+    "library": "local",
+    "description": "Calls the bind_functions method on the llm object to bind the defined function.",
+    "enhanced_description": null,
+    "full_code": "llm.bind_functions(functions=[function_def], function_call=\"route\")",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "15:10",
+    "name": "JsonOutputFunctionsParser_variable",
+    "number": 10,
+    "type": "variable",
+    "library": "local",
+    "description": "Creates an instance of JsonOutputFunctionsParser to handle the output of the function call.",
+    "enhanced_description": null,
+    "full_code": "JsonOutputFunctionsParser()",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

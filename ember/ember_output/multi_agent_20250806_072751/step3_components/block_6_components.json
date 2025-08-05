@@ -1,0 +1,14 @@
+[
+  {
+    "component_id": "6:1",
+    "name": "qdrant_retriever_assignment",
+    "number": 1,
+    "type": "variable",
+    "library": "local",
+    "description": "This variable assignment creates a retriever from the Qdrant vector store, enabling the system to fetch relevant document chunks based on user queries.",
+    "enhanced_description": null,
+    "full_code": "qdrant_retriever = qdrant_vectorstore.as_retriever()",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

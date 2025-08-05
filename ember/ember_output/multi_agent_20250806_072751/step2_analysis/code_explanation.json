@@ -1,0 +1,430 @@
+{
+  "overview": "This code implements a Retrieval-Augmented Generation (RAG) system that utilizes various language models and document loaders to process and respond to queries about student loans. It integrates multiple agents for research, response generation, and document management, allowing for a collaborative approach to generating informative responses based on user queries.",
+  "blocks": [
+    {
+      "id": "1",
+      "name": "Environment Setup",
+      "description": "This block sets up the environment by importing necessary libraries and configuring API keys for OpenAI and Tavily. It ensures that the application has access to the required services for document processing and language model interactions.",
+      "content": "# Cell 5\nimport os\nimport getpass\n\nos.environ[\"OPENAI_API_KEY\"] = getpass.getpass(\"OpenAI API Key:\")\nos.environ[\"TAVILY_API_KEY\"] = getpass.getpass(\"TAVILY_API_KEY\")",
+      "dependencies": [],
+      "dependents": [
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Document Loading",
+      "description": "This block loads PDF documents from a specified directory using the DirectoryLoader and PyMuPDFLoader. It prepares the documents for further processing by extracting their content into a structured format.",
+      "content": "# Cell 9\nfrom langchain_community.document_loaders import DirectoryLoader\nfrom langchain_community.document_loaders import PyMuPDFLoader\ndirectory_loader = DirectoryLoader(\"data\", glob=\"**/*.pdf\", loader_cls=PyMuPDFLoader)\nloan_knowledge_resources = directory_loader.load()",
+      "dependencies": [
+        "1"
+      ],
+      "dependents": [
+        "3"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Text Processing",
+      "description": "This block defines a function to calculate the token length of text and initializes a text splitter to divide the loaded documents into manageable chunks. It processes the loaded documents into smaller segments for easier handling in subsequent steps.",
+      "content": "# Cell 11\nimport tiktoken\nfrom langchain.text_splitter import RecursiveCharacterTextSplitter\ndef tiktoken_len(text):\n    tokens = tiktoken.encoding_for_model(\"gpt-4o\").encode(\n        text,\n    )\n    return len(tokens)\n\ntext_splitter = RecursiveCharacterTextSplitter(\n    chunk_size = 750,\n    chunk_overlap = 0,\n    length_function = tiktoken_len,\n)\nloan_knowledge_chunks = text_splitter.split_documents(loan_knowledge_resources)",
+      "dependencies": [
+        "2"
+      ],
+      "dependents": [
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Chunk Length Calculation",
+      "description": "This block calculates the number of document chunks created from the loaded loan knowledge resources. It provides a quick overview of how many segments are available for processing.",
+      "content": "# Cell 13\nlen(loan_knowledge_chunks)",
+      "dependencies": [
+        "3"
+      ],
+      "dependents": [
+        "5"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Embedding Model Initialization",
+      "description": "This block initializes the OpenAI embeddings model, which will be used to convert the text chunks into vector representations for efficient retrieval. This is a crucial step for enabling semantic search capabilities.",
+      "content": "# Cell 16\nfrom langchain_openai.embeddings import OpenAIEmbeddings\n\nembedding_model = OpenAIEmbeddings(model=\"text-embedding-3-small\")",
+      "dependencies": [
+        "3"
+      ],
+      "dependents": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Vector Store Creation",
+      "description": "This block creates a vector store using the Qdrant library, which stores the document chunks along with their embeddings. This allows for efficient retrieval of relevant documents based on user queries.",
+      "content": "# Cell 18\nfrom langchain_community.vectorstores import Qdrant\n\nqdrant_vectorstore = Qdrant.from_documents(\n    documents=loan_knowledge_chunks,\n    embedding=embedding_model,\n    location=\":memory:\"\n)",
+      "dependencies": [
+        "5"
+      ],
+      "dependents": [
+        "7"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Retriever Initialization",
+      "description": "This block initializes a retriever from the vector store, which will be used to fetch relevant document chunks based on user queries. It sets up the mechanism for retrieving context during the response generation phase.",
+      "content": "# Cell 20\nqdrant_retriever = qdrant_vectorstore.as_retriever()",
+      "dependencies": [
+        "6"
+      ],
+      "dependents": [
+        "8"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Prompt Template Definition",
+      "description": "This block defines a chat prompt template that structures the context and query for the language model. It specifies how the model should respond based on the provided context and user query.",
+      "content": "# Cell 22\nfrom langchain_core.prompts import ChatPromptTemplate\n\nHUMAN_TEMPLATE = \"\"\"\n#CONTEXT:\n{context}\n\nQUERY:\n{query}\n\nUse the provide context to answer the provided user query. Only use the provided context to answer the query. If you do not know the answer, or it's not contained in the provided context respond with \"I don't know\"\n\"\"\"\n\nchat_prompt = ChatPromptTemplate.from_messages([\n    (\"human\", HUMAN_TEMPLATE)\n])",
+      "dependencies": [
+        "7"
+      ],
+      "dependents": [
+        "9"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Chat Model Initialization",
+      "description": "This block initializes the OpenAI chat model that will be used to generate responses based on the context retrieved from the vector store. It sets up the model for interaction with the user queries.",
+      "content": "# Cell 24\nfrom langchain_openai import ChatOpenAI\n\nopenai_chat_model = ChatOpenAI(model=\"gpt-4.1-nano\")",
+      "dependencies": [
+        "8"
+      ],
+      "dependents": [
+        "10",
+        "11"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "State Definition and RAG Graph Construction",
+      "description": "This block defines the state structure for the RAG system and constructs the state graph that outlines the sequence of operations for retrieving documents and generating responses. It establishes the workflow for the RAG system.",
+      "content": "# Cell 26\nfrom langgraph.graph import START, StateGraph\nfrom typing_extensions import TypedDict\nfrom langchain_core.documents import Document\nfrom langchain_core.output_parsers import StrOutputParser\n\nclass State(TypedDict):\n  question: str\n  context: list[Document]\n  response: str\n\ndef retrieve(state: State) -> State:\n  retrieved_docs = qdrant_retriever.invoke(state[\"question\"])\n  return {\"context\" : retrieved_docs}\n\ndef generate(state: State) -> State:\n  generator_chain = chat_prompt | openai_chat_model | StrOutputParser()\n  response = generator_chain.invoke({\"query\" : state[\"question\"], \"context\" : state[\"context\"]})\n  return {\"response\" : response}\n\ngraph_builder = StateGraph(State)\ngraph_builder = graph_builder.add_sequence([retrieve, generate])\ngraph_builder.add_edge(START, \"retrieve\")\nrag_graph = graph_builder.compile()",
+      "dependencies": [
+        "9"
+      ],
+      "dependents": [
+        "11",
+        "12"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "RAG Graph Invocation",
+      "description": "This block invokes the RAG graph with a sample question about student loans, demonstrating how the system can be used to retrieve information and generate a response.",
+      "content": "# Cell 29\nrag_graph.invoke({\"question\" : \"What is the maximum loan amount?\"})",
+      "dependencies": [
+        "10"
+      ],
+      "dependents": [
+        "12"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Dynamic ArXiv Paper Fetching (Commented Out)",
+      "description": "This block contains commented-out code for dynamically fetching papers from ArXiv based on a search query. It outlines how to create a RAG system with dynamically fetched content, but is not currently active in the execution flow.",
+      "content": "# Cell 32\n# import sys\n# !{sys.executable} -m pip install --upgrade arxiv\n# import arxiv\n# import tempfile\n# import os\n# from langchain_community.document_loaders import PyMuPDFLoader\n# from typing import List, Optional\n# \n# def fetch_arxiv_papers(query: str, max_results: int = 5) -> List:\n#    \"\"\"\n#    Fetch papers from ArXiv based on a search query\n#    Args:\n#       query: Search query for ArXiv papers\n#       max_results: Maximum number of papers to fetch\n#    Returns:\n#       List of processed document chunks\n#    \"\"\"\n#    # Create ArXiv client and search\n#    client = arxiv.Client()\n#    search = arxiv.Search(\n#       query=query,\n#       max_results=max_results,\n#       sort_by=arxiv.SortCriterion.SubmittedDate\n#    )\n#    all_chunks = []\n#    # Create temporary directory for downloads\n#    with tempfile.TemporaryDirectory() as temp_dir:\n#       for paper in client.results(search):\n#             try:\n#                # Download PDF to temporary directory\n#                pdf_path = paper.download_pdf(dirpath=temp_dir)\n#                # Load and process the PDF\n#                loader = PyMuPDFLoader(pdf_path)\n#                documents = loader.load()\n#                # Add metadata to each document\n#                for doc in documents:\n#                   doc.metadata.update({\n#                         'title': paper.title,\n#                         'authors': ', '.join([author.name for author in paper.authors]),\n#                         'published': paper.published.strftime('%Y-%m-%d'),\n#                         'arxiv_id': paper.entry_id.split('/')[-1],\n#                         'summary': paper.summary[:500] + '...' if len(paper.summary) > 500 else paper.summary\n#                   })\n#                # Chunk the documents\n#                chunks = text_splitter.split_documents(documents)\n#                all_chunks.extend(chunks)\n#             except Exception as e:\n#                print(f\"Error processing paper {paper.title}: {e}\")\n#                continue\n#    return all_chunks\n# \n# def create_dynamic_rag_system(arxiv_query: str):\n#    \"\"\"\n#    Create a RAG system with dynamically fetched ArXiv papers\n#    Args:\n#       arxiv_query: Query to search ArXiv papers\n#    Returns:\n#       Tuple of (vectorstore, retriever, rag_graph)\n#    \"\"\"\n#    # Fetch papers dynamically\n#    print(f\"Fetching papers for query: {arxiv_query}\")\n#    knowledge_chunks = fetch_arxiv_papers(arxiv_query)\n#    print(f\"Fetched {len(knowledge_chunks)} document chunks\")\n#    # Create vector store with dynamic content\n#    vectorstore = Qdrant.from_documents(\n#       documents=knowledge_chunks,\n#       embedding=embedding_model,\n#       location=\":memory:\"\n#    )\n#    # Create retriever\n#    retriever = vectorstore.as_retriever()\n#    # Create RAG graph with dynamic retriever\n#    def dynamic_retrieve(state: State) -> State:\n#       retrieved_docs = retriever.invoke(state[\"question\"])\n#       return {\"context\": retrieved_docs}\n#    def dynamic_generate(state: State) -> State:\n#       generator_chain = chat_prompt | openai_chat_model | StrOutputParser()\n#       response = generator_chain.invoke({\"query\": state[\"question\"], \"context\": state[\"context\"]})\n#       return {\"response\": response}\n#    # Build the graph\n#    graph_builder = StateGraph(State)\n#    graph_builder = graph_builder.add_sequence([dynamic_retrieve, dynamic_generate])\n#    graph_builder.add_edge(START, \"dynamic_retrieve\")\n#    dynamic_rag_graph = graph_builder.compile()\n#    return vectorstore, retriever, dynamic_rag_graph",
+      "dependencies": [
+        "11"
+      ],
+      "dependents": []
+    },
+    {
+      "id": "13",
+      "name": "Agent and Tool Initialization",
+      "description": "This block imports necessary libraries and initializes various agents and tools for handling different tasks such as searching, retrieving information, and managing documents. It sets up the foundation for the collaborative workflow among agents.",
+      "content": "# Cell 35\nfrom typing import Any, Callable, List, Optional, TypedDict, Union\n\nfrom langchain.agents import AgentExecutor, create_openai_functions_agent\nfrom langchain.output_parsers.openai_functions import JsonOutputFunctionsParser\nfrom langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder\nfrom langchain_core.messages import AIMessage, BaseMessage, HumanMessage\nfrom langchain_core.runnables import Runnable\nfrom langchain_core.tools import BaseTool\nfrom langchain_openai import ChatOpenAI\n\nfrom langgraph.graph import END, StateGraph",
+      "dependencies": [],
+      "dependents": [
+        "14"
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Agent Node Definition",
+      "description": "This block defines a function that creates an agent node for the state graph. It invokes the agent with the current state and returns the result as a message. This function is used to integrate agents into the workflow.",
+      "content": "# Cell 37\ndef agent_node(state, agent, name):\n    result = agent.invoke(state)\n    return {\"messages\": [HumanMessage(content=result[\"output\"], name=name)]}",
+      "dependencies": [
+        "13"
+      ],
+      "dependents": [
+        "15"
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Agent Creation Functions",
+      "description": "This block defines functions to create various agents for different roles in the system, such as a search agent, a research agent, and a team supervisor. Each agent is tailored to perform specific tasks within the collaborative workflow.",
+      "content": "# Cell 39\ndef create_agent(\n    llm: ChatOpenAI,\n    tools: list,\n    system_prompt: str,\n) -> str:\n    \"\"\"Create a function-calling agent and add it to the graph.\"\"\"\n    system_prompt += (\"\\nWork autonomously according to your specialty, using the tools available to you.\"\n    \" Do not ask for clarification.\"\n    \" Your other team members (and other teams) will collaborate with you with their own specialties.\"\n    \" You are chosen for a reason!\")\n    prompt = ChatPromptTemplate.from_messages(\n        [\n            (\n                \"system\",\n                system_prompt,\n            ),\n            MessagesPlaceholder(variable_name=\"messages\"),\n            MessagesPlaceholder(variable_name=\"agent_scratchpad\"),\n        ]\n    )\n    agent = create_openai_functions_agent(llm, tools, prompt)\n    executor = AgentExecutor(agent=agent, tools=tools)\n    return executor",
+      "dependencies": [
+        "14"
+      ],
+      "dependents": [
+        "16",
+        "17",
+        "18"
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Team Supervisor Creation",
+      "description": "This block defines a function to create a team supervisor agent that manages the workflow among different agents. It ensures that tasks are assigned appropriately and that the overall process is coordinated.",
+      "content": "# Cell 41\ndef create_team_supervisor(llm: ChatOpenAI, system_prompt, members) -> str:\n    \"\"\"An LLM-based router.\"\"\"\n    options = [\"FINISH\"] + members\n    function_def = {\n        \"name\": \"route\",\n        \"description\": \"Select the next role.\",\n        \"parameters\": {\n            \"title\": \"routeSchema\",\n            \"type\": \"object\",\n            \"properties\": {\n                \"next\": {\n                    \"title\": \"Next\",\n                    \"anyOf\": [\n                        {\"enum\": options},\n                    ],\n                },\n            },\n            \"required\": [\"next\"],\n        },\n    }\n    prompt = ChatPromptTemplate.from_messages(\n        [\n            (\"system\", system_prompt),\n            MessagesPlaceholder(variable_name=\"messages\"),\n            (\n                \"system\",\n                \"Given the conversation above, who should act next?\"\n                \" Or should we FINISH? Select one of: {options}\",\n            ),\n        ]\n    ).partial(options=str(options), team_members=\", \".join(members))\n    return (\n        prompt\n        | llm.bind_functions(functions=[function_def], function_call=\"route\")\n        | JsonOutputFunctionsParser()\n    )",
+      "dependencies": [
+        "15"
+      ],
+      "dependents": [
+        "19"
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Tavily Search Tool Initialization",
+      "description": "This block initializes the Tavily search tool, which will be used by the search agent to fetch up-to-date information. It sets the maximum number of results to be retrieved during searches.",
+      "content": "# Cell 44\nfrom langchain_community.tools.tavily_search import TavilySearchResults\ntavily_tool = TavilySearchResults(max_results=5)",
+      "dependencies": [
+        "16"
+      ],
+      "dependents": [
+        "20"
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Information Retrieval Tool Definition",
+      "description": "This block defines a tool for retrieving information using the RAG system. It allows the user to query the system and receive responses based on the context retrieved from the vector store.",
+      "content": "# Cell 46\nfrom typing import Annotated, List, Tuple, Union\nfrom langchain_core.tools import tool\n\n@tool\ndef retrieve_information(\n    query: Annotated[str, \"query to ask the retrieve information tool\"]\n    ):\n  \"\"\"Use Retrieval Augmented Generation to retrieve information about student loan policies\"\"\"\n  return rag_graph.invoke({\"question\" : query})",
+      "dependencies": [
+        "19"
+      ],
+      "dependents": [
+        "21"
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Document Management Functions",
+      "description": "This block defines various functions for managing documents, including creating outlines, reading, writing, and editing documents. These functions facilitate the handling of text files within the system.",
+      "content": "# Cell 83\nfrom pathlib import Path\nfrom tempfile import TemporaryDirectory\nfrom typing import Dict, Optional\nfrom typing_extensions import TypedDict\nimport uuid\nimport os\n\nos.makedirs('./content/data', exist_ok=True)\n\ndef create_random_subdirectory():\n    random_id = str(uuid.uuid4())[:8]  # Use first 8 characters of a UUID\n    subdirectory_path = os.path.join('./content/data', random_id)\n    os.makedirs(subdirectory_path, exist_ok=True)\n    return subdirectory_path\n\nWORKING_DIRECTORY = Path(create_random_subdirectory())\n\n@tool\ndef create_outline(\n    points: Annotated[List[str], \"List of main points or sections.\"],\n    file_name: Annotated[str, \"File path to save the outline.\"],\n) -> Annotated[str, \"Path of the saved outline file.\"]:\n    \"\"\"Create and save an outline.\"\"\"\n    with (WORKING_DIRECTORY / file_name).open(\"w\") as file:\n        for i, point in enumerate(points):\n            file.write(f\"{i + 1}. {point}\\n\")\n    return f\"Outline saved to {file_name}\"\n\n@tool\ndef read_document(\n    file_name: Annotated[str, \"File path to save the document.\"],\n    start: Annotated[Optional[int], \"The start line. Default is 0\"] = None,\n    end: Annotated[Optional[int], \"The end line. Default is None\"] = None,\n) -> str:\n    \"\"\"Read the specified document.\"\"\"\n    with (WORKING_DIRECTORY / file_name).open(\"r\") as file:\n        lines = file.readlines()\n    if start is not None:\n        start = 0\n    return \"\\n\".join(lines[start:end])\n\n@tool\ndef write_document(\n    content: Annotated[str, \"Text content to be written into the document.\"],\n    file_name: Annotated[str, \"File path to save the document.\"],\n) -> Annotated[str, \"Path of the saved document file.\"]:\n    \"\"\"Create and save a text document.\"\"\"\n    with (WORKING_DIRECTORY / file_name).open(\"w\") as file:\n        file.write(content)\n    return f\"Document saved to {file_name}\"\n\n@tool\ndef edit_document(\n    file_name: Annotated[str, \"Path of the document to be edited.\"],\n    inserts: Annotated[\n        Dict[int, str],\n        \"Dictionary where key is the line number (1-indexed) and value is the text to be inserted at that line.\",\n    ] = {},\n) -> Annotated[str, \"Path of the edited document file.\"]:\n    \"\"\"Edit a document by inserting text at specific line numbers.\"\"\"\n\n    with (WORKING_DIRECTORY / file_name).open(\"r\") as file:\n        lines = file.readlines()\n\n    sorted_inserts = sorted(inserts.items())\n\n    for line_number, text in sorted_inserts:\n        if 1 <= line_number <= len(lines) + 1:\n            lines.insert(line_number - 1, text + \"\\n\")\n        else:\n            return f\"Error: Line number {line_number} is out of range.\"\n\n    with (WORKING_DIRECTORY / file_name).open(\"w\") as file:\n        file.writelines(lines)\n\n    return f\"Document edited and saved to {file_name}\"",
+      "dependencies": [
+        "20"
+      ],
+      "dependents": [
+        "22"
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Document Writing State Definition",
+      "description": "This block defines the state structure for the document writing process, including messages, team members, and the current files being worked on. It sets up the context for managing document-related tasks.",
+      "content": "# Cell 86\nimport operator\nfrom pathlib import Path\n\nclass DocWritingState(TypedDict):\n    messages: Annotated[List[BaseMessage], operator.add]\n    team_members: str\n    next: str\n    current_files: str",
+      "dependencies": [
+        "21"
+      ],
+      "dependents": [
+        "23"
+      ]
+    },
+    {
+      "id": "23",
+      "name": "Document Writing Agent Creation",
+      "description": "This block creates various agents for managing document writing tasks, including a document writer, note taker, copy editor, and empathy editor. Each agent is designed to handle specific aspects of the document creation process.",
+      "content": "# Cell 90\ndoc_writer_agent = create_agent(\n    llm,\n    [write_document, edit_document, read_document],\n    (\"You are an expert writing customer assistance responses.\\n\"\n    \"Below are files currently in your directory:\\n{current_files}\")\n)\ncontext_aware_doc_writer_agent = prelude | doc_writer_agent\n\ndoc_writing_node = functools.partial(\n    agent_node, agent=context_aware_doc_writer_agent, name=\"DocWriter\"\n)\n\nnote_taking_agent = create_agent(\n    llm,\n    [create_outline, read_document, reference_previous_responses],\n    (\"You are an expert senior researcher tasked with writing a customer assistance outline and\"\n    \" taking notes to craft a customer assistance response.\\n{current_files}\")\n)\ncontext_aware_note_taking_agent = prelude | note_taking_agent\nnote_taking_node = functools.partial(\n    agent_node, agent=context_aware_note_taking_agent, name=\"NoteTaker\"\n)\n\ncopy_editor_agent = create_agent(\n    llm,\n    [write_document, edit_document, read_document],\n    (\"You are an expert copy editor who focuses on fixing grammar, spelling, and tone issues\\n\"\n    \"Below are files currently in your directory:\\n{current_files}\")\n)\ncontext_aware_copy_editor_agent = prelude | copy_editor_agent\ncopy_editing_node = functools.partial(\n    agent_node, agent=context_aware_copy_editor_agent, name=\"CopyEditor\"\n)\n\nempathy_editor_agent = create_agent(\n    llm,\n    [write_document, edit_document, read_document],\n    (\"You are an expert in empathy, compassion, and understanding - you edit the document to make sure it's empathetic and compassionate.\"\n    \"Below are files currently in your directory:\\n{current_files}\")\n)\nempathy_editor_agent = prelude | empathy_editor_agent\nempathy_node = functools.partial(\n    agent_node, agent=empathy_editor_agent, name=\"EmpathyEditor\"\n)\n\ndoc_writing_supervisor = create_team_supervisor(\n    llm,\n    (\"You are a supervisor tasked with managing a conversation between the\"\n    \" following workers: {team_members}. You should always verify the technical\"\n    \" contents after any edits are made. \"\n    \"Given the following user request,\"\n    \" respond with the worker to act next. Each worker will perform a\"\n    \" task and respond with their results and status. When each team is finished,\"\n    \" you must respond with FINISH.\"),\n    [\"DocWriter\", \"NoteTaker\", \"EmpathyEditor\", \"CopyEditor\"],\n)",
+      "dependencies": [
+        "22"
+      ],
+      "dependents": [
+        "24"
+      ]
+    },
+    {
+      "id": "24",
+      "name": "Document Writing Workflow Graph Construction",
+      "description": "This block constructs the state graph for the document writing process, integrating all the agents and defining the workflow among them. It establishes the sequence of operations and how agents interact with each other.",
+      "content": "# Cell 92\n\nauthoring_graph = StateGraph(DocWritingState)\nauthoring_graph.add_node(\"DocWriter\", doc_writing_node)\nauthoring_graph.add_node(\"NoteTaker\", note_taking_node)\nauthoring_graph.add_node(\"CopyEditor\", copy_editing_node)\nauthoring_graph.add_node(\"EmpathyEditor\", empathy_node)\nauthoring_graph.add_node(\"supervisor\", doc_writing_supervisor)\n\nauthoring_graph.add_edge(\"DocWriter\", \"supervisor\")\nauthoring_graph.add_edge(\"NoteTaker\", \"supervisor\")\nauthoring_graph.add_edge(\"CopyEditor\", \"supervisor\")\nauthoring_graph.add_edge(\"EmpathyEditor\", \"supervisor\")\nauthoring_graph.add_conditional_edges(\n    \"supervisor\",\n    lambda x: x[\"next\"],\n    {\n        \"DocWriter\": \"DocWriter\",\n        \"NoteTaker\": \"NoteTaker\",\n        \"CopyEditor\" : \"CopyEditor\",\n        \"EmpathyEditor\" : \"EmpathyEditor\",\n        \"FINISH\": END,\n    },\n)\nauthoring_graph.set_entry_point(\"supervisor\")\ncompiled_authoring_graph = authoring_graph.compile()",
+      "dependencies": [
+        "23"
+      ],
+      "dependents": [
+        "25"
+      ]
+    },
+    {
+      "id": "25",
+      "name": "Authoring Graph Visualization",
+      "description": "This block visualizes the constructed authoring graph, displaying the workflow among the various agents involved in the document writing process. It provides a graphical representation of how tasks are managed and executed.",
+      "content": "# Cell 94\nfrom IPython.display import Image, display\n\ndisplay(\n    Image(\n        compiled_authoring_graph.get_graph().draw_mermaid_png(\n            curve_style=CurveStyle.LINEAR,\n            node_colors=NodeStyles(first=\"#ffdfba\", last=\"#baffc9\", default=\"#fad7de\"),\n            wrap_label_n_words=9,\n            output_file_path=None,\n            draw_method=MermaidDrawMethod.PYPPETEER,\n            background_color=\"white\",\n            padding=10,\n        )\n    )\n)",
+      "dependencies": [
+        "24"
+      ],
+      "dependents": [
+        "26"
+      ]
+    },
+    {
+      "id": "26",
+      "name": "Authoring Chain Execution",
+      "description": "This block defines the execution chain for the authoring process, allowing for the input of a user request and managing the flow of messages among the agents. It sets up the interaction model for generating responses based on user queries.",
+      "content": "# Cell 96\n\nauthoring_chain = (\n    functools.partial(enter_chain, members=authoring_graph.nodes)\n    | authoring_graph.compile()\n)\n\nfor s in authoring_chain.stream(\n    \"Write a customer assistance response on the positioning of Student Loans as it relates to low income students.\",\n    {\"recursion_limit\": 100},\n):\n    if \"__end__\" not in s:\n        print(s)\n        print(\"---\")",
+      "dependencies": [
+        "25"
+      ],
+      "dependents": []
+    }
+  ],
+  "edges": [
+    {
+      "from_id": "1",
+      "to": "2",
+      "type": "uses"
+    },
+    {
+      "from_id": "2",
+      "to": "3",
+      "type": "uses"
+    },
+    {
+      "from_id": "3",
+      "to": "4",
+      "type": "uses"
+    },
+    {
+      "from_id": "3",
+      "to": "5",
+      "type": "uses"
+    },
+    {
+      "from_id": "5",
+      "to": "6",
+      "type": "uses"
+    },
+    {
+      "from_id": "6",
+      "to": "7",
+      "type": "uses"
+    },
+    {
+      "from_id": "7",
+      "to": "8",
+      "type": "uses"
+    },
+    {
+      "from_id": "8",
+      "to": "9",
+      "type": "uses"
+    },
+    {
+      "from_id": "9",
+      "to": "10",
+      "type": "uses"
+    },
+    {
+      "from_id": "10",
+      "to": "11",
+      "type": "uses"
+    },
+    {
+      "from_id": "11",
+      "to": "12",
+      "type": "uses"
+    },
+    {
+      "from_id": "13",
+      "to": "14",
+      "type": "uses"
+    },
+    {
+      "from_id": "14",
+      "to": "15",
+      "type": "uses"
+    },
+    {
+      "from_id": "15",
+      "to": "16",
+      "type": "uses"
+    },
+    {
+      "from_id": "16",
+      "to": "19",
+      "type": "uses"
+    },
+    {
+      "from_id": "19",
+      "to": "20",
+      "type": "uses"
+    },
+    {
+      "from_id": "20",
+      "to": "21",
+      "type": "uses"
+    },
+    {
+      "from_id": "21",
+      "to": "22",
+      "type": "uses"
+    },
+    {
+      "from_id": "22",
+      "to": "23",
+      "type": "uses"
+    },
+    {
+      "from_id": "23",
+      "to": "24",
+      "type": "uses"
+    },
+    {
+      "from_id": "24",
+      "to": "25",
+      "type": "uses"
+    },
+    {
+      "from_id": "25",
+      "to": "26",
+      "type": "uses"
+    }
+  ],
+  "execution_order": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26"
+  ]
+}

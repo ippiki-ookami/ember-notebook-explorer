@@ -1,0 +1,753 @@
+{
+  "nodes": [
+    {
+      "id": "560499fa5dc8d81c",
+      "type": "text",
+      "text": "INPUT:\n  - ipynb file (Jupyter notebook)\n\n  ---\n\n  PROCESS:\n  - extract_ipynb_as_strings() reads the notebook JSON structure\n  - iterates through cells array\n  - separates code cells from markdown cells\n  - preserves original cell order\n  - adds cell number comments as separators\n\n  ---\n\n  OUTPUTS:\n  - Python string (all code cells concatenated with separators)\n  - Markdown string (all markdown cells concatenated with separators)",
+      "styleAttributes": {
+        "textAlign": null
+      },
+      "x": -2960,
+      "y": 1830,
+      "width": 420,
+      "height": 560
+    },
+    {
+      "id": "9537649fbf955972",
+      "type": "text",
+      "text": "SEPARATE CODE",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": -2880,
+      "y": 1800,
+      "width": 260,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "42d84be884574ac9",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": -2600,
+      "y": 1800,
+      "width": 60,
+      "height": 60,
+      "color": "4"
+    },
+    {
+      "id": "4b3e1ea8dedeabbc",
+      "type": "text",
+      "text": " INPUT:\n  - Python code string (extracted from notebook)\n\n  ---\n\n  PROCESS:\n  - ENHANCED_EXPLANATION_PROMPT template receives code\n  - LLM analyzes code structure\n  - identifies logical blocks (imports, classes, functions, etc.)\n  - maps dependencies between blocks\n  - determines execution flow\n\n  ---\n\n  OUTPUTS:\n  - JSON structure containing:\n    - overview (2-3 sentence summary)\n    - blocks array (id, name, description, content, dependencies)\n    - edges array (dependency graph)\n    - execution_order array",
+      "styleAttributes": {
+        "textAlign": null
+      },
+      "x": -2340,
+      "y": 1800,
+      "width": 420,
+      "height": 620
+    },
+    {
+      "id": "52b36807b45eadea",
+      "type": "text",
+      "text": "INITIAL ANALYSIS",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": -2260,
+      "y": 1770,
+      "width": 260,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "7e82ac51a71cdfe6",
+      "type": "text",
+      "text": "INPUT:\n- CodeBlock object (from initial analysis)\n- CodeExplanation context (overview, all blocks, edges)\n- Connected blocks summary (from format_connected_blocks)\n\n  ---\n\nPROCESS:\n-  COMPONENT_EXTRACTION_PROMPT template receives:\n\t- Block code content\n\t- Block description and ID\n\t- Connected blocks context\n- LLM decomposes block into components:\n\t- Identifies component types (import, class, function, etc.)\n\t- Assigns sequential numbers\n\t- Maps parent-child relationships\n\t- Tracks internal calls/dependencies\n- Component validation:\n\t- Checks for external dependencies\n\t- Sets is_resolved status\n\n  ---\n\nOUTPUTS:\n- ComponentAnalysis containing:\n\t- components array with each component having:\n\t\t- name, number, type, library\n\t\t- code (exact content)\n\t\t- description\n\t\t- parent/children relationships\n\t\t- calls/called_by references\n- Updates to WalkthroughState:\n\t- component_states populated\n\t- global registries updated\n\t- is_completed flag set (true if no external deps)",
+      "styleAttributes": {
+        "textAlign": null
+      },
+      "x": -1440,
+      "y": 1550,
+      "width": 440,
+      "height": 1140
+    },
+    {
+      "id": "57ec707aa14dca4c",
+      "type": "text",
+      "text": "COMPONENT EXTRACTION",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": -1350,
+      "y": 1520,
+      "width": 260,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "4ffe38231d3e258a",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": -1060,
+      "y": 1520,
+      "width": 60,
+      "height": 60,
+      "color": "4"
+    },
+    {
+      "id": "a1b2cc1b645943ab",
+      "type": "text",
+      "text": "INPUT: \n- ExplanationState JSON\n\n---\n\nPROCESS:\n- Creates Tree and Graph\n\n---\n\nOUTPUT:\n- Graph \n\t- Grouped by phases (all phases 1 group color)\n\t- Parent component grouped with it's children (aka nested - different group color for each level, also smaller nodes?)\n- Tree View",
+      "styleAttributes": {},
+      "x": -695,
+      "y": 2525,
+      "width": 450,
+      "height": 540
+    },
+    {
+      "id": "018b5748be764939",
+      "type": "text",
+      "text": "  INPUT:\n\t- BlockState with pending_dependencies\n\t- Global component registry (all analyzed components)\n\t- Dependency context (external component descriptions)\n\n  ---\n\n  PROCESS:\n- Identify unresolved components (is_resolved=false)\n- Gather dependency context:\n\t- Look up external components in global registry\n\t- Build context with their descriptions\n- enhance_with_dependencies:\n\t- LLM receives component + dependency context\n\t- Generates enhanced description explaining interactions\n\t- Updates confidence scores\n- Mark components as resolved\n\n  ---\n\nOUTPUTS:\n- Enhanced component descriptions\n- Updated component states:\n\t- enhanced_description populated\n\t- is_resolved set to true\n- BlockState marked as fully_analyzed",
+      "styleAttributes": {
+        "textAlign": null
+      },
+      "x": -75,
+      "y": 806,
+      "width": 440,
+      "height": 920
+    },
+    {
+      "id": "1ba4050eeafcab82",
+      "type": "text",
+      "text": "DEPENDENCY RESOLUTION",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 15,
+      "y": 776,
+      "width": 260,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "c8acd02e4f6aa780",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 305,
+      "y": 776,
+      "width": 60,
+      "height": 60,
+      "color": "4"
+    },
+    {
+      "id": "8176aab22e565062",
+      "type": "text",
+      "text": "INPUT:\n- BlockState (fully analyzed)\n- All component descriptions (initial or enhanced)\n- Block metadata and relationships\n\n  ---\n\n PROCESS:\n- Aggregate component insights:\n\t- Use enhanced_description if available\n\t- Otherwise use initial description\n- Combine into comprehensive block description:\n\t- Original block description\n\t- Component-level details\n\t- Cross-component interactions\n- Generate execution flow narrative\n\n  ---\n\nOUTPUTS:\n- deep_description for block\n- Comprehensive understanding combining:\n\t  - What the block does\n\t  - How components work together\n\t  - External dependencies explained",
+      "styleAttributes": {
+        "textAlign": null
+      },
+      "x": -75,
+      "y": 1770,
+      "width": 440,
+      "height": 720
+    },
+    {
+      "id": "8c550d8ae4fd9395",
+      "type": "text",
+      "text": "DEEP DESCRIPTION GENERATION",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 15,
+      "y": 2400,
+      "width": 260,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "52cb2e7043d87922",
+      "type": "text",
+      "text": "Check Component Dependency",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": -695,
+      "y": 1570,
+      "width": 260,
+      "height": 100
+    },
+    {
+      "id": "30b44cb7f7afc424",
+      "type": "text",
+      "text": "CREATE TREE/GRAPH",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": -600,
+      "y": 2495,
+      "width": 260,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "13f05637bcf40c0c",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": -1980,
+      "y": 1770,
+      "width": 60,
+      "height": 60,
+      "color": "4"
+    },
+    {
+      "id": "0f1564a9fd3fd1af",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": -305,
+      "y": 2495,
+      "width": 60,
+      "height": 60,
+      "color": "1"
+    },
+    {
+      "id": "08d3714fc4b78b8c",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 305,
+      "y": 1740,
+      "width": 60,
+      "height": 60,
+      "color": "4"
+    },
+    {
+      "id": "7331e61560032a4f",
+      "type": "text",
+      "text": "Hours\n\n7/30 6am-7:30am, 1pm-3pm --- 3h\n7/31 10am-12pm & 8pm-9pm --- 3h\n8/1 10am-4pm --- 6h\n8/4 7am-10am --- 3h\n8/5 10am-5pm --- 7h",
+      "styleAttributes": {},
+      "x": -1790,
+      "y": 1112,
+      "width": 480,
+      "height": 220,
+      "color": "6"
+    },
+    {
+      "id": "52214d5932359433",
+      "type": "text",
+      "text": "Token usage counter feature\n\nADD HASH TRACKING FOR CHANGES LIKE EMBER.PY\n\nHighlighting on blocks gives information similar to what we have in this canvas: INPUT, PROCESS, OUTPUT",
+      "styleAttributes": {},
+      "x": -1440,
+      "y": 866,
+      "width": 520,
+      "height": 180
+    },
+    {
+      "id": "5e2397029c937ae1",
+      "type": "text",
+      "text": "Make Labels for Each \"Node\" so I can find equivalent code for below in .ipynb easily\n\n\nFor changes after usable state, change color for new items until finalized",
+      "styleAttributes": {},
+      "x": -800,
+      "y": 836,
+      "width": 460,
+      "height": 180
+    },
+    {
+      "id": "662cc68e1ff4d99b",
+      "type": "text",
+      "text": "PHASE DEEP DESCRIPTION GENERATION",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 2269,
+      "y": 4920,
+      "width": 320,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "f2a219ee553c1cd9",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 2599,
+      "y": 4920,
+      "width": 60,
+      "height": 60,
+      "color": "1"
+    },
+    {
+      "id": "3c2c68b21937e2c8",
+      "type": "text",
+      "text": "INPUT: \n- (async) For PhaseState in PhaseStateList:\n\n---\n\nPROCESS:\n- Prompt to generate Deep Description\n\t- Code Overview\n\t- Initial Description\n\t- (all) children in ComponentStateList\n\n---\n\nOUTPUT:\n- PhaseStateList\n\t- PhaseState[\"Deep Description\"]",
+      "styleAttributes": {},
+      "x": 2199,
+      "y": 4950,
+      "width": 460,
+      "height": 440
+    },
+    {
+      "id": "3a5638d6edd3ce95",
+      "type": "text",
+      "text": "INPUT:\n- JSON of initial explanation\n\t- Overview\n\t- Phases\n\t\t- Description\n\t\t- Components (make all are assigned)\n\n---\n\nPROCESS:\n- Convert JSON to state\n\n---\n\nOUTPUT:\n- ExplanationState\n\t- Code Overview\n\t- PhasteStateList\n\t\t- PhaseState\n\t\t\t- State Name\n\t\t\t- State Number\n\t\t\t- Parent Phases\n\t\t\t- Children Phases\n\t\t\t- Initial Description\n\t\t\t- Deep Description (null)\n\t\t\t- ComponentStateList\n\t\t\t\t- ComponentState\n\t\t\t\t\t- Component Name\n\t\t\t\t\t- Component Number\n\t\t\t\t\t- Type (class, func, var, etc.)\n\t\t\t\t\t- Library (or built-in)\n\t\t\t\t\t- Full Code\n\t\t\t\t\t- Description (null)\n\t\t\t\t\t- Belonged Phase\n\t\t\t\t\t- Parent Component(s)\n\t\t\t\t\t- Child Component(s)\n\t\t\t\t\t- Called Components\n\t\t\t\t\t- Called-by Components",
+      "styleAttributes": {},
+      "x": 2159,
+      "y": 5610,
+      "width": 480,
+      "height": 1020
+    },
+    {
+      "id": "64330e2c569f2ed2",
+      "type": "text",
+      "text": "CREATE STATES",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 2269,
+      "y": 5580,
+      "width": 260,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "356864aaa2cbdeb3",
+      "type": "text",
+      "text": "LLM COMPONENT DESCRIPTOR",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 2959,
+      "y": 5170,
+      "width": 260,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "d36d4d0cc5a9a7ce",
+      "type": "text",
+      "text": "CONTEXT7 COMPONENT DESCRIPTOR",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 2739,
+      "y": 6570,
+      "width": 320,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "3cee50a2a7e2ca9b",
+      "type": "text",
+      "text": "\n\n\n\n\nNPUT: \n- ComponentStates independent of other functions\n\n---\n\nPROCESS: (async)\n- Use Context7 to explain to get context of functions\n\n---\n\nOUTPUT:\n- List of components not in Context7\n- ComponentState[\"Description\"]",
+      "styleAttributes": {},
+      "x": 2849,
+      "y": 6620,
+      "width": 480,
+      "height": 480
+    },
+    {
+      "id": "e10dac09e48d8815",
+      "type": "text",
+      "text": "COMPONENT DESCRIPTION ASSIGNMENT",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 2739,
+      "y": 5750,
+      "width": 320,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "386b19d0a062c913",
+      "type": "text",
+      "text": "INPUT: \n- (async) For PhaseState in PhaseStateList:\n\n---\n\nPROCESS (async)\n- If called components, await \n- For Components not dependent on others\n\t- Calls Content7 Component Descriptor\n- For those dependent on something or not found in Context7\n\t- Calls LLM Component Descriptor\n\n---\n\nOUTPUT:\n- ComponentStateList\n\t- ComponentState[\"Description\"]",
+      "styleAttributes": {},
+      "x": 2849,
+      "y": 5810,
+      "width": 480,
+      "height": 500
+    },
+    {
+      "id": "4852e1d739f4f7a6",
+      "type": "text",
+      "text": "INPUT:\n- ComponentStates\n- Phase's Initial Description\n- Called Components\n\nPROCESS:\n- Passes input and a prompt to LLM to get a description\n\nOUTPUT:\n- ComponentState[\"Description\"]",
+      "styleAttributes": {},
+      "x": 2929,
+      "y": 5230,
+      "width": 320,
+      "height": 380
+    },
+    {
+      "id": "d66482c0a3e165c5",
+      "type": "text",
+      "text": "FEED TO LLM",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 1210,
+      "y": 4990,
+      "width": 260,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "d90085b9468d2ede",
+      "type": "text",
+      "text": "INPUT: \n- py file\n- md file\n- parsed components\n\n---\n\nPROCESS:\n- feed to LLM with prompt for structured output\n\t- Components should be ordered in order used in phase\n\t- md, if applicable, is to help with additional understanding if it provides any info\n\n---\n\nOUTPUT\n- JSON of following items\n\t- ExplanationState\n\t\t- Code Overview\n\t\t- BlockStateList\n\t\t\t- BlockState\n\t\t\t\t- Block ID\n\t\t\t\t- Block Name\n\t\t\t\t- Initial Pass?\n\t\t\t\t- Initial Description\n\t\t\t\t- Deep Description (null)\n\t\t\t\t- ComponentStateList\n\t\t\t\t\t- ComponentState\n\t\t\t\t\t\t- Component Name\n\t\t\t\t\t\t- Component Number\n\t\t\t\t\t\t- Type (class, func, var, etc.)\n\t\t\t\t\t\t- Library (or built-in)\n\t\t\t\t\t\t- Full Code\n\t\t\t\t\t\t- Description\n\t\t\t\t\t\t- Belonged Phase\n\t\t\t\t\t\t- Parent Component(s)\n\t\t\t\t\t\t- Child Component(s)\n\t\t\t\t\t\t- Called Components\n\t\t\t\t\t\t- Called-by Components\n",
+      "styleAttributes": {
+        "textAlign": null
+      },
+      "x": 1120,
+      "y": 5020,
+      "width": 440,
+      "height": 1180
+    },
+    {
+      "id": "f1ffe6dffc3b00e6",
+      "type": "text",
+      "text": "INPUT:\n- WalkthroughState with completed deep descriptions\n- All blocks fully analyzed\n- Component descriptions (initial/enhanced)\n\n  ---\n\nPROCESS:\n- Generate comprehensive overview from deep descriptions\n- Judge improvement potential (0-100% score)\n- IF score >= 10%:\n\t- Create selective update plan\n\t- Update overview with architectural insights\n\t- Update specific blocks needing refinement\n\t- Update affected components with context\n\t- Repeat (max 2 iterations)\n- ELSE: Skip iteration\n\n  ---\n\nOUTPUTS:\n- Enhanced code_overview with full architectural understanding\n- Refined deep_descriptions for selected blocks\n- Updated component descriptions with architectural context\n- Improvement metrics (iterations, API calls, scores)",
+      "styleAttributes": {
+        "textAlign": null
+      },
+      "x": 560,
+      "y": 1422,
+      "width": 440,
+      "height": 755
+    },
+    {
+      "id": "a56ac517a3d18681",
+      "type": "text",
+      "text": "INPUT:\n  - WalkthroughState with completed deep descriptions\n  - Enhanced component descriptions (initial/enhanced)\n  - Global component registries (functions, classes, imports)\n  - Block states with full architectural understanding\n\n  ---\n  PROCESS:\n  - Generate comprehensive teaching plan from enhanced state\n  - Build dynamic component name mapping and cross-references\n  - Create educational sections with mandatory component linking\n  - IF coverage < 100%:\n    - Apply advanced component linking patterns (1100+ regex patterns)\n    - Run iterative replacement with priority rules (max 3 passes)\n    - Validate component coverage and link quality\n    - Fix broken/duplicate links through post-processing\n    - Repeat until 100% coverage or max iterations\n  - Generate both original and preview versions with universal conversion\n\n  ---\n  OUTPUTS:\n  - Complete educational walkthrough with 100% component coverage\n  - Component links in VS Code extension format: [[component:block:num:name|display]]\n  - Preview version with standard markdown links for presentations\n  - Quality validation report with coverage metrics and link analysis\n  - Component registry for VS Code extension integration\n  - Teaching sections with contextual explanations and guided learning flow",
+      "styleAttributes": {
+        "textAlign": null
+      },
+      "x": 1270,
+      "y": 1369,
+      "width": 560,
+      "height": 863
+    },
+    {
+      "id": "4ef74bd321b3041e",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 1770,
+      "y": 1339,
+      "width": 60,
+      "height": 60,
+      "color": "4"
+    },
+    {
+      "id": "bc62ff6c0a6bc819",
+      "type": "text",
+      "text": "WALKTHROUGH GENERATION",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 1420,
+      "y": 1339,
+      "width": 260,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "ec1f9b7ead176bb6",
+      "type": "text",
+      "text": "Take new overview and blocks and feed to planner for walk through, broken apart by each block but still cohesive in order, Also writes brief introduction/overview/purpose\n\nFor each block we run async. Each block gets their block's task list as per planner. Using their deep description and components list, they'll write a walkthrough as well as possible, following the task list order, and making sure to touch upon/mention (but not necessarily explain - unless needed) every component in that block\n\nAsk for less technical tone. with 10 being professor and 1 being a friend, we should be around a 7 or so. Language easy to grasp but still professional\n\n\n\nFor testing, make modules with different prompts for each section to see what kind of results are returned (like changing sensitivity of block count for making sure that each block is manageable in size for understanding and not too overwhelming) - ex evaluation is pretend you're student who knows basic python and are receiving explanations from a teacher. Does this walkthrough block seem manageable to you or overwhelming? What could be done differently?\n",
+      "styleAttributes": {},
+      "x": 1230,
+      "y": 2325,
+      "width": 640,
+      "height": 580
+    },
+    {
+      "id": "c7cd8378cab35dca",
+      "type": "text",
+      "text": "Form walkthrough doc for each phase (find out best file type to use for interactivity)\n\n- one section per phase\n- clickable component names\n- \"comment\" box next to each section with previously asked questions IF that question can't be matched to a specific snippet\n\t- if snippet is matched, highlight that in walkthrough (and original ipynb) so when hovered or clicked it shows answers to it",
+      "styleAttributes": {},
+      "x": 1280,
+      "y": 952,
+      "width": 520,
+      "height": 320
+    },
+    {
+      "id": "c52de9722d14536c",
+      "type": "text",
+      "text": "Response printout to user",
+      "styleAttributes": {},
+      "x": 2940,
+      "y": 2040,
+      "width": 260,
+      "height": 90
+    },
+    {
+      "id": "739005f35372c33a",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 3140,
+      "y": 2100,
+      "width": 60,
+      "height": 60,
+      "color": "1"
+    },
+    {
+      "id": "e1ec4c697495d1f8",
+      "type": "text",
+      "text": "Stores to Database for use in new tooltip\n\nDoes it need to be stored in a vectordb too?",
+      "styleAttributes": {},
+      "x": 2940,
+      "y": 1550,
+      "width": 260,
+      "height": 160
+    },
+    {
+      "id": "cece7a89a0cf976e",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 3140,
+      "y": 1680,
+      "width": 60,
+      "height": 60,
+      "color": "1"
+    },
+    {
+      "id": "a2b5d697c24b5047",
+      "type": "text",
+      "text": "RETURN RESPONSE TO USER",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 2910,
+      "y": 1980,
+      "width": 320,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "af56b4ce20689f81",
+      "type": "text",
+      "text": "INPUT: \n- User Query\n\n---\n\nPROCESS:\n- Passes to an LLM a prompt as well as:\n\t- Phase's Deep Description\n\t- ComponentState[\"Description\"]\n\t- For all edges (to first and last ancestor), all those ComponentState[\"Description\"]\n\t- Overview\n\t- RAG Context\n---\n\nOUTPUT:\n- Response to query",
+      "styleAttributes": {},
+      "x": 2040,
+      "y": 1500,
+      "width": 470,
+      "height": 510
+    },
+    {
+      "id": "3d496307b3dea45e",
+      "type": "text",
+      "text": "Check to see if query is in regards to a certain thing, or more  \"abstract\". If more abstract, find out how to determine what context to pass through and how much context",
+      "styleAttributes": {},
+      "x": 2640,
+      "y": 1670,
+      "width": 260,
+      "height": 220
+    },
+    {
+      "id": "8629434e5cb90c58",
+      "type": "text",
+      "text": "ITERATIVE IMPROVEMENT",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 650,
+      "y": 1392,
+      "width": 260,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "744fd1092f9b1710",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 940,
+      "y": 1392,
+      "width": 60,
+      "height": 60,
+      "color": "4"
+    },
+    {
+      "id": "690c945aadfb5569",
+      "type": "text",
+      "text": "USER QUERY HANDLING",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 2115,
+      "y": 1470,
+      "width": 320,
+      "height": 60,
+      "color": "2"
+    },
+    {
+      "id": "b61dbfed43e004df",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 2450,
+      "y": 1470,
+      "width": 60,
+      "height": 60,
+      "color": "1"
+    },
+    {
+      "id": "9635308fc714cc8a",
+      "type": "text",
+      "text": "RESPONSE STORAGE",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "x": 2910,
+      "y": 1500,
+      "width": 320,
+      "height": 60,
+      "color": "2"
+    }
+  ],
+  "edges": [
+    {
+      "id": "def833f4b38b87ec",
+      "styleAttributes": {},
+      "fromNode": "386b19d0a062c913",
+      "fromSide": "top",
+      "toNode": "4852e1d739f4f7a6",
+      "toSide": "bottom",
+      "label": "LLM Component Desriptor"
+    },
+    {
+      "id": "82e1aa4b860fd3b5",
+      "styleAttributes": {},
+      "fromNode": "386b19d0a062c913",
+      "fromSide": "bottom",
+      "toNode": "3cee50a2a7e2ca9b",
+      "toSide": "top"
+    },
+    {
+      "id": "696f59e63669d83d",
+      "styleAttributes": {},
+      "fromNode": "3cee50a2a7e2ca9b",
+      "fromSide": "top",
+      "toNode": "386b19d0a062c913",
+      "toSide": "bottom",
+      "label": "Context7 Component Descriptor"
+    },
+    {
+      "id": "61d52f71c62ddc53",
+      "styleAttributes": {},
+      "fromNode": "4852e1d739f4f7a6",
+      "fromSide": "bottom",
+      "toNode": "386b19d0a062c913",
+      "toSide": "top"
+    },
+    {
+      "id": "da564a53c010a8e2",
+      "styleAttributes": {},
+      "fromNode": "af56b4ce20689f81",
+      "fromSide": "right",
+      "toNode": "e1ec4c697495d1f8",
+      "toSide": "left"
+    },
+    {
+      "id": "ad6888031ea67d66",
+      "styleAttributes": {},
+      "fromNode": "af56b4ce20689f81",
+      "fromSide": "right",
+      "toNode": "c52de9722d14536c",
+      "toSide": "left"
+    },
+    {
+      "id": "cd09a085518f14bd",
+      "styleAttributes": {},
+      "fromNode": "560499fa5dc8d81c",
+      "fromSide": "right",
+      "toNode": "4b3e1ea8dedeabbc",
+      "toSide": "left"
+    },
+    {
+      "id": "3b55007d9fefd5c0",
+      "styleAttributes": {},
+      "fromNode": "4b3e1ea8dedeabbc",
+      "fromSide": "right",
+      "toNode": "7e82ac51a71cdfe6",
+      "toSide": "left",
+      "color": "1",
+      "label": "Run evaluations to make\nsure all code is accounted\nfor and that there are no\nduplicates\n"
+    },
+    {
+      "id": "dd5136226edc750a",
+      "styleAttributes": {},
+      "fromNode": "7e82ac51a71cdfe6",
+      "fromSide": "right",
+      "toNode": "52cb2e7043d87922",
+      "toSide": "left"
+    },
+    {
+      "id": "daa0e079d3b2c838",
+      "styleAttributes": {},
+      "fromNode": "52cb2e7043d87922",
+      "fromSide": "right",
+      "toNode": "018b5748be764939",
+      "toSide": "left",
+      "label": "is_completed=false"
+    },
+    {
+      "id": "208f06ac7731a0cd",
+      "styleAttributes": {},
+      "fromNode": "52cb2e7043d87922",
+      "fromSide": "right",
+      "toNode": "8176aab22e565062",
+      "toSide": "left",
+      "label": "is_completed=true"
+    },
+    {
+      "id": "04ff01756e57e34b",
+      "styleAttributes": {},
+      "fromNode": "018b5748be764939",
+      "fromSide": "bottom",
+      "toNode": "8176aab22e565062",
+      "toSide": "top"
+    },
+    {
+      "id": "701d56f41a930a72",
+      "styleAttributes": {},
+      "fromNode": "3a5638d6edd3ce95",
+      "fromSide": "right",
+      "toNode": "386b19d0a062c913",
+      "toSide": "left"
+    },
+    {
+      "id": "a38432faa5561b1a",
+      "styleAttributes": {},
+      "fromNode": "7e82ac51a71cdfe6",
+      "fromSide": "right",
+      "toNode": "a1b2cc1b645943ab",
+      "toSide": "left"
+    },
+    {
+      "id": "f680449f52cefe22",
+      "styleAttributes": {},
+      "fromNode": "8176aab22e565062",
+      "fromSide": "right",
+      "toNode": "f1ffe6dffc3b00e6",
+      "toSide": "left"
+    },
+    {
+      "id": "289d3f12e32c70f3",
+      "styleAttributes": {},
+      "fromNode": "f1ffe6dffc3b00e6",
+      "fromSide": "right",
+      "toNode": "a56ac517a3d18681",
+      "toSide": "left"
+    }
+  ],
+  "metadata": {}
+}

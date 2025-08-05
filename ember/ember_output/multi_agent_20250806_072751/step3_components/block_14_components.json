@@ -1,0 +1,98 @@
+[
+  {
+    "component_id": "14:1",
+    "name": "create_agent_function",
+    "number": 1,
+    "type": "function",
+    "library": "local",
+    "description": "Defines a function to create a function-calling agent that integrates with the RAG system.",
+    "enhanced_description": null,
+    "full_code": "def create_agent(\n    llm: ChatOpenAI,\n    tools: list,\n    system_prompt: str,\n) -> str:",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "14:2",
+    "name": "create_agent_function_docstring",
+    "number": 2,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Docstring that describes the purpose of the create_agent function.",
+    "enhanced_description": null,
+    "full_code": "\"\"\"Create a function-calling agent and add it to the graph.\"\"\"",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "14:3",
+    "name": "system_prompt_modification",
+    "number": 3,
+    "type": "variable",
+    "library": "local",
+    "description": "Modifies the system prompt to include instructions for the agent's behavior.",
+    "enhanced_description": null,
+    "full_code": "system_prompt += (\"\\nWork autonomously according to your specialty, using the tools available to you.\"\n    \" Do not ask for clarification.\"\n    \" Your other team members (and other teams) will collaborate with you with their own specialties.\"\n    \" You are chosen for a reason!\")",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "14:4",
+    "name": "prompt_creation",
+    "number": 4,
+    "type": "variable",
+    "library": "local",
+    "description": "Creates a prompt using the ChatPromptTemplate from the modified system prompt and placeholders.",
+    "enhanced_description": null,
+    "full_code": "prompt = ChatPromptTemplate.from_messages(\n        [\n            (\n                \"system\",\n                system_prompt,\n            ),\n            MessagesPlaceholder(variable_name=\"messages\"),\n            MessagesPlaceholder(variable_name=\"agent_scratchpad\"),\n        ]\n    )",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "14:5",
+    "name": "agent_creation",
+    "number": 5,
+    "type": "variable",
+    "library": "local",
+    "description": "Creates an agent using the OpenAI functions agent with the provided LLM, tools, and prompt.",
+    "enhanced_description": null,
+    "full_code": "agent = create_openai_functions_agent(llm, tools, prompt)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "14:6",
+    "name": "executor_creation",
+    "number": 6,
+    "type": "variable",
+    "library": "local",
+    "description": "Creates an executor that manages the agent and its tools.",
+    "enhanced_description": null,
+    "full_code": "executor = AgentExecutor(agent=agent, tools=tools)",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "14:7",
+    "name": "return_executor",
+    "number": 7,
+    "type": "expression",
+    "library": "built-in",
+    "description": "Returns the created executor from the create_agent function.",
+    "enhanced_description": null,
+    "full_code": "return executor",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "14:8",
+    "name": "MessagesPlaceholder_class",
+    "number": 8,
+    "type": "class",
+    "library": "local",
+    "description": "Placeholder class used in the prompt creation to represent message variables.",
+    "enhanced_description": null,
+    "full_code": "MessagesPlaceholder",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]

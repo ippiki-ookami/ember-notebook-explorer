@@ -1,0 +1,648 @@
+{
+  "run_directory": "ember_output/multi_agent_20250806_072751",
+  "timestamp": "20250806_072751",
+  "files_created": [
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_4_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_15_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_12_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_13_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_21_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_17_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/improved_state.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_25_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_22_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/improvement_summary.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_20_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_7_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/deep_descriptions.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_23_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_1_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_11_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_5_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_10_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/expansion_metrics.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_24_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_2_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_18_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_14_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_16_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_9_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_26_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/component_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_3_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_8_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_6_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/example_comparison.json",
+    "ember_output/multi_agent_20250806_072751/step4_deep_descriptions/block_19_enhancements.json",
+    "ember_output/multi_agent_20250806_072751/step2_analysis/code_explanation.json",
+    "ember_output/multi_agent_20250806_072751/step2_analysis/overview.txt",
+    "ember_output/multi_agent_20250806_072751/step2_analysis/dependency_graph.json",
+    "ember_output/multi_agent_20250806_072751/step2_analysis/first_block_preview.txt",
+    "ember_output/multi_agent_20250806_072751/step2_analysis/first_block_full.py",
+    "ember_output/multi_agent_20250806_072751/step2_analysis/blocks_summary.json",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/component_links_registry.json",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/quality_report.json",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/complete_walkthrough.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_7_7.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_4_4.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/walkthrough_summary.json",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_24_25.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_13_14.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_10_10.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_preview.txt",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_12_13.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_1_1.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_5_5.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_11_12.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_14_15.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/walkthrough_data.json",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_22_23.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_8_8.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_15_16.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_17_18.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_2_2.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_6_6.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_16_17.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_18_19.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_21_22.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/complete_walkthrough_preview.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_19_20.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_3_3.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_9_9.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_25_26.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_20_21.md",
+    "ember_output/multi_agent_20250806_072751/step5_walkthrough/section_23_24.md",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_7_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_10_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_12_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_17_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_6_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_details.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_4_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_23_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_9_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_11_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_20_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/global_registries.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_16_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_8_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_1_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/progress_summary.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_14_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_22_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/component_examples.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_15_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_24_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_19_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/final_state.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_3_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_13_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_18_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_21_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_5_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_25_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_26_components.json",
+    "ember_output/multi_agent_20250806_072751/step3_components/block_2_components.json",
+    "ember_output/multi_agent_20250806_072751/step1_extraction/extracted_markdown.md",
+    "ember_output/multi_agent_20250806_072751/step1_extraction/extracted_code.py",
+    "ember_output/multi_agent_20250806_072751/step1_extraction/extraction_summary.json",
+    "ember_output/multi_agent_20250806_072751/step1_extraction/code_preview.txt"
+  ],
+  "step_summaries": {
+    "step4_deep_descriptions": [
+      {
+        "filename": "block_4_enhancements.json",
+        "size": 2920,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_15_enhancements.json",
+        "size": 11191,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_12_enhancements.json",
+        "size": 15100,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_13_enhancements.json",
+        "size": 3754,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_21_enhancements.json",
+        "size": 5976,
+        "modified": "2025-08-06T07:50:40.941589"
+      },
+      {
+        "filename": "block_17_enhancements.json",
+        "size": 4906,
+        "modified": "2025-08-06T07:50:40.941589"
+      },
+      {
+        "filename": "improved_state.json",
+        "size": 544951,
+        "modified": "2025-08-06T07:50:40.923589"
+      },
+      {
+        "filename": "block_25_enhancements.json",
+        "size": 9497,
+        "modified": "2025-08-06T07:50:40.941589"
+      },
+      {
+        "filename": "block_22_enhancements.json",
+        "size": 3042,
+        "modified": "2025-08-06T07:50:40.941589"
+      },
+      {
+        "filename": "improvement_summary.json",
+        "size": 139,
+        "modified": "2025-08-06T07:50:40.923589"
+      },
+      {
+        "filename": "block_20_enhancements.json",
+        "size": 4901,
+        "modified": "2025-08-06T07:50:40.941589"
+      },
+      {
+        "filename": "block_7_enhancements.json",
+        "size": 4096,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "deep_descriptions.json",
+        "size": 2,
+        "modified": "2025-08-06T07:37:07.339998"
+      },
+      {
+        "filename": "block_23_enhancements.json",
+        "size": 17837,
+        "modified": "2025-08-06T07:50:40.941589"
+      },
+      {
+        "filename": "block_1_enhancements.json",
+        "size": 4646,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_11_enhancements.json",
+        "size": 59042,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_5_enhancements.json",
+        "size": 3006,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_10_enhancements.json",
+        "size": 1746,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "expansion_metrics.json",
+        "size": 2,
+        "modified": "2025-08-06T07:37:07.339998"
+      },
+      {
+        "filename": "block_24_enhancements.json",
+        "size": 5797,
+        "modified": "2025-08-06T07:50:40.941589"
+      },
+      {
+        "filename": "block_2_enhancements.json",
+        "size": 5262,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_18_enhancements.json",
+        "size": 9793,
+        "modified": "2025-08-06T07:50:40.941589"
+      },
+      {
+        "filename": "block_14_enhancements.json",
+        "size": 9454,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_16_enhancements.json",
+        "size": 2833,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_9_enhancements.json",
+        "size": 20746,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_26_enhancements.json",
+        "size": 6756,
+        "modified": "2025-08-06T07:50:40.941589"
+      },
+      {
+        "filename": "component_enhancements.json",
+        "size": 1850,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_3_enhancements.json",
+        "size": 8205,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_8_enhancements.json",
+        "size": 2972,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "block_6_enhancements.json",
+        "size": 1830,
+        "modified": "2025-08-06T07:50:40.932589"
+      },
+      {
+        "filename": "example_comparison.json",
+        "size": 1083,
+        "modified": "2025-08-06T07:50:40.923589"
+      },
+      {
+        "filename": "block_19_enhancements.json",
+        "size": 1620,
+        "modified": "2025-08-06T07:50:40.941589"
+      }
+    ],
+    "step2_analysis": [
+      {
+        "filename": "code_explanation.json",
+        "size": 29920,
+        "modified": "2025-08-06T07:29:42.167767"
+      },
+      {
+        "filename": "overview.txt",
+        "size": 367,
+        "modified": "2025-08-06T07:29:42.167767"
+      },
+      {
+        "filename": "dependency_graph.json",
+        "size": 1887,
+        "modified": "2025-08-06T07:29:42.167767"
+      },
+      {
+        "filename": "first_block_preview.txt",
+        "size": 165,
+        "modified": "2025-08-06T07:29:42.167767"
+      },
+      {
+        "filename": "first_block_full.py",
+        "size": 165,
+        "modified": "2025-08-06T07:29:42.167767"
+      },
+      {
+        "filename": "blocks_summary.json",
+        "size": 10266,
+        "modified": "2025-08-06T07:29:42.167767"
+      }
+    ],
+    "step5_walkthrough": [
+      {
+        "filename": "component_links_registry.json",
+        "size": 52118,
+        "modified": "2025-08-06T07:51:46.593079"
+      },
+      {
+        "filename": "quality_report.json",
+        "size": 192956,
+        "modified": "2025-08-06T07:51:46.574420"
+      },
+      {
+        "filename": "complete_walkthrough.md",
+        "size": 129041,
+        "modified": "2025-08-06T07:51:46.546433"
+      },
+      {
+        "filename": "section_7_7.md",
+        "size": 4445,
+        "modified": "2025-08-06T07:51:46.555763"
+      },
+      {
+        "filename": "section_4_4.md",
+        "size": 3651,
+        "modified": "2025-08-06T07:51:46.555763"
+      },
+      {
+        "filename": "walkthrough_summary.json",
+        "size": 259,
+        "modified": "2025-08-06T07:51:46.593079"
+      },
+      {
+        "filename": "section_24_25.md",
+        "size": 6417,
+        "modified": "2025-08-06T07:51:46.574420"
+      },
+      {
+        "filename": "section_13_14.md",
+        "size": 5743,
+        "modified": "2025-08-06T07:51:46.565092"
+      },
+      {
+        "filename": "section_10_10.md",
+        "size": 3440,
+        "modified": "2025-08-06T07:51:46.565092"
+      },
+      {
+        "filename": "section_preview.txt",
+        "size": 403,
+        "modified": "2025-08-06T07:51:46.593079"
+      },
+      {
+        "filename": "section_12_13.md",
+        "size": 4381,
+        "modified": "2025-08-06T07:51:46.565092"
+      },
+      {
+        "filename": "section_1_1.md",
+        "size": 4183,
+        "modified": "2025-08-06T07:51:46.555763"
+      },
+      {
+        "filename": "section_5_5.md",
+        "size": 3571,
+        "modified": "2025-08-06T07:51:46.555763"
+      },
+      {
+        "filename": "section_11_12.md",
+        "size": 7607,
+        "modified": "2025-08-06T07:51:46.565092"
+      },
+      {
+        "filename": "section_14_15.md",
+        "size": 7466,
+        "modified": "2025-08-06T07:51:46.565092"
+      },
+      {
+        "filename": "walkthrough_data.json",
+        "size": 170937,
+        "modified": "2025-08-06T07:51:46.574420"
+      },
+      {
+        "filename": "section_22_23.md",
+        "size": 7235,
+        "modified": "2025-08-06T07:51:46.574420"
+      },
+      {
+        "filename": "section_8_8.md",
+        "size": 3940,
+        "modified": "2025-08-06T07:51:46.555763"
+      },
+      {
+        "filename": "section_15_16.md",
+        "size": 4085,
+        "modified": "2025-08-06T07:51:46.565092"
+      },
+      {
+        "filename": "section_17_18.md",
+        "size": 5391,
+        "modified": "2025-08-06T07:51:46.565092"
+      },
+      {
+        "filename": "section_2_2.md",
+        "size": 5125,
+        "modified": "2025-08-06T07:51:46.555763"
+      },
+      {
+        "filename": "section_6_6.md",
+        "size": 2933,
+        "modified": "2025-08-06T07:51:46.555763"
+      },
+      {
+        "filename": "section_16_17.md",
+        "size": 4806,
+        "modified": "2025-08-06T07:51:46.565092"
+      },
+      {
+        "filename": "section_18_19.md",
+        "size": 3051,
+        "modified": "2025-08-06T07:51:46.565092"
+      },
+      {
+        "filename": "section_21_22.md",
+        "size": 3876,
+        "modified": "2025-08-06T07:51:46.565092"
+      },
+      {
+        "filename": "complete_walkthrough_preview.md",
+        "size": 127815,
+        "modified": "2025-08-06T07:51:46.555763"
+      },
+      {
+        "filename": "section_19_20.md",
+        "size": 4865,
+        "modified": "2025-08-06T07:51:46.565092"
+      },
+      {
+        "filename": "section_3_3.md",
+        "size": 6075,
+        "modified": "2025-08-06T07:51:46.555763"
+      },
+      {
+        "filename": "section_9_9.md",
+        "size": 8267,
+        "modified": "2025-08-06T07:51:46.555763"
+      },
+      {
+        "filename": "section_25_26.md",
+        "size": 4789,
+        "modified": "2025-08-06T07:51:46.574420"
+      },
+      {
+        "filename": "section_20_21.md",
+        "size": 6886,
+        "modified": "2025-08-06T07:51:46.565092"
+      },
+      {
+        "filename": "section_23_24.md",
+        "size": 5584,
+        "modified": "2025-08-06T07:51:46.574420"
+      }
+    ],
+    "step3_components": [
+      {
+        "filename": "block_7_components.json",
+        "size": 1612,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_10_components.json",
+        "size": 500,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_12_components.json",
+        "size": 4006,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_17_components.json",
+        "size": 1839,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_6_components.json",
+        "size": 485,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_details.json",
+        "size": 5554,
+        "modified": "2025-08-06T07:37:07.282969"
+      },
+      {
+        "filename": "block_4_components.json",
+        "size": 902,
+        "modified": "2025-08-06T07:37:07.282969"
+      },
+      {
+        "filename": "block_23_components.json",
+        "size": 5433,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_9_components.json",
+        "size": 7631,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_11_components.json",
+        "size": 22593,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_20_components.json",
+        "size": 1789,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "global_registries.json",
+        "size": 1518,
+        "modified": "2025-08-06T07:37:07.282969"
+      },
+      {
+        "filename": "block_16_components.json",
+        "size": 947,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_8_components.json",
+        "size": 930,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_1_components.json",
+        "size": 1606,
+        "modified": "2025-08-06T07:37:07.282969"
+      },
+      {
+        "filename": "progress_summary.json",
+        "size": 113,
+        "modified": "2025-08-06T07:37:07.282969"
+      },
+      {
+        "filename": "block_14_components.json",
+        "size": 3705,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_22_components.json",
+        "size": 1457,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "component_examples.json",
+        "size": 847,
+        "modified": "2025-08-06T07:37:07.282969"
+      },
+      {
+        "filename": "block_15_components.json",
+        "size": 4838,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_24_components.json",
+        "size": 3025,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_19_components.json",
+        "size": 426,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "final_state.json",
+        "size": 266936,
+        "modified": "2025-08-06T07:37:07.282969"
+      },
+      {
+        "filename": "block_3_components.json",
+        "size": 2885,
+        "modified": "2025-08-06T07:37:07.282969"
+      },
+      {
+        "filename": "block_13_components.json",
+        "size": 1267,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_18_components.json",
+        "size": 3404,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_21_components.json",
+        "size": 2074,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_5_components.json",
+        "size": 1048,
+        "modified": "2025-08-06T07:37:07.282969"
+      },
+      {
+        "filename": "block_25_components.json",
+        "size": 3263,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_26_components.json",
+        "size": 2338,
+        "modified": "2025-08-06T07:37:07.292474"
+      },
+      {
+        "filename": "block_2_components.json",
+        "size": 1898,
+        "modified": "2025-08-06T07:37:07.282969"
+      }
+    ],
+    "step1_extraction": [
+      {
+        "filename": "extracted_markdown.md",
+        "size": 15799,
+        "modified": "2025-08-06T07:27:51.798362"
+      },
+      {
+        "filename": "extracted_code.py",
+        "size": 24684,
+        "modified": "2025-08-06T07:27:51.798362"
+      },
+      {
+        "filename": "extraction_summary.json",
+        "size": 225,
+        "modified": "2025-08-06T07:27:51.798362"
+      },
+      {
+        "filename": "code_preview.txt",
+        "size": 503,
+        "modified": "2025-08-06T07:27:51.798362"
+      }
+    ]
+  }
+}

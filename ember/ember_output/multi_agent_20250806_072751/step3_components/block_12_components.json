@@ -1,0 +1,110 @@
+[
+  {
+    "component_id": "12:1",
+    "name": "typing_imports",
+    "number": 1,
+    "type": "import",
+    "library": "built-in",
+    "description": "Imports various typing utilities for type hinting in Python.",
+    "enhanced_description": null,
+    "full_code": "from typing import Any, Callable, List, Optional, TypedDict, Union",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "12:2",
+    "name": "langchain_agents_imports",
+    "number": 2,
+    "type": "import",
+    "library": "langchain",
+    "description": "Imports AgentExecutor and a function to create an OpenAI functions agent from the langchain.agents module.",
+    "enhanced_description": null,
+    "full_code": "from langchain.agents import AgentExecutor, create_openai_functions_agent",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "12:3",
+    "name": "langchain_output_parsers_imports",
+    "number": 3,
+    "type": "import",
+    "library": "langchain",
+    "description": "Imports the JsonOutputFunctionsParser for parsing JSON outputs from OpenAI functions.",
+    "enhanced_description": null,
+    "full_code": "from langchain.output_parsers.openai_functions import JsonOutputFunctionsParser",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "12:4",
+    "name": "langchain_prompts_imports",
+    "number": 4,
+    "type": "import",
+    "library": "langchain_core",
+    "description": "Imports ChatPromptTemplate and MessagesPlaceholder for managing chat prompts in the langchain_core module.",
+    "enhanced_description": null,
+    "full_code": "from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "12:5",
+    "name": "langchain_messages_imports",
+    "number": 5,
+    "type": "import",
+    "library": "langchain_core",
+    "description": "Imports message classes for AI, base, and human messages from the langchain_core.messages module.",
+    "enhanced_description": null,
+    "full_code": "from langchain_core.messages import AIMessage, BaseMessage, HumanMessage",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "12:6",
+    "name": "langchain_runnables_imports",
+    "number": 6,
+    "type": "import",
+    "library": "langchain_core",
+    "description": "Imports the Runnable class from the langchain_core.runnables module, which is likely used for creating runnable components.",
+    "enhanced_description": null,
+    "full_code": "from langchain_core.runnables import Runnable",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "12:7",
+    "name": "langchain_tools_imports",
+    "number": 7,
+    "type": "import",
+    "library": "langchain_core",
+    "description": "Imports the BaseTool class from the langchain_core.tools module, which may serve as a base for tool implementations.",
+    "enhanced_description": null,
+    "full_code": "from langchain_core.tools import BaseTool",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "12:8",
+    "name": "langchain_openai_imports",
+    "number": 8,
+    "type": "import",
+    "library": "langchain_openai",
+    "description": "Imports the ChatOpenAI class from the langchain_openai module, which is likely used for interacting with OpenAI's chat models.",
+    "enhanced_description": null,
+    "full_code": "from langchain_openai import ChatOpenAI",
+    "is_resolved": false,
+    "external_dependencies": []
+  },
+  {
+    "component_id": "12:9",
+    "name": "langgraph_imports",
+    "number": 9,
+    "type": "import",
+    "library": "langgraph",
+    "description": "Imports END and StateGraph from the langgraph.graph module, which may be used for graph-based state management.",
+    "enhanced_description": null,
+    "full_code": "from langgraph.graph import END, StateGraph",
+    "is_resolved": false,
+    "external_dependencies": []
+  }
+]
